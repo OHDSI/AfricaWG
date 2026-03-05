@@ -1,0 +1,142 @@
+version: '3.8'
+
+services:
+  # dbname: openmrs username: openmrs pw: openmrs rootpw: openmrs
+  omrsdb:
+    image: openmrs/openmrs-reference-application-3-db:nightly-with-data
+    ports:
+      - "3306:3306"
+  sqlmesh-db:
+    image: mariadb:10.11.7
+    restart: "unless-stopped"
+    command: "mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci"
+    environment:
+      MYSQL_DATABASE: openmrs
+      MYSQL_USER: openmrs
+      MYSQL_PASSWORD: openmrs
+      MYSQL_ROOT_PASSWORD: openmrs
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+  core:
+    build: core
+    image: omop-etl-core
+    container_name: core
+    environment:
+      SRC_HOST: omrsdb
+      SRC_PORT: 3306
+      SRC_USER: openmrs
+      SRC_PASS: openmrs
+      SRC_DB: openmrs
+      SQLMESH_DB_ROOT_PASSWORD: openmrs
+      TARGET_HOST: omop-db
+      TARGET_PORT: 5432
+      TARGET_USER: omop
+      TARGET_PASS: omop
+      TARGET_DB: omop
+      ACHILLES_VOCAB_SCHEMA: vocab
+      ACHILLES_RESULTS_SCHEMA: results
+    depends_on:
+      - sqlmesh-db
+      - omrsdb
+      - omop-db
+
+    volumes:
+       - ./concepts:/concepts
+      # Uncomment the following line during development to mount local files and see changes without rebuilding the image.
+      # Note: This will override files copied into /core during build.
+      # - so be sure your local files are complete.
+       - ./core:/core
+    profiles:
+      - manual
+
+  omop-db:
+    image: postgres:15
+    container_name: omop-db
+    restart: always
+    environment:
+      POSTGRES_DB: omop
+      POSTGRES_USER: omop
+      POSTGRES_PASSWORD: omop
+    ports:
+      - "5432:5432"
+#    volumes:
+#      - ./omop-ddl/processed/ddl:/docker-entrypoint-initdb.d
+  achilles:
+    build: achilles
+    image: omop-etl-achilles
+    container_name: achilles
+    platform: linux/amd64
+    depends_on:
+      - omop-db
+    environment:
+      ACHILLES_DB_URI: "postgresql://omop-db:5432/omop"
+      ACHILLES_DB_USERNAME: "omop"
+      ACHILLES_DB_PASSWORD: "omop"
+      ACHILLES_CDM_SCHEMA: "public"
+      ACHILLES_VOCAB_SCHEMA: "public"
+      ACHILLES_RESULTS_SCHEMA: "public"
+      ACHILLES_CDM_VERSION: "5.4"
+    profiles:
+      - manual
+
+  dqd:
+    build: dqd
+    image: omop-etl-dqd
+    container_name: omop-etl-dqd
+    depends_on:
+      - omop-db
+    platform: "linux/amd64"
+    ports:
+      - "3000:3000"
+#    secrets:
+#      - CDM_CONNECTIONDETAILS_PASSWORD
+    environment:
+      CDM_CONNECTIONDETAILS_DBMS: "postgresql"
+      CDM_CONNECTIONDETAILS_USER: "omop"
+      CDM_CONNECTIONDETAILS_SERVER: "omop-db/omop"
+      CDM_CONNECTIONDETAILS_PORT: "5432"
+      CDM_CONNECTIONDETAILS_PASSWORD: "omop"
+      CDM_CONNECTIONDETAILS_EXTRA_SETTINGS: ""
+      CDM_VERSION: "5.4"
+      CDM_SOURCE_NAME: "OpenMRS"
+      CDM_DATABASE_SCHEMA: "public"
+      RESULTS_DATABASE_SCHEMA: "public"
+      VOCAB_DATABASE_SCHEMA: "public"
+      DQD_NUM_THREADS: "2"
+      DQD_SQL_ONLY: "FALSE"
+      DQD_SQL_ONLY_UNION_COUNT: "1"
+      DQD_SQL_ONLY_INCREMENTAL_INSERT: "FALSE"
+      DQD_VERBOSE_MODE: "FALSE"
+      DQD_WRITE_TO_TABLE: "TRUE"
+      DQD_WRITE_TABLE_NAME: "dqdashboard_results"
+      DQD_WRITE_TO_CSV: "FALSE"
+      DQD_CSV_FILE: ""
+      DQD_CHECK_LEVELS: "TABLE,FIELD,CONCEPT"
+      DQD_CHECK_NAMES: ""
+      DQD_COHORT_DEFINITION_ID: ""
+      DQD_COHORT_DATABASE_SCHEMA: "demo_cdm_results"
+      DQD_COHORT_TABLE_NAME: "cohort"
+      DQD_TABLES_TO_EXCLUDE: "CONCEPT,VOCABULARY,CONCEPT_ANCESTOR,CONCEPT_RELATIONSHIP,CONCEPT_CLASS,CONCEPT_SYNONYM,RELATIONSHIP,DOMAIN"
+      DQD_TABLE_CHECK_THRESHOLD_LOC: "default"
+      DQD_FIELD_CHECK_THRESHOLD_LOC: "default"
+      DQD_CONCEPT_CHECK_THRESHOLD_LOC: "default"
+    entrypoint: ["Rscript", "/postprocessing/dqd/scripts/run_dqd.R" ]
+    volumes:
+      - jdbc-drivers-data:/jdbc
+      - cdm-postprocessing-data:/postprocessing
+      - ./dqd/postprocessing/init.R:/postprocessing/init.R
+      - ./dqd/run_dqd.R:/postprocessing/dqd/scripts/run_dqd.R
+    profiles:
+      - manual
+
+
+
+volumes:
+  db-data: ~
+  db-data2: ~
+  postgres_data: ~
+  jdbc-drivers-data: ~
+  cdm-postprocessing-data: ~
