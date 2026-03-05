@@ -1,0 +1,7 @@
+.idea
+env
+.cache
+logs
+core/tmp/
+.DS_Store
+__pycache__

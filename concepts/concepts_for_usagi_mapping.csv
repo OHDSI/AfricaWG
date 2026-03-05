@@ -1,0 +1,1796 @@
+sourceCode,sourceName,frequency
+963,Text of encounter note,956
+1701,Respiratory rate,478
+1703,Arterial blood oxygen saturation (pulse oximeter),478
+1694,Systolic blood pressure,478
+1695,Diastolic blood pressure,478
+1696,Temperature (c),478
+1697,Height (cm),478
+1698,Weight (kg),478
+1699,Pulse,478
+216,Serum potassium,126
+68,Serum glucose,80
+75,Serum creatinine (umol/L),77
+69,Blood urea nitrogen,77
+217,Serum sodium,66
+200,Serum calcium,65
+245,Total cholesterol (mmol/L),52
+76,Alkaline phosphatase,52
+102,Total bilirubin,51
+103,Serum glutamic-pyruvic transaminase,51
+104,Serum glutamic-oxaloacetic transaminase,51
+242,Triglycerides (mmol/L),51
+86,Total protein,50
+189,Prostate specific antigen (PSA) measurement (ng/mL),40
+71,Mean corpuscular volume,39
+173,Pus culture and sensitivity,39
+237,Mean cell hemoglobin concentration,39
+214,Serum carbon dioxide,38
+184,"Culture and sensitivity, urine",38
+185,"Culture and sensitivity, blood",38
+42,C-reactive protein,37
+172,Body fluid culture and sensitivity,37
+215,Serum chloride,37
+239,Hematocrit,37
+156,Stool culture (bacterial),37
+113,Haemoglobin,36
+99,Red blood cells,36
+100,White blood cells,36
+238,Red cell distribution width,36
+182,Urine routine and microscopy,36
+158,"Combined % of monocytes, eosinophils and basophils",35
+116,Lymphocytes (%) - microscopic exam,35
+80,Platelets,35
+118,Neutrophils (%) - microscopic exam,35
+50,CD4 count,34
+236,Mean corpuscular hemoglobin,34
+180,Kinyoun's stain for coccidians,34
+48,CD4%,33
+135,Urea measurement (calculated),33
+181,Stool microscopy with concentration,31
+132,"Glucose, serum 2 hrs post 75g oral glucose (mg/dL)",31
+188,Post-prandial blood glucose measurement (mg/dL),30
+72,Serum albumin,29
+195,"uric acid, serum",29
+131,"Glucose, serum 3 hrs post 75g oral glucose (mg/dL)",29
+134,"Glucose, serum 1/2 hr post 75g oral glucose (mg/dL)",28
+190,Fasting blood glucose measurement (mg/dL),27
+130,"Glucose, serum 4 hrs post 75g oral glucose (mg/dL)",27
+133,"Glucose, serum 1 hr post 75g oral glucose (mg/dL)",27
+201,Hepatitis B Surface Antigen Test,26
+125,Amylase,26
+243,Low-density lipoprotein cholesterol (mmol/L),26
+244,High-density lipoprotein cholesterol measurement (mmol/L),26
+157,Glucose tolerance test pre-glucose administration,26
+126,Very low density lipoprotein measurement (mmol/L),25
+176,Prothrombin time,23
+175,International normalized ratio,20
+226,Serum glucose (mmol),20
+166,Prostate specific antigen test,19
+171,Culture panel,18
+41,C-reactive protein test,18
+235,Complete blood count,17
+170,Renal function panel,16
+49,CD4 panel,16
+137,Casts presence in urine sediment by light microscopy test,15
+138,Crystals type in urine sediment by light microscopy test,15
+193,"Bacteriuria test, urine",15
+141,Epithelial casts presence in urine sediment by light microscopy test,15
+28,GeneXpert MTB/Rif Lab set,15
+31,Bacillary burden as determined by quantitative cycle threshold,15
+144,Trichomonas vaginalis presence in urine sediment by light microscopy,15
+32,Mycobacterium tuberculosis rifampin resistance detection status,15
+145,Spore presence in urine test,15
+146,Yeast hyphae presence in urine sediment by light microscopy test,15
+147,Yeast presence in urine sediment by light microscopy,15
+148,Leukocytes presence in urine sediment by light microscopy,15
+149,Erythrocytes presence in urine sediment by light microscopy test,15
+136,Urine microscopy panel,15
+38,Tuberculosis polymerase chain reaction with rifampin resistance checking,15
+44,HBsAg Rapid Diagnostic Test,14
+46,Hepatitis B surface antigen spot test,14
+177,Stool test,14
+178,"Stool fat test, semi-quantitative",14
+179,Stool test for reducing substance,14
+203,Fecal occult blood test,14
+45,Hepatitis B serological test,14
+110,Stool exam,14
+174,Serum chemistry panel,13
+129,Glucose tolerance test 5 specimens (75g) panel,13
+121,Hepatitis C test - qualitative,12
+241,Lipid panel,12
+67,Liver function tests,12
+194,Sickle cell screening test,11
+183,Sickling test only,11
+40,Toxoplasma IgG,10
+186,Prothrombin Time (with INR),10
+34,Toxoplasma Gondii IgG And IgM Panel - Serum,10
+39,Toxoplasma IgM,10
+26,Serum electrolytes,9
+159,Basic metabolic panel,9
+70,Erythrocyte sedimentation rate,5
+229,Chlamydia trachomatis polymerase chain reaction,4
+199,Glycosylated hemoglobin A measurement,4
+168,Serum ferritin,3
+169,Thyroid stimulating hormone test,3
+230,Basophils,3
+47,CD4/CD8,3
+240,Creatine kinase,3
+120,Reticulocytes (%),2
+198,cerebrospinal fluid bacterial culture,2
+66,HIV viral load,2
+933,Never smoker,1
+232,Monocytes,1
+233,Neutrophils,1
+234,Lymphocytes,1
+122,Albumin/creatinine ratio (mass ratio) in 24 hour urine,1
+59,Cryptococcus Sp Ag presence in serum test,1
+187,Glomerular filtration rate,1
+1484,Odansetron hydrochloride,0
+1775,Presence of Symptoms,0
+374,Multisystem inflammatory syndrome associated with severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection in adult,0
+1404,Silver Sulphadiazene,0
+686,Preparation,0
+1100,Erythema,0
+295,Invoice line number,0
+1659,MTV & Fer gttes (pr neonato),0
+423,Inhaler,0
+872,"Muscle Cramp, Nocturnal",0
+1326,Glycerine & Sodium Chloride Enema,0
+945,HEENT examination (text),0
+227,Neisseria gonorrhoeae polymerase chain reaction,0
+1579,Brimonidine tartrate,0
+621,Thrice daily,0
+1246,Alprazolam,0
+219,Not done,0
+591,Allergy-Sensitivity to Fungi Syndrome,0
+1769,Time of Procedure,0
+93,O negative,0
+1500,Co-Amoxiclav,0
+390,Hyperthyroidism,0
+1117,Rhinorrhoea,0
+1420,Verapamil,0
+858,Return visit date,0
+1673,Tocopherol,0
+706,Inpatient patient disposition,0
+476,Intranasal,0
+891,Palpitations,0
+1342,Lactulose,0
+1040,duration of smoking (in years),0
+1595,Petrolatum,0
+527,Penicillins,0
+732,Cirrhosis of Liver,0
+1262,Beclomethasone Dipropionate,0
+266,Mobile money,0
+112,Blood typing,0
+1514,Sorbitol,0
+830,Vision difficulties,0
+162,Urine appears clear,0
+247,Bloodwork,0
+408,Measles,0
+1140,Acute Alcoholic Liver Disease,0
+1436,Gamma-Hexachlorocyclohexane,0
+1011,Tuberculosis Visit,0
+1689,Glucosamine & Chondroitin,0
+892,Follow-up need status,0
+1356,Metronidazole & Diloxanide,0
+514,Beef,0
+980,Swallowing painful,0
+1181,Diffuse non-miliary changes,0
+842,Family planning services,0
+1611,Atazanavir & Ritonavir,0
+452,Pint,0
+750,Epigastric pain,0
+1278,Chlordiazepoxide,0
+287,Billed,0
+1531,Thiopental,0
+857,Abdominal mass,0
+710,Clinical impression comment,0
+77,Cystine,0
+646,Priority,0
+538,Personal History of Allergy to Anti-Infective Agent,0
+1170,Blurred vision,0
+1452,Prednisone,0
+1036,Secondary,0
+335,"Meningitis, cryptococcal",0
+1372,Oral Rehydration Solution (ORS),0
+642,In Service,0
+1064,Hepatitis A,0
+1700,Mid-upper arm circumference,0
+1205,"Polio vaccination, inactivated",0
+1627,Oral polio vaccine (OPV),0
+468,Can,0
+777,Hoarse,0
+1294,Cremaffin,0
+309,Inactive status,0
+1547,Nitroglycerin (Glycerine Trinitrate),0
+906,Alcohol counseling,0
+816,Regressed milestones,0
+720,Condoms,0
+22,Beyond detectable limit,0
+555,Allergy to Insects,0
+1725,Herpes simplex esophagitis (B00.8),0
+1468,Tetrahydrozoline,0
+1155,Never,0
+353,Helicobacter Pylori Gastrointestinal Tract Infection,0
+1058,Alcohol use status,0
+1388,Prednisolone,0
+667,Stale-dated order,0
+1082,limb weakness,0
+1196,"X-ray of bilateral hips, 2 views",0
+1000,Axillary lymph node location,0
+1643,Dextran in NaCl,0
+802,Limitation of Joint Movement,0
+1310,Ethionamide,0
+327,Radiology department,0
+1563,Albumin,0
+605,Every twelve hours,0
+905,Increased skin temperature,0
+1229,"Measles Virus Vaccine Live, Enders' attenuated Edmonston strain / Mumps Virus Vaccine Live, Jeryl Lynn Strain / Rubella Virus Vaccine Live (Wistar RA 27-3 Strain)",0
+124,Equivocal,0
+575,Personal History of Allergy to Unspecified Medicinal Agent,0
+1753,Assistants,0
+1741,Tuberculosis of the peritonium (A18.3),0
+1742,Tuberculosis Of Central Nervous System (A17.9),0
+1485,Oral rehydration therapy,0
+1782,Covid 19 Signs and Symptom in past 14 days,0
+375,Upper respiratory tract infection due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),0
+1405,Sodium Valproate,0
+687,In progress,0
+1101,deformity,0
+297,Type of service provided,0
+1660,Nitroprussiate,0
+424,Each,0
+873,Night sweats,0
+1327,Glyceryl Trinitrate,0
+946,General examination (text),0
+228,"Chlamydia trachomatis polymerase chain reaction, qualitative",0
+1580,Betaxolol,0
+622,"Once daily, in the morning",0
+1247,Amikacin,0
+220,Abnormal,0
+592,Allergy to Dog,0
+1770,Post-Operative Instructions,0
+94,O positive,0
+1501,Dolex,0
+391,Pulmonary Hypertension,0
+1118,Former smoker,0
+1421,Vitamin B Complex,0
+874,Recurrence of disease,0
+1674,Vasopressin,0
+711,Objective Findings,0
+477,Capsule,0
+893,Pericardial friction rub,0
+1343,Levofloxacin,0
+1041,Postnatal visit number,0
+250,HIV Test,0
+1596,Povidone iodine,0
+563,Erythromycins,0
+733,Cocaine abuse,0
+1263,Benzoic & Salicylic Acid,0
+267,Credit card,0
+1515,"Acetaminophen,Pseudo-ephedrine,Dextrometorphan,Chlorpheniramine",0
+853,Oral sores,0
+163,Urine turbidity,0
+248,Hematology,0
+409,Syphilitic Cirrhosis,0
+1144,Acute Hepatitis,0
+1437,Amoxicillin & Clauvulanate,0
+1012,Preventing Mother to Child Transmission Visit,0
+1690,Nystatin & Zinc Oxide,0
+894,Had sex without condom,0
+1357,"Metronidazole, Chlorhexidine, Lignocaine & Menthol",0
+515,Adhesive tape,0
+981,Swelling of Inguinal Region,0
+1182,Infiltrate,0
+849,Female sterilization,0
+1612,Didanosine (DDI),0
+453,Patch,0
+751,Excessive Sweating,0
+1279,Chlorhexidine Gluconate,0
+288,Not billable,0
+1532,Bupivacaine spinal heavy,0
+866,Nostril flaring,0
+735,Currently pregnant,0
+78,Creatine,0
+654,Medication dispense status reason,0
+539,Mental status change,0
+1171,Bronchial Breathing,0
+1453,Tramadol & Acetaminophen,0
+1037,Primary,0
+336,Visceral leishmaniasis,0
+964,Patient-generated history: Family history section text,0
+1373,Oxymetazoline,0
+643,Waiting,0
+1065,Visual disturbance,0
+1212,"Polio vaccination, oral",0
+1628,Polio Vaccine-Inactivated Vaccine (IPV),0
+469,Bar,0
+779,Hypertensive Retinopathy,0
+1295,Cycloserine,0
+310,Diabetes clinic,0
+1548,Isosorbide dinitrate,0
+967,Stop all,0
+817,Delayed milestones,0
+721,Norplant (implantable contraceptive),0
+24,Not detected,0
+556,Allergy to Spiders,0
+1726,Fracture of great toe (S92.4),0
+1469,Fexofenadine,0
+1230,Patient Identification Photo,0
+354,Hip Pain,0
+1095,"Review of systems, developmental",0
+1389,Primaquine,0
+668,Order discontinued,0
+1083,Chest pain,0
+1197,"X-ray of right hip, two views",0
+1001,Axillary lymph node(s) level 3,0
+1644,Enoxaparin,0
+803,Loss of Appetite,0
+1311,Etophylline & Theophylline,0
+328,Unit of currency,0
+1564,Dextran,0
+606,Every eight hours,0
+910,Problem list,0
+1231,Ciprofloxacin,0
+127,Present,0
+576,allergy to ertapenem,0
+1754,General,0
+43,VDRL,0
+577,Dander (Animal) Allergy,0
+1755,Monitored Anesthesia Care,0
+1743,Tuberculosis of bones and joints (A18.0),0
+1486,Propranolol hydrochloride,0
+1784,Tested for COVID 19,0
+376,Acute respiratory disease due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),0
+1406,Spironolactone,0
+689,Example Option 3,0
+1102,Fetal Distress,0
+322,"Patient-side expenses, items",0
+1661,Noradrenaline,0
+425,Dose pack,0
+875,Numbness of Foot,0
+1328,Haloperidol,0
+951,Serious adverse event,0
+1581,Brimonidine & timolol,0
+623,"Once daily, in the evening",0
+1248,Amitriptyline,0
+221,Normal,0
+1785,Respiratory PCR,0
+95,B negative,0
+1502,Dypirone,0
+392,Acute Cholecystitis,0
+1119,Smoker,0
+1422,Vitamin K,0
+911,Some,0
+1675,Vitamins A and D,0
+712,Subjective Findings,0
+478,Subcutaneous,0
+895,Periorbital Cellulitis,0
+1344,Levonorgestrel & Ethinylestradiol,0
+1056,In the past,0
+252,Malarial smear,0
+1597,Silver sulfadiazine,0
+564,Statins,0
+734,Coma,0
+1264,Benzoyl Peroxide,0
+268,Cash,0
+114,Urine protein (dip stick),0
+1516,Vitamin C,0
+957,Intense fatigue and general weakness,0
+212,Moderate,0
+249,Billable Services Set,0
+410,Asthma,0
+1145,Urinary tract infection,0
+1438,Cefuroxime,0
+1013,Kaposi Sarcoma Visit,0
+1691,Multivitamin & Iron,0
+896,Has regular sex partner,0
+1358,Midazolam,0
+516,Ragweed,0
+982,Swelling of Skin,0
+1183,Evidence of cardiac enlargement,0
+928,Referral for pregnancy termination,0
+1613,Efavirenz (ENV or EFZ),0
+454,Pad,0
+752,Excessive Tear Production,0
+1280,Chloroquine,0
+289,Billable,0
+139,Waxy casts presence in urine sediment by light microscopy test,0
+1533,Lidocaine & Epinephrine,0
+1123,History of pneumonia,0
+738,Date of last menstrual period,0
+82,Calcium sulfate,0
+669,SubstanceAdminSubstitutionReason,0
+540,Anaemia,0
+1172,Burning Pain,0
+1454,"Peanut, Sugar, Vegetable oil, Milk, Vitamins, minerals",0
+1039,Maternal and child health program,0
+337,Influenza,0
+965,Patient-generated history: Social history section text,0
+1374,Oxytocin,0
+645,Triage,0
+1066,Deceased,0
+1702,Karnofsky performance score,0
+1213,Hepatitis B vaccination,0
+1629,Measles Rubella Vaccine (MR),0
+470,Ampule(s),0
+780,Hypertrophy of Tonsils,0
+1296,Dexamethasone,0
+311,"Data entry error, deleted",0
+1549,Hydralazine,0
+969,Change regimen,0
+831,"Edema, legs",0
+722,Implantable contraceptive (unspecified type),0
+25,Detected,0
+557,Allergy to Seafood,0
+1727,Stromal tumor of digestive system (D48.1),0
+1470,Guaifenesin,0
+1704,On time,0
+360,Peptic Ulcer of Stomach,0
+1148,History of HIV test,0
+1390,Prochlorperazine Maleate,0
+670,Regulatory requirement,0
+1084,Chronic Hepatitis,0
+1198,"X-ray of left hip, two views",0
+1002,Axillary lymph node(s) level 2,0
+1645,Ephedrine,0
+804,Loss of consciousness,0
+1312,Finasteride,0
+1565,Gelofusine,0
+607,Every six hours,0
+910,org.openmrs.module.emrapi:Coded Diagnosis,0
+1232,Paracetamol,0
+128,Absent,0
+1233,Streptomycin,0
+164,Brown color,0
+578,Allergy to penicillin,0
+1756,Knee Block,0
+1744,Tuberculoid Leprosy (Type T) (A30.1),0
+1487,Saline flush,0
+1788,Test Done,0
+377,Disease due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),0
+1407,Sulfamethoxazole & Trimethoprim,0
+690,Example Option 2,0
+1103,Poor Fetal Growth,0
+356,Imaging contrast type,0
+1662,Parenteral nutrition (peripheral at least),0
+426,Cartridge,0
+876,Numbness of Hand,0
+1329,Hydrocortisone,0
+954,Problem severity,0
+1582,Dorzolamine & timolol,0
+624,"Once daily, at bedtime",0
+1249,Amlodipine & Atenolol,0
+222,None,0
+1786,Rapid blood test,0
+96,B positive,0
+1503,Ergotamine,0
+393,Hypothyroidism,0
+1120,Narcotic abuse,0
+1423,Warfarin,0
+917,New visit,0
+1676,Voltaren,0
+713,Assessment,0
+479,Intramuscular,0
+898,Pitting Edema,0
+1345,Levothyroxine,0
+1059,Diagnosis certainty,0
+925,Rapid test for HIV,0
+1598,Benzathine penicillin,0
+567,Sulfonamides,0
+736,Crying Infant,0
+1265,Betamethasone,0
+270,Euro,0
+1517,Amino Acids and Vitamins,0
+1125,Abdominal pain,0
+314,Active status,0
+286,Billing status set,0
+411,Malignant neoplasm of cervix uteri,0
+1146,Vertigo,0
+1439,Atovaquone & Proquanil,0
+1014,Early Infant Diagnosis Visit,0
+1692,Pentoxifylline,0
+897,HIV self-test performed,0
+1359,Mifepristone & Misoprostol,0
+517,Pollen,0
+983,Swollen Feet,0
+1192,Miliary changes,0
+972,Counseling about infant feeding practices,0
+1614,Efavirenz & Lamivudine & Tenofovir,0
+455,Nebulizer,0
+753,Exophthalmos,0
+1281,Chlorpheniramine,0
+290,Planned,0
+140,WBC casts presence in urine sediment by light microscopy test,0
+1534,Diphenidramine,0
+1175,Irritability,0
+755,Dosing change,0
+83,Calcium phosphate,0
+672,ActSubstanceAdminSubstitutionCode,0
+542,calcium channel blocker allergy,0
+1173,Cannabis Abuse,0
+1455,Cyclobenzaprine,0
+1044,Medical record observations,0
+338,Meningitis,0
+966,Test name,0
+1375,P Dextrose And Electrolyte Solution,0
+647,Not Urgent,0
+1067,Visual Field Scotoma,0
+1214,Diphtheria tetanus and pertussis vaccination,0
+1630,Pentavalent Vaccine (Penta),0
+472,Milliliter,0
+781,Hyperuricaemia,0
+1297,Dextrose,0
+312,Entered in error report status,0
+1550,Methyldopa,0
+970,Change formulation,0
+833,CARDIAC MURMUR (on exam),0
+724,Pyrimethamine / sulfadoxine,0
+29,Medium,0
+558,Personal History of Allergy to Sulfonamides,0
+1728,Fracture of Base of Skull (S02.1),0
+1471,Aclidinium Bromide,0
+1705,Late,0
+361,Peptic Ulcer with Perforation,0
+1156,"Review of systems, central nervous system",0
+1391,Promethazine,0
+671,Formulary policy,0
+1086,Conjunctivitis,0
+52,Trinity Biotech Trinscreen HIV test kit,0
+1003,Axillary lymph node(s) level 1,0
+1646,Esmolol,0
+806,Lower Respiratory Tract Infection,0
+1313,Fluconazole,0
+1566,Calcium chloride,0
+608,Every five hours,0
+912,Breathing poorly (<30 breaths / min),0
+1234,Isoniazid,0
+165,Black color,0
+579,Allergy to Insect Bites,0
+1757,Axillary Block,0
+1745,Triplet Pregnancy (O30.1),0
+1488,Sulfacetamide,0
+1789,Test Results,0
+378,Suspected severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection,0
+1408,Tetanus Antitoxin,0
+691,Example Option 1,0
+1104,Genital herpes,0
+357,Imaging sequence(s),0
+1663,Petroleum,0
+427,Box,0
+877,Oliguria,0
+1330,Hydrogen Peroxide,0
+956,Unexplained bleeding,0
+231,Eosinophils,0
+1583,Pilocarpine,0
+625,Once daily,0
+593,History of Allergy,0
+1250,Amoxicillin,0
+223,bloody,0
+1787,ELISA blood test,0
+97,A negative,0
+1504,Ferrous Folate,0
+395,Kaposi's sarcoma of skin,0
+1121,Opioid abuse,0
+1424,Zinc Sulphate,0
+918,Surgical Outpatient Department,0
+1677,Someticone,0
+714,Plan,0
+480,Intravenous,0
+903,Polyuria,0
+1346,Lignocaine,0
+1085,Confusion,0
+1599,Benzyl penicillin,0
+440,Biscuit wafer,0
+737,Cyanosis,0
+1266,Bupivacaine Hydrochloride,0
+271,Ugandan shilling,0
+1518,"Levonorgestrel, Ethinylestradiol",0
+503,Rash,0
+352,Radiology results,0
+10,Lisinopril,0
+291,Charge item status set,0
+412,Pneumonia,0
+1147,Abnormal Pupillary Function,0
+1440,Fluticasone & Salmeterol,0
+1015,Pre-ART Visit,0
+1693,Podophillin,0
+913,HIV test date,0
+1360,Miltefosine,0
+518,Mold,0
+985,Tachypnea,0
+1206,Immunization history,0
+973,Therapeutic feeding,0
+1615,Lamivudine (3TC),0
+456,Million units,0
+754,Fatigue,0
+1282,Chlorpromazine,0
+296,TB/HIV clinic,0
+1535,Complex B,0
+1176,Weight gain,0
+757,Pruritus,0
+87,Ascorbic acid,0
+683,Medication dispense status,0
+543,allergy to sufentanil,0
+1174,Cellulitis of Head,0
+1456,Permethrin,0
+1048,Pit latrine without slab,0
+339,Mycetoma,0
+978,Antiretroviral plan,0
+1376,Pantoprazole,0
+648,Urgent,0
+1069,Vomiting,0
+1771,"Rash, nonvesicular, unspec.",0
+1215,Yellow fever vaccination,0
+1631,Rotavirus Vaccine (Rota),0
+473,Liter,0
+782,Hypospadias,0
+1298,Dextrose & Normal Saline (DNS),0
+313,Laboratory orders,0
+1551,Labetalol,0
+971,Continue regimen,0
+838,Adherence counseling,0
+725,Heparinoids / salicylic acid,0
+30,Very low,0
+559,Anaphylaxis,0
+1729,Cerebrovascular Accident (I64),0
+1472,Amoxicillin & Clauvulanic Acid,0
+1706,Early,0
+362,Ulcer,0
+1157,"Review of systems, musculoskeletal",0
+1392,Promethazine Hydrochloride (HCl),0
+673,Formulary substitution,0
+1087,Convalescence,0
+53,One Step HIV 1/2 testing kit,0
+3,ATT DEFAULT ATTACHMENT,0
+1647,Etomidate,0
+329,Antenatal services,0
+807,Lymphadenopathy,0
+1314,Fluoxetine,0
+1567,Sodium bicarbonate,0
+609,Every four hours,0
+920,Swelling,0
+921,Quadriceps muscle wasting,0
+1235,Rifampicin,0
+191,Yellow color,0
+580,Contrast Media Allergy,0
+1758,Interscalene Block,0
+1746,Traumatic Amputation of Finger(s) (S68.1),0
+1489,Tiotropium powder,0
+379,Pneumonia due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),0
+1409,Tetanus Immunoglobulin,0
+692,multiCheckbox,0
+1105,Hearing Loss,0
+358,Contrast imaging phase,0
+1664,Propafenone,0
+428,Bag,0
+880,Orbital Oedema,0
+1331,Hyoscine Butylbromide,0
+962,Contraception method undecided,0
+1584,Cyclopentolate,0
+626,Twice daily with meals,0
+594,Photoallergy,0
+1251,Amoxicillin & Clavulanate,0
+224,Unknown,0
+1791,Session Name,0
+98,A positive,0
+1505,Fungobacter,0
+397,Infection due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),0
+1122,"Localized Swelling, Mass and Lump, Multiple Sites",0
+1425,Methimazole,0
+927,Health center hospital,0
+1678,Primoquine,0
+723,Current drugs used,0
+481,Inhalation,0
+904,Chronic obstructive pulmonary disease,0
+1347,Lignocaine & Adrenaline,0
+1111,Daily cigarette use,0
+1189,12-lead electrocardiogram,0
+1600,Benzyl penicillin Procaine,0
+441,Vial,0
+739,Dehydration,0
+1267,Caffeine Citrate,0
+272,Tanzanian shilling,0
+1519,Levonorgestrel,0
+811,Memory problems,0
+359,Procedure date/time,0
+11,Levothyroxine sodium,0
+355,Imaging procedure history,0
+493,Cough,0
+1149,Acquired immunodeficiency syndrome,0
+1441,Budesonide & Formoterol,0
+1016,Antiretroviral Treatment Visit,0
+79,Infection by Ascaris Lumbricoides,0
+915,Reason for referral (text),0
+1361,Mirtazapine,0
+519,Latex,0
+990,Testicular Mass,0
+1207,Vaccine lot number,0
+974,Micronutrient support,0
+1616,Lamivudine & Tenofovir,0
+457,Microgram,0
+762,Elevated blood pressure,0
+1283,Clarithromycine,0
+298,Sexual/reproductive health service,0
+142,Fatty casts presence in urine sediment by light microscopy test,0
+1536,"Complex B (B1, B6, B12)",0
+1178,Hematuria,0
+758,Eye discharge,0
+90,"Albumin, human",0
+703,Inpatient disposition construct,0
+544,allergy to sevoflurane,0
+1177,Muscle pain,0
+1457,Miconozole,0
+1049,Pit latrine with slab,0
+340,African Trypanosomiasis,0
+993,Date of event,0
+1377,Paracetamol & Codeine Phosphate,0
+649,Emergency,0
+1070,Sore throat,0
+1772,Congestion,0
+1216,Tetanus booster,0
+1632,Diphtheria Tetanus Vaccine (DT),0
+474,Gram,0
+784,Increased Frequency of Urination,0
+1299,Diazepam,0
+315,Observation ward,0
+1552,Nicardipine,0
+977,Start drugs,0
+852,Pallor,0
+726,Heparinoids / hyaluronidase,0
+33,Mycobacterium tuberculosis detected with indeterminate rifampin resistance,0
+560,Angioedema,0
+1730,Vitiligo (L80),0
+1473,Atovaquone & Proquanil hydrochloride,0
+1708,Prevention of Maternal to Child HIV transmissio,0
+363,Upper Gastrointestinal Hemorrhage,0
+1158,"Review of systems, genitourinary",0
+1393,Propofol,0
+674,Therapeutic generic substitution,0
+1088,Delirium,0
+56,Premier First Response(R) test kit,0
+4,ATT IMAGE ATTACHMENT,0
+1648,Fenofibrate,0
+330,No,0
+808,Lymphogranuloma venereum,0
+1315,Folic Acid,0
+1568,Aluminum & Magnesium hydroxide & Simethicone,0
+610,Every three hours,0
+1569,Bisacodyl,0
+611,Every two hours,0
+931,Unknown if ever smoked,0
+1236,Ethambutol,0
+192,Green color,0
+581,Allergy to Peanuts,0
+1759,Intravenous Block,0
+1747,Amputation of arm (T11.6),0
+1490,Triple antibiotic,0
+380,Paratyphoid Fever,0
+1410,Tetracycline Ophtalmic,0
+693,date,0
+415,Duration units,0
+1665,Glycerin,0
+430,Rectally,0
+881,Pain in Eye,0
+1332,Ibuprofen,0
+987,Skin examination (text),0
+1585,Propacaine,0
+627,Twice daily after meals,0
+595,Hymenoptera Allergy,0
+1252,Amoxicillin & Clavulanic Acid,0
+253,Years,0
+88,Urobilinogen,0
+1792,Session Date,0
+101,Negative,0
+1506,Glibenclamide,0
+398,AIDS with Kaposi's sarcoma,0
+1124,Pain,0
+1426,Multi-Vitamin Adult,0
+938,Quartenary,0
+1679,Dyphenhydramine,0
+756,Currently using birth control,0
+482,Oral,0
+909,Problem,0
+1126,Abdominal distension,0
+254,Intermittent preventive treatment in pregnancy with sulphadoxine-pyrimethamine,0
+1601,Cefalexin,0
+442,Unit,0
+740,Diabetic foot ulcer,0
+1268,Calamine,0
+273,Nigerian naira,0
+1520,Medroxyprojesterone acetate,0
+815,Poor appetite,0
+491,Severe,0
+12,Hydrochlorothiazide,0
+421,Dispensing units,0
+494,Diarrhea,0
+1150,Alcoholic Hepatitis,0
+1442,Fluticasone Furoate & Vilanterol,0
+1017,"Follow-up visit, regular",0
+81,Infection due to Entamoeba Histolytica,0
+916,Visit type,0
+1362,Misoprostol,0
+520,Dust,0
+992,Papular pruritic eruption,0
+1208,Vaccine manufacturer,0
+975,Food support,0
+1617,Lopinavir & Ritonavir (LPV/r),0
+458,Milliequivalent,0
+763,Finger Clubbing,0
+1284,Clobazam,0
+299,Triage service,0
+143,Granular casts presence in urine sediment by light microscopy test,0
+1537,Multivitamin,0
+260,Nutrition counseling,0
+759,Otorrhea,0
+251,Tetanus toxoid,0
+775,Congenital disorders,0
+545,allergy to remifentanil,0
+1191,Pleural effusion,0
+1458,Tolnoftate,0
+1050,Ventilated improved pit latrine with slab,0
+341,Helminthiasis,0
+996,Family planning status,0
+1378,Paracetamol Paediatric,0
+651,Patient currently unavailable,0
+1072,Wheeze - rhonchi,0
+1773,Shortness of breath,0
+1218,Measles vaccination,0
+1633,Diphtheria Tetanus Pertusis Vaccine (DTP),0
+475,Milligram,0
+789,Influenza-like symptoms,0
+1300,Diclofenac,0
+316,Neonatal service,0
+1553,Sprironolactone,0
+984,Referral for opportunistic infection treatment,0
+855,Pale conjunctiva,0
+1202,Vitamin A,0
+35,Invalid,0
+561,Hives,0
+1731,"Extreme prematurity, < 28 weeks gestation (P07.2)",0
+1474,Captopril,0
+364,Diabetes mellitus,0
+1159,"Review of systems, gastrointestinal",0
+1394,Propranolol,0
+675,Therapeutic brand substitution,0
+1089,Dental caries,0
+57,Abbott Determine(R) test kit,0
+1649,Fer elementaire & Acide folique,0
+331,Yes,0
+809,Problem resolved,0
+1316,Frusemide,0
+1317,Frusemide & Amiloride,0
+1570,Sodium phosphate (Fleet's),0
+612,Every hour,0
+932,Current every day smoker,0
+1237,Calcium,0
+196,gram-negative cocci,0
+582,"Allergy, Unspecified",0
+1760,Local Anesthesia and Sedation,0
+1748,Transitory tachypnea of newborn (P22.1),0
+1491,Eye glasses,0
+381,Gastroesophageal reflux disease,0
+1411,Tinidazole,0
+694,select,0
+489,Severity of adverse reaction,0
+1666,Bupivacaine,0
+431,Vaginally,0
+882,Pain in pelvis,0
+1333,Ibuprofen & Paracetamol,0
+988,Abdominal lymph node examination (text),0
+1586,Phenylephrine,0
+628,Twice daily before meals,0
+596,Personal History of Allergy to Shellfish,0
+1253,Amoxicillin & Cloxacillin,0
+255,Months,0
+1793,Practitioner,0
+105,Two plus,0
+1507,Griseofulvine,0
+399,Malaria,0
+1127,Ptosis of Eyelid,0
+1427,Multi-Vitamin Children,0
+941,In remission,0
+1680,Eucalyptus & Diphenhydramine & Phenylephrine,0
+800,Requests family planning information,0
+484,Packets,0
+919,Red eye,0
+1134,Musculoskeletal exam findings,0
+351,Name of Procedure performed,0
+1602,Cefotaxime,0
+443,Tube,0
+741,Diabetic retinopathy,0
+1269,Calcium Gluconate,0
+274,Kenyan shilling,0
+1521,"Rifampicine, Isoniazide, Ethambutol, pyrazinamide",0
+818,Abdominal swelling,0
+492,Mild,0
+13,Famotidine,0
+429,Routes of administration,0
+495,Drug allergy,0
+1151,Amenorrhea,0
+1443,Tiotropium,0
+1018,Emergency Visit,0
+117,Mucus in Stool,0
+929,Referrals ordered,0
+1363,Naloxone,0
+521,Bee stings,0
+1020,Toothache,0
+1209,Immunization sequence number,0
+1042,Hysterectomy,0
+1618,Nevirapine (NVP),0
+459,Lozenge,0
+764,Flank Pain,0
+1285,Clobetasol Propionate,0
+300,Clinical consultation,0
+1538,Multivitamin & Lysine,0
+727,Diagnostic testing and counseling for HIV,0
+760,Chills,0
+258,Folate / iron,0
+785,Mental disorders,0
+546,allergy to meropenem,0
+1716,Mild persistent asthma (J45.9),0
+1459,Lidocaine,0
+1051,Flush toilet,0
+342,Schistosomiasis,0
+998,Reaction (to an allergen),0
+1379,Paradichloro Benzene,0
+655,Washout period,0
+1073,Xanthelasma of Eyelid,0
+1774,Onset Date,0
+1222,Administration of booster severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) vaccine,0
+1634,Pneumococcal Vaccine (PCV13),0
+483,Suppository,0
+792,Inspiratory Stridor,0
+1301,Dicyclomine,0
+317,General medicine service,0
+1554,Nifedepine SR,0
+986,Referral for antiretroviral therapy,0
+856,Abdominal tenderness,0
+1203,Pentavalent pneumovax,0
+36,Mycobacterium tuberculosis detected without rifampin resistance,0
+565,allergy to wheat,0
+1732,Vaginal Enterocele (N81.5),0
+1475,Chloroquine phosphate,0
+365,Gastric ulcer,0
+1160,"Review of systems, cardiopulmonary",0
+1395,Pyridoxine,0
+676,Therapeutic alternative substitution,0
+1090,Depression,0
+907,Female condom,0
+1650,Flumazenil,0
+396,Unnatural death,0
+810,Problem added,0
+832,Mastoiditis,0
+1318,Furosemide,0
+1571,"Nitrofurasone, Neomycin, Dexamethasone (Otofuran®)",0
+613,Every 30 min,0
+934,Current some day smoker,0
+1238,Pyrazinamide,0
+197,gram-positive cocci,0
+54,"Mycobacterium tuberculosis lipoarabinomannan antigen, urine, rapid",0
+583,Food Allergy,0
+1761,Local Anesthesia,0
+1749,Transient Cerebral Ischemia (G45.9),0
+1492,Orthopedic device,0
+382,Salmonella Septicaemia,0
+1107,inhalant abuse,0
+1412,Tizanidine,0
+695,radio,0
+533,No known allergies,0
+1667,Propylthiouracil,0
+432,Transdermal,0
+883,Pain in penis,0
+1334,Indomethacin,0
+989,Abdominal examination (text),0
+1587,Salbutamol & Iprotopium bromide,0
+629,Twice daily,0
+633,Traumatic injury,0
+1254,Amphotericin B,0
+256,Weeks,0
+1794,Session Notes,0
+106,One plus,0
+1508,Metoprolol,0
+400,Tuberculosis,0
+1128,Abnormal Posture,0
+1428,Multi-Vitamin Prenatal,0
+948,Problem resolved with sequela,0
+1681,Silver Nitrate,0
+834,Estimated date of confinement,0
+1348,Losartan,0
+485,Tablet,0
+922,Renal Retinopathy,0
+1137,Urogenital exam findings,0
+637,PMTCT,0
+1603,Erythromycin,0
+444,Teaspoon,0
+742,Diplopia,0
+1270,Carbamazine,0
+275,Ethiopian birr,0
+1522,"Rifampicine, Isoniazide",0
+820,Focal weakness,0
+496,Fever,0
+14,Esomeprazole,0
+439,Dosing unit,0
+497,Flushing,0
+1152,Anal pain,0
+1444,Budesonide,0
+1019,Pharmacy Visit,0
+167,Schistosoma Mansonii Infection,0
+930,Smoking status,0
+1364,Neomycin & Polymyxin B & Bacitracin Zinc,0
+528,Wheat,0
+1024,Toxic hepatitis,0
+1211,Vaccination date,0
+1153,Vasectomy,0
+1619,Tenofovir,0
+460,Kilogram,0
+765,Genital warts,0
+1286,Clonazepan,0
+301,On hold,0
+1539,Ascorbic acid (Vit C),0
+729,Tobacco use counseling,0
+761,Hearing difficulties,0
+500,Caffeine,0
+1033,Visit Diagnoses,0
+547,allergy to imipenem,0
+1717,Acute rheumatic fever (I00),0
+1460,Benzyl Benzoate,0
+1054,Sexual abstinence,0
+343,Leishmaniasis,0
+999,Family history comment,0
+1380,"Paradichlorobenzene, Benzocaine, Chlorbutol & Turpentine Oil",0
+656,Surgery planned,0
+1074,Dyspnea,0
+1776,Sneezing,0
+1228,Meningococcal vaccination,0
+1635,Ready-to-Use Supplementary Foods,0
+486,Metric drop,0
+793,Intercostal recession,0
+1302,Diethylcarbamazine,0
+318,Emergency medical services,0
+1555,Carvedilol,0
+991,Referral for imaging study,0
+859,Splenomegaly,0
+1204,"Rotavirus vaccine, live",0
+37,Mycobacterium tuberculosis detected with rifampin resistance,0
+566,house dust mite allergy,0
+1709,HIV treatment status,0
+1733,Uterine Inversion (N85.5),0
+1476,Corticosteroid,0
+366,Bleeding Stomach Ulcer,0
+1161,"Review of systems, HEENT",0
+1396,Pyrimethamine Sulfadoxine,0
+677,Generic composition substitution,0
+1091,grunting baby,0
+908,Male condom,0
+64,Test not performed due to lack of availability of test materials,0
+1651,Glycopyrrolate,0
+413,Hours,0
+1652,Hialorunate de Na+,0
+414,Minutes,0
+843,"Candidiasis, oral",0
+1319,Furosemide & Spironolactone,0
+1572,Latanoprost,0
+614,One time,0
+935,Current light tobacco smoker,0
+1239,Pioglitazone,0
+202,Rarely,0
+55,"HIV DNA polymerase chain reaction, dried blood spot (DBS)",0
+584,Allergy to Cats,0
+1762,Anesthesia Type,0
+21,Low,0
+1493,Heatwrap,0
+383,Shigellosis,0
+1109,Pain in Joints,0
+1413,Tramadol,0
+696,number,0
+632,Cause of death,0
+1668,Protamine sulfate,0
+433,In both eyes,0
+884,Pain in Scrotum,0
+1335,Insulin,0
+994,Chest examination (text),0
+1588,Alcohol,0
+630,Weekly,0
+634,Infectious Disease,0
+1255,Ampicillin,0
+257,Days,0
+562,Bronchospasm,0
+151,Triple phosphate crystals,0
+1509,Metronidazole and Nystatin,0
+783,Oral contraception,0
+401,Carcinoma of Prostate,0
+1129,Abnormal Reflex,0
+1429,Tenormin,0
+949,Active problem,0
+1682,Boric acid & Antipyrine & Ephedrine,0
+851,Pregnancy status,0
+1349,Magnesium,0
+488,Fatal,0
+923,Respiratory crackles,0
+1138,Abdominal exam findings,0
+638,Pre-exposure prophylaxis (PrEP),0
+1604,Gentamicin,0
+445,Tablespoon,0
+743,Discharge from Penis,0
+1271,Cefadroxil,0
+277,Equitel Pay,0
+1524,Paracetamol & Chlorzoxasone,0
+823,Menstruating,0
+541,Myalgia,0
+15,Ceftriaxone,0
+487,Allergens Options,0
+498,Gastrointestinal Food Allergy,0
+1154,Post-nasal discharge,0
+1445,Albuterol,0
+1021,Private health care clinic/facility,0
+204,Uric Acid Crystalluria,0
+937,Time frame,0
+1365,Nifedipine,0
+529,Soy,0
+1029,Urinary symptoms,0
+1224,Vaccine lot expiration date,0
+1169,Tubal ligation procedure,0
+1620,Zidovudine (AZT),0
+461,Inch,0
+767,Itchy Eyes,0
+1287,Clotrimazole,0
+302,Inpatient department,0
+1540,Phytomenadione (Vit K),0
+786,Dental care referral,0
+766,Weight loss,0
+502,Aspirin,0
+1045,Review of systems,0
+548,allergy to egg protein,0
+1718,Idiopathic cardiomyopathy (I42.8),0
+1461,Glyburide,0
+1057,Currently,0
+344,Leptospirosis,0
+1027,Substance use,0
+1381,Pheniramine,0
+658,Duplicate therapy,0
+1075,Alcohol abuse,0
+1777,Sore throat or pain with swallowing,0
+5,Tetracycline,0
+1636,Aminophyllin,0
+394,Human immunodeficiency virus,0
+794,Irregular heartbeat,0
+1303,Digoxin,0
+319,Intensive care service,0
+1556,Metoprolol tartrate,0
+1199,Current immunization orders,0
+860,Hepatomegaly,0
+1210,Pneumococcal vaccine,0
+60,Positive for both Plasmodium falciparum and Plasmodium vivax,0
+568,erythromycin allergy,0
+1710,Program status,0
+1734,Urinary calculus (N20.9),0
+1477,Emollient Lotion,0
+367,Hypertension,0
+1162,"Review of systems, general",0
+1397,Rabeprazole Sodium,0
+678,Brand composition substitution,0
+1092,Diabetic ketoacidosis,0
+269,Method of payment,0
+276,Billable service,0
+1653,Hialorunate de Na+ et oxymetazoline,0
+416,Milligram per meter squared,0
+845,Frequency of Urination and Polyuria,0
+1320,Fusidic Acid,0
+1573,Trobramycin,0
+615,"Four times daily, before meals and at bedtime",0
+1240,Glipizide,0
+206,Ab negative,0
+58,Rapid test for malaria,0
+585,allergy to almonds,0
+1763,Estimated Blood Loss,0
+73,High,0
+1494,Alpha Methyl Dopa,0
+384,Cholera due to Vibrio cholerae,0
+1110,Stiffness of joint,0
+1414,Tranexamic Acid,0
+697,text area field,0
+635,Probable cause of death (text),0
+1669,Sildenafil,0
+434,In right eye,0
+885,Pain in Testicle,0
+1336,Ipratropium,0
+997,Patient not using family planning,0
+1589,Chlorhexidine,0
+631,Monthly,0
+636,Human immunodeficiency virus (HIV) disease,0
+1256,Ampicillin & Cloxacillin,0
+259,Hospital waiver,0
+812,"Pain, lower extremities",0
+152,Amorphous urate crystals in urine,0
+846,Injectable contraceptives,0
+402,HIV resulting in other conditions,0
+1130,Decreased fetal movements,0
+1430,Celecoxib,0
+952,Moderate to severe,0
+1683,Belladona & Phenobarbital,0
+854,Chief complaint,0
+1350,Mannitol,0
+490,Life threatening severity,0
+924,Respiratory Distress,0
+1139,Cardiac exam findings,0
+707,Discharge from hospital,0
+1605,Quinine sulfate,0
+446,Syringe,0
+744,Dizziness,0
+1272,Cefazolin,0
+278,Tigo Pesa,0
+1525,Sevoflurane,0
+824,History of jaundice,0
+657,Suspected intolerance to drug,0
+16,Bismuth subsalicylate,0
+505,Reference application allergic reactions,0
+499,GI upset,0
+1163,Acute Coryza,0
+1446,Levabuterol,0
+1022,Obstetrics and gynecology department,0
+205,"Urinary Cast, Hyaline",0
+942,Musculoskeletal examination (text),0
+1366,Nimesulide,0
+530,Shellfish,0
+1031,Tropical Ulcer,0
+1184,Clean and dressing,0
+1621,Zidovudine & Lamivudine (AZT/3TC),0
+462,Gum,0
+769,Hearing Disorder,0
+1288,Clotrimazole & Lignocaine,0
+303,Cancelled,0
+1541,Proteines,0
+787,Ophthalmology referral,0
+768,Physical exam,0
+597,Morphine,0
+1200,Immunizations,0
+549,allergy to chloroprocaine,0
+1719,Heart Failure (I50.9),0
+1462,Cefaclor,0
+1060,Presumed diagnosis,0
+345,Ascariasis,0
+1028,Past medical history added (text),0
+1382,Pheniramine Maleate,0
+660,Drug would interfere with upcoming laboratory testing,0
+1076,Memory Loss,0
+1778,Loss of taste,0
+6,Oxycodone,0
+1637,Biperidene lactate,0
+795,IUD Contraception,0
+1304,Disodium Hydrogen Citrate,0
+320,Rehabilitation service,0
+1557,Propranalol,0
+599,Non-coded frequency,0
+862,Oedema,0
+1217,Hemophilus influenza B vaccine,0
+61,Positive for Plasmodium vivax,0
+569,heparin allergy,0
+1711,On Antiretrovirals Treatment,0
+1735,Polyarthropathy or Polyarthritis (M15.9),0
+1478,Erythromycin estolate,0
+368,Acute Gastric Ulcer without Hemorrhage or Perforation,0
+1223,"Immunization, non-coded",0
+1398,Ranitidine,0
+679,Equivalent composition substitution,0
+1093,Disorder of Eyelid,0
+284,Mobile money type,0
+1654,Hydrocortisone hemorrhoidal,0
+417,Intraosseous,0
+861,"Dementia, senile",0
+1321,Gabapentin,0
+1574,Ketorolac,0
+616,"Four times daily, after meals and at bedtime",0
+1241,Aceclofenac,0
+207,Ab positive,0
+586,Personal History of Allergy to Anesthetic Agent,0
+1764,Complications,0
+84,Calcium oxalate crystals,0
+1495,Antipyrine,0
+385,Peptic ulcer,0
+1112,Lethargy,0
+1415,Triamcinolone,0
+698,text field,0
+652,Patient currently inpatient at facility,0
+1670,Streptokinase,0
+435,In left eye,0
+886,Throat pain,0
+1337,Ipratropium Bromide,0
+1004,Currently not sexually active,0
+1590,Eucerin,0
+522,NSAIDs,0
+650,Drug Interaction (Properly Prescribed and Administered),0
+1257,Antacid,0
+261,Mental health services,0
+819,Refusal to feed,0
+153,Ammonium urate crystals in urine,0
+1006,Emergency contraceptive pills,0
+403,Death of unknown cause,0
+1131,Foreign body in eye,0
+1431,Calcium Carbonate,0
+953,Mild to moderate,0
+1684,Dequalinium & Lidocaine,0
+863,Method of family planning,0
+1351,Medroxyprogesterone,0
+509,Strawberries,0
+926,Retention of urine,0
+1141,Chest exam findings,0
+708,Admit to hospital,0
+1606,Serum antitetatique,0
+447,Application,0
+745,Dizziness and Giddiness,0
+1273,Cefepime,0
+279,MTN MoMo,0
+1526,Succinylcholine,0
+826,Shortness of breath with exertion,0
+659,Mother pregnant or currently breastfeeding,0
+17,Azithromycin,0
+506,Reference application common environmental allergens,0
+501,Headache,0
+1164,Apnea,0
+1447,Polyethylene Glycol,0
+1023,Antenatal Visit,0
+210,Cestode Infection,0
+943,Urogenital examination (text),0
+1367,Nitrofurantoin,0
+531,Peanuts,0
+1043,khat abuse,0
+1185,Appendectomy,0
+1622,Zidovudine & Lamivudine & Nevirapine (AZT/3TC/NVP),0
+463,Gallon,0
+770,Wasting syndrome,0
+1289,Clotrimazole Otic,0
+304,Urology service,0
+1542,Zinc,0
+788,Postnatal care referral,0
+774,History of present illness,0
+598,Codeine,0
+1715,Vital signs,0
+550,Arrhythmia,0
+1720,Rheumatic Fever Without Heart Involvement (I00),0
+1463,Famciclovir,0
+1061,Confirmed diagnosis,0
+346,Cervical lymphadenopathy,0
+1032,Diagnosis date,0
+1383,Phenobarbitone,0
+662,Prescription/request requires clarification,0
+1077,Anxiety,0
+1779,Loss of smell,0
+7,Ondansetron,0
+1638,Calcium & vit,0
+796,Jaundice,0
+1305,Domperidone,0
+321,Surgical service,0
+1558,Phenobarbital,0
+600,"Every Monday, Wednesday and Friday",0
+868,Bulging fontenelle,0
+1219,Diptheria tetanus booster,0
+62,Positive for Plasmodium falciparum,0
+570,sulfite allergy,0
+1712,Lost to follow-up,0
+1736,Umbilical Cord Complication During Labor and Delivery (O69.9),0
+1479,Ferrous sulfate,0
+369,Acute Peptic Ulcer with Haemorrhage but without Obstruction,0
+1225,Procedure received by patient,0
+1399,Risperidone,0
+680,Equivalent substitution,0
+1094,Muscle Stiffiness,0
+1096,Alterations of Sensations,0
+285,Account status,0
+1655,Rabies immunoglobulins,0
+418,Per NG tube,0
+864,Seizure,0
+1322,Gamma Benzene Hexachloride & Cetrimide,0
+936,Current heavy tobacco smoker,0
+1575,Sodium hyaluronate,0
+617,Four times daily,0
+1242,Acyclovir,0
+208,Non-reactive,0
+587,naproxen allergy,0
+1765,Specimens,0
+85,Amorphous phosphate crystals,0
+1496,Apetamine,0
+119,Comprehensive metabolic panel,0
+386,Gestational diabetes,0
+1113,rectal discharge,0
+1416,Trihexyphenidyl,0
+699,Free text comment,0
+653,Medications unavailable,0
+1671,Tamoxifen,0
+436,In both ears,0
+887,Pain in Urethra,0
+1338,Isosorbide Mononitrate,0
+1005,Patient wishes to get pregnant,0
+1591,Phenylephrine & pramoxine,0
+523,Heparins,0
+719,"HIV staging - varicella, disseminated",0
+1258,Antioxidant,0
+262,Social support services,0
+108,Urine pregnancy test,0
+1510,Neomycin,0
+821,Paresthesia,0
+154,Color of stool,0
+1523,Albendazole and Vitamin A Set,0
+404,Primary Genital Syphilis,0
+1132,Scrotal Mass,0
+1432,Glipizide Er,0
+968,Patient-reported,0
+1685,Diclofenac & Vitamin B complex,0
+870,Sign/symptom duration,0
+1352,Medroxyprogesterone Acetate,0
+510,Milk protein,0
+959,Shoulder Pain,0
+1142,HEENT exam findings,0
+709,Internal facility transfer/referral,0
+1607,Vancomycin,0
+448,Spray,0
+746,Dribbling of Urine,0
+1274,Cefixime,0
+280,Orange Money,0
+1527,Rocuronium,0
+827,Shortness of breath at rest,0
+661,Drug level too high to continue treatment,0
+18,Amlodipine,0
+507,Reference application common food allergens,0
+504,Itching,0
+1165,Back pain,0
+1448,Docusate Sodium,0
+1025,Final diagnosis,0
+218,Ancylostomiasis due to Ancylostoma Duodenale,0
+947,Outcome of adverse event,0
+1368,Normal Saline (NS),0
+532,Eggs,0
+1053,Tinnitus,0
+1187,Colonoscopy,0
+1623,BCG vaccine,0
+464,Fluid ounce,0
+771,Heart failure,0
+1290,Clove Oil,0
+305,"Ear, nose and throat service",0
+1543,Heparin,0
+790,Prenatal care referral,0
+778,Joint pain,0
+715,Sulfadoxine and pyrimethamine,0
+1783,Covid 19 Signs and Symptom Set,0
+551,History of Allergy to Milk Products,0
+1721,Birth Asphyxia (P21.9),0
+1464,Minocycline,0
+1068,Hospital,0
+347,Malignant neoplasm,0
+1038,Detailed location information,0
+1384,Phenytoin,0
+663,Try another treatment first,0
+1078,Barbiturate abuse,0
+1186,Ultrasound of chest,0
+1780,"Diarrea, Vomiting or Abdominal pain",0
+8,Metronidazole,0
+1639,Activated charcoal,0
+797,Joint Crepitus,0
+1306,Dopamine,0
+323,Vaccination service,0
+1559,Protamine,0
+601,Every seventy-two hours,0
+899,Date of last normal menstrual period,0
+1220,"Diphtheria toxoid / hepatitis B vaccines / pertussis, acellular / tetanus toxoid / haemophilus capsular oligosaccharide",0
+63,Procedure not performed,0
+23,"HIV viral load, qualitative",0
+571,allergy to dairy product,0
+1713,Never started,0
+1737,Twin Pregnancy (O30.0),0
+1480,Fluticasone spray,0
+370,Acute Peptic Ulcer with Perforation,0
+1707,Visit Punctuality,0
+1400,Ringers Lactate (RL),0
+681,Supplies not available,0
+1401,Salbutamol,0
+682,Continue previous treatment,0
+1097,Dysphagia,0
+292,Invoice total,0
+1656,Formula Milk,0
+419,Seconds,0
+865,Nasal haemorrhage,0
+1323,Gentamycin,0
+939,Nervous system examination (text),0
+1576,Timolol,0
+618,"Thrice daily, with meals",0
+1243,Adrenaline,0
+209,Reactive,0
+588,Allergic to Other Foods,0
+1766,Drains,0
+89,Four plus,0
+1497,Apressoline,0
+387,Diabetes insipidus,0
+1114,Babinski Sign,0
+1417,Trypsin Chymotrypsin,0
+847,Diaphragm,0
+700,Admission to hospital decision,0
+1672,Tobramycin,0
+437,In right ear,0
+888,Pain of breast,0
+1339,Ivermectin,0
+1007,Date of HIV diagnosis,0
+1592,Mineral oil,0
+524,Cephalosporins,0
+728,Abnormal Dullness to Percussion of Chest,0
+1259,Atenolol,0
+263,Exempted from Insurance,0
+109,Widal test,0
+1511,Benzocaine-Chloroxylenol,0
+822,Menopausal,0
+155,Appearance of stool,0
+51,HIV test kits,0
+405,Natural Death,0
+1133,Abscess of skin and subcutaneous tissue,0
+1433,Bacitracin,0
+979,Private home-based care,0
+1686,Diclofenac & Methocarbamol & Paracetamol,0
+871,Sexually transmitted infection (STI) in past 6 months,0
+1353,Methotrexate,0
+511,Fish,0
+960,Sinusitis,0
+1143,Skin exam findings,0
+835,ARV for mother,0
+1608,Rifampicin & Isoniazide & Pyrazinamide,0
+449,Scoopful,0
+747,Dysfunctional Uterine Bleeding,0
+1275,Ceftazidime,0
+281,Airtel Money,0
+1528,Vecuronium,0
+828,Productive cough,0
+688,Completed,0
+19,Acetaminophen,0
+508,Reference application common drug allergens,0
+535,Musculoskeletal pain,0
+1166,Bleeding,0
+1449,Senna,0
+1026,Provisional diagnosis,0
+332,Cutaneous leishmaniasis,0
+950,Adverse event reported,0
+1369,Ofloxacin,0
+534,No known drug allergies,0
+1055,Urethrorrhoea,0
+1193,Esophagogastroduodenoscopy,0
+1624,Moderna Covid 19 Vaccine,0
+465,Enema,0
+772,Heartburn,0
+1291,Cloxacillin,0
+306,Neurosurgery service,0
+150,Trichomonas vaginalis in microscopy of saline mount,0
+1544,Clopidogrel,0
+791,Voluntary counseling and testing for HIV,0
+805,Loss of Hair,0
+716,Sulfadoxine,0
+1790,Covid 19 Test Set,0
+552,4-quinolones allergy,0
+1722,Type 1 diabetes (E10),0
+1465,Clindamycin,0
+1071,Health clinic/post,0
+348,Neoplasm/cancer,0
+1046,"Review of systems, obstetrical/pregnancy",0
+1385,Pilex,0
+664,Unable to provide necessary care,0
+1079,Bladder Pain,0
+1188,"CT scan, chest",0
+1781,Practicing social distancing,0
+9,Metformin,0
+1640,Cisatracurium,0
+798,Kernicterus not due to Isoimmunisation,0
+1307,Doxycycline,0
+324,Outpatient department,0
+1560,Insulin regular,0
+602,Every thirty-six hours,0
+900,Condition clinical status,0
+1221,"RTS,S/AS01 vaccine",0
+107,Other,0
+27,"Cryptococcal antigen, serum, coded",0
+572,Personal History of Analgesic Agent Allergy,0
+1750,Pre-Operative Diagnosis,0
+1738,Dilated cardiomyopathy (I42.0),0
+1481,Hydrocortisone & Acetic Acid,0
+371,Cholelithiasis,0
+1714,General patient note,0
+1402,Salbutamol & Bromhexine,0
+684,Refused,0
+1098,Voiding Pain,0
+293,Invoice total net taxes,0
+1657,Lidocaine w & epinephrine dental,0
+420,Number of occurrences,0
+867,Nausea and vomiting,0
+1324,Gentian Violet,0
+940,Numbness and tingling of skin,0
+225,"Neisseria gonorrhoeae polymerase chain reaction, qualitative",0
+1577,Sodium hyaluronate & Oxymetazoline,0
+619,"Thrice daily, before meals",0
+1244,Albendazole,0
+211,Few,0
+589,Allergy to Eggs,0
+1767,Condition upon discharge from OR,0
+91,Positive,0
+1498,Bebe Sirop,0
+388,Drug-Induced Diabetes Mellitus,0
+1115,Thickening of Tendon Sheath,0
+1418,Tuberculin Purified Protein Derivative (PPD),0
+848,Natural family planning,0
+704,Internal transfer location (text/code),0
+438,In left ear,0
+889,Painful Mouth,0
+1340,Ketamine,0
+1009,Chief complaint (text),0
+1593,Neomycin & Bacitracin,0
+525,ARBs (angiotensin II receptor blockers),0
+730,Chronic Kidney Disease,0
+1260,Atorvastatin,0
+264,Pharmacy,0
+1512,Simethicone,0
+825,Nausea,0
+160,Urine appears turbid,0
+65,Tests Orderability,0
+406,Natural Death with Unknown Cause,0
+1135,Stiffness of neck,0
+1434,Nystatin,0
+1008,Sexually transmitted infection program/clinic,0
+1687,Diosmine & Hesperidine,0
+878,Objective narrative,0
+1354,Methylergometrine,0
+512,Dairy food,0
+961,Snoring,0
+1179,Body mass index,0
+837,Psychosocial counseling,0
+1609,Rifampicin & Izsoniazide & Ethambutol,0
+450,Ring pessary,0
+748,Dyssomnia,0
+1276,Cetirizine,0
+282,T-Kash,0
+1529,Neostigmine,0
+836,Learning problems,0
+701,Patient on waiting list,0
+20,Acetaminophen / oxycodone,0
+640,Status,0
+536,Hepatotoxicity,0
+1167,Vaginal bleeding,0
+1450,Loratadine,0
+1030,Relapse,0
+333,Mpox,0
+955,Physical exam outcome,0
+1370,Omeprazole,0
+639,Clinical Consult,0
+1062,Vaginal discharge,0
+1195,Laparoscopic cholecystectomy,0
+1625,Pfizer-BioNTech Covid 19 Vaccine,0
+466,Drop,0
+773,Heberden's Node,0
+1292,Codeine Phosphate,0
+307,Obstetrics and gynecology service,0
+1545,Nitroglycerin,0
+839,Tuberculosis Treatment or DOT Program,0
+813,Renal disease,0
+717,Heparinoids,0
+1,True,0
+553,Dystonia,0
+1723,Malignant tumor of lymphatic and hematopoietic tissue (C96.7),0
+1466,Tobramycin & Dexamethasone,0
+1106,Not applicable,0
+349,Constipation,0
+1047,reuse,0
+1386,Polyvalent Anti Snake Serum,0
+665,Religious/ethical objection,0
+1080,Painful Breathing,0
+1190,"X-ray, chest",0
+914,Eye,0
+1641,Clomifen citrate,0
+799,Lactational amenorrhea,0
+1308,Enalapril,0
+325,Pediatric inpatient service,0
+1561,Insulin NPH,0
+603,Every forty-eight hours,0
+901,Patient condition resolved,0
+1226,Measles-Rubella vaccine,0
+115,Trace,0
+573,5-hydroxytryptamine-3 receptor antagonist allergy,0
+1751,Post-Operative Diagnosis,0
+1739,Tuberculosis of skin and subcutaneous tissue (A18.4),0
+1482,Iptratropium bromide & albuterol,0
+372,Enteropathogenic Escherichia Coli Gastrointestinal Tract Infection,0
+373,Typhoid fever,0
+1403,Saline,0
+685,Discontinued,0
+1099,Dysuria,0
+294,Invoice price,0
+1658,Meperidine,0
+422,Kit,0
+869,Neck Pain,0
+1325,Glimepiride,0
+944,Cardiac examination (text),0
+1578,Sodium chloride,0
+620,"Thrice daily, after meals",0
+1245,Allopurinol,0
+213,Indeterminate,0
+590,Laboratory Animal Dander Allergy,0
+1768,Surgeon,0
+92,Three plus,0
+1499,Bromhexine,0
+389,Essential hypertension,0
+1116,Muscle Weakness,0
+1419,Valproic Acid,0
+850,Intrauterine device,0
+705,Admitted to location (text/code),0
+471,International units,0
+890,Painful Urging to Urinate,0
+1341,Ketoconazole,0
+1034,Diagnosis order,0
+1594,Permanganate potassium,0
+526,ACE inhibitors,0
+731,No fetal movements,0
+1261,Atropine,0
+265,Health insurance,0
+111,Urinalysis order,0
+1513,Simvastatin,0
+829,Swallowing difficulties,0
+161,Cloudy urine,0
+246,Chemistry,0
+407,Neoplasm of Lung,0
+1136,Substance abuse,0
+1435,Valacyclovir,0
+1010,Return visit type,0
+1688,Gemfibrozil,0
+879,Subjective narrative,0
+1355,Metoclopramide,0
+513,Chocolate,0
+976,"Diagnosis or problem, non-coded",0
+1180,Cavitary lesion,0
+841,Nutritional support,0
+1610,Abacavir (ABC),0
+451,Puff,0
+749,Ear Problem,0
+1277,Dipirone,0
+283,M-Pesa,0
+1530,Fentanyl,0
+844,Joint swelling,0
+702,Admission denied,0
+74,Magnesium phosphate,0
+644,Service,0
+537,Allergy,0
+1168,Bleeding gums,0
+1451,Diphenhydramine,0
+1035,Tertiary,0
+334,Varicella,0
+958,Recently traveled outside of home town,0
+1371,Oral Hormonal Contraceptive Pills,0
+641,Finished Service,0
+1063,Vaginal Pain,0
+1201,Bacillus Calmette–Guérin vaccine,0
+1626,Johnson & Johnson Covid 19 Vaccine,0
+467,Container,0
+776,HIV positive,0
+1293,Co-trimoxazole,0
+308,Orthopedic service,0
+1546,Amiodarone,0
+840,Inpatient care or hospitalization,0
+814,Hepatic disease,0
+718,Isoniazid / pyrazinamide / rifampin,0
+2,False,0
+554,Allergy to Latex,0
+1724,"Urticaria, Solar (L56.3)",0
+1467,Methylprednisolone,0
+1108,Disclosure counseling,0
+350,Kaposi sarcoma oral,0
+1052,HIV Status,0
+1387,Potassium Chloride,0
+666,Incomplete data,0
+1081,Cataract,0
+1194,Mammogram,0
+995,Inguinal lymph node(s),0
+1642,Cortisone & antibiotic & antimycotic,0
+801,Leukoplakia,0
+1309,Ethamsylate,0
+326,Adult inpatient service,0
+1562,Insulin (Fast & Long Acting),0
+604,Every twenty-four hours,0
+902,History of recent travel in past 14 days,0
+1227,"Diphtheria Toxoid / Haemophilus influenzae b, capsular polysaccharide  / Hepatitis B surface antigen / Pertussis (whole cell) / Tetanus toxoid conjugate vaccine",0
+123,Poor sample quality,0
+574,Allergy to Tomatoes,0
+1752,Procedure,0
+1740,Tuberculous Meningitis (A17.0),0
+1483,Lansoprazole,0

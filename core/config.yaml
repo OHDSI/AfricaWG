@@ -1,0 +1,13 @@
+gateways:
+  omrs:
+    connection:
+      type: mysql
+      host: sqlmesh-db
+      port: 3306
+      user: root
+      password: openmrs
+
+default_gateway: omrs
+
+model_defaults:
+  dialect: mysql
