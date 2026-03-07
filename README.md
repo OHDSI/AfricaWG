@@ -82,7 +82,7 @@ sudo usermod -aG docker $USER
 ### Step 1: Get the Project Files
 
 **Option A: Download ZIP file (Recommended for beginners)**
-1. Visit: https://github.com/OHDSI/AfricaWG.git
+1. Visit: wget https://github.com/OHDSI/AfricaWG/archive/refs/heads/omop-deep-dive.zip
 2. Download and extract the ZIP file to a folder on your computer
 3. Open your terminal/command prompt and navigate to that folder
 
@@ -90,8 +90,8 @@ sudo usermod -aG docker $USER
 
 Make sure you have LFS installed. Check [Setting Up git LFS](#setting-up-git-lfs)
 ```bash
-git clone https://github.com/OHDSI/AfricaWG.git
-cd omop-etl-deep-dive
+git clone --branch omop-deep-dive --single-branch https://github.com/OHDSI/AfricaWG.git
+cd AfricaWG
 ```
 
 ### Step 2: Build the Project
