@@ -1,0 +1,5 @@
+core/seed/CONCEPT.csv filter=lfs diff=lfs merge=lfs -text
+core/seed/CONCEPT_ANCESTOR.csv filter=lfs diff=lfs merge=lfs -text
+core/seed/CONCEPT_SYNONYM.csv filter=lfs diff=lfs merge=lfs -text
+core/seed/DOMAIN.csv filter=lfs diff=lfs merge=lfs -text
+core/seed/VOCABULARY.csv filter=lfs diff=lfs merge=lfs -text

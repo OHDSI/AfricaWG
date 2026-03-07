@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "OMOP Postgres",
+      "Group": "Servers",
+      "Host": "omop-db",
+      "Port": 5432,
+      "MaintenanceDB": "postgres",
+      "Username": "omop",
+      "SSLMode": "prefer"
+    }
+  }
+}

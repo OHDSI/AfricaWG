@@ -1,0 +1,1837 @@
+source_concept_id,original_source_concept_id,type,Reference FSN,Mapping relationship,Reference code system,Reference code,source_concept_name,CIEL concept_id
+1,1,Misc,Yes (qualifier value),SAME-AS,SNOMED-CT,373066001,True,1065
+2,2,Misc,No (qualifier value),SAME-AS,SNOMED-CT,373067005,False,1066
+5,5,Drug,Tetracycline,SAME-AS,RxNORM,10395,Tetracycline,84893
+6,6,Drug,Oxycodone,SAME-AS,RxNORM,7804,Oxycodone,81332
+7,7,Drug,Ondansetron,SAME-AS,RxNORM,26225,Ondansetron,81073
+8,8,Drug,Metronidazole,SAME-AS,RxNORM,6922,Metronidazole,79782
+9,9,Drug,Metformin,SAME-AS,RxNORM,6809,Metformin,79651
+10,10,Drug,Lisinopril,SAME-AS,RxNORM,29046,Lisinopril,78945
+11,11,Drug,Levothyroxine sodium,SAME-AS,RxNORM,40144,Levothyroxine sodium,78809
+12,12,Drug,Hydrochlorothiazide,SAME-AS,RxNORM,5487,Hydrochlorothiazide,77696
+13,13,Drug,Famotidine,SAME-AS,RxNORM,4278,Famotidine,76178
+14,14,Drug,Esomeprazole,SAME-AS,RxNORM,283742,Esomeprazole,75875
+15,15,Drug,Ceftriaxone,SAME-AS,RxNORM,2193,Ceftriaxone,73041
+16,16,Drug,Bismuth subsalicylate,SAME-AS,RxNORM,19478,Bismuth subsalicylate,72241
+17,17,Drug,Azithromycin,SAME-AS,RxNORM,18631,Azithromycin,71780
+18,18,Drug,Amlodipine,SAME-AS,RxNORM,17767,Amlodipine,71137
+19,19,Drug,Acetaminophen,SAME-AS,RxNORM,161,Acetaminophen,70116
+20,20,Drug,Acetaminophen / oxycodone,SAME-AS,RxNORM,214183,Acetaminophen / oxycodone,103281
+21,21,Finding,Low (qualifier value),SAME-AS,SNOMED-CT,62482003,Low,1407
+22,22,Misc,Not detected (qualifier value),NARROWER-THAN,SNOMED-CT,260415000,Beyond detectable limit,1306
+23,23,Test,Human immunodeficiency virus viral load (procedure),NARROWER-THAN,SNOMED-CT,315124004,"HIV viral load, qualitative",1305
+24,24,Misc,Not detected (qualifier value),SAME-AS,SNOMED-CT,260415000,Not detected,1302
+25,25,Misc,Detected (qualifier value),SAME-AS,SNOMED-CT,260373001,Detected,1301
+26,26,LabSet,"Electrolytes measurement, serum (procedure)",SAME-AS,SNOMED-CT,20109005,Serum electrolytes,5473
+27,27,Test,Cryptococcus sp Ag [Presence] in Serum,SAME-AS,LOINC,31790-9,"Cryptococcal antigen, serum, coded",169216
+29,29,Misc,Medium (qualifier value),SAME-AS,SNOMED-CT,255508009,Medium,164944
+30,30,Misc,Very low (qualifier value),SAME-AS,SNOMED-CT,260362008,Very low,164943
+32,32,Question,Drug observable (observable entity),NARROWER-THAN,SNOMED-CT,373064003,Mycobacterium tuberculosis rifampin resistance detection status,164937
+33,33,Misc,Finding of presence of bacteria (finding),NARROWER-THAN,SNOMED-CT,365691004,Mycobacterium tuberculosis detected with indeterminate rifampin resistance,164104
+34,34,LabSet,Toxoplasma gondii IgG and IgM panel - Serum,BROADER-THAN,LOINC,57770-0,Toxoplasma Gondii IgG And IgM Panel - Serum,163625
+36,36,Misc,Finding of presence of bacteria (finding),NARROWER-THAN,SNOMED-CT,365691004,Mycobacterium tuberculosis detected without rifampin resistance,162204
+37.1,37,Misc,Rifampicin resistant tuberculosis (disorder),NARROWER-THAN,SNOMED-CT,415345001,Mycobacterium tuberculosis detected with rifampin resistance,162203
+37.2,37,Misc,Finding of presence of bacteria (finding),NARROWER-THAN,SNOMED-CT,365691004,Mycobacterium tuberculosis detected with rifampin resistance,162203
+38,38,Test,Polymerase chain reaction analysis (procedure),NARROWER-THAN,SNOMED-CT,9718006,Tuberculosis polymerase chain reaction with rifampin resistance checking,162202
+39,39,Test,Toxoplasma gondii IgM Ab [Units/volume] in Serum,SAME-AS,LOINC,8040-8,Toxoplasma IgM,161523
+40.1,40,Test,Toxoplasma gondii IgG Ab [Units/volume] in Serum --1st specimen,SAME-AS,LOINC,24242-0,Toxoplasma IgG,161522
+40.2,40,Test,Toxoplasma gondii IgG Ab [Units/volume] in Serum --2nd specimen,SAME-AS,LOINC,13286-0,Toxoplasma IgG,161522
+41,41,LabSet,C-reactive protein measurement (procedure),NARROWER-THAN,SNOMED-CT,55235003,C-reactive protein test,161501
+42,42,Test,C reactive protein [Mass/volume] in Serum or Plasma,SAME-AS,LOINC,1988-5,C-reactive protein,161500
+43,43,Test,Reagin Ab [Presence] in Specimen by VDRL,BROADER-THAN,LOINC,14904-7,VDRL,299
+44,44,Test,"Hepatitis B virus surface Ag [Presence] in Serum, Plasma or Blood by Rapid immunoassay",SAME-AS,LOINC,75410-1,HBsAg Rapid Diagnostic Test,165301
+45,45,LabSet,PhenX - assay for hepatitis B protocol 160401,SAME-AS,LOINC,62871-9,Hepatitis B serological test,161475
+46,46,Test,Hepatitis B virus surface Ag [Units/volume] in Serum or Plasma by Immunoassay,SAME-AS,LOINC,63557-3,Hepatitis B surface antigen spot test,159430
+47,47,Test,CD3+CD4+ (T4 helper) cells/CD3+CD8+ (T8 suppressor cells) cells [# Ratio] in Specimen,BROADER-THAN,LOINC,20607-8,CD4/CD8,854
+48,48,Test,CD4 cells/100 cells in Unspecified specimen,BROADER-THAN,LOINC,20606-0,CD4%,730
+49,49,LabSet,CD4 percent count (procedure),NARROWER-THAN,SNOMED-CT,313938009,CD4 panel,657
+50,50,Test,CD3+CD4+ (T4 helper) cells [#/volume] in Blood,SAME-AS,LOINC,24467-3,CD4 count,5497
+54,54,Test,Mycobacterium tuberculosis lipoarabinomannan Ag [Presence] in Urine by Rapid immunoassay,NARROWER-THAN,LOINC,95127-7,"Mycobacterium tuberculosis lipoarabinomannan antigen, urine, rapid",167459
+55,55,Test,Polymerase chain reaction test for human immunodeficiency virus type 1 (procedure),NARROWER-THAN,SNOMED-CT,399256002,"HIV DNA polymerase chain reaction, dried blood spot (DBS)",167441
+58,58,Test,Plasmodium sp Ag [Identifier] in Blood by Rapid immunoassay,BROADER-THAN,LOINC,70569-9,Rapid test for malaria,1643
+59,59,Test,Cryptococcus sp Ag [Presence] in Serum,BROADER-THAN,LOINC,31790-9,Cryptococcus Sp Ag presence in serum test,163613
+60.1,60,Misc,Plasmodium falciparum (organism),Causative agent,SNOMED-CT,30020004,Positive for both Plasmodium falciparum and Plasmodium vivax,161248
+60.2,60,Misc,Plasmodium vivax (organism),Causative agent,SNOMED-CT,74746009,Positive for both Plasmodium falciparum and Plasmodium vivax,161248
+61,61,Misc,Plasmodium vivax (organism),Causative agent,SNOMED-CT,74746009,Positive for Plasmodium vivax,161247
+62,62,Misc,Plasmodium falciparum (organism),Causative agent,SNOMED-CT,30020004,Positive for Plasmodium falciparum,161246
+63,63,Misc,Procedure not done (situation),SAME-AS,SNOMED-CT,416237000,Procedure not performed,160414
+64,64,Question,Procedure related finding (finding),NARROWER-THAN,SNOMED-CT,127325009,Test not performed due to lack of availability of test materials,160352
+66,66,Test,HIV 1 RNA [#/volume] (viral load) in Specimen by NAA with probe detection,BROADER-THAN,LOINC,25836-8,HIV viral load,856
+67.1,67,LabSet,Hepatic function 1996 panel - Serum or Plasma,SAME-AS,LOINC,24324-6,Liver function tests,953
+67.2,67,LabSet,Hepatic function 2000 panel - Serum or Plasma,SAME-AS,LOINC,24325-3,Liver function tests,953
+68,68,Test,Glucose [Mass/volume] in Serum or Plasma,BROADER-THAN,LOINC,2345-7,Serum glucose,887
+69,69,Test,Urea nitrogen [Moles/volume] in Serum or Plasma,BROADER-THAN,LOINC,14937-7,Blood urea nitrogen,857
+70,70,Test,Erythrocyte sedimentation rate,BROADER-THAN,LOINC,30341-2,Erythrocyte sedimentation rate,855
+71,71,Test,MCV [Entitic volume] by Automated count,BROADER-THAN,LOINC,787-2,Mean corpuscular volume,851
+72,72,Test,Albumin [Mass/volume] in Serum or Plasma,BROADER-THAN,LOINC,1751-7,Serum albumin,848
+73,73,Finding,High (qualifier value),SAME-AS,SNOMED-CT,75540009,High,1408
+74,74,Drug,Magnesium phosphate,SAME-AS,RxNORM,29164,Magnesium phosphate,79241
+75,75,Test,Creatinine [Moles/volume] in Serum or Plasma,BROADER-THAN,LOINC,14682-9,Serum creatinine (umol/L),790
+76,76,Test,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,BROADER-THAN,LOINC,6768-6,Alkaline phosphatase,785
+77,77,Drug,Cystine,SAME-AS,RxNORM,3036,Cystine,74167
+78,78,Drug,Creatine,SAME-AS,RxNORM,2907,Creatine,74023
+79,79,Diagnosis,Infection caused by Ascaris lumbricoides (disorder),SAME-AS,SNOMED-CT,50982003,Infection by Ascaris Lumbricoides,137504
+80,80,Test,Platelets [#/volume] in Blood,BROADER-THAN,LOINC,26515-7,Platelets,729
+81,81,Diagnosis,Infection caused by Entamoeba histolytica (disorder),SAME-AS,SNOMED-CT,388759003,Infection due to Entamoeba Histolytica,137329
+82,82,Drug,Calcium sulfate,SAME-AS,RxNORM,1925,Calcium sulfate,72703
+83,83,Drug,Calcium phosphate,SAME-AS,RxNORM,1919,Calcium phosphate,72695
+84,84,Finding,Calcium oxalate crystal (substance),SAME-AS,SNOMED-CT,312281007,Calcium oxalate crystals,725
+85,85,Finding,"Urinary crystal, amorphous phosphate (finding)",SAME-AS,SNOMED-CT,115595004,Amorphous phosphate crystals,722
+86,86,Test,Serum total protein measurement (procedure),SAME-AS,SNOMED-CT,270992008,Total protein,717
+87,87,Drug,Ascorbic acid,SAME-AS,RxNORM,1151,Ascorbic acid,71589
+88,88,Test,"Urobilinogen measurement, urine (procedure)",SAME-AS,SNOMED-CT,67410005,Urobilinogen,1369
+90,90,Drug,"Albumin, human",SAME-AS,RxNORM,214198,"Albumin, human",70445
+91,91,Finding,Positive,SAME-AS,LOINC,LA6576-8,Positive,703
+92,92,Finding,Strong positive,SAME-AS,LOINC,LA18996-1,Three plus,1364
+93,93,Finding,Blood group O Rh(D) negative (finding),SAME-AS,SNOMED-CT,278148006,O negative,701
+94,94,Finding,Blood group O Rh(D) positive (finding),SAME-AS,SNOMED-CT,278147001,O positive,699
+95,95,Finding,Blood group B Rh(D) negative (finding),SAME-AS,SNOMED-CT,278153001,B negative,696
+96,96,Finding,Blood group B Rh(D) positive (finding),SAME-AS,SNOMED-CT,278150003,B positive,694
+97,97,Finding,Blood group A Rh(D) negative (finding),SAME-AS,SNOMED-CT,278152006,A negative,692
+98,98,Finding,Blood group A Rh(D) positive (finding),SAME-AS,SNOMED-CT,278149003,A positive,690
+99,99,Test,Erythrocytes [#/volume] in Specimen by Light microscopy,BROADER-THAN,LOINC,23859-2,Red blood cells,679
+100,100,Test,Leukocytes [#/volume] in Blood,SAME-AS,LOINC,26464-8,White blood cells,678
+101,101,Finding,Negative,SAME-AS,LOINC,LA6577-6,Negative,664
+102,102,Test,Bilirubin.total [Moles/volume] in Serum or Plasma,BROADER-THAN,LOINC,14631-6,Total bilirubin,655
+103,103,Test,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,BROADER-THAN,LOINC,1742-6,Serum glutamic-pyruvic transaminase,654
+104,104,Test,Aspartate aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma,BROADER-THAN,LOINC,48136-6,Serum glutamic-oxaloacetic transaminase,653
+105,105,Finding,Present two plus out of three plus (qualifier value),SAME-AS,SNOMED-CT,441517005,Two plus,1363
+106,106,Finding,Weak positive,SAME-AS,LOINC,LA19422-7,One plus,1362
+107,107,Misc,Other (qualifier value),NARROWER-THAN,SNOMED-CT,74964007,Other non-coded,5622
+108,108,Test,Choriogonadotropin (pregnancy test) [Presence] in Urine,BROADER-THAN,LOINC,2106-3,Urine pregnancy test,45
+109,109,Test,Widal test (procedure),SAME-AS,SNOMED-CT,165828002,Widal test,306
+110,110,Test,Ova and parasites identified in Stool by Light microscopy,BROADER-THAN,LOINC,10704-5,Stool exam,304
+111,111,Test,Urinalysis complete panel - Urine,BROADER-THAN,LOINC,24356-8,Urinalysis order,302
+112,112,Test,ABO and Rh group [Type] in Blood,SAME-AS,LOINC,882-1,Blood typing,300
+113,113,Test,Hemoglobin [Mass/volume] in Blood,BROADER-THAN,LOINC,718-7,Haemoglobin,21
+114,114,Test,Albumin [Presence] in Urine by Test strip,SAME-AS,LOINC,50949-7,Urine protein (dip stick),1875
+115,115,Misc,Trace (qualifier value),SAME-AS,SNOMED-CT,260405006,Trace,1874
+116,116,Test,Lymphocyte percent differential count (procedure),SAME-AS,SNOMED-CT,271036002,Lymphocytes (%) - microscopic exam,1338
+117,117,Diagnosis,Mucus in stool (finding),SAME-AS,SNOMED-CT,271864008,Mucus in Stool,133792
+118,118,Test,Neutrophil count (procedure),SAME-AS,SNOMED-CT,30630007,Neutrophils (%) - microscopic exam,1336
+119,119,LabSet,Comprehensive metabolic 2000 panel - Serum or Plasma,BROADER-THAN,LOINC,24323-8,Comprehensive metabolic panel,166374
+120.1,120,Test,Reticulocytes/100 erythrocytes in Blood by Automated count,BROADER-THAN,LOINC,17849-1,Reticulocytes (%),1327
+120.2,120,Test,Reticulocytes/100 erythrocytes in Blood,BROADER-THAN,LOINC,4679-7,Reticulocytes (%),1327
+120.3,120,Test,Reticulocytes/100 erythrocytes in Blood by Manual,BROADER-THAN,LOINC,31112-6,Reticulocytes (%),1327
+121,121,Test,Hepatitis C virus Ab [Presence] in Serum,SAME-AS,LOINC,16128-1,Hepatitis C test - qualitative,1325
+122,122,Test,Albumin/Creatinine [Mass Ratio] in 24 hour Urine,SAME-AS,LOINC,13705-9,Albumin/creatinine ratio (mass ratio) in 24 hour urine,164948
+123,123,Misc,Specimen (specimen),NARROWER-THAN,SNOMED-CT,123038009,Poor sample quality,1304
+124,124,Misc,Equivocal (qualifier value),SAME-AS,SNOMED-CT,42425007,Equivocal,1300
+125,125,Test,Amylase [Enzymatic activity/volume] in Serum or Plasma,BROADER-THAN,LOINC,1798-8,Amylase,1299
+126,126,Test,Cholesterol in VLDL [Moles/volume] in Serum or Plasma,NARROWER-THAN,LOINC,25371-6,Very low density lipoprotein measurement (mmol/L),1298
+127,127,Misc,Present (qualifier value),SAME-AS,SNOMED-CT,52101004,Present,163748
+128,128,Misc,Absent (qualifier value),SAME-AS,SNOMED-CT,2667000,Absent,163747
+129,129,LabSet,Glucose tolerance test (procedure),NARROWER-THAN,SNOMED-CT,113076002,Glucose tolerance test 5 specimens (75g) panel,163708
+130,130,Test,Glucose [Mass/volume] in Serum or Plasma --4 hours post 75 g glucose PO,SAME-AS,LOINC,1539-6,"Glucose, serum 4 hrs post 75g oral glucose (mg/dL)",163707
+131,131,Test,Glucose [Mass/volume] in Serum or Plasma --3 hours post 75 g glucose PO,SAME-AS,LOINC,1533-9,"Glucose, serum 3 hrs post 75g oral glucose (mg/dL)",163706
+132,132,Test,Glucose [Mass/volume] in Serum or Plasma --2 hours post 75 g glucose PO,SAME-AS,LOINC,1518-0,"Glucose, serum 2 hrs post 75g oral glucose (mg/dL)",163705
+133,133,Test,Glucose [Mass/volume] in Serum or Plasma --1 hour post 75 g glucose PO,SAME-AS,LOINC,1507-3,"Glucose, serum 1 hr post 75g oral glucose (mg/dL)",163704
+134,134,Test,Glucose [Mass/volume] in Serum or Plasma --30 minutes post 75 g glucose PO,SAME-AS,LOINC,1527-1,"Glucose, serum 1/2 hr post 75g oral glucose (mg/dL)",163703
+135,135,Test,Urea [Mass/volume] in Blood,SAME-AS,LOINC,20977-5,Urea measurement (calculated),163699
+137,137,Test,Casts [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,24124-0,Casts presence in urine sediment by light microscopy test,163696
+138,138,Test,Crystals [type] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,5782-8,Crystals type in urine sediment by light microscopy test,163695
+139,139,Test,Waxy casts [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,33862-4,Waxy casts presence in urine sediment by light microscopy test,163694
+140,140,Test,WBC casts [Presence] in Urine sediment by Light microscopy,SAME-AS,LOINC,33825-1,WBC casts presence in urine sediment by light microscopy test,163693
+141,141,Test,Epithelial casts [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,25157-9,Epithelial casts presence in urine sediment by light microscopy test,163692
+142,142,Test,Fatty casts [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,25159-5,Fatty casts presence in urine sediment by light microscopy test,163691
+143,143,Test,Granular casts [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,25160-3,Granular casts presence in urine sediment by light microscopy test,163690
+144,144,Test,Trichomonas vaginalis [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,5813-1,Trichomonas vaginalis presence in urine sediment by light microscopy,163689
+146,146,Test,Yeast.hyphae [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,41865-7,Yeast hyphae presence in urine sediment by light microscopy test,163687
+147,147,Test,Yeast [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,32356-8,Yeast presence in urine sediment by light microscopy,163686
+148,148,Test,Leukocytes [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,20455-2,Leukocytes presence in urine sediment by light microscopy,163684
+149,149,Test,Erythrocytes [Presence] in Urine sediment by Light microscopy,BROADER-THAN,LOINC,32776-7,Erythrocytes presence in urine sediment by light microscopy test,163683
+151,151,Finding,"Urinary crystal, magnesium ammonium phosphate (finding)",SAME-AS,SNOMED-CT,102863008,Triple phosphate crystals,163644
+152,152,Finding,"Urinary crystal, amorphous urate (finding)",SAME-AS,SNOMED-CT,115594000,Amorphous urate crystals in urine,163643
+153,153,Finding,"Urinary crystal, ammonium urate (finding)",SAME-AS,SNOMED-CT,102851003,Ammonium urate crystals in urine,163642
+154,154,Finding,Color of Stool,BROADER-THAN,LOINC,9397-1,Color of stool,163641
+155,155,Finding,Appearance of Stool,BROADER-THAN,LOINC,29636-8,Appearance of stool,163640
+156,156,Test,Bacteria identified in Stool by Culture,BROADER-THAN,LOINC,625-4,Stool culture (bacterial),163603
+157,157,Test,Glucose tolerance test (procedure),NARROWER-THAN,SNOMED-CT,113076002,Glucose tolerance test pre-glucose administration,163594
+158,158,Test,White blood cell test (procedure),NARROWER-THAN,SNOMED-CT,252305002,"Combined % of monocytes, eosinophils and basophils",163426
+159,159,LabSet,General health panel (procedure),NARROWER-THAN,SNOMED-CT,28040002,Basic metabolic panel,162630
+160,160,Finding,Turbid urine (finding),SAME-AS,SNOMED-CT,167238004,Urine appears turbid,162104
+161,161,Finding,Cloudy urine (finding),SAME-AS,SNOMED-CT,7766007,Cloudy urine,162103
+162,162,Finding,Urine looks clear (finding),SAME-AS,SNOMED-CT,167236000,Urine appears clear,162102
+163,163,Finding,Finding of turbidity of fluid (finding),NARROWER-THAN,SNOMED-CT,365669006,Urine turbidity,162101
+164,164,Misc,Brown color (qualifier value),SAME-AS,SNOMED-CT,371254008,Brown color,162100
+165,165,Misc,Black color (qualifier value),SAME-AS,SNOMED-CT,371252007,Black color,162065
+166,166,LabSet,Prostate specific antigen measurement (procedure),SAME-AS,SNOMED-CT,63476009,Prostate specific antigen test,161520
+167,167,Diagnosis,Schistosoma mansoni infection (disorder),SAME-AS,SNOMED-CT,750009,Schistosoma Mansonii Infection,127133
+168,168,Test,Ferritin [Mass/volume] in Serum or Plasma,SAME-AS,LOINC,2276-4,Serum ferritin,161511
+169,169,Test,Thyrotropin [Moles/volume] in Serum or Plasma,SAME-AS,LOINC,14297-6,Thyroid stimulating hormone test,161505
+170,170,LabSet,Renal function 2000 panel - Serum or Plasma,SAME-AS,LOINC,24362-6,Renal function panel,161488
+171,171,LabSet,Microbial culture (procedure),SAME-AS,SNOMED-CT,61594008,Culture panel,161486
+172,172,Test,Sterile body fluid culture (procedure),SAME-AS,SNOMED-CT,117027007,Body fluid culture and sensitivity,161485
+173,173,Test,Culture and susceptibility (procedure),NARROWER-THAN,SNOMED-CT,252390002,Pus culture and sensitivity,161484
+174,174,LabSet,Serum chemistry test (procedure),NARROWER-THAN,SNOMED-CT,275711006,Serum chemistry panel,161483
+175,175,Test,INR in Blood by Coagulation assay,SAME-AS,LOINC,34714-6,International normalized ratio,161482
+176,176,Test,Prothrombin time (procedure),SAME-AS,SNOMED-CT,396451008,Prothrombin time,161481
+177,177,LabSet,Evaluation of stool specimen (procedure),NARROWER-THAN,SNOMED-CT,442514001,Stool test,161451
+178,178,Test,Fat [Mass] in Stool,SAME-AS,LOINC,16853-4,"Stool fat test, semi-quantitative",161450
+179,179,Test,Reducing substances [Mass/volume] in Stool,SAME-AS,LOINC,32211-5,Stool test for reducing substance,161449
+180,180,Test,Microscopic observation [Identifier] in Specimen by Acid fast stain.Kinyoun,SAME-AS,LOINC,654-4,Kinyoun's stain for coccidians,161448
+181,181,Test,Ova and parasites identified in Stool by Concentration,SAME-AS,LOINC,10701-1,Stool microscopy with concentration,161447
+182,182,Test,Urine sediment comments by Light microscopy Narrative,SAME-AS,LOINC,11279-7,Urine routine and microscopy,161445
+183,183,LabSet,Sickling test (procedure),NARROWER-THAN,SNOMED-CT,252289009,Sickling test only,161431
+184,184,Test,Bacteria identified in Urine by Culture,SAME-AS,LOINC,630-4,"Culture and sensitivity, urine",161156
+185,185,Test,Bacteria identified in Blood by Culture,SAME-AS,LOINC,600-7,"Culture and sensitivity, blood",161155
+186,186,LabSet,PT panel - Platelet poor plasma by Coagulation assay,SAME-AS,LOINC,34528-0,Prothrombin Time (with INR),161152
+187,187,Test,Isotope study for glomerular filtration rate (procedure),SAME-AS,SNOMED-CT,12341000,Glomerular filtration rate,161132
+188,188,Test,Glucose [Mass/volume] in Serum or Plasma --post meal,BROADER-THAN,LOINC,16915-1,Post-prandial blood glucose measurement (mg/dL),160914
+189,189,Test,Prostate specific Ag [Mass/volume] in Serum or Plasma,BROADER-THAN,LOINC,2857-1,Prostate specific antigen (PSA) measurement (ng/mL),160913
+190,190,Test,Fasting glucose [Mass/volume] in Serum or Plasma,BROADER-THAN,LOINC,1558-6,Fasting blood glucose measurement (mg/dL),160912
+191,191,Misc,Yellow color (qualifier value),SAME-AS,SNOMED-CT,371244009,Yellow color,160910
+192,192,Misc,Green color (qualifier value),SAME-AS,SNOMED-CT,371246006,Green color,160909
+193,193,Test,Urine bacteriuria test (procedure),SAME-AS,SNOMED-CT,167316004,"Bacteriuria test, urine",160735
+194,194,Test,Sickle cell screen test status CPHS,BROADER-THAN,LOINC,39230-8,Sickle cell screening test,160225
+195,195,Test,Urate [Mass/volume] in Serum or Plasma,SAME-AS,LOINC,3084-1,"uric acid, serum",159825
+196,196,Misc,Gram-negative coccus (organism),SAME-AS,SNOMED-CT,18383003,gram-negative cocci,159664
+197,197,Misc,Gram-positive coccus (organism),SAME-AS,SNOMED-CT,59206002,gram-positive cocci,159663
+198,198,Test,Cerebrospinal fluid culture (procedure),NARROWER-THAN,SNOMED-CT,252399001,cerebrospinal fluid bacterial culture,159648
+199,199,Test,Hemoglobin A1c measurement (procedure),SAME-AS,SNOMED-CT,43396009,Glycosylated hemoglobin A measurement,159644
+200,200,Test,Calcium [Moles/volume] in Serum or Plasma,NARROWER-THAN,LOINC,2000-8,Serum calcium,166038
+201,201,Test,Hepatitis B virus surface Ag [Units/volume] in Serum or Plasma by Immunoassay,SAME-AS,LOINC,63557-3,Hepatitis B Surface Antigen Test,159430
+202,202,Misc,Rare (qualifier value),SAME-AS,SNOMED-CT,89292003,Rarely,159416
+203,203,Test,Hemoglobin.gastrointestinal [Presence] in Stool,SAME-AS,LOINC,2335-8,Fecal occult blood test,159362
+204,204,Diagnosis,Uric acid crystalluria (finding),SAME-AS,SNOMED-CT,102865001,Uric Acid Crystalluria,123505
+205,205,Diagnosis,Urine microscopy: hyaline casts (finding),SAME-AS,SNOMED-CT,167338002,"Urinary Cast, Hyaline",123501
+206,206,Misc,Blood group AB Rh(D) negative (finding),SAME-AS,SNOMED-CT,278154007,Ab negative,1231
+207,207,Misc,Blood group AB Rh(D) positive (finding),SAME-AS,SNOMED-CT,278151004,Ab positive,1230
+208,208,Misc,Non-Reactive (qualifier value),SAME-AS,SNOMED-CT,131194007,Non-reactive,1229
+209,209,Misc,Reactive (qualifier value),SAME-AS,SNOMED-CT,11214006,Reactive,1228
+210,210,Diagnosis,Cestode infection (disorder),SAME-AS,SNOMED-CT,86133004,Cestode Infection,120759
+211,211,Misc,Few (qualifier value),SAME-AS,SNOMED-CT,57176003,Few,1160
+212,212,Finding,Moderate (severity modifier) (qualifier value),SAME-AS,SNOMED-CT,6736007,Moderate,1499
+213,213,Misc,Indeterminate (qualifier value),SAME-AS,SNOMED-CT,82334004,Indeterminate,1138
+214,214,Test,Bicarbonate [Moles/volume] in Serum or Plasma,BROADER-THAN,LOINC,1963-8,Serum carbon dioxide,1135
+215,215,Test,Chloride [Moles/volume] in Serum or Plasma,BROADER-THAN,LOINC,2075-0,Serum chloride,1134
+216,216,Test,Potassium [Moles/volume] in Serum or Plasma,BROADER-THAN,LOINC,2823-3,Serum potassium,1133
+217,217,Test,Sodium [Moles/volume] in Serum or Plasma,BROADER-THAN,LOINC,2951-2,Serum sodium,1132
+218,218,Diagnosis,Ancylostomiasis caused by Ancylostoma duodenale (disorder),SAME-AS,SNOMED-CT,7386008,Ancylostomiasis due to Ancylostoma Duodenale,148882
+219,219,Misc,Not done (qualifier value),SAME-AS,SNOMED-CT,385660001,Not done,1118
+220,220,Misc,Abnormal (qualifier value),SAME-AS,SNOMED-CT,263654008,Abnormal,1116
+221,221,Misc,Normal (qualifier value),SAME-AS,SNOMED-CT,17621005,Normal,1115
+222,222,Misc,None (qualifier value),SAME-AS,SNOMED-CT,260413007,,1107
+223,223,Misc,Extravascular blood (substance),NARROWER-THAN,SNOMED-CT,2522002,bloody,1077
+224,224,Misc,Unknown (qualifier value),SAME-AS,SNOMED-CT,261665006,Unknown,1067
+225,225,Test,Neisseria gonorrhoeae DNA [Presence] in Specimen by NAA with probe detection,BROADER-THAN,LOINC,24111-7,"Neisseria gonorrhoeae polymerase chain reaction, qualitative",1038
+226,226,Test,Glucose [Mass/volume] in Serum or Plasma,BROADER-THAN,LOINC,2345-7,Serum glucose (mmol),887
+227,227,Test,Polymerase chain reaction test for Neisseria gonorrhoeae (procedure),SAME-AS,SNOMED-CT,399143002,Neisseria gonorrhoeae polymerase chain reaction,1036
+228,228,Test,Chlamydia trachomatis DNA [Presence] in Specimen by NAA with probe detection,BROADER-THAN,LOINC,21613-5,"Chlamydia trachomatis polymerase chain reaction, qualitative",1034
+229,229,Test,Chlamydia trachomatis DNA [Units/volume] in Specimen by NAA with probe detection,BROADER-THAN,LOINC,49096-1,Chlamydia trachomatis polymerase chain reaction,1033
+230,230,Test,Basophils/100 leukocytes in Blood by Automated count,BROADER-THAN,LOINC,706-2,Basophils,1025
+231,231,Test,Eosinophils/100 leukocytes in Blood by Automated count,BROADER-THAN,LOINC,713-8,Eosinophils,1024
+232,232,Test,Monocytes/100 leukocytes in Blood by Automated count,BROADER-THAN,LOINC,5905-5,Monocytes,1023
+233,233,Test,Neutrophils/100 leukocytes in Blood by Automated count,BROADER-THAN,LOINC,770-8,Neutrophils,1022
+234,234,Test,Lymphocytes/100 leukocytes in Blood by Automated count,BROADER-THAN,LOINC,736-9,Lymphocytes,1021
+235,235,LabSet,CBC panel - Blood by Automated count,BROADER-THAN,LOINC,58410-2,Complete blood count,1019
+236,236,Test,MCH [Entitic mass],BROADER-THAN,LOINC,28539-5,Mean corpuscular hemoglobin,1018
+237,237,Test,MCHC [Mass/volume],BROADER-THAN,LOINC,28540-3,Mean cell hemoglobin concentration,1017
+238,238,Test,Erythrocyte distribution width [Entitic volume],BROADER-THAN,LOINC,30384-2,Red cell distribution width,1016
+239,239,Test,Hematocrit [Volume Fraction] of Blood,BROADER-THAN,LOINC,20570-8,Hematocrit,1015
+240,240,Test,Creatine kinase [Enzymatic activity/volume] in Serum or Plasma,BROADER-THAN,LOINC,2157-6,Creatine kinase,1011
+241,241,LabSet,Lipid 1996 panel - Serum or Plasma,SAME-AS,LOINC,24331-1,Lipid panel,1010
+242,242,Test,Triglyceride [Moles/volume] in Serum or Plasma,NARROWER-THAN,LOINC,14927-8,Triglycerides (mmol/L),1009
+243,243,Test,Cholesterol in LDL [Moles/volume] in Serum or Plasma,NARROWER-THAN,LOINC,22748-8,Low-density lipoprotein cholesterol (mmol/L),1008
+244,244,Test,Cholesterol in HDL [Moles/volume] in Serum or Plasma,NARROWER-THAN,LOINC,14646-4,High-density lipoprotein cholesterol measurement (mmol/L),1007
+245,245,Test,Cholesterol [Moles/volume] in Serum or Plasma,NARROWER-THAN,LOINC,14647-2,Total cholesterol (mmol/L),1006
+247,247,ConvSet,Bleeding (finding),NARROWER-THAN,SNOMED-CT,131148009,Bloodwork,162835
+250,250,Test,Human immunodeficiency virus antibody test (procedure),SAME-AS,SNOMED-CT,165813002,HIV Test,1356
+251,251,Drug,Tetanus toxoid,SAME-AS,RxNORM,10387,Tetanus toxoid,84879
+252,252,Test,Plasmodium sp [Presence] in Blood by Light microscopy,BROADER-THAN,LOINC,51587-4,Malarial smear,32
+253,253,Misc,year (qualifier value),SAME-AS,SNOMED-CT,258707000,Years,1734
+254,254,Procedure,Pregnancy observable (observable entity),NARROWER-THAN,SNOMED-CT,364320009,Intermittent preventive treatment in pregnancy with sulphadoxine-pyrimethamine,1591
+255,255,Misc,month (qualifier value),SAME-AS,SNOMED-CT,258706009,Months,1074
+256,256,Misc,week (qualifier value),SAME-AS,SNOMED-CT,258705008,Weeks,1073
+257,257,Misc,day (qualifier value),SAME-AS,SNOMED-CT,258703001,Days,1072
+258,258,Drug,Folate / iron,SAME-AS,RxNORM,1007327,Folate / iron,104677
+260,260,Misc Order,Nutrition education (procedure),SAME-AS,SNOMED-CT,61310001,Nutrition counseling,1380
+261,261,Misc,Mental health care (regime/therapy),SAME-AS,SNOMED-CT,390808007,Mental health services,5489
+262,262,Misc,Social support (regime/therapy),NARROWER-THAN,SNOMED-CT,315042007,Social support services,5486
+264,264,Misc,Pharmacy (environment),SAME-AS,SNOMED-CT,264372000,Pharmacy,1744
+282,282,Misc,T lymphocyte disorder (disorder),SAME-AS,SNOMED-CT,44306006,T-Kash,125071
+285,285,Question,Observable entity (observable entity),NARROWER-THAN,SNOMED-CT,363787002,Account status,168857
+287,287,Misc,Administrative statuses (finding),NARROWER-THAN,SNOMED-CT,307824009,Billed,168849
+288,288,Misc,Administrative statuses (finding),NARROWER-THAN,SNOMED-CT,307824009,Not billable,168848
+289,289,Misc,Administrative statuses (finding),NARROWER-THAN,SNOMED-CT,307824009,Billable,168847
+290,290,Misc,Planned (qualifier value),SAME-AS,SNOMED-CT,397943006,Planned,168846
+296,296,Misc,Infectious disease clinic (environment),NARROWER-THAN,SNOMED-CT,702870003,TB/HIV clinic,168362
+297,297,Question,Clinical history/examination observable (observable entity),NARROWER-THAN,SNOMED-CT,363788007,Type of service provided,168146
+298,298,Misc,Sexual health service (qualifier value),SAME-AS,SNOMED-CT,788122004,Sexual/reproductive health service,167813
+299,299,Misc,Triage (procedure),NARROWER-THAN,SNOMED-CT,225390008,Triage service,167411
+300,300,Misc,Provider-specific procedure (procedure),NARROWER-THAN,SNOMED-CT,127777001,Clinical consultation,167410
+301,301,Misc,Hold - dosing instruction fragment (qualifier value),SAME-AS,SNOMED-CT,421139008,On hold,167154
+302,302,Misc,Hospital department (environment),NARROWER-THAN,SNOMED-CT,284548004,Inpatient department,167050
+303,303,Misc,Canceled (qualifier value),SAME-AS,SNOMED-CT,89925002,Cancelled,165170
+304,304,Misc,Urology service (qualifier value),SAME-AS,SNOMED-CT,310167005,Urology service,164954
+305,305,Misc,"Ear, nose and throat service (qualifier value)",SAME-AS,SNOMED-CT,310149003,"Ear, nose and throat service",164953
+306,306,Misc,Neurosurgical service (qualifier value),SAME-AS,SNOMED-CT,310159002,Neurosurgery service,164952
+307,307,Misc,Obstetrics and gynecology service (qualifier value),SAME-AS,SNOMED-CT,310060005,Obstetrics and gynecology service,164951
+308,308,Misc,Orthopedic service (qualifier value),SAME-AS,SNOMED-CT,310161006,Orthopedic service,164949
+309,309,Misc,Inactive (qualifier value),SAME-AS,SNOMED-CT,73425007,Inactive status,164928
+310,310,Misc,Diabetes clinic (environment),SAME-AS,SNOMED-CT,702706001,Diabetes clinic,164103
+311,311,Misc,Error entry deleted (finding),SAME-AS,SNOMED-CT,185981001,"Data entry error, deleted",163133
+312,312,Misc,Report status (finding),NARROWER-THAN,SNOMED-CT,308552006,Entered in error report status,162983
+313,313,Misc,Laboratory test requested (situation),SAME-AS,SNOMED-CT,165332000,Laboratory orders,1283
+314,314,Finding,Active (qualifier value),SAME-AS,SNOMED-CT,55561003,Active status,161636
+315,315,Misc,Healthcare services (qualifier value),NARROWER-THAN,SNOMED-CT,224891009,Observation ward,161629
+316,316,Misc,Special care baby service (qualifier value),SAME-AS,SNOMED-CT,310070007,Neonatal service,161628
+317.1,317,Misc,Healthcare services (qualifier value),NARROWER-THAN,SNOMED-CT,224891009,General medicine service,161627
+317.2,317,Misc,General medical service (procedure),NARROWER-THAN,SNOMED-CT,310047004,General medicine service,161627
+318,318,Misc,Emergency medical services (qualifier value),SAME-AS,SNOMED-CT,409971007,Emergency medical services,161626
+319,319,Misc,Intensive care service (qualifier value),SAME-AS,SNOMED-CT,310032008,Intensive care service,161625
+320,320,Misc,Rehabilitation service (qualifier value),SAME-AS,SNOMED-CT,310129007,Rehabilitation service,161624
+321,321,Misc,Surgical service (qualifier value),SAME-AS,SNOMED-CT,310138009,Surgical service,161623
+322,322,Question,Finding related to health insurance issues (finding),NARROWER-THAN,SNOMED-CT,419808006,"Patient-side expenses, items",161187
+323,323,Misc,Hospital department (environment),NARROWER-THAN,SNOMED-CT,284548004,Vaccination service,160564
+324,324,Misc,Hospital-based outpatient department (environment),SAME-AS,SNOMED-CT,33022008,Outpatient department,160542
+325,325,Misc,Medical or surgical floor (environment),NARROWER-THAN,SNOMED-CT,398156002,Pediatric inpatient service,160537
+326,326,Misc,Medical or surgical floor (environment),NARROWER-THAN,SNOMED-CT,398156002,Adult inpatient service,160536
+327,327,Misc,Radiology department (environment),SAME-AS,SNOMED-CT,309964003,Radiology department,160463
+328,328,Misc,Unit of currency (qualifier value),SAME-AS,SNOMED-CT,282473001,Unit of currency,159582
+329,329,Misc,Antenatal care (regime/therapy),NARROWER-THAN,SNOMED-CT,424525001,Antenatal services,1592
+330,330,Misc,No (qualifier value),SAME-AS,SNOMED-CT,373067005,No,1066
+331,331,Misc,Yes (qualifier value),SAME-AS,SNOMED-CT,373066001,Yes,1065
+332,332,Diagnosis,Cutaneous leishmaniasis (disorder),SAME-AS,SNOMED-CT,240637006,Cutaneous leishmaniasis,143074
+333,333,Diagnosis,Monkeypox (disorder),SAME-AS,SNOMED-CT,359814004,Mpox,138403
+334,334,Diagnosis,Varicella (disorder),SAME-AS,SNOMED-CT,38907003,Varicella,892
+335,335,Diagnosis,Cryptococcal meningitis (disorder),SAME-AS,SNOMED-CT,14232007,"Meningitis, cryptococcal",1294
+336,336,Diagnosis,Visceral leishmaniasis (disorder),SAME-AS,SNOMED-CT,186803007,Visceral leishmaniasis,123084
+337,337,Diagnosis,Influenza (disorder),SAME-AS,SNOMED-CT,6142004,Influenza,141826
+338,338,Diagnosis,Meningitis (disorder),SAME-AS,SNOMED-CT,7180009,Meningitis,115835
+339,339,Diagnosis,Mycetoma (disorder),SAME-AS,SNOMED-CT,410039003,Mycetoma,115451
+340,340,Diagnosis,African trypanosomiasis (disorder),SAME-AS,SNOMED-CT,27031003,African Trypanosomiasis,149241
+341,341,Diagnosis,Infection caused by Cestoda and/or Trematoda and/or Phylum Nematoda (disorder),NARROWER-THAN,SNOMED-CT,27601005,Helminthiasis,199
+342,342,Diagnosis,Infection caused by Schistosoma (disorder),SAME-AS,SNOMED-CT,10087007,Schistosomiasis,117152
+343,343,Diagnosis,Leishmaniasis (disorder),SAME-AS,SNOMED-CT,80612004,Leishmaniasis,116350
+344,344,Diagnosis,Leptospirosis (disorder),SAME-AS,SNOMED-CT,77377001,Leptospirosis,116341
+345,345,Diagnosis,Ascariasis (disorder),SAME-AS,SNOMED-CT,2435008,Ascariasis,148353
+346,346,Diagnosis,Cervical lymphadenopathy (disorder),SAME-AS,SNOMED-CT,127086001,Cervical lymphadenopathy,145802
+347,347,Diagnosis,Malignant neoplastic disease (disorder),SAME-AS,SNOMED-CT,363346000,Malignant neoplasm,116031
+348,348,Diagnosis,Malignant neoplastic disease (disorder),NARROWER-THAN,SNOMED-CT,363346000,Neoplasm/cancer,116030
+349,349,Diagnosis,Constipation (finding),SAME-AS,SNOMED-CT,14760008,Constipation,996
+350,350,Diagnosis,Primary Kaposi's sarcoma of oral cavity (disorder),SAME-AS,SNOMED-CT,424779008,Kaposi sarcoma oral,644
+351.1,351,Procedure,Procedure related observable (observable entity),NARROWER-THAN,SNOMED-CT,416342005,Name of Procedure performed,1651
+351.2,351,Procedure,Procedure carried out on subject (situation),NARROWER-THAN,SNOMED-CT,443938003,Name of Procedure performed,1651
+352.1,352,Finding,Radiographic imaging procedure (procedure),SAME-AS,SNOMED-CT,363680008,Radiology results,1392
+352.2,352,Finding,Radiology report (record artifact),SAME-AS,SNOMED-CT,371527006,Radiology results,1392
+353,353,Diagnosis,Helicobacter pylori gastrointestinal tract infection (disorder),SAME-AS,SNOMED-CT,307759003,Helicobacter Pylori Gastrointestinal Tract Infection,139041
+354,354,Diagnosis,Pain of hip region (finding),SAME-AS,SNOMED-CT,49218002,Hip Pain,138609
+356,356,Question,Types of contrast medium (qualifier value),SAME-AS,SNOMED-CT,278474008,Imaging contrast type,163023
+357,357,Question,Imaging - action (qualifier value),NARROWER-THAN,SNOMED-CT,360037004,Imaging sequence(s),163022
+358,358,Question,Phase (attribute),NARROWER-THAN,SNOMED-CT,21191007,Contrast imaging phase,163018
+359,359,Finding,Date of procedure (observable entity),SAME-AS,SNOMED-CT,439272007,Procedure date/time,160715
+360,360,Diagnosis,Gastric ulcer (disorder),NARROWER-THAN,SNOMED-CT,397825006,Peptic Ulcer of Stomach,130601
+361,361,Diagnosis,Peptic ulcer with perforation (disorder),SAME-AS,SNOMED-CT,88169003,Peptic Ulcer with Perforation,130595
+362,362,Diagnosis,Ulcer (disorder),SAME-AS,SNOMED-CT,429040005,Ulcer,123919
+363,363,Diagnosis,Upper gastrointestinal hemorrhage (disorder),SAME-AS,SNOMED-CT,37372002,Upper Gastrointestinal Hemorrhage,123569
+364,364,Diagnosis,Diabetes mellitus (disorder),SAME-AS,SNOMED-CT,73211009,Diabetes mellitus,119481
+365,365,Diagnosis,Gastric ulcer (disorder),SAME-AS,SNOMED-CT,397825006,Gastric ulcer,117905
+366,366,Diagnosis,Gastric ulcer with hemorrhage (disorder),SAME-AS,SNOMED-CT,15902003,Bleeding Stomach Ulcer,117903
+367,367,Diagnosis,"Hypertensive disorder, systemic arterial (disorder)",SAME-AS,SNOMED-CT,38341003,Hypertension,117399
+368,368,Diagnosis,Acute gastric ulcer without hemorrhage AND without perforation (disorder),SAME-AS,SNOMED-CT,67964002,Acute Gastric Ulcer without Hemorrhage or Perforation,149783
+369,369,Diagnosis,Acute peptic ulcer with hemorrhage but without obstruction (disorder),SAME-AS,SNOMED-CT,22157005,Acute Peptic Ulcer with Haemorrhage but without Obstruction,149594
+370,370,Diagnosis,Acute peptic ulcer with perforation (disorder),SAME-AS,SNOMED-CT,79118000,Acute Peptic Ulcer with Perforation,149592
+371,371,Diagnosis,Calculus in biliary tract (disorder),SAME-AS,SNOMED-CT,266474003,Cholelithiasis,145625
+372,372,Diagnosis,Enteropathogenic Escherichia coli gastrointestinal tract infection (disorder),SAME-AS,SNOMED-CT,240353001,Enteropathogenic Escherichia Coli Gastrointestinal Tract Infection,141210
+373,373,Diagnosis,Typhoid fever (disorder),SAME-AS,SNOMED-CT,4834000,Typhoid fever,141
+374.1,374,Diagnosis,Multisystem inflammatory syndrome in adults (disorder),NARROWER-THAN,SNOMED-CT,1119306006,Multisystem inflammatory syndrome associated with severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection in adult,166845
+374.2,374,Diagnosis,Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder),NARROWER-THAN,SNOMED-CT,840539006,Multisystem inflammatory syndrome associated with severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection in adult,166845
+375,375,Diagnosis,Infection of upper respiratory tract caused by severe acute respiratory syndrome coronavirus 2 (disorder),SAME-AS,SNOMED-CT,1240541000000100,Upper respiratory tract infection due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),165633
+376.1,376,Diagnosis,Acute disease caused by severe acute respiratory syndrome coronavirus 2 (disorder),NARROWER-THAN,SNOMED-CT,1119302008,Acute respiratory disease due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),165630
+376.2,376,Diagnosis,Viral respiratory infection (disorder),NARROWER-THAN,SNOMED-CT,312133006,Acute respiratory disease due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),165630
+376.3,376,Diagnosis,Acute respiratory disease (disorder),NARROWER-THAN,SNOMED-CT,111273006,Acute respiratory disease due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),165630
+377,377,Diagnosis,Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder),SAME-AS,SNOMED-CT,840539006,Disease due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),165623
+378,378,Diagnosis,Suspected disease caused by Severe acute respiratory coronavirus 2 (situation),SAME-AS,SNOMED-CT,840544004,Suspected severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) infection,165612
+379,379,Diagnosis,Pneumonia caused by severe acute respiratory syndrome coronavirus 2 (disorder),SAME-AS,SNOMED-CT,882784691000119040,Pneumonia due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),165608
+380,380,Diagnosis,Paratyphoid fever (disorder),SAME-AS,SNOMED-CT,85904008,Paratyphoid Fever,130811
+381.1,381,Diagnosis,Acid reflux (finding),SAME-AS,SNOMED-CT,698065002,Gastroesophageal reflux disease,1293
+381.2,381,Diagnosis,Gastroesophageal reflux disease (disorder),SAME-AS,SNOMED-CT,235595009,Gastroesophageal reflux disease,1293
+382,382,Diagnosis,Sepsis caused by Salmonella (disorder),NARROWER-THAN,SNOMED-CT,449083008,Salmonella Septicaemia,127198
+383,383,Diagnosis,Shigellosis (disorder),SAME-AS,SNOMED-CT,36188001,Shigellosis,126558
+384,384,Diagnosis,Cholera (disorder),SAME-AS,SNOMED-CT,63650001,Cholera due to Vibrio cholerae,122604
+385,385,Diagnosis,Peptic ulcer (disorder),SAME-AS,SNOMED-CT,13200003,Peptic ulcer,114262
+386,386,Diagnosis,Gestational diabetes mellitus (disorder),SAME-AS,SNOMED-CT,11687002,Gestational diabetes,1449
+387,387,Diagnosis,Arginine vasopressin-related polyuria (disorder),SAME-AS,SNOMED-CT,1296758008,Diabetes insipidus,142486
+388,388,Diagnosis,Drug-induced diabetes mellitus (disorder),SAME-AS,SNOMED-CT,5368009,Drug-Induced Diabetes Mellitus,141730
+389,389,Diagnosis,Essential hypertension (disorder),SAME-AS,SNOMED-CT,59621000,Essential hypertension,140987
+390,390,Diagnosis,Hyperthyroidism (disorder),SAME-AS,SNOMED-CT,34486009,Hyperthyroidism,138176
+391,391,Diagnosis,Pulmonary hypertension (disorder),SAME-AS,SNOMED-CT,70995007,Pulmonary Hypertension,128125
+392,392,Diagnosis,Acute cholecystitis (disorder),SAME-AS,SNOMED-CT,65275009,Acute Cholecystitis,122101
+393,393,Diagnosis,Hypothyroidism (disorder),SAME-AS,SNOMED-CT,40930008,Hypothyroidism,117321
+394,394,Organism,Human immunodeficiency virus (organism),SAME-AS,SNOMED-CT,19030005,Human immunodeficiency virus,884
+395,395,Diagnosis,Kaposi's sarcoma of skin (disorder),SAME-AS,SNOMED-CT,109386008,Kaposi's sarcoma of skin,507
+396,396,Misc,Death (event),NARROWER-THAN,SNOMED-CT,419620001,Unnatural death,166078
+397,397,Diagnosis,Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder),NARROWER-THAN,SNOMED-CT,840539006,Infection due to severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2),165609
+398,398,Diagnosis,Kaposi's sarcoma with acquired immunodeficiency syndrome (disorder),SAME-AS,SNOMED-CT,420524008,AIDS with Kaposi's sarcoma,155010
+399,399,Diagnosis,Malaria (disorder),SAME-AS,SNOMED-CT,61462000,Malaria,116128
+400.1,400,Diagnosis,Infection caused by Mycobacterium tuberculosis (disorder),SAME-AS,SNOMED-CT,373576009,Tuberculosis,112141
+400.2,400,Diagnosis,Tuberculosis (disorder),SAME-AS,SNOMED-CT,56717001,Tuberculosis,112141
+401,401,Diagnosis,Carcinoma of prostate (disorder),SAME-AS,SNOMED-CT,254900004,Carcinoma of Prostate,146221
+403,403,Diagnosis,Death of unknown cause (event),SAME-AS,SNOMED-CT,87309006,Death of unknown cause,142917
+404,404,Diagnosis,Primary genital syphilis (disorder),SAME-AS,SNOMED-CT,186847001,Primary Genital Syphilis,129119
+405,405,Diagnosis,Natural death (event),SAME-AS,SNOMED-CT,38605008,Natural Death,133481
+406,406,Diagnosis,Natural death with unknown cause (event),SAME-AS,SNOMED-CT,9855000,Natural Death with Unknown Cause,133475
+407,407,Diagnosis,Neoplasm of lung (disorder),SAME-AS,SNOMED-CT,126713003,Neoplasm of Lung,133328
+408,408,Diagnosis,Measles (disorder),SAME-AS,SNOMED-CT,14189004,Measles,134561
+409,409,Diagnosis,Syphilitic cirrhosis (disorder),SAME-AS,SNOMED-CT,16070004,Syphilitic Cirrhosis,125119
+410,410,Diagnosis,Asthma (disorder),SAME-AS,SNOMED-CT,195967001,Asthma,121375
+411,411,Diagnosis,Malignant tumor of cervix (disorder),SAME-AS,SNOMED-CT,363354003,Malignant neoplasm of cervix uteri,116023
+412,412,Diagnosis,Pneumonia (disorder),SAME-AS,SNOMED-CT,233604007,Pneumonia,114100
+413,413,Misc,hour (qualifier value),SAME-AS,SNOMED-CT,258702006,Hours,1822
+414,414,Misc,min (qualifier value),SAME-AS,SNOMED-CT,258701004,Minutes,1733
+415,415,Question,Non-International System of Units unit of time (qualifier value),NARROWER-THAN,SNOMED-CT,258700003,Duration units,1732
+416,416,Misc,Mg/m2 (qualifier value),SAME-AS,SNOMED-CT,396174004,Milligram per meter squared,165171
+417,417,Misc,Intraosseous route (qualifier value),SAME-AS,SNOMED-CT,417255000,Intraosseous administration,162824
+418,418,Misc,Nasogastric route (qualifier value),SAME-AS,SNOMED-CT,127492001,Nasogastric tube administration,162798
+419,419,Misc,Seconds (qualifier value),SAME-AS,SNOMED-CT,257997001,Seconds,162583
+420,420,Misc,Number of times (qualifier value),SAME-AS,SNOMED-CT,252109000,Number of occurrences,162582
+422,422,Misc,Kit - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,419179001,Kit,162401
+423,423,Misc,Inhalation - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,422237004,Inhaler,162400
+424,424,Misc,Each (qualifier value),SAME-AS,SNOMED-CT,419473009,Each,162399
+425,425,Misc,Unit dose (qualifier value),NARROWER-THAN,SNOMED-CT,408102007,Dose pack,162398
+426,426,Misc,Unit dose (qualifier value),NARROWER-THAN,SNOMED-CT,408102007,Cartridge,162397
+427,427,Misc,Box - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,418445004,Box,162396
+428,428,Misc,Bag - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,428672001,Bag,162395
+429,429,ConvSet,Route of administration (attribute),SAME-AS,SNOMED-CT,410675002,Routes of administration,162394
+430,430,Misc,Rectal route (qualifier value),SAME-AS,SNOMED-CT,37161004,Rectal administration,162393
+431,431,Misc,Vaginal route (qualifier value),SAME-AS,SNOMED-CT,16857009,Vaginal administration,162392
+432,432,Misc,Transdermal route (qualifier value),SAME-AS,SNOMED-CT,45890007,Transdermal administration,162391
+433,433,Misc,Ophthalmic route (qualifier value),NARROWER-THAN,SNOMED-CT,54485002,Bilateral eye administration,162390
+434,434,Misc,Ophthalmic route (qualifier value),NARROWER-THAN,SNOMED-CT,54485002,Right eye administration,162389
+435,435,Misc,Ophthalmic route (qualifier value),NARROWER-THAN,SNOMED-CT,54485002,Left eye administration,162388
+436,436,Misc,Otic route (qualifier value),NARROWER-THAN,SNOMED-CT,10547007,Bilateral ear administration,162387
+437,437,Misc,Otic route (qualifier value),NARROWER-THAN,SNOMED-CT,10547007,Right ear administration,162386
+438,438,Misc,Otic route (qualifier value),NARROWER-THAN,SNOMED-CT,10547007,Left ear administration,162385
+439,439,ConvSet,Unit dose (qualifier value),SAME-AS,SNOMED-CT,408102007,Dosing unit,162384
+440,440,Units of Measure,Wafer biscuit (substance),SAME-AS,SNOMED-CT,226557000,Biscuit wafer,162383
+441,441,Units of Measure,Vial - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,415818006,Vial,162382
+442,442,Units of Measure,Unit (qualifier value),SAME-AS,SNOMED-CT,258666001,Unit,162381
+443,443,Units of Measure,Tube - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,418530008,Tube,162380
+444,444,Units of Measure,Teaspoonful - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,415703001,Teaspoon,162379
+445,445,Units of Measure,Tablespoonful - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,415702006,Tablespoon,162378
+446,446,Units of Measure,"Syringe, device (physical object)",SAME-AS,SNOMED-CT,61968008,Syringe,162377
+447,447,Units of Measure,Application - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,413568008,Application,162376
+448,448,Units of Measure,Spray - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,419694003,Spray,162375
+449,449,Units of Measure,Scoop - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,415505006,Scoopful,162374
+450,450,Units of Measure,Ring pessary (physical object),SAME-AS,SNOMED-CT,336782009,Ring pessary,162373
+451,451,Units of Measure,Puff - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,415215001,Puff,162372
+452,452,Units of Measure,pint (qualifier value),SAME-AS,SNOMED-CT,282119004,Pint,162371
+453,453,Units of Measure,Patch - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,419702001,Patch,162370
+454,454,Units of Measure,Pad - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,421823004,Pad,162369
+455,455,Units of Measure,Nebulizer (physical object),NARROWER-THAN,SNOMED-CT,334947002,Nebulizer,162368
+456,456,Units of Measure,Million unit (qualifier value),SAME-AS,SNOMED-CT,396186001,Million units,162367
+457,457,Units of Measure,microgram (qualifier value),SAME-AS,SNOMED-CT,258685003,Microgram,162366
+458,458,Units of Measure,milliequivalent (qualifier value),SAME-AS,SNOMED-CT,258727004,Milliequivalent,162364
+459,459,Units of Measure,Lozenge - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,429587008,Lozenge,162363
+460,460,Units of Measure,kilogram (qualifier value),SAME-AS,SNOMED-CT,258683005,Kilogram,162362
+461,461,Units of Measure,Inch (qualifier value),SAME-AS,SNOMED-CT,258677007,Inch,162361
+462,462,Units of Measure,Gum - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,430281005,Gum,162360
+463,463,Units of Measure,gallon (qualifier value),SAME-AS,SNOMED-CT,282120005,Gallon,162359
+464,464,Units of Measure,fluid ounce (qualifier value),SAME-AS,SNOMED-CT,282118007,Fluid ounce,162358
+465,465,Units of Measure,Enema (qualifier value),SAME-AS,SNOMED-CT,385186005,Enema,162357
+466,466,Units of Measure,Drop - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,404218003,Drop,162356
+467,467,Units of Measure,Unit of drug administration (qualifier value),NARROWER-THAN,SNOMED-CT,408103002,Container,162355
+468,468,Units of Measure,Can - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,429308001,Can,162354
+469,469,Units of Measure,Bar - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,428003006,Bar,162351
+470,470,Units of Measure,Ampule - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,413516001,Ampule(s),162335
+471,471,Misc,international unit (qualifier value),SAME-AS,SNOMED-CT,258997004,International units,162264
+472,472,Units of Measure,Milliliter (qualifier value),SAME-AS,SNOMED-CT,258773002,Milliliter,162263
+473,473,Units of Measure,Liter (qualifier value),SAME-AS,SNOMED-CT,258770004,Liter,162262
+474,474,Units of Measure,gram (qualifier value),SAME-AS,SNOMED-CT,258682000,Gram,161554
+475,475,Units of Measure,milligram (qualifier value),SAME-AS,SNOMED-CT,258684004,Milligram,161553
+476,476,Misc,Nasal route (qualifier value),SAME-AS,SNOMED-CT,46713006,Nasal administration,161253
+477,477,Misc,Capsule - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,428641000,Capsule,1608
+478,478,Misc,Subcutaneous route (qualifier value),SAME-AS,SNOMED-CT,34206005,Subcutaneous administration,160245
+479,479,Misc,Intramuscular route (qualifier value),SAME-AS,SNOMED-CT,78421000,Intramuscular administration,160243
+480,480,Misc,Intravenous route (qualifier value),SAME-AS,SNOMED-CT,47625008,Intravenous administration,160242
+481,481,Misc,Respiratory tract route (qualifier value),SAME-AS,SNOMED-CT,447694001,Inhaled administration,160241
+482,482,Misc,Oral route (qualifier value),SAME-AS,SNOMED-CT,26643006,Oral administration,160240
+483,483,Units of Measure,Suppository (basic dose form),SAME-AS,SNOMED-CT,385194003,Suppository,1518
+484,484,Misc,Packet - unit of product usage (qualifier value),SAME-AS,SNOMED-CT,419888008,Packets,1514
+485,485,Misc,Tablet (basic dose form),SAME-AS,SNOMED-CT,385055001,Tablet,1513
+486,486,Units of Measure,Drop - unit of product usage (qualifier value),NARROWER-THAN,SNOMED-CT,404218003,Metric drop,162365
+488,488,Misc,Fatal (qualifier value),SAME-AS,SNOMED-CT,399166001,Fatal,162819
+489,489,Question,Symptom severity level (observable entity),NARROWER-THAN,SNOMED-CT,405162009,Severity of adverse reaction,162760
+490,490,Misc,Life threatening severity (qualifier value),SAME-AS,SNOMED-CT,442452003,Life threatening severity,162693
+491,491,Finding,Severe (severity modifier) (qualifier value),SAME-AS,SNOMED-CT,24484000,Severe,1500
+492,492,Finding,Mild (qualifier value),SAME-AS,SNOMED-CT,255604002,Mild,1498
+493,493,Diagnosis,Cough (finding),SAME-AS,SNOMED-CT,49727002,Cough,143264
+494,494,Diagnosis,Diarrhea (finding),SAME-AS,SNOMED-CT,62315008,Diarrhea,142412
+495,495,Diagnosis,Allergy to drug (finding),SAME-AS,SNOMED-CT,416098002,Drug allergy,141760
+496,496,Finding,Fever (finding),SAME-AS,SNOMED-CT,386661006,Fever,140238
+497,497,Diagnosis,Flushing (disorder),SAME-AS,SNOMED-CT,238810007,Flushing,140039
+498,498,Diagnosis,Gastrointestinal disorder due to food allergy (disorder),SAME-AS,SNOMED-CT,416389007,Gastrointestinal Food Allergy,139584
+499,499,Diagnosis,Gastrointestinal irritation (finding),SAME-AS,SNOMED-CT,95516005,Gastrointestinal Irritation,139581
+500,500,Drug,Caffeine,SAME-AS,RxNORM,1886,Caffeine,72609
+501,501,Diagnosis,Headache (finding),SAME-AS,SNOMED-CT,25064002,Headache,139084
+502,502,Drug,Acetylsalicylate sodium,SAME-AS,RxNORM,1191,Acetylsalicylate sodium,71617
+503,503,Symptom/Finding,Eruption of skin (disorder),SAME-AS,SNOMED-CT,271807003,Rash,512
+504,504,Diagnosis,Itching (finding),SAME-AS,SNOMED-CT,418290006,Itching,136455
+510,510,Misc,Milk protein (substance),SAME-AS,SNOMED-CT,10827009,Milk protein,162547
+511,511,Misc,Fish (organism),SAME-AS,SNOMED-CT,90580008,Fish,162546
+512,512,Misc,Dairy food (substance),SAME-AS,SNOMED-CT,226760005,Dairy products,162545
+513,513,Misc,Chocolate (substance),SAME-AS,SNOMED-CT,102262009,Chocolate,162544
+514,514,Misc,Beef (substance),SAME-AS,SNOMED-CT,226916002,Beef,162543
+515,515,Misc,"Adhesive tape, device (physical object)",SAME-AS,SNOMED-CT,84756000,Adhesive tape,162542
+517,517,Misc,Pollen (substance),SAME-AS,SNOMED-CT,256259004,Pollen,162540
+518,518,Misc,Mold (organism),SAME-AS,SNOMED-CT,84489001,Mold,162539
+519,519,Misc,Latex (substance),SAME-AS,SNOMED-CT,111088007,Latex,162538
+520,520,Misc,Dust (substance),SAME-AS,SNOMED-CT,33008008,Dust,162537
+521,521,Misc,Bee venom,SAME-AS,RxNORM,124427,Bee venom,77561
+525,525,Pharmacologic Drug Class,Product containing angiotensin II receptor antagonist (product),SAME-AS,SNOMED-CT,96308008,Angiotensin II receptor blockers,162299
+526,526,Pharmacologic Drug Class,Product containing angiotensin-converting enzyme inhibitor (product),SAME-AS,SNOMED-CT,41549009,Angiotensin-converting enzyme inhibitors drug class,162298
+528,528,Misc,Wheat (substance),SAME-AS,SNOMED-CT,412071004,Wheat,162177
+530,530,Misc,Shellfish - dietary (substance),SAME-AS,SNOMED-CT,227146005,Shellfish (dietary),162175
+531,531,Misc,Peanut - dietary (substance),SAME-AS,SNOMED-CT,256349002,Peanuts,162172
+532,532,Misc,Eggs (edible) (substance),SAME-AS,SNOMED-CT,102263004,Eggs (edible),162171
+533,533,Question,No known allergies (situation),SAME-AS,SNOMED-CT,160244002,No known allergies,160557
+534,534,Misc,No known drug allergy (situation),SAME-AS,SNOMED-CT,409137002,No known drug allergies,160556
+535,535,Diagnosis,Musculoskeletal pain (finding),SAME-AS,SNOMED-CT,279069000,Musculoskeletal pain,159347
+536,536,Diagnosis,Toxic liver disease (disorder),SAME-AS,SNOMED-CT,197354009,Toxic liver disease,159098
+537,537,Diagnosis,Allergic condition (finding),NARROWER-THAN,SNOMED-CT,473011001,Allergy,121689
+538,538,Diagnosis,Allergy to drug (finding),NARROWER-THAN,SNOMED-CT,416098002,Personal History of Allergy to Anti-Infective Agent,121684
+539,539,Diagnosis,Altered mental status (finding),SAME-AS,SNOMED-CT,419284004,Altered Mental Status,121677
+540,540,Diagnosis,Anemia (disorder),SAME-AS,SNOMED-CT,271737000,Anaemia,121629
+541,541,Finding,Muscle pain (finding),SAME-AS,SNOMED-CT,68962001,Myalgia,121
+542,542,Diagnosis,Allergy to drug (finding),NARROWER-THAN,SNOMED-CT,416098002,calcium channel blocker allergy,155382
+543,543,Diagnosis,Allergy to sufentanil (finding),SAME-AS,SNOMED-CT,441955007,allergy to sufentanil,155045
+544,544,Diagnosis,Allergy to sevoflurane (finding),SAME-AS,SNOMED-CT,441954006,allergy to sevoflurane,155044
+545,545,Diagnosis,Allergy to remifentanil (finding),SAME-AS,SNOMED-CT,441992007,allergy to remifentanil,155043
+546,546,Diagnosis,Allergy to meropenem (finding),SAME-AS,SNOMED-CT,442022002,allergy to meropenem,155042
+547,547,Diagnosis,Allergy to imipenem (finding),SAME-AS,SNOMED-CT,442408006,allergy to imipenem,155041
+548,548,Diagnosis,Allergy to egg protein (finding),SAME-AS,SNOMED-CT,213020009,allergy to egg protein,155039
+549,549,Diagnosis,Allergy to chloroprocaine (finding),SAME-AS,SNOMED-CT,441931002,allergy to chloroprocaine,155037
+550,550,Diagnosis,Cardiac arrhythmia (disorder),SAME-AS,SNOMED-CT,698247007,Cardiac Dysrhythmia,120148
+551,551,Diagnosis,History of non-drug allergy (situation),NARROWER-THAN,SNOMED-CT,161611007,History of Allergy to Milk Products,119779
+552,552,Diagnosis,Allergy to drug (finding),NARROWER-THAN,SNOMED-CT,416098002,4-quinolones allergy,154386
+553,553,Diagnosis,Dystonia (disorder),SAME-AS,SNOMED-CT,15802004,Dystonia,118773
+554,554,Diagnosis,Allergy to Hevea brasiliensis latex protein (finding),NARROWER-THAN,SNOMED-CT,1003755004,Allergy to Latex,116367
+555,555,Diagnosis,Allergy to insect protein (finding),SAME-AS,SNOMED-CT,716187007,Allergy to Insects,149084
+556,556,Diagnosis,Allergy to spider venom (finding),SAME-AS,SNOMED-CT,427487000,Allergy to Spiders,149083
+557,557,Diagnosis,Allergy to seafood (finding),SAME-AS,SNOMED-CT,91937001,Allergy to Seafood,149070
+558,558,Diagnosis,Allergy to sulfonamide (finding),NARROWER-THAN,SNOMED-CT,91939003,Personal History of Allergy to Sulfonamides,149069
+559,559,Diagnosis,Anaphylaxis (disorder),SAME-AS,SNOMED-CT,39579001,Anaphylaxis,148888
+560,560,Diagnosis,Angioedema (disorder),SAME-AS,SNOMED-CT,41291007,Angioedema,148787
+561,561,Diagnosis,Wheal (finding),SAME-AS,SNOMED-CT,247472004,Wheal,111061
+562,562,Symptom,Bronchospasm (finding),SAME-AS,SNOMED-CT,4386001,Bronchospasm,108
+565,565,Diagnosis,Allergy to wheat (finding),SAME-AS,SNOMED-CT,420174000,allergy to wheat,155046
+566,566,Diagnosis,Allergy to dust mite protein (finding),SAME-AS,SNOMED-CT,232350006,house dust mite allergy,156681
+568,568,Diagnosis,Allergy to erythromycin (finding),SAME-AS,SNOMED-CT,91931000,erythromycin allergy,156171
+569,569,Diagnosis,Allergy to heparin (finding),SAME-AS,SNOMED-CT,294872001,heparin allergy,156587
+570,570,Diagnosis,Allergic disposition (finding),NARROWER-THAN,SNOMED-CT,609328004,sulfite allergy,153435
+571.1,571,Diagnosis,Allergy to food (finding),NARROWER-THAN,SNOMED-CT,414285001,allergy to dairy product,155038
+571.2,571,Diagnosis,Allergy to animal protein (finding),NARROWER-THAN,SNOMED-CT,717234006,allergy to dairy product,155038
+572,572,Diagnosis,History of disorder (situation),NARROWER-THAN,SNOMED-CT,312850006,Personal History of Analgesic Agent Allergy,148826
+573,573,Diagnosis,Allergy to 5-hydroxytryptamine-3-receptor antagonist (finding),SAME-AS,SNOMED-CT,293676007,5-hydroxytryptamine-3 receptor antagonist allergy,154389
+574,574,Diagnosis,Allergy to tomato (finding),SAME-AS,SNOMED-CT,418779002,Allergy to Tomatoes,153358
+575,575,Diagnosis,Allergy to drug (finding),NARROWER-THAN,SNOMED-CT,416098002,Personal History of Allergy to Unspecified Medicinal Agent,151292
+576,576,Diagnosis,Allergy to ertapenem (finding),SAME-AS,SNOMED-CT,441725009,allergy to ertapenem,155040
+577,577,Diagnosis,Allergy to animal protein (finding),SAME-AS,SNOMED-CT,717234006,Dander (Animal) Allergy,142943
+578,578,Diagnosis,Allergy to penicillin (finding),SAME-AS,SNOMED-CT,91936005,Allergy to penicillin,149071
+579,579,Diagnosis,Allergy to insect protein (finding),NARROWER-THAN,SNOMED-CT,716187007,Allergy to Insect Bites,149085
+580,580,Diagnosis,Allergy to contrast media (finding),NARROWER-THAN,SNOMED-CT,293637006,Contrast Media Allergy,143476
+581,581,Diagnosis,Allergy to peanut (finding),SAME-AS,SNOMED-CT,91935009,Allergy to Peanuts,149072
+582,582,Diagnosis,Allergic condition (finding),NARROWER-THAN,SNOMED-CT,473011001,"Allergy, Unspecified",121689
+583,583,Diagnosis,Allergy to food (finding),SAME-AS,SNOMED-CT,414285001,Food Allergy,139994
+584,584,Diagnosis,Allergy to Felis catus protein (finding),SAME-AS,SNOMED-CT,1208807009,Allergy to Cats,146113
+585,585,Diagnosis,Allergy to almond (finding),SAME-AS,SNOMED-CT,712839001,allergy to almonds,155036
+586,586,Diagnosis,History of disorder (situation),NARROWER-THAN,SNOMED-CT,312850006,Personal History of Allergy to Anesthetic Agent,148826
+587,587,Diagnosis,Allergy to naproxen (finding),SAME-AS,SNOMED-CT,293625009,naproxen allergy,157885
+588,588,Diagnosis,Allergy to food (finding),NARROWER-THAN,SNOMED-CT,414285001,Allergic to Other Foods,139207
+589,589,Diagnosis,Allergy to egg protein (finding),NARROWER-THAN,SNOMED-CT,213020009,Allergy to Eggs,149074
+590,590,Diagnosis,Allergy to animal protein (finding),NARROWER-THAN,SNOMED-CT,717234006,Laboratory Animal Dander Allergy,136203
+591,591,Diagnosis,Allergy-sensitivity to fungi syndrome (disorder),SAME-AS,SNOMED-CT,30668009,Allergy-Sensitivity to Fungi Syndrome,121682
+592,592,Diagnosis,Allergy to Canis lupus subspecies familiaris protein (finding),NARROWER-THAN,SNOMED-CT,1208808004,Allergy to Dog,110178
+593,593,Diagnosis,History of disorder (situation),NARROWER-THAN,SNOMED-CT,312850006,History of Allergy,110247
+594.1,594,Diagnosis,Photosensitivity (finding),NARROWER-THAN,SNOMED-CT,90128006,Photoallergy,114159
+594.2,594,Diagnosis,Allergic disposition (finding),NARROWER-THAN,SNOMED-CT,609328004,Photoallergy,114159
+595,595,Diagnosis,Allergy to bee venom (finding),SAME-AS,SNOMED-CT,424213003,Hymenoptera Allergy,111178
+596.1,596,Diagnosis,History of food allergy (situation),NARROWER-THAN,SNOMED-CT,762616007,Personal History of Allergy to Shellfish,112990
+596.2,596,Diagnosis,History of non-drug allergy (situation),NARROWER-THAN,SNOMED-CT,161611007,Personal History of Allergy to Shellfish,112990
+597,597,Drug,Morphine,SAME-AS,RxNORM,7052,Morphine,80106
+598,598,Drug,Codeine,SAME-AS,RxNORM,2670,Codeine,73667
+599,599,Frequency,Frequencies (qualifier value),NARROWER-THAN,SNOMED-CT,272123002,Non-coded frequency,162257
+600,600,Frequency,"Three times a week on Monday, Wednesday and Friday (qualifier value)",SAME-AS,SNOMED-CT,444763000,"Every Monday, Wednesday and Friday",162256
+601,601,Frequency,Every seventy two hours (qualifier value),SAME-AS,SNOMED-CT,396143001,Every seventy-two hours,162255
+602,602,Frequency,Every thirty six hours (qualifier value),SAME-AS,SNOMED-CT,396126004,Every thirty-six hours,162254
+603,603,Frequency,Every twenty four hours (qualifier value),SAME-AS,SNOMED-CT,396125000,Every forty-eight hours,162253
+604,604,Frequency,Every twenty four hours (qualifier value),SAME-AS,SNOMED-CT,396125000,Every twenty-four hours,162252
+605,605,Frequency,Every twelve hours (qualifier value),SAME-AS,SNOMED-CT,307470009,Every twelve hours,162251
+606,606,Frequency,Every eight hours (qualifier value),SAME-AS,SNOMED-CT,307469008,Every eight hours,162250
+607,607,Frequency,Every six hours (qualifier value),SAME-AS,SNOMED-CT,307468000,Every six hours,162249
+608,608,Frequency,Every five hours (qualifier value),SAME-AS,SNOMED-CT,396137003,Every five hours,162248
+609,609,Frequency,Every four hours (qualifier value),SAME-AS,SNOMED-CT,225756002,Every four hours,162247
+610,610,Frequency,Every three hours (qualifier value),SAME-AS,SNOMED-CT,225753005,Every three hours,162246
+611,611,Frequency,Every two hours (qualifier value),SAME-AS,SNOMED-CT,225750008,Every two hours,162245
+612,612,Frequency,Hourly (qualifier value),SAME-AS,SNOMED-CT,225768006,Every hour,162244
+613,613,Frequency,Every thirty minutes (qualifier value),SAME-AS,SNOMED-CT,225767001,Every 30 min,162243
+614,614,Frequency,Single event (qualifier value),SAME-AS,SNOMED-CT,307486002,One time,162135
+615,615,Frequency,Four times daily before meals and at bedtime (qualifier value),SAME-AS,SNOMED-CT,420660006,"Four times daily, before meals and at bedtime",160872
+616,616,Frequency,Four times daily after meals and at bedtime (qualifier value),SAME-AS,SNOMED-CT,421969000,"Four times daily, after meals and at bedtime",160871
+617,617,Frequency,Four times daily (qualifier value),SAME-AS,SNOMED-CT,307439001,Four times daily,160870
+618,618,Frequency,"Three times a day, with meals (qualifier value)",SAME-AS,SNOMED-CT,396146009,"Thrice daily, with meals",160869
+619,619,Frequency,"Three times a day, before meals (qualifier value)",SAME-AS,SNOMED-CT,396145008,"Thrice daily, before meals",160868
+620,620,Frequency,Three times daily after meals (qualifier value),SAME-AS,SNOMED-CT,421409007,"Thrice daily, after meals",160867
+621,621,Frequency,Three times daily (qualifier value),SAME-AS,SNOMED-CT,229798009,Thrice daily,160866
+622,622,Frequency,Once daily (qualifier value),NARROWER-THAN,SNOMED-CT,229797004,"Once daily, in the morning",160865
+623,623,Frequency,"Once a day, in the evening (qualifier value)",SAME-AS,SNOMED-CT,396147000,"Once daily, in the evening",160864
+624,624,Frequency,"Once a day, at bedtime (qualifier value)",SAME-AS,SNOMED-CT,396142006,"Once daily, at bedtime",160863
+625,625,Frequency,Once daily (qualifier value),SAME-AS,SNOMED-CT,229797004,Once daily,160862
+626,626,Frequency,Twice a day with meals (qualifier value),SAME-AS,SNOMED-CT,421589008,Twice daily with meals,160861
+627,627,Frequency,Twice a day after meals (qualifier value),SAME-AS,SNOMED-CT,421331003,Twice daily after meals,160860
+628,628,Frequency,Twice a day before meals (qualifier value),SAME-AS,SNOMED-CT,422231003,Twice daily before meals,160859
+629,629,Frequency,Twice a day (qualifier value),SAME-AS,SNOMED-CT,229799001,Twice daily,160858
+630,630,Frequency,Weekly (qualifier value),SAME-AS,SNOMED-CT,14497002,Weekly,1099
+631,631,Frequency,Monthly (qualifier value),SAME-AS,SNOMED-CT,89185003,Monthly,1098
+632,632,Question,Cause of death (observable entity),SAME-AS,SNOMED-CT,184305005,Cause of death,1599
+633,633,Diagnosis,Traumatic injury (disorder),SAME-AS,SNOMED-CT,417746004,Traumatic injury,124193
+634,634,Diagnosis,Infectious disease (disorder),SAME-AS,SNOMED-CT,40733004,Infectious Disease,151673
+635,635,Question,Cause of death (observable entity),NARROWER-THAN,SNOMED-CT,184305005,Probable cause of death (text),160218
+636,636,Diagnosis,Human immunodeficiency virus infection (disorder),NARROWER-THAN,SNOMED-CT,86406008,Human immunodeficiency virus (HIV) disease,138405
+637,637,Procedure,Administration of prophylactic drug or medicament (procedure),NARROWER-THAN,SNOMED-CT,182929008,PMTCT,1148
+638,638,Procedure,Pre-exposure prophylaxis (procedure),SAME-AS,SNOMED-CT,1137457009,Pre-exposure prophylaxis (PrEP),166536
+639,639,Misc,Provider-specific procedure (procedure),NARROWER-THAN,SNOMED-CT,127777001,Clinical Consult,167410
+641,641,Misc,Patient care statuses (finding),NARROWER-THAN,SNOMED-CT,305060004,Finished Service,167409
+642,642,Misc,Patient care statuses (finding),NARROWER-THAN,SNOMED-CT,305060004,In Service,167408
+643.1,643,Misc,Patient care statuses (finding),NARROWER-THAN,SNOMED-CT,305060004,Waiting,167407
+643.2,643,Misc,Patient waiting for (contextual qualifier) (qualifier value),NARROWER-THAN,SNOMED-CT,103327009,Waiting,167407
+645,645,Misc,Triage (procedure),NARROWER-THAN,SNOMED-CT,225390008,Triage,167411
+648,648,Misc,Urgent (qualifier value),SAME-AS,SNOMED-CT,103391001,Urgent,1883
+649,649,Misc,Emergency (qualifier value),SAME-AS,SNOMED-CT,25876001,Emergency,1882
+650,650,Diagnosis,Drug interaction (finding),SAME-AS,SNOMED-CT,79899007,Drug Interaction (Properly Prescribed and Administered),141748
+651,651,Misc,Patient unavailable (finding),Associated finding,SNOMED-CT,398090008,Patient currently unavailable,1899
+652,652,Question,Inpatient stay (finding),NARROWER-THAN,SNOMED-CT,308540004,Patient currently inpatient at facility,1896
+653,653,Question,Drug not available - out of stock (finding),SAME-AS,SNOMED-CT,182856006,Medications unavailable,1754
+657,657,Finding,Intolerance to drug (finding),NARROWER-THAN,SNOMED-CT,59037007,Suspected intolerance to drug,168096
+658,658,Misc,Drugs not issued (finding),NARROWER-THAN,SNOMED-CT,182850000,Duplicate therapy,168095
+659,659,Finding,Pregnancy (finding),NARROWER-THAN,SNOMED-CT,77386006,Mother pregnant or currently breastfeeding,168094
+660,660,Misc,Drugs not issued (finding),NARROWER-THAN,SNOMED-CT,182850000,Drug would interfere with upcoming laboratory testing,168093
+661,661,Finding,Drugs not issued (finding),NARROWER-THAN,SNOMED-CT,182850000,Drug level too high to continue treatment,168092
+662,662,Misc,Drugs not issued (finding),NARROWER-THAN,SNOMED-CT,182850000,Prescription/request requires clarification,168091
+663,663,Misc,Drugs not issued (finding),NARROWER-THAN,SNOMED-CT,182850000,Try another treatment first,168090
+664,664,Misc,Drugs not issued (finding),NARROWER-THAN,SNOMED-CT,182850000,Unable to provide necessary care,168089
+665,665,Misc,Drugs not issued (finding),NARROWER-THAN,SNOMED-CT,182850000,Religious/ethical objection,168088
+666,666,Misc,Insufficient (qualifier value),NARROWER-THAN,SNOMED-CT,423437008,Incomplete data,168087
+668,668,Misc,Discontinued (qualifier value),NARROWER-THAN,SNOMED-CT,410546004,Order discontinued,168085
+681,681,Misc,Supplies not available (finding),SAME-AS,SNOMED-CT,419182006,Supplies not available,165183
+682,682,Misc,Previous treatment continue (situation),SAME-AS,SNOMED-CT,266714009,Continue previous treatment,163057
+683,683,ConvSet,Administrative statuses (finding),NARROWER-THAN,SNOMED-CT,307824009,Medication dispense status,167157
+684,684,Misc,Declined (qualifier value),SAME-AS,SNOMED-CT,443390004,Refused,167156
+685,685,Misc,Discontinued (qualifier value),SAME-AS,SNOMED-CT,410546004,Discontinued,167155
+686,686,Misc,Procedure phase (qualifier value),NARROWER-THAN,SNOMED-CT,128954007,Preparation,167153
+687,687,Misc,In progress (qualifier value),SAME-AS,SNOMED-CT,385651009,In progress,163723
+688,688,Finding,Complete (qualifier value),SAME-AS,SNOMED-CT,255594003,Completed,1267
+692,692,Misc,Night time (qualifier value),SAME-AS,SNOMED-CT,2546009,multiCheckbox,161018
+694,694,Misc,Selective immunoglobulin G deficiency (disorder),SAME-AS,SNOMED-CT,190981001,select,126812
+699,699,Misc,Annotation comment [Interpretation] Narrative,BROADER-THAN,LOINC,48767-8,Free text comment,161011
+700,700,Question,Clinical history/examination observable (observable entity),NARROWER-THAN,SNOMED-CT,363788007,Admission to hospital decision,169408
+701,701,Finding,Patient on waiting list (finding),SAME-AS,SNOMED-CT,270459005,Patient on waiting list,169407
+702,702,Finding,Admission statuses (finding),NARROWER-THAN,SNOMED-CT,308277006,Admission denied,169406
+704,704,Question,Procedure related observable (observable entity),NARROWER-THAN,SNOMED-CT,416342005,Internal transfer location (text/code),169404
+705,705,Question,Procedure related observable (observable entity),NARROWER-THAN,SNOMED-CT,416342005,Admitted to location (text/code),169403
+706,706,Question,Clinical history/examination observable (observable entity),NARROWER-THAN,SNOMED-CT,363788007,Inpatient patient disposition,169402
+707,707,Procedure,Discharge from hospital (procedure),SAME-AS,SNOMED-CT,308283009,Discharge from hospital,169401
+708,708,Procedure,Hospital admission (procedure),SAME-AS,SNOMED-CT,32485007,Admit to hospital,168619
+709,709,Procedure,Internal facility referral or transfer,SAME-AS,LOINC,LA9328-1,Internal facility transfer/referral,167731
+710,710,Finding,Clinical diagnosis (contextual qualifier) (qualifier value),NARROWER-THAN,SNOMED-CT,39154008,Clinical impression comment,159395
+711,711,Question,Objective Narrative,SAME-AS,LOINC,61149-1,Objective Findings,167955
+712,712,Question,Subjective Narrative,SAME-AS,LOINC,61150-9,Subjective Findings,167954
+714,714,Question,Care plan (record artifact),NARROWER-THAN,SNOMED-CT,734163000,Plan,163104
+715,715,Drug,Sulfadoxine and pyrimethamine,SAME-AS,RxNORM,203218,Sulfadoxine and pyrimethamine,924
+716,716,Drug,Sulfadoxine,SAME-AS,RxNORM,10173,Sulfadoxine,84462
+717,717,Drug,Heparinoids,SAME-AS,RxNORM,5228,Heparinoids,77419
+718,718,Drug,Isoniazid / pyrazinamide / rifampin,SAME-AS,RxNORM,214662,Isoniazid / pyrazinamide / rifampin,768
+719,719,Diagnosis,Multidermatomal infection caused by Herpes zoster co-occurrent with human immunodeficiency virus infection (disorder),SAME-AS,SNOMED-CT,713964006,"HIV staging - varicella, disseminated",5029
+720,720,Drug,Condom (physical object),SAME-AS,SNOMED-CT,706506000,Condoms,190
+721,721,Drug,Norplant (implantable contraceptive),SAME-AS,RxNORM,6373,Norplant (implantable contraceptive),1359
+722,722,Drug,Subcutaneous contraceptive (product),SAME-AS,SNOMED-CT,169552007,Implantable contraceptive (unspecified type),159589
+724,724,Drug,Pyrimethamine / sulfadoxine,SAME-AS,RxNORM,203218,Pyrimethamine / sulfadoxine,105232
+725,725,Drug,Heparinoids / salicylic acid,SAME-AS,RxNORM,1008085,Heparinoids / salicylic acid,104813
+726,726,Drug,Heparinoids / hyaluronidase,SAME-AS,RxNORM,1006904,Heparinoids / hyaluronidase,104811
+728,728,Diagnosis,Chest dull to percussion (finding),SAME-AS,SNOMED-CT,39180009,Abnormal Dullness to Percussion of Chest,145712
+729,729,Misc Order,Tobacco abuse prevention education (procedure),SAME-AS,SNOMED-CT,408939007,Tobacco use counseling,1455
+730,730,Diagnosis,Chronic kidney disease (disorder),SAME-AS,SNOMED-CT,709044004,Chronic Kidney Disease,145438
+731,731,Diagnosis,Fetal movements not observed (finding),SAME-AS,SNOMED-CT,289433006,No fetal movements,1452
+732,732,Diagnosis,Cirrhosis of liver (disorder),SAME-AS,SNOMED-CT,19943007,Cirrhosis of Liver,145091
+733,733,Diagnosis,Harmful pattern of use of cocaine (disorder),NARROWER-THAN,SNOMED-CT,78267003,Cocaine abuse,144661
+734,734,Diagnosis,Coma (disorder),SAME-AS,SNOMED-CT,371632003,Coma,144576
+735,735,Finding,Pregnancy (finding),SAME-AS,SNOMED-CT,77386006,Currently pregnant,1434
+736,736,Diagnosis,Crying infant (finding),SAME-AS,SNOMED-CT,162214009,Crying Infant,143129
+737,737,Diagnosis,Cyanosis (finding),SAME-AS,SNOMED-CT,3415004,Cyanosis,143050
+738,738,Finding,Last menstrual period start date,SAME-AS,LOINC,8665-2,Date of last menstrual period,1427
+739,739,Diagnosis,Dehydration (disorder),SAME-AS,SNOMED-CT,34095006,Dehydration,142630
+740,740,Diagnosis,Ulcer of foot due to diabetes mellitus (disorder),SAME-AS,SNOMED-CT,371087003,Diabetic foot ulcer,142451
+741,741,Diagnosis,Retinopathy due to diabetes mellitus (disorder),SAME-AS,SNOMED-CT,4855003,Diabetic retinopathy,142429
+742,742,Diagnosis,Diplopia (disorder),SAME-AS,SNOMED-CT,24982008,Diplopia,142263
+743,743,Diagnosis,Discharge from penis (finding),SAME-AS,SNOMED-CT,2910007,Discharge from Penis,142247
+744.1,744,Diagnosis,Dizziness present (situation),SAME-AS,SNOMED-CT,162260006,Dizziness,141831
+744.2,744,Diagnosis,Dizziness (finding),SAME-AS,SNOMED-CT,404640003,Dizziness,141831
+745,745,Diagnosis,Dizziness and giddiness (finding),SAME-AS,SNOMED-CT,271789005,Dizziness and Giddiness,141830
+746,746,Diagnosis,Dribbling of urine (finding),SAME-AS,SNOMED-CT,58972000,Dribbling of Urine,141774
+747,747,Diagnosis,Abnormal uterine bleeding (disorder),NARROWER-THAN,SNOMED-CT,44991000119100,Dysfunctional Uterine Bleeding,141631
+748,748,Diagnosis,Dyssomnia (disorder),SAME-AS,SNOMED-CT,44186003,Dyssomnia,141597
+749,749,Diagnosis,Ear problem (finding),SAME-AS,SNOMED-CT,300197009,Ear Problem,141585
+750,750,Diagnosis,Epigastric pain (finding),SAME-AS,SNOMED-CT,79922009,Epigastric pain,141128
+751,751,Diagnosis,Excessive sweating (finding),SAME-AS,SNOMED-CT,52613005,Excessive Sweating,140941
+752,752,Diagnosis,Excessive tear production (finding),SAME-AS,SNOMED-CT,418035005,Excessive Tear Production,140940
+753,753,Diagnosis,Exophthalmos (disorder),SAME-AS,SNOMED-CT,18265008,Exophthalmos,140919
+754,754,Diagnosis,Fatigue (finding),SAME-AS,SNOMED-CT,84229001,Fatigue,140501
+756.1,756,Question,Contraception status (finding),NARROWER-THAN,SNOMED-CT,243816001,Currently using birth control,965
+756.2,756,Question,Uses combined oral contraception (finding),NARROWER-THAN,SNOMED-CT,268458002,Currently using birth control,965
+757,757,Finding,Pruritic disorder (disorder),SAME-AS,SNOMED-CT,279333002,Pruritus,879
+758,758,Finding,Discharge from eye (finding),SAME-AS,SNOMED-CT,246679005,Eye discharge,874
+759,759,Finding,Otorrhea (disorder),SAME-AS,SNOMED-CT,65668001,Otorrhea,873
+760,760,Finding,Fever with chills (finding),SAME-AS,SNOMED-CT,274640006,Chills,871
+761,761,Finding,Hearing difficulty (finding),SAME-AS,SNOMED-CT,162340000,Hearing difficulties,861
+762,762,Diagnosis,Increased blood pressure (finding),SAME-AS,SNOMED-CT,24184005,Elevated blood pressure,140147
+763,763,Diagnosis,Finger clubbing (disorder),SAME-AS,SNOMED-CT,30760008,Finger Clubbing,140125
+764,764,Diagnosis,Flank pain (finding),SAME-AS,SNOMED-CT,247355005,Flank Pain,140070
+765,765,Diagnosis,Genital warts (disorder),SAME-AS,SNOMED-CT,266113007,Genital warts,139505
+766,766,Finding,Weight loss (finding),SAME-AS,SNOMED-CT,89362005,Weight loss,832
+767,767,Diagnosis,Itching of eye (finding),SAME-AS,SNOMED-CT,74776002,Itchy Eyes,139100
+768,768,Finding,Physical examination procedure (procedure),SAME-AS,SNOMED-CT,5880005,Physical exam,1391
+769.1,769,Diagnosis,Hearing problem (finding),SAME-AS,SNOMED-CT,300228004,Hearing Disorder,139075
+769.2,769,Diagnosis,Hearing disorder (disorder),SAME-AS,SNOMED-CT,128540005,Hearing Disorder,139075
+770,770,Diagnosis,Cachexia associated with acquired immunodeficiency syndrome (finding),SAME-AS,SNOMED-CT,422003001,Wasting syndrome,823
+771,771,Diagnosis,Heart failure (disorder),SAME-AS,SNOMED-CT,84114007,Heart failure,139069
+772,772,Diagnosis,Heartburn (finding),SAME-AS,SNOMED-CT,16331000,Heartburn,139059
+773,773,Diagnosis,Heberden node (disorder),SAME-AS,SNOMED-CT,371598009,Heberden's Node,139047
+774,774,Finding,History of Present illness Narrative,BROADER-THAN,LOINC,10164-2,History of present illness,1390
+775,775,ConvSet,Congenital disease (disorder),SAME-AS,SNOMED-CT,66091009,Congenital disorders,81
+776,776,Diagnosis,Human immunodeficiency virus detected (finding),SAME-AS,SNOMED-CT,165816005,HIV positive,138571
+777,777,Diagnosis,Hoarse (finding),SAME-AS,SNOMED-CT,50219008,Hoarse,138554
+778,778,Finding,Pain of joint (finding),SAME-AS,SNOMED-CT,57676002,Joint pain,80
+779,779,Diagnosis,Hypertensive retinopathy (disorder),SAME-AS,SNOMED-CT,6962006,Hypertensive Retinopathy,138180
+780,780,Diagnosis,Hypertrophy of tonsils (disorder),SAME-AS,SNOMED-CT,46689006,Hypertrophy of Tonsils,138120
+781,781,Diagnosis,Hyperuricemia (disorder),SAME-AS,SNOMED-CT,35885006,Hyperuricaemia,138111
+782,782,Diagnosis,Hypospadias (disorder),SAME-AS,SNOMED-CT,416010008,Hypospadias,138010
+783,783,MedSet,Uses oral contraception (finding),SAME-AS,SNOMED-CT,5935008,Oral contraception,780
+784,784,Diagnosis,Increased frequency of urination (finding),SAME-AS,SNOMED-CT,162116003,Increased Frequency of Urination,137593
+785,785,ConvSet,Mental disorder (disorder),SAME-AS,SNOMED-CT,74732009,Mental disorders,77
+786,786,Misc Order,Patient referral for dental care (procedure),SAME-AS,SNOMED-CT,103697008,Dental care referral,1374
+787,787,Misc Order,Referral to ophthalmology service (procedure),SAME-AS,SNOMED-CT,183543004,Ophthalmology referral,1373
+788,788,Misc Order,Referral to postnatal clinic (procedure),SAME-AS,SNOMED-CT,183861004,Postnatal care referral,1372
+789,789,Diagnosis,Nonspecific syndrome suggestive of viral illness (finding),NARROWER-THAN,SNOMED-CT,445939008,Influenza-like symptoms,137162
+790,790,Misc Order,Referral to obstetrics service (procedure),SAME-AS,SNOMED-CT,183548008,Prenatal care referral,1371
+792,792,Diagnosis,Inspiratory stridor (finding),SAME-AS,SNOMED-CT,58596002,Inspiratory Stridor,136790
+793,793,Diagnosis,Intercostal recession (finding),SAME-AS,SNOMED-CT,6442005,Intercostal recession,136768
+794,794,Diagnosis,Irregular heart beat (finding),SAME-AS,SNOMED-CT,361137007,Irregular heartbeat,136522
+795,795,Diagnosis,Intrauterine contraceptive device in situ (finding),SAME-AS,SNOMED-CT,737288007,IUD Contraception,136452
+796,796,Diagnosis,Jaundice (finding),SAME-AS,SNOMED-CT,18165001,Jaundice,136443
+797,797,Diagnosis,Joint crepitus (finding),SAME-AS,SNOMED-CT,2764000,Joint Crepitus,136421
+798,798,Diagnosis,Kernicterus of newborn (disorder),NARROWER-THAN,SNOMED-CT,50143004,Kernicterus not due to Isoimmunisation,136282
+799,799,Diagnosis,Lactational amenorrhea (finding),SAME-AS,SNOMED-CT,237122005,Lactational amenorrhea,136163
+800,800,Question,Family planning education (procedure),NARROWER-THAN,SNOMED-CT,397619005,Requests family planning information,1360
+801,801,Diagnosis,Leukoplakia (disorder),SAME-AS,SNOMED-CT,274134003,Leukoplakia,135841
+802,802,Diagnosis,Limitation of joint movement (finding),SAME-AS,SNOMED-CT,70733008,Limitation of Joint Movement,135786
+803,803,Diagnosis,Loss of appetite (finding),SAME-AS,SNOMED-CT,79890006,Loss of Appetite,135595
+804,804,Diagnosis,Loss of consciousness (finding),SAME-AS,SNOMED-CT,419045004,Loss of consciousness,135592
+805,805,Finding,Loss of hair (finding),SAME-AS,SNOMED-CT,278040002,Loss of Hair,135591
+806,806,Diagnosis,Lower respiratory tract infection (disorder),SAME-AS,SNOMED-CT,50417007,Lower Respiratory Tract Infection,998
+807,807,Diagnosis,Lymphadenopathy (disorder),SAME-AS,SNOMED-CT,30746006,Lymphadenopathy,135488
+808,808,Diagnosis,Lymphogranuloma venereum (disorder),SAME-AS,SNOMED-CT,186946009,Lymphogranuloma venereum,135462
+809,809,Diagnosis,Problem resolved (finding),SAME-AS,SNOMED-CT,413322009,Problem resolved,6097
+810,810,Diagnosis,Diagnosis (observable entity),NARROWER-THAN,SNOMED-CT,439401001,Problem added,6042
+811,811,Symptom/Finding,Memory impairment (finding),SAME-AS,SNOMED-CT,386807006,Memory problems,6037
+812,812,Symptom,Pain in lower limb (finding),SAME-AS,SNOMED-CT,10601006,"Pain, lower extremities",6035
+813,813,Finding,Kidney disease (disorder),SAME-AS,SNOMED-CT,90708001,Renal disease,6033
+814,814,Finding,Disorder of liver (disorder),SAME-AS,SNOMED-CT,235856003,Hepatic disease,6032
+815,815,Symptom/Finding,Decrease in appetite (finding),SAME-AS,SNOMED-CT,64379006,Poor appetite,6031
+816,816,Finding,Delayed milestone (finding),NARROWER-THAN,SNOMED-CT,274625009,Regressed milestones,6025
+817,817,Finding,Delayed milestone (finding),SAME-AS,SNOMED-CT,274625009,Delayed milestones,6022
+818,818,Symptom/Finding,Swollen abdomen (finding),SAME-AS,SNOMED-CT,60728008,Abdominal swelling,6019
+819,819,Symptom,Refusal of feeds in infant (finding),SAME-AS,SNOMED-CT,304528007,Refusal to feed,6017
+820,820,Symptom/Finding,Muscle weakness (finding),NARROWER-THAN,SNOMED-CT,26544005,Focal weakness,6005
+821,821,Symptom,Paresthesia (finding),SAME-AS,SNOMED-CT,91019004,Paresthesia,6004
+822,822,Symptom,"Menopause, function (observable entity)",NARROWER-THAN,SNOMED-CT,161712005,Menopausal,5990
+823,823,Symptom/Finding,Menstrual bleeding present (finding),SAME-AS,SNOMED-CT,289894009,Menstruating,5989
+824,824,Symptom/Finding,History of jaundice (situation),SAME-AS,SNOMED-CT,161536006,History of jaundice,5986
+825,825,Symptom,Nausea (finding),SAME-AS,SNOMED-CT,422587007,Nausea,5978
+826,826,Symptom/Finding,Dyspnea on exertion (finding),SAME-AS,SNOMED-CT,60845006,Shortness of breath with exertion,5963
+827,827,Symptom/Finding,Dyspnea at rest (finding),SAME-AS,SNOMED-CT,161941007,Shortness of breath at rest,5961
+828,828,Symptom/Finding,Productive cough (finding),SAME-AS,SNOMED-CT,28743005,Productive cough,5957
+829,829,Symptom,Dysphagia (disorder),SAME-AS,SNOMED-CT,40739000,Swallowing difficulties,5954
+830,830,Symptom,Disorder of vision (disorder),SAME-AS,SNOMED-CT,95677002,Vision difficulties,5953
+831,831,Finding,On examination - edema of legs (finding),SAME-AS,SNOMED-CT,162783008,"Edema, legs",590
+832,832,Diagnosis,Mastoiditis (disorder),SAME-AS,SNOMED-CT,52404001,Mastoiditis,134614
+833,833,Finding,On examination - cardiac murmur (finding),SAME-AS,SNOMED-CT,268934006,CARDIAC MURMUR (on exam),562
+834,834,Question,Delivery date Estimated from last menstrual period,SAME-AS,LOINC,11779-6,Estimated date of confinement,5596
+835,835,Procedure,Drug therapy (procedure),NARROWER-THAN,SNOMED-CT,416608005,ARV for mother,5576
+836,836,Symptom/Finding,Learning difficulties (finding),SAME-AS,SNOMED-CT,161129001,Learning problems,5550
+837,837,Procedure,Counseling (procedure),NARROWER-THAN,SNOMED-CT,409063005,Psychosocial counseling,5490
+838,838,Finding,Counseling (procedure),NARROWER-THAN,SNOMED-CT,409063005,Adherence counseling,5488
+839,839,Misc Order,Drug intake observed (procedure),NARROWER-THAN,SNOMED-CT,182882002,Tuberculosis Treatment or DOT Program,5487
+840,840,Misc Order,Inpatient care (regime/therapy),SAME-AS,SNOMED-CT,394656005,Inpatient care or hospitalization,5485
+841,841,Procedure,Nutritional support (regime/therapy),SAME-AS,SNOMED-CT,278906000,Nutritional support,5484
+842,842,Procedure,Family planning service (qualifier value),SAME-AS,SNOMED-CT,310031001,Family planning services,5483
+843,843,Diagnosis,Candidiasis of mouth (disorder),SAME-AS,SNOMED-CT,79740000,"Candidiasis, oral",5334
+844,844,Symptom/Finding,Joint swelling (finding),SAME-AS,SNOMED-CT,271771009,Joint swelling,5312
+845,845,Diagnosis,Micturition frequency and polyuria (finding),SAME-AS,SNOMED-CT,274734008,Frequency of Urination and Polyuria,134185
+846,846,MedSet,Subcutaneous contraceptive (product),NARROWER-THAN,SNOMED-CT,169552007,Injectable contraceptives,5279
+847,847,Misc,Cervical contraceptive cap (physical object),SAME-AS,SNOMED-CT,368441006,Diaphragm,5278
+848,848,Misc,Uses natural method of contraception (finding),SAME-AS,SNOMED-CT,225371000,Natural family planning,5277
+849,849,Procedure,Female sterilization (procedure),SAME-AS,SNOMED-CT,60890002,Female sterilization,5276
+850.1,850,Misc,Intrauterine contraceptive device (physical object),SAME-AS,SNOMED-CT,268460000,Intrauterine device,5275
+850.2,850,Misc,Uses intrauterine device contraception (finding),SAME-AS,SNOMED-CT,312081001,Intrauterine device,5275
+851,851,Question,Pregnancy status - Reported,BROADER-THAN,LOINC,11449-6,Pregnancy status,5272
+852,852,Finding,Body pale (finding),SAME-AS,SNOMED-CT,274643008,Pallor,5245
+853,853,Symptom,Sore mouth (finding),SAME-AS,SNOMED-CT,162011005,Oral sores,5244
+854,854,Question,Chief complaint - Reported,SAME-AS,LOINC,8661-1,Chief complaint,5219
+855,855,Finding,Conjunctival finding (finding),NARROWER-THAN,SNOMED-CT,246875002,Pale conjunctiva,516
+856,856,Finding,Abdominal tenderness (finding),SAME-AS,SNOMED-CT,43478001,Abdominal tenderness,5105
+857,857,Symptom/Finding,Abdominal mass (finding),SAME-AS,SNOMED-CT,271860004,Abdominal mass,5103
+858,858,Misc,Date of visit (observable entity),NARROWER-THAN,SNOMED-CT,406543005,Return visit date,5096
+859,859,Finding,Splenomegaly (disorder),SAME-AS,SNOMED-CT,16294009,Splenomegaly,5009
+860,860,Finding,Large liver (disorder),SAME-AS,SNOMED-CT,80515008,Hepatomegaly,5008
+861,861,Diagnosis,Senile dementia (disorder),SAME-AS,SNOMED-CT,15662003,"Dementia, senile",487
+862,862,Finding,Edema (finding),SAME-AS,SNOMED-CT,267038008,Oedema,460
+863,863,Question,Uses contraception (finding),SAME-AS,SNOMED-CT,13197004,Method of family planning,374
+864,864,Diagnosis,Seizure (finding),NARROWER-THAN,SNOMED-CT,91175000,Seizure,206
+865,865,Diagnosis,Bleeding from nose (finding),SAME-AS,SNOMED-CT,249366005,Nasal haemorrhage,133499
+866,866,Symptom/Finding,Flaring of alae nasi (finding),SAME-AS,SNOMED-CT,21558008,Nostril flaring,1861
+867,867,Diagnosis,Nausea and vomiting (disorder),SAME-AS,SNOMED-CT,16932000,Nausea and vomiting,133473
+868,868,Finding,Bulging fontanelle (finding),SAME-AS,SNOMED-CT,103019006,Bulging fontenelle,1836
+869,869,Diagnosis,Neck pain (finding),SAME-AS,SNOMED-CT,81680005,Neck Pain,133469
+870,870,Question,Time symptom lasts (observable entity),SAME-AS,SNOMED-CT,162442009,Sign/symptom duration,1731
+871,871,Question,Urogenital observable (observable entity),NARROWER-THAN,SNOMED-CT,364178005,Sexually transmitted infection (STI) in past 6 months,169004
+872,872,Diagnosis,Nocturnal muscle cramp (finding),NARROWER-THAN,SNOMED-CT,166631000119101,"Muscle Cramp, Nocturnal",133028
+873,873,Diagnosis,Night sweats (finding),SAME-AS,SNOMED-CT,42984000,Night sweats,133027
+875,875,Diagnosis,Numbness of foot (finding),SAME-AS,SNOMED-CT,309538000,Numbness of Foot,132653
+876,876,Diagnosis,Numbness of hand (finding),SAME-AS,SNOMED-CT,309521004,Numbness of Hand,132652
+877,877,Diagnosis,Oliguria (finding),SAME-AS,SNOMED-CT,83128009,Oliguria,132418
+878,878,Question,Objective Narrative,SAME-AS,LOINC,61149-1,Objective narrative,167955
+879,879,Question,Subjective Narrative,SAME-AS,LOINC,61150-9,Subjective narrative,167954
+880,880,Diagnosis,Orbital edema (disorder),SAME-AS,SNOMED-CT,441796004,Orbital Oedema,131724
+881,881,Diagnosis,Pain in eye (finding),SAME-AS,SNOMED-CT,41652007,Pain in Eye,131040
+882,882,Diagnosis,Pain in pelvis (finding),SAME-AS,SNOMED-CT,30473006,Pain in pelvis,131034
+883,883,Diagnosis,Pain in penis (finding),SAME-AS,SNOMED-CT,285375003,Pain in penis,131033
+884,884,Diagnosis,Pain in scrotum (finding),SAME-AS,SNOMED-CT,20502007,Pain in Scrotum,131032
+885,885,Diagnosis,Pain in testicle (finding),SAME-AS,SNOMED-CT,63901009,Pain in Testicle,131030
+886,886,Diagnosis,Pain in throat (finding),SAME-AS,SNOMED-CT,162397003,Throat pain,131028
+887,887,Diagnosis,Pain in urethra (finding),SAME-AS,SNOMED-CT,6561007,Pain in Urethra,131024
+888,888,Diagnosis,Pain of breast (finding),SAME-AS,SNOMED-CT,53430007,Pain of breast,131021
+889,889,Diagnosis,Painful mouth (finding),SAME-AS,SNOMED-CT,102616008,Painful Mouth,131015
+890,890,Diagnosis,Painful urging to urinate (finding),SAME-AS,SNOMED-CT,16844001,Painful Urging to Urinate,131008
+891,891,Diagnosis,Palpitations (finding),SAME-AS,SNOMED-CT,80313002,Palpitations,130987
+892,892,Question,Situation with explicit context (situation),NARROWER-THAN,SNOMED-CT,243796009,Follow-up need status,167079
+893,893,Diagnosis,Pericardial friction rub (finding),SAME-AS,SNOMED-CT,7036007,Pericardial friction rub,130560
+894,894,Question,Unprotected sexual intercourse (finding),NARROWER-THAN,SNOMED-CT,2314005,Had sex without condom,166658
+895,895,Diagnosis,Cellulitis of periorbital region (disorder),SAME-AS,SNOMED-CT,109245003,Periorbital Cellulitis,130459
+896,896,Question,Commitment to sexual relationship (observable entity),NARROWER-THAN,SNOMED-CT,228466005,Has regular sex partner,166505
+898,898,Diagnosis,Pitting edema (finding),SAME-AS,SNOMED-CT,284521000,Pitting Edema,130166
+899,899,Finding,Date of last normal period (observable entity),SAME-AS,SNOMED-CT,248993009,Date of last normal menstrual period,166079
+901,901,Finding,Patient condition resolved (finding),SAME-AS,SNOMED-CT,370996005,Patient condition resolved,165870
+902,902,Finding,History of clinical finding in subject (situation),NARROWER-THAN,SNOMED-CT,417662000,History of recent travel in past 14 days,165656
+903,903,Diagnosis,Polyuria (finding),SAME-AS,SNOMED-CT,28442001,Polyuria,129510
+904,904,Diagnosis,Chronic obstructive pulmonary disease (disorder),SAME-AS,SNOMED-CT,13645005,Chronic obstructive pulmonary disease,1295
+905,905,Finding,Increased skin temperature (finding),SAME-AS,SNOMED-CT,17038008,Increased skin temperature,165282
+906,906,Misc Order,Counseling about alcohol consumption (procedure),SAME-AS,SNOMED-CT,413473000,Alcohol counseling,1288
+907,907,Medical supply,"Female condom, device (physical object)",SAME-AS,SNOMED-CT,442288006,Female condom,164814
+908,908,Medical supply,"Male condom, device (physical object)",SAME-AS,SNOMED-CT,442450006,Male condom,164813
+909,909,Diagnosis,Problem (finding),SAME-AS,SNOMED-CT,55607006,Problem,128461
+910,910,Finding,Diagnosis (observable entity),NARROWER-THAN,SNOMED-CT,439401001,org.openmrs.module.emrapi:Coded Diagnosis,1284
+911,911,Misc,Some (qualifier value),SAME-AS,SNOMED-CT,27768009,Some,164493
+912,912,Finding,Inhaling and exhaling (observable entity),NARROWER-THAN,SNOMED-CT,258162000,Breathing poorly (<30 breaths / min),164440
+914,914,Anatomy,Structure of eye proper (body structure),SAME-AS,SNOMED-CT,81745001,Eye,164386
+915,915,Question,Patient referral (procedure),NARROWER-THAN,SNOMED-CT,3457005,Reason for referral (text),164359
+917,917,Misc,Patient visit for (contextual qualifier) (qualifier value),NARROWER-THAN,SNOMED-CT,103324002,New visit,164180
+918,918,Misc,Ambulatory surgery center (environment),SAME-AS,SNOMED-CT,405607001,Surgical Outpatient Department,164164
+919,919,Diagnosis,Red eye (finding),SAME-AS,SNOMED-CT,703630003,Red eye,127777
+920,920,Finding,Swelling (morphologic abnormality),SAME-AS,SNOMED-CT,442672001,Swelling,163894
+921,921,Finding,On examination - quadriceps muscle wasting (finding),SAME-AS,SNOMED-CT,275851002,Quadriceps muscle wasting,163851
+922,922,Diagnosis,Renal retinopathy (disorder),SAME-AS,SNOMED-CT,193357001,Renal Retinopathy,127679
+923,923,Diagnosis,Respiratory crackles (finding),SAME-AS,SNOMED-CT,48409008,Respiratory crackles,127640
+924,924,Diagnosis,Respiratory distress (finding),SAME-AS,SNOMED-CT,271825005,Respiratory Distress,127639
+925,925,Test,HIV 1+2 IgG Ab [Presence] in Serum or Plasma by Rapid immunoassay,SAME-AS,LOINC,73905-2,Rapid test for HIV,163722
+926,926,Diagnosis,Retention of urine (disorder),SAME-AS,SNOMED-CT,267064002,Retention of urine,127579
+927,927,Misc,Hospital (environment),NARROWER-THAN,SNOMED-CT,22232009,Health center hospital,1275
+928,928,Procedure,Referral for therapeutic abortion (procedure),SAME-AS,SNOMED-CT,396158009,Referral for pregnancy termination,1636
+929,929,Question,Referral placed (situation),SAME-AS,SNOMED-CT,439980006,Referrals ordered,1272
+931,931,Finding,Unknown if ever smoked,BROADER-THAN,LOINC,LA18980-5,Unknown if ever smoked,163200
+932,932,Finding,Smokes tobacco daily (finding),SAME-AS,SNOMED-CT,449868002,Current every day smoker,163199
+933,933,Test,Never smoker,BROADER-THAN,LOINC,LA18978-9,Never smoker,163198
+937,937,Question,Time frame (qualifier value),SAME-AS,SNOMED-CT,7389001,Time frame,163191
+938,938,Misc,Order values (qualifier value),NARROWER-THAN,SNOMED-CT,272126005,Quartenary,163139
+939,939,Finding,On examination - neurological (finding),NARROWER-THAN,SNOMED-CT,271888005,Nervous system examination (text),163109
+940,940,Finding,Numbness and tingling sensation of skin (finding),SAME-AS,SNOMED-CT,101000119102,Numbness and tingling of skin,163074
+941,941,Misc,Remission phase (qualifier value),SAME-AS,SNOMED-CT,277022003,In remission,163051
+942,942,Question,Locomotor examination finding (observable entity),NARROWER-THAN,SNOMED-CT,271916000,Musculoskeletal examination (text),163048
+943,943,Question,Urogenital finding (finding),NARROWER-THAN,SNOMED-CT,118238000,Urogenital examination (text),163047
+944,944,Finding,Cardiovascular examination finding (observable entity),NARROWER-THAN,SNOMED-CT,271910006,Cardiac examination (text),163046
+945,945,Finding,Physical findings of Ears and Nose and Mouth and Throat Narrative,SAME-AS,LOINC,11393-6,HEENT examination (text),163045
+946,946,Finding,General examination finding (observable entity),NARROWER-THAN,SNOMED-CT,271907004,General examination (text),163042
+947,947,Question,Clinical history/examination observable (observable entity),NARROWER-THAN,SNOMED-CT,363788007,Outcome of adverse event,162875
+948,948,Misc,Sequelae of disorders (disorder),NARROWER-THAN,SNOMED-CT,302049001,Problem resolved with sequela,162873
+949,949,Misc,Active problem (qualifier value),SAME-AS,SNOMED-CT,394774009,Active problem,162872
+950,950,Question,Observable entity (observable entity),NARROWER-THAN,SNOMED-CT,363787002,Adverse event reported,162871
+951,951,Finding,Adverse reaction (disorder),NARROWER-THAN,SNOMED-CT,281647001,Serious adverse event,162867
+952,952,Misc,Moderate to severe (qualifier value),SAME-AS,SNOMED-CT,371924009,Moderate to severe,162822
+953,953,Misc,Mild to moderate (qualifier value),SAME-AS,SNOMED-CT,371923003,Mild to moderate,162821
+954,954,Finding,Symptom severity level (observable entity),NARROWER-THAN,SNOMED-CT,405162009,Problem severity,162820
+955,955,Question,Physical examination procedure (procedure),NARROWER-THAN,SNOMED-CT,5880005,Physical exam outcome,162737
+956,956,Finding,Bleeding (finding),NARROWER-THAN,SNOMED-CT,131148009,Unexplained bleeding,162628
+957,957,Symptom,Fatigue - symptom (finding),NARROWER-THAN,SNOMED-CT,272060000,Intense fatigue and general weakness,162626
+958,958,Question,Travel (event),NARROWER-THAN,SNOMED-CT,420008001,Recently traveled outside of home town,162619
+959,959,Diagnosis,Pain of shoulder region (finding),SAME-AS,SNOMED-CT,45326000,Shoulder Pain,126535
+960,960,Diagnosis,Sinusitis (disorder),SAME-AS,SNOMED-CT,36971009,Sinusitis,126423
+961,961,Diagnosis,Snoring (finding),SAME-AS,SNOMED-CT,72863001,Snoring,126318
+962,962,Finding,Contraception status not decided (finding),SAME-AS,SNOMED-CT,408822009,Contraception method undecided,162332
+965,965,Question,Social history Narrative,BROADER-THAN,LOINC,29762-2,Patient-generated history: Social history section text,162143
+967,967,Misc Order,Drug therapy discontinued (situation),NARROWER-THAN,SNOMED-CT,274512008,Stop all,1260
+971,971,Misc Order,Previous treatment continue (situation),SAME-AS,SNOMED-CT,266714009,Continue regimen,1257
+972,972,Procedure,Infant feeding education (procedure),SAME-AS,SNOMED-CT,171053005,Counseling about infant feeding practices,161651
+973,973,Procedure,Feeding patient (regime/therapy),SAME-AS,SNOMED-CT,75118006,Therapeutic feeding,161650
+974,974,Procedure,Nutritional support (regime/therapy),NARROWER-THAN,SNOMED-CT,278906000,Micronutrient support,161649
+975,975,Procedure,Nutritional support (regime/therapy),NARROWER-THAN,SNOMED-CT,278906000,Food support,161648
+976,976,Diagnosis,Diagnosis (observable entity),NARROWER-THAN,SNOMED-CT,439401001,"Diagnosis or problem, non-coded",161602
+977,977,Misc Order,Recommendation to start drug treatment (procedure),NARROWER-THAN,SNOMED-CT,306807008,Start drugs,1256
+979,979,Misc,Private home-based care (environment),SAME-AS,SNOMED-CT,66280005,Private home-based care,161359
+980,980,Diagnosis,Swallowing painful (finding),SAME-AS,SNOMED-CT,30233002,Swallowing painful,125225
+981,981,Diagnosis,Swelling of inguinal region (finding),SAME-AS,SNOMED-CT,274743004,Swelling of Inguinal Region,125207
+982,982,Diagnosis,Swelling of skin (finding),SAME-AS,SNOMED-CT,300886007,Swelling of Skin,125201
+983,983,Diagnosis,Swelling of bilateral feet (finding),SAME-AS,SNOMED-CT,762917000,Swollen Feet,125198
+984,984,Misc Order,Patient referral (procedure),NARROWER-THAN,SNOMED-CT,3457005,Referral for opportunistic infection treatment,1611
+985,985,Diagnosis,Tachypnea (finding),SAME-AS,SNOMED-CT,271823003,Tachypnea,125061
+986,986,Misc Order,Patient referral (procedure),NARROWER-THAN,SNOMED-CT,3457005,Referral for antiretroviral therapy,1610
+987,987,Finding,Physical findings of Skin Narrative,BROADER-THAN,LOINC,10206-1,Skin examination (text),160981
+988,988,Finding,Lymph node observable (observable entity),NARROWER-THAN,SNOMED-CT,364108009,Abdominal lymph node examination (text),160948
+989,989,Finding,Physical findings of Abdomen Narrative,BROADER-THAN,LOINC,10191-5,Abdominal examination (text),160947
+990,990,Diagnosis,Mass of testicle (finding),SAME-AS,SNOMED-CT,87860000,Testicular Mass,124965
+991,991,Misc Order,Referral to diagnostic radiographer (procedure),NARROWER-THAN,SNOMED-CT,306365005,Referral for imaging study,1609
+993,993,Question,Date of event (observable entity),SAME-AS,SNOMED-CT,439771001,Date of event,160753
+994,994,Finding,Physical findings of Chest Narrative,BROADER-THAN,LOINC,11391-0,Chest examination (text),160689
+995,995,Anatomy,Inguinal lymph node group (body structure),SAME-AS,SNOMED-CT,245312007,Inguinal lymph node(s),160680
+996,996,Question,Family planning observable (observable entity),NARROWER-THAN,SNOMED-CT,423925001,Family planning status,160653
+997,997,Finding,Family planning observable (observable entity),NARROWER-THAN,SNOMED-CT,423925001,Patient not using family planning,160652
+998,998,Question,Adverse reaction caused by drug (disorder),NARROWER-THAN,SNOMED-CT,62014003,Reaction (to an allergen),160646
+999,999,Question,Family history with explicit context (situation),NARROWER-THAN,SNOMED-CT,57177007,Family history comment,160618
+1000,1000,Anatomy,Axillary lymph node level (tumor staging),SAME-AS,SNOMED-CT,258312001,Axillary lymph node location,160613
+1001,1001,Anatomy,Level III (tumor staging),SAME-AS,SNOMED-CT,258315004,Axillary lymph node(s) level 3,160610
+1002,1002,Anatomy,Level II (tumor staging),SAME-AS,SNOMED-CT,258314000,Axillary lymph node(s) level 2,160609
+1003,1003,Anatomy,Level I (tumor staging),SAME-AS,SNOMED-CT,258313006,Axillary lymph node(s) level 1,160608
+1004,1004,Finding,Currently not sexually active (finding),SAME-AS,SNOMED-CT,162171002,Currently not sexually active,160573
+1005,1005,Finding,Finding related to pregnancy (finding),NARROWER-THAN,SNOMED-CT,118185001,Patient wishes to get pregnant,160571
+1006,1006,MedSet,Emergency contraception (finding),NARROWER-THAN,SNOMED-CT,275813002,Emergency contraceptive pills,160570
+1007.1,1007,Finding,Human immunodeficiency virus infection (disorder),NARROWER-THAN,SNOMED-CT,86406008,Date of HIV diagnosis,160554
+1007.2,1007,Finding,Date of diagnosis (observable entity),NARROWER-THAN,SNOMED-CT,432213005,Date of HIV diagnosis,160554
+1008,1008,Misc,Sexually transmitted disease clinic (environment),SAME-AS,SNOMED-CT,25681007,Sexually transmitted infection program/clinic,160546
+1009,1009,Finding,Chief complaint Narrative - Reported,BROADER-THAN,LOINC,10154-3,Chief complaint (text),160531
+1017,1017,Misc,Follow-up visit (procedure),NARROWER-THAN,SNOMED-CT,185389009,"Follow-up visit, regular",160523
+1018,1018,Misc,Emergency department patient visit (procedure),SAME-AS,SNOMED-CT,4525004,Emergency Visit,160522
+1020,1020,Diagnosis,Toothache (finding),SAME-AS,SNOMED-CT,27355003,Toothache,124601
+1021,1021,Misc,Health clinic managed by voluntary or private agents (environment),SAME-AS,SNOMED-CT,394794000,Private health care clinic/facility,160479
+1022,1022,Misc,Obstetrics and gynecology department (environment),SAME-AS,SNOMED-CT,309942007,Obstetrics and gynecology department,160456
+1023,1023,Misc,Prenatal visit (regime/therapy),SAME-AS,SNOMED-CT,424619006,Antenatal Visit,160446
+1024,1024,Diagnosis,Toxic hepatitis (disorder),SAME-AS,SNOMED-CT,197352008,Toxic hepatitis,124443
+1025,1025,Misc,Final diagnosis (discharge) (contextual qualifier) (qualifier value),SAME-AS,SNOMED-CT,89100005,Final diagnosis,160250
+1026,1026,Misc,Preliminary diagnosis (contextual qualifier) (qualifier value),SAME-AS,SNOMED-CT,148006,Provisional diagnosis,160249
+1027,1027,Question,Substance use behavior (observable entity),NARROWER-THAN,SNOMED-CT,1187057000,Substance use,160246
+1028,1028,Question,History of clinical finding in subject (situation),NARROWER-THAN,SNOMED-CT,417662000,Past medical history added (text),160221
+1029,1029,Diagnosis,Urinary symptoms (finding),SAME-AS,SNOMED-CT,249274008,Urinary symptoms,160208
+1030,1030,Misc,Relapse phase (qualifier value),SAME-AS,SNOMED-CT,263855007,Relapse,160033
+1031,1031,Diagnosis,Tropical phagedenic ulcer (disorder),SAME-AS,SNOMED-CT,32940002,Tropical Ulcer,124087
+1032,1032,Question,Date of diagnosis (observable entity),SAME-AS,SNOMED-CT,432213005,Diagnosis date,159948
+1033,1033,ConvSet,Qualifier for type of diagnosis (qualifier value),NARROWER-THAN,SNOMED-CT,106229004,Visit Diagnoses,159947
+1035,1035,Misc,Tertiary (qualifier value),SAME-AS,SNOMED-CT,84965000,Tertiary,159945
+1036,1036,Misc,Secondary (qualifier value),SAME-AS,SNOMED-CT,2603003,Secondary,159944
+1037,1037,Misc,Principal (qualifier value),SAME-AS,SNOMED-CT,63161005,Primary,159943
+1040,1040,Finding,Total time smoked (observable entity),SAME-AS,SNOMED-CT,228487000,duration of smoking (in years),159931
+1041,1041,Finding,Postnatal visit (regime/therapy),SAME-AS,SNOMED-CT,169762003,Postnatal visit number,159893
+1042,1042,Procedure,Hysterectomy (procedure),SAME-AS,SNOMED-CT,236886002,Hysterectomy,159837
+1043,1043,Diagnosis,Harmful pattern of use of psychoactive substance (disorder),NARROWER-THAN,SNOMED-CT,91388009,khat abuse,159779
+1044,1044,Misc,Medical records review (procedure),SAME-AS,SNOMED-CT,312853008,Medical record observations,1238
+1045,1045,ConvSet,Review of systems Narrative - Reported,BROADER-THAN,LOINC,10187-3,Review of systems,159615
+1046,1046,Question,Review of systems (procedure),NARROWER-THAN,SNOMED-CT,415300000,"Review of systems, obstetrical/pregnancy",159614
+1048,1048,Misc,Lavatory (physical object),NARROWER-THAN,SNOMED-CT,225735004,Pit latrine without slab,159580
+1049,1049,Misc,Lavatory (physical object),NARROWER-THAN,SNOMED-CT,225735004,Pit latrine with slab,159579
+1050,1050,Misc,Lavatory (physical object),NARROWER-THAN,SNOMED-CT,225735004,Ventilated improved pit latrine with slab,159578
+1051,1051,Misc,Lavatory (physical object),NARROWER-THAN,SNOMED-CT,225735004,Flush toilet,159577
+1052,1052,Question,Human immunodeficiency virus status (observable entity),SAME-AS,SNOMED-CT,278977008,HIV Status,159576
+1053.1,1053,Diagnosis,Ringing in ear (finding),SAME-AS,SNOMED-CT,162352007,Tinnitus,123588
+1053.2,1053,Diagnosis,Tinnitus (finding),SAME-AS,SNOMED-CT,60862001,Tinnitus,123588
+1054,1054,Misc,Currently not sexually active (finding),NARROWER-THAN,SNOMED-CT,162171002,Sexual abstinence,159524
+1055,1055,Diagnosis,Urethral discharge (finding),SAME-AS,SNOMED-CT,9957009,Urethrorrhoea,123529
+1056,1056,Finding,In the past (qualifier value),SAME-AS,SNOMED-CT,410513005,In the past,159452
+1057,1057,Misc,Current (qualifier value),SAME-AS,SNOMED-CT,15240007,Currently,159450
+1058,1058,Question,Finding relating to alcohol drinking behavior (finding),NARROWER-THAN,SNOMED-CT,228273003,Alcohol use status,159449
+1059,1059,Finding,Qualifier for certainty of diagnosis (qualifier value),SAME-AS,SNOMED-CT,106230009,Diagnosis certainty,159394
+1060,1060,Misc,Likely outcome (qualifier value),SAME-AS,SNOMED-CT,410596003,Presumed diagnosis,159393
+1061,1061,Misc,Disorder confirmed (situation),SAME-AS,SNOMED-CT,395098000,Confirmed diagnosis,159392
+1062,1062,Diagnosis,Vaginal discharge (finding),SAME-AS,SNOMED-CT,271939006,Vaginal discharge,123396
+1063,1063,Diagnosis,Vaginal pain (finding),SAME-AS,SNOMED-CT,38343000,Vaginal Pain,123385
+1064,1064,Diagnosis,"Viral hepatitis, type A (disorder)",SAME-AS,SNOMED-CT,40468003,Hepatitis A,123107
+1065,1065,Diagnosis,Visual disturbance (disorder),SAME-AS,SNOMED-CT,63102001,Visual disturbance,123074
+1066,1066,Diagnosis,Dead (finding),SAME-AS,SNOMED-CT,419099009,Deceased,159
+1067,1067,Diagnosis,Visual field scotoma (finding),SAME-AS,SNOMED-CT,23388006,Visual Field Scotoma,123070
+1068,1068,Misc,Hospital (environment),SAME-AS,SNOMED-CT,22232009,Hospital,1589
+1069,1069,Diagnosis,Vomiting (disorder),SAME-AS,SNOMED-CT,422400008,Vomiting,122983
+1070,1070,Diagnosis,Sore throat (finding),SAME-AS,SNOMED-CT,267102003,Sore throat,158843
+1071,1071,Misc,Rural health center (environment),NARROWER-THAN,SNOMED-CT,77931003,Health clinic/post,1588
+1072,1072,Diagnosis,Wheeze - rhonchi (finding),SAME-AS,SNOMED-CT,24612001,Wheeze - rhonchi,122864
+1073,1073,Diagnosis,Xanthelasma (disorder),SAME-AS,SNOMED-CT,238951005,Xanthelasma of Eyelid,122813
+1074,1074,Diagnosis,Dyspnea (finding),SAME-AS,SNOMED-CT,267036007,Dyspnea,122496
+1075,1075,Diagnosis,Harmful pattern of use of alcohol (disorder),NARROWER-THAN,SNOMED-CT,15167005,Alcohol abuse,121725
+1076,1076,Diagnosis,Amnesia (finding),SAME-AS,SNOMED-CT,48167000,Memory Loss,121657
+1077,1077,Diagnosis,Anxiety (finding),SAME-AS,SNOMED-CT,48694002,Anxiety,121543
+1078,1078,Diagnosis,Harmful pattern of use of barbiturate (disorder),NARROWER-THAN,SNOMED-CT,231462006,Barbiturate abuse,121249
+1079,1079,Diagnosis,Pain of urinary bladder (finding),SAME-AS,SNOMED-CT,15803009,Bladder Pain,121107
+1080,1080,Diagnosis,Breathing painful (finding),SAME-AS,SNOMED-CT,75483001,Painful Breathing,121016
+1081,1081,Diagnosis,Cataract (disorder),SAME-AS,SNOMED-CT,193570009,Cataract,120860
+1082,1082,Diagnosis,Muscle weakness of limb (finding),NARROWER-THAN,SNOMED-CT,713514005,limb weakness,157498
+1083,1083,Diagnosis,Chest pain (finding),SAME-AS,SNOMED-CT,29857009,Chest pain,120749
+1084,1084,Diagnosis,Chronic hepatitis (disorder),SAME-AS,SNOMED-CT,76783007,Chronic Hepatitis,120637
+1085,1085,Finding,Clouded consciousness (finding),SAME-AS,SNOMED-CT,40917007,Confusion,120345
+1086,1086,Diagnosis,Conjunctivitis (disorder),SAME-AS,SNOMED-CT,9826008,Conjunctivitis,119905
+1087,1087,Diagnosis,Convalescence (finding),SAME-AS,SNOMED-CT,105499002,Convalescence,119844
+1088,1088,Diagnosis,Delirium (disorder),SAME-AS,SNOMED-CT,2776000,Delirium,119574
+1089,1089,Diagnosis,Dental caries (disorder),SAME-AS,SNOMED-CT,80967001,Dental caries,119558
+1090,1090,Diagnosis,Depressive disorder (disorder),NARROWER-THAN,SNOMED-CT,35489007,Depression,119537
+1091,1091,Diagnosis,Grunting baby (finding),SAME-AS,SNOMED-CT,240310001,grunting baby,156534
+1092.1,1092,Diagnosis,Ketoacidosis due to diabetes mellitus (disorder),NARROWER-THAN,SNOMED-CT,420422005,Diabetic ketoacidosis,119441
+1092.2,1092,Diagnosis,Diabetes mellitus (disorder),NARROWER-THAN,SNOMED-CT,73211009,Diabetic ketoacidosis,119441
+1093,1093,Diagnosis,Disorder of eyelid (disorder),SAME-AS,SNOMED-CT,60113004,Disorder of Eyelid,119216
+1094,1094,Diagnosis,Muscle weakness (finding),SAME-AS,SNOMED-CT,26544005,Muscle Stiffiness,115476
+1095,1095,Question,Review of systems (procedure),NARROWER-THAN,SNOMED-CT,415300000,"Review of systems, developmental",1189
+1096,1096,Diagnosis,Disturbed sensory perception (finding),NARROWER-THAN,SNOMED-CT,130985008,Alterations of Sensations,118872
+1097.1,1097,Diagnosis,Difficulty swallowing (finding),SAME-AS,SNOMED-CT,288939007,Dysphagia,118789
+1097.2,1097,Diagnosis,Dysphagia (disorder),SAME-AS,SNOMED-CT,40739000,Dysphagia,118789
+1098,1098,Diagnosis,Dysuria (finding),NARROWER-THAN,SNOMED-CT,49650001,Voiding Pain,118772
+1099,1099,Diagnosis,Dysuria (finding),SAME-AS,SNOMED-CT,49650001,Dysuria,118771
+1100,1100,Diagnosis,Erythema (finding),SAME-AS,SNOMED-CT,247441003,Erythema,118536
+1101,1101,Diagnosis,Deformity (finding),SAME-AS,SNOMED-CT,417893002,deformity,155871
+1102,1102,Diagnosis,Fetal distress (finding),SAME-AS,SNOMED-CT,130955003,Fetal Distress,118256
+1103,1103,Diagnosis,Fetal growth abnormality (disorder),NARROWER-THAN,SNOMED-CT,276604007,Poor Fetal Growth,118246
+1104,1104,Diagnosis,Genital herpes simplex (disorder),SAME-AS,SNOMED-CT,33839006,Genital herpes,117829
+1105,1105,Diagnosis,Hearing loss (disorder),SAME-AS,SNOMED-CT,15188001,Hearing Loss,117698
+1106,1106,Misc,Not applicable (qualifier value),SAME-AS,SNOMED-CT,385432009,Not applicable,1175
+1107,1107,Diagnosis,Harmful pattern of use of volatile inhalant (disorder),NARROWER-THAN,SNOMED-CT,70340006,inhalant abuse,116945
+1108,1108,Misc,Counseling (procedure),NARROWER-THAN,SNOMED-CT,409063005,Disclosure counseling,1167
+1109,1109,Diagnosis,Pain of multiple joints (finding),SAME-AS,SNOMED-CT,35678005,Pain in Joints,116557
+1110,1110,Diagnosis,Joint stiffness (finding),NARROWER-THAN,SNOMED-CT,84445001,Stiffness of joint,116554
+1112,1112,Diagnosis,Lethargy (finding),SAME-AS,SNOMED-CT,214264003,Lethargy,116334
+1113,1113,Diagnosis,Rectal discharge (finding),SAME-AS,SNOMED-CT,278851001,rectal discharge,154311
+1114,1114,Diagnosis,Extensor plantar response finding (finding),NARROWER-THAN,SNOMED-CT,366575004,Babinski Sign,153009
+1115,1115,Diagnosis,Thickening of tendon sheath (finding),SAME-AS,SNOMED-CT,298270005,Thickening of Tendon Sheath,152959
+1116,1116,Diagnosis,Muscle weakness (finding),SAME-AS,SNOMED-CT,26544005,Muscle Weakness,115476
+1117,1117,Diagnosis,Nasal discharge (finding),SAME-AS,SNOMED-CT,64531003,Rhinorrhoea,115403
+1118,1118,Diagnosis,Former smoker,SAME-AS,LOINC,LA15920-4,Former smoker,152807
+1119,1119,Diagnosis,Smoker (finding),SAME-AS,SNOMED-CT,77176002,Smoker,152722
+1120.1,1120,Diagnosis,Narcotic drug user (finding),NARROWER-THAN,SNOMED-CT,70545002,Narcotic abuse,114751
+1120.2,1120,Diagnosis,Harmful pattern of use of psychoactive substance (disorder),NARROWER-THAN,SNOMED-CT,91388009,Narcotic abuse,114751
+1121,1121,Diagnosis,Harmful pattern of use of opioid (disorder),NARROWER-THAN,SNOMED-CT,5602001,Opioid abuse,114750
+1122.1,1122,Diagnosis,Swelling (finding),NARROWER-THAN,SNOMED-CT,65124004,"Localized Swelling, Mass and Lump, Multiple Sites",152228
+1122.2,1122,Diagnosis,Multiple lumps (finding),NARROWER-THAN,SNOMED-CT,248528002,"Localized Swelling, Mass and Lump, Multiple Sites",152228
+1122.3,1122,Diagnosis,Mass of body region (finding),NARROWER-THAN,SNOMED-CT,300862005,"Localized Swelling, Mass and Lump, Multiple Sites",152228
+1123,1123,Symptom/Finding,History of pneumonia (situation),SAME-AS,SNOMED-CT,161525004,History of pneumonia,1145
+1124,1124,Diagnosis,Pain (finding),SAME-AS,SNOMED-CT,22253000,Pain,114403
+1125,1125,Symptom,Abdominal pain (finding),SAME-AS,SNOMED-CT,21522001,Abdominal pain,151
+1126,1126,Finding,Abdominal distension (finding),SAME-AS,SNOMED-CT,41931001,Abdominal distension,150915
+1127.1,1127,Diagnosis,Has drooping eyelids (finding),SAME-AS,SNOMED-CT,267090004,Ptosis of Eyelid,113516
+1127.2,1127,Diagnosis,Ptosis of eyelid (disorder),SAME-AS,SNOMED-CT,11934000,Ptosis of Eyelid,113516
+1128,1128,Diagnosis,Abnormal posture (finding),SAME-AS,SNOMED-CT,43029002,Abnormal Posture,150823
+1129,1129,Diagnosis,Abnormal reflex (finding),SAME-AS,SNOMED-CT,46670006,Abnormal Reflex,150817
+1130.1,1130,Diagnosis,Reduced fetal movement (finding),NARROWER-THAN,SNOMED-CT,276369006,Decreased fetal movements,113377
+1130.2,1130,Diagnosis,Fetal condition affecting obstetrical care of mother (disorder),NARROWER-THAN,SNOMED-CT,106009009,Decreased fetal movements,113377
+1131.1,1131,Diagnosis,Disorder of eye proper (disorder),NARROWER-THAN,SNOMED-CT,371405004,Foreign body in eye,113292
+1131.2,1131,Diagnosis,Foreign body in head (disorder),NARROWER-THAN,SNOMED-CT,386082004,Foreign body in eye,113292
+1132,1132,Diagnosis,Mass of scrotum (finding),SAME-AS,SNOMED-CT,53929009,Scrotal Mass,113122
+1133,1133,Diagnosis,Abscess of skin and/or subcutaneous tissue (disorder),SAME-AS,SNOMED-CT,31928004,Abscess of skin and subcutaneous tissue,150555
+1134,1134,Finding,Locomotor examination finding (observable entity),SAME-AS,SNOMED-CT,271916000,Musculoskeletal exam findings,1128
+1135,1135,Diagnosis,Stiff neck (finding),SAME-AS,SNOMED-CT,161882006,Stiffness of neck,112721
+1136,1136,Diagnosis,Harmful pattern of substance use (disorder),NARROWER-THAN,SNOMED-CT,1306692000,Substance abuse,112603
+1137,1137,Finding,On examination - sign - genital area (finding),NARROWER-THAN,SNOMED-CT,164637006,Urogenital exam findings,1126
+1138,1138,Finding,Abdominal examination finding (observable entity),SAME-AS,SNOMED-CT,271911005,Abdominal exam findings,1125
+1139,1139,Finding,Cardiovascular examination finding (observable entity),SAME-AS,SNOMED-CT,271910006,Cardiac exam findings,1124
+1140,1140,Diagnosis,Acute alcoholic liver disease (disorder),SAME-AS,SNOMED-CT,9953008,Acute Alcoholic Liver Disease,149923
+1141,1141,Finding,On examination - chest finding (finding),SAME-AS,SNOMED-CT,272016000,Chest exam findings,1123
+1142,1142,Finding,Physical findings of Ears and Nose and Mouth and Throat,SAME-AS,LOINC,11424-9,HEENT exam findings,1122
+1143,1143,Finding,On examination - general skin examination (finding),SAME-AS,SNOMED-CT,164320006,Skin exam findings,1120
+1144,1144,Diagnosis,Acute hepatitis (disorder),SAME-AS,SNOMED-CT,37871000,Acute Hepatitis,149745
+1145,1145,Diagnosis,Urinary tract infectious disease (disorder),SAME-AS,SNOMED-CT,68566005,Urinary tract infection,111633
+1146,1146,Diagnosis,Vertigo (finding),SAME-AS,SNOMED-CT,399153001,Vertigo,111525
+1147,1147,Diagnosis,Abnormal pupillary function (disorder),SAME-AS,SNOMED-CT,72124005,Abnormal Pupillary Function,111154
+1149,1149,Diagnosis,Acquired immune deficiency syndrome (disorder),SAME-AS,SNOMED-CT,62479008,Acquired immunodeficiency syndrome,149197
+1150,1150,Diagnosis,Alcoholic hepatitis (disorder),SAME-AS,SNOMED-CT,235875008,Alcoholic Hepatitis,149153
+1151,1151,Diagnosis,Amenorrhea (finding),SAME-AS,SNOMED-CT,14302001,Amenorrhea,148989
+1152,1152,Diagnosis,Anal pain (finding),SAME-AS,SNOMED-CT,68653001,Anal pain,148901
+1153,1153,Procedure,Vasectomy (procedure),SAME-AS,SNOMED-CT,22523008,Vasectomy,1489
+1154,1154,Diagnosis,Nasal discharge (finding),NARROWER-THAN,SNOMED-CT,64531003,Post-nasal discharge,110099
+1156,1156,Question,Review of systems (procedure),NARROWER-THAN,SNOMED-CT,415300000,"Review of systems, central nervous system",1082
+1157,1157,Question,Review of systems (procedure),NARROWER-THAN,SNOMED-CT,415300000,"Review of systems, musculoskeletal",1081
+1158,1158,Question,Review of systems (procedure),NARROWER-THAN,SNOMED-CT,415300000,"Review of systems, genitourinary",1080
+1159,1159,Question,Review of systems (procedure),NARROWER-THAN,SNOMED-CT,415300000,"Review of systems, gastrointestinal",1078
+1160,1160,Question,Review of systems (procedure),NARROWER-THAN,SNOMED-CT,415300000,"Review of systems, cardiopulmonary",1071
+1161,1161,Question,Review of systems (procedure),NARROWER-THAN,SNOMED-CT,415300000,"Review of systems, HEENT",1070
+1162,1162,Question,Review of systems (procedure),SAME-AS,SNOMED-CT,415300000,"Review of systems, general",1069
+1163,1163,Diagnosis,Common cold (disorder),SAME-AS,SNOMED-CT,82272006,Acute Coryza,106
+1164.1,1164,Diagnosis,Stops breathing (finding),SAME-AS,SNOMED-CT,248583008,Apnea,148517
+1164.2,1164,Diagnosis,Apnea (finding),SAME-AS,SNOMED-CT,1023001,Apnea,148517
+1165,1165,Diagnosis,Backache (finding),SAME-AS,SNOMED-CT,161891005,Back pain,148035
+1166,1166,Diagnosis,Bleeding (finding),SAME-AS,SNOMED-CT,131148009,Bleeding,147241
+1167,1167,Diagnosis,Bleeding from vagina (finding),SAME-AS,SNOMED-CT,289530006,Vaginal bleeding,147232
+1168,1168,Diagnosis,Bleeding gums (finding),SAME-AS,SNOMED-CT,86276007,Bleeding gums,147230
+1169,1169,Procedure,Ligation of fallopian tube (procedure),SAME-AS,SNOMED-CT,77543007,Tubal ligation procedure,1472
+1170,1170,Diagnosis,Blurring of visual image (finding),SAME-AS,SNOMED-CT,111516008,Blurred vision,147104
+1171,1171,Diagnosis,Bronchial breathing (finding),SAME-AS,SNOMED-CT,79451004,Bronchial Breathing,146893
+1172,1172,Diagnosis,Burning pain (finding),SAME-AS,SNOMED-CT,36349006,Burning Pain,146625
+1173,1173,Diagnosis,Harmful pattern of use of cannabis (disorder),NARROWER-THAN,SNOMED-CT,37344009,Cannabis Abuse,146504
+1174,1174,Diagnosis,Cellulitis of head (disorder),SAME-AS,SNOMED-CT,128277003,Cellulitis of Head,146003
+1175,1175,Symptom/Finding,Feeling irritable (finding),SAME-AS,SNOMED-CT,55929007,Irritability,6023
+1176,1176,Symptom/Finding,Weight gain (finding),SAME-AS,SNOMED-CT,8943002,Weight gain,5544
+1177,1177,Diagnosis,Muscle pain (finding),SAME-AS,SNOMED-CT,68962001,Muscle pain,133632
+1178,1178,Symptom/Finding,Blood in urine (finding),SAME-AS,SNOMED-CT,34436003,Hematuria,840
+1179,1179,Finding,Body mass index (BMI) [Ratio],NARROWER-THAN,LOINC,39156-5,Body mass index,1342
+1180,1180,Finding,Cavitation of lung (disorder),SAME-AS,SNOMED-CT,301863008,Cavitary lesion,6052
+1181,1181,Finding,Abnormal findings on diagnostic imaging of lung (finding),NARROWER-THAN,SNOMED-CT,274533004,Diffuse non-miliary changes,1137
+1182,1182,Finding,Infiltration (morphologic abnormality),SAME-AS,SNOMED-CT,47351003,Infiltrate,6049
+1183,1183,Finding,Cardiomegaly (disorder),SAME-AS,SNOMED-CT,8186001,Evidence of cardiac enlargement,5158
+1184,1184,Procedure,Dressing of wound (procedure),SAME-AS,SNOMED-CT,182531007,Clean and dressing,441
+1185,1185,Procedure,Excision of appendix (procedure),SAME-AS,SNOMED-CT,80146002,Appendectomy,161768
+1186,1186,Radiology/Imaging Procedure,US Chest,SAME-AS,LOINC,24630-6,Ultrasound of chest,161288
+1187,1187,Procedure,Colonoscopy (procedure),SAME-AS,SNOMED-CT,73761001,Colonoscopy,161166
+1188,1188,Radiology/Imaging Procedure,CT Chest,SAME-AS,LOINC,24627-2,"CT scan, chest",161165
+1189,1189,Test,Standard electrocardiogram (procedure),SAME-AS,SNOMED-CT,164847006,12-lead electrocardiogram,161157
+1190,1190,Radiology/Imaging Procedure,XR Chest Views,SAME-AS,LOINC,30745-4,"X-ray, chest",12
+1191,1191,Diagnosis,Pleural effusion (disorder),SAME-AS,SNOMED-CT,60046008,Pleural effusion,114108
+1192,1192,Finding,Abnormal findings on diagnostic imaging of lung (finding),NARROWER-THAN,SNOMED-CT,274533004,Miliary changes,1137
+1193,1193,Procedure,Esophagogastroduodenoscopy (procedure),SAME-AS,SNOMED-CT,76009000,Esophagogastroduodenoscopy,161221
+1194,1194,Radiology/Imaging Procedure,MG Breast Views,SAME-AS,LOINC,36625-2,Mammogram,163591
+1195,1195,Procedure,Laparoscopic cholecystectomy (procedure),SAME-AS,SNOMED-CT,45595009,Laparoscopic cholecystectomy,162897
+1196,1196,Radiology/Imaging Procedure,XR Hip - bilateral 2 Views,SAME-AS,LOINC,69058-6,"X-ray of bilateral hips, 2 views",161334
+1197,1197,Radiology/Imaging Procedure,XR Hip - right 2 Views,SAME-AS,LOINC,37721-8,"X-ray of right hip, two views",161333
+1198,1198,Radiology/Imaging Procedure,XR Hip - left 2 Views,SAME-AS,LOINC,36664-1,"X-ray of left hip, two views",161332
+1200,1200,ConvSet,Administration of vaccine to produce active immunity (procedure),SAME-AS,SNOMED-CT,33879002,Immunizations,984
+1201,1201,Procedure,Administration of vaccine product containing only live attenuated Mycobacterium bovis antigen (procedure),SAME-AS,SNOMED-CT,42284007,Bacillus Calmette‚ÄìGu√©rin vaccine,886
+1202,1202,Drug,Vitamin A,SAME-AS,RxNORM,11246,Vitamin A,86339
+1203,1203,Drug,Administration of vaccine product containing only Streptococcus pneumoniae antigen (procedure),SAME-AS,SNOMED-CT,12866006,Pentavalent pneumovax,1423
+1204,1204,Drug,"Rotavirus vaccine, live",SAME-AS,RxNORM,253199,"Rotavirus vaccine, live",83531
+1205,1205,Procedure,Administration of vaccine product containing only Human poliovirus antigen (procedure),SAME-AS,SNOMED-CT,72093006,"Polio vaccination, inactivated",1422
+1206,1206,Finding,History of vaccination (situation),NARROWER-THAN,SNOMED-CT,425457005,Immunization history,1421
+1207,1207,Finding,Lot number [Identifier] Vaccine,SAME-AS,LOINC,30959-1,Vaccine lot number,1420
+1208,1208,Finding,Manufacturer name [Identifier] Vaccine,SAME-AS,LOINC,30957-5,Vaccine manufacturer,1419
+1210,1210,Drug,Pneumococcal vaccine,SAME-AS,RxNORM,106467,Pneumococcal vaccine,82215
+1212,1212,Procedure,Administration of vaccine product containing only Human poliovirus antigen (procedure),NARROWER-THAN,SNOMED-CT,72093006,"Polio vaccination, oral",783
+1213,1213,Procedure,Administration of vaccine product containing only Hepatitis B virus antigen (procedure),SAME-AS,SNOMED-CT,16584000,Hepatitis B vaccination,782
+1214,1214,Procedure,Administration of vaccine product containing only Bordetella pertussis and Clostridium tetani and Corynebacterium diphtheriae antigens (procedure),SAME-AS,SNOMED-CT,399014008,Diphtheria tetanus and pertussis vaccination,781
+1215,1215,Procedure,Administration of vaccine product containing only Yellow fever virus antigen (procedure),SAME-AS,SNOMED-CT,67308009,Yellow fever vaccination,5864
+1216,1216,Procedure,Administration of booster dose of vaccine product containing only Clostridium tetani antigen (procedure),SAME-AS,SNOMED-CT,170333009,Tetanus booster,54
+1217,1217,Drug,Hemophilus influenza B vaccine,NARROWER-THAN,RxNORM,50937,Hemophilus influenza B vaccine,5261
+1218,1218,Procedure,Administration of vaccine product containing only Measles morbillivirus antigen (procedure),SAME-AS,SNOMED-CT,47435007,Measles vaccination,36
+1219,1219,Drug,Diptheria tetanus booster,SAME-AS,RxNORM,1007589,Diptheria tetanus booster,17
+1220,1220,Drug,"Diphtheria toxoid / hepatitis B vaccines / pertussis, acellular / tetanus toxoid / haemophilus capsular oligosaccharide",SAME-AS,RxNORM,1007545,"Diphtheria toxoid / hepatitis B vaccines / pertussis, acellular / tetanus toxoid / haemophilus capsular oligosaccharide",1685
+1221,1221,Drug,Vaccine product (medicinal product),NARROWER-THAN,SNOMED-CT,787859002,"RTS,S/AS01 vaccine",166703
+1222.1,1222,Procedure,Booster vaccination (procedure),NARROWER-THAN,SNOMED-CT,359953009,Administration of booster severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) vaccine,166660
+1222.2,1222,Procedure,Administration of vaccine product against severe acute respiratory syndrome coronavirus 2 (procedure),NARROWER-THAN,SNOMED-CT,1156257007,Administration of booster severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) vaccine,166660
+1223,1223,Question,Vaccine (substance),NARROWER-THAN,SNOMED-CT,398827000,"Immunization, non-coded",166011
+1224,1224,Finding,Therapeutic substance expiration date (observable entity),NARROWER-THAN,SNOMED-CT,427416004,Vaccine lot expiration date,165907
+1225,1225,Question,Procedure related observable (observable entity),NARROWER-THAN,SNOMED-CT,416342005,Procedure received by patient,163100
+1226,1226,Drug,Vaccine product containing only Measles morbillivirus and Rubella virus antigens (medicinal product),SAME-AS,SNOMED-CT,871817003,Measles-Rubella vaccine,162586
+1227,1227,Drug,Diphtheria + pertussis + tetanus + Haemophilus influenzae type b vaccine (product),NARROWER-THAN,SNOMED-CT,412373007,"Diphtheria Toxoid / Haemophilus influenzae b, capsular polysaccharide  / Hepatitis B surface antigen / Pertussis (whole cell) / Tetanus toxoid conjugate vaccine",162339
+1228,1228,Procedure,Administration of vaccine product containing only Neisseria meningitidis antigen (procedure),SAME-AS,SNOMED-CT,41088001,Meningococcal vaccination,159900
+1229,1229,Drug,"Measles Virus Vaccine Live, Enders' attenuated Edmonston strain / Mumps Virus Vaccine Live, Jeryl Lynn Strain / Rubella Virus Vaccine Live (Wistar RA 27-3 Strain)",SAME-AS,RxNORM,1007534,"Measles Virus Vaccine Live, Enders' attenuated Edmonston strain / Mumps Virus Vaccine Live, Jeryl Lynn Strain / Rubella Virus Vaccine Live (Wistar RA 27-3 Strain)",159701
+1231,1231,Drug,Ciprofloxacin,SAME-AS,RxNORM,2551,Ciprofloxacin,73449
+1232,1232,Drug,Paracetamol,SAME-AS,RxNORM,161,Paracetamol,70116
+1233,1233,Drug,Streptomycin,SAME-AS,RxNORM,10109,Streptomycin,84360
+1234,1234,Drug,Isoniazid,SAME-AS,RxNORM,6038,Isoniazid,78280
+1235,1235,Drug,Rifampicin,SAME-AS,RxNORM,9384,Rifampicin,767
+1236,1236,Drug,Ethambutol,SAME-AS,RxNORM,4110,Ethambutol,75948
+1237,1237,Drug,Calcium,SAME-AS,RxNORM,1895,Calcium,72650
+1238,1238,Drug,Pyrazinamide,SAME-AS,RxNORM,8987,Pyrazinamide,82900
+1239,1239,Drug,Pioglitazone,SAME-AS,RxNORM,33738,Pioglitazone,82111
+1240,1240,Drug,Glipizide,SAME-AS,RxNORM,4821,Glipizide,77032
+1241,1241,Drug,Aceclofenac,SAME-AS,RxNORM,16689,Aceclofenac,70102
+1242,1242,Drug,Acyclovir,SAME-AS,RxNORM,281,Acyclovir,70245
+1243,1243,Drug,Adrenaline,SAME-AS,RxNORM,3992,Adrenaline,75744
+1244,1244,Drug,Albendazole,SAME-AS,RxNORM,430,Albendazole,70439
+1245,1245,Drug,Allopurinol,SAME-AS,RxNORM,519,Allopurinol,70878
+1246,1246,Drug,Alprazolam,SAME-AS,RxNORM,596,Alprazolam,70938
+1247,1247,Drug,Amikacin,SAME-AS,RxNORM,641,Amikacin,71060
+1248,1248,Drug,Amitriptyline,SAME-AS,RxNORM,704,Amitriptyline,931
+1250,1250,Drug,Amoxicillin,SAME-AS,RxNORM,723,Amoxicillin,71160
+1251,1251,Drug,Amoxicillin & Clavulanate,SAME-AS,RxNORM,19711,Amoxicillin & Clavulanate,450
+1252,1252,Drug,Amoxicillin & Clavulanic Acid,SAME-AS,RxNORM,19711,Amoxicillin & Clavulanic Acid,450
+1254,1254,Drug,Amphotericin B,SAME-AS,RxNORM,732,Amphotericin B,71184
+1255,1255,Drug,Ampicillin,SAME-AS,RxNORM,733,Ampicillin,71188
+1256,1256,Drug,Product containing ampicillin and cloxacillin (medicinal product),SAME-AS,SNOMED-CT,346320003,Ampicillin & Cloxacillin,294
+1257,1257,Drug,Antacid (substance),SAME-AS,SNOMED-CT,372794006,Antacid,944
+1258,1258,Drug,Antioxidant,SAME-AS,RxNORM,72901,Antioxidant,76346
+1259,1259,Drug,Atenolol,SAME-AS,RxNORM,1202,Atenolol,71652
+1260,1260,Drug,Atorvastatin,SAME-AS,RxNORM,83367,Atorvastatin,71665
+1261,1261,Drug,Atropine,SAME-AS,RxNORM,1223,Atropine,71681
+1262,1262,Drug,Beclomethasone Dipropionate,SAME-AS,RxNORM,1348,Beclomethasone Dipropionate,71917
+1263,1263,Drug,Benzoic & Salicylic Acid,SAME-AS,RxNORM,1006911,Benzoic & Salicylic Acid,103878
+1264,1264,Drug,Benzoyl Peroxide,SAME-AS,RxNORM,1418,Benzoyl Peroxide,72063
+1265,1265,Drug,Betamethasone,SAME-AS,RxNORM,1514,Betamethasone,72120
+1266,1266,Drug,Bupivacaine Hydrochloride,SAME-AS,RxNORM,267396,Bupivacaine Hydrochloride,72506
+1267,1267,Drug,Caffeine Citrate,SAME-AS,RxNORM,20033,Caffeine Citrate,72610
+1268,1268,Drug,Calamine,SAME-AS,RxNORM,106212,Calamine,72621
+1269,1269,Drug,Calcium Gluconate,SAME-AS,RxNORM,1908,Calcium Gluconate,72678
+1270,1270,Drug,Carbamazine,SAME-AS,RxNORM,2002,Carbamazine,72822
+1271,1271,Drug,Cefadroxil,SAME-AS,RxNORM,2177,Cefadroxil,72990
+1272,1272,Drug,Cefazolin,SAME-AS,RxNORM,2180,Cefazolin,72998
+1273,1273,Drug,Cefepime,SAME-AS,RxNORM,20481,Cefepime,73003
+1274,1274,Drug,Cefixime,SAME-AS,RxNORM,25033,Cefixime,73006
+1275,1275,Drug,Ceftazidime,SAME-AS,RxNORM,2191,Ceftazidime,73034
+1276,1276,Drug,Cetirizine,SAME-AS,RxNORM,20610,Cetirizine,73136
+1277,1277,Drug,Dipirone,SAME-AS,RxNORM,3523,Dipirone,75047
+1278,1278,Drug,Chlordiazepoxide,SAME-AS,RxNORM,611854,Chlordiazepoxide,104171
+1279,1279,Drug,Chlorhexidine Gluconate,SAME-AS,RxNORM,20791,Chlorhexidine Gluconate,73265
+1280,1280,Drug,Chloroquine,SAME-AS,RxNORM,2393,Chloroquine,73300
+1281,1281,Drug,Chlorpheniramine,SAME-AS,RxNORM,2400,Chlorpheniramine,913
+1282,1282,Drug,Chlorpromazine,SAME-AS,RxNORM,2403,Chlorpromazine,73330
+1283,1283,Drug,Clarithromycine,SAME-AS,RxNORM,21212,Clarithromycine,73498
+1284,1284,Drug,Clobazam,SAME-AS,RxNORM,21241,Clobazam,73561
+1285,1285,Drug,Clobetasol Propionate,SAME-AS,RxNORM,21245,Clobetasol Propionate,73565
+1286,1286,Drug,Clonazepan,SAME-AS,RxNORM,2598,Clonazepan,73596
+1287,1287,Drug,Clotrimazole,SAME-AS,RxNORM,2623,Clotrimazole,73624
+1289,1289,Drug,Clotrimazole Otic,SAME-AS,RxNORM,2623,Clotrimazole Otic,73624
+1291,1291,Drug,Cloxacillin,SAME-AS,RxNORM,2625,Cloxacillin,73628
+1292,1292,Drug,Codeine Phosphate,SAME-AS,RxNORM,2672,Codeine Phosphate,73671
+1293,1293,Drug,Co-trimoxazole,SAME-AS,RxNORM,10831,Co-trimoxazole,105281
+1295,1295,Drug,Cycloserine,SAME-AS,RxNORM,3007,Cycloserine,74123
+1296,1296,Drug,Dexamethasone,SAME-AS,RxNORM,3264,Dexamethasone,74609
+1297,1297,Drug,Dextrose,SAME-AS,RxNORM,349944,Dextrose,74675
+1298,1298,Drug,Dextrose & Normal Saline (DNS),SAME-AS,RxNORM,108190,Dextrose & Normal Saline (DNS),104745
+1299,1299,Drug,Diazepam,SAME-AS,RxNORM,3322,Diazepam,74745
+1300,1300,Drug,Diclofenac,SAME-AS,RxNORM,3355,Diclofenac,74778
+1301,1301,Drug,Dicyclomine,SAME-AS,RxNORM,3361,Dicyclomine,74803
+1302,1302,Drug,Diethylcarbamazine,SAME-AS,RxNORM,3384,Diethylcarbamazine,74820
+1303,1303,Drug,Digoxin,SAME-AS,RxNORM,3407,Digoxin,74860
+1304,1304,Drug,Disodium Hydrogen Citrate,SAME-AS,RxNORM,1366889,Disodium Hydrogen Citrate,168007
+1305,1305,Drug,Domperidone,SAME-AS,RxNORM,3626,Domperidone,75161
+1306,1306,Drug,Dopamine,SAME-AS,RxNORM,3628,Dopamine,75177
+1307,1307,Drug,Doxycycline,SAME-AS,RxNORM,3640,Doxycycline,75222
+1308,1308,Drug,Enalapril,SAME-AS,RxNORM,3827,Enalapril,75633
+1309,1309,Drug,Ethamsylate,SAME-AS,RxNORM,4112,Ethamsylate,75952
+1310,1310,Drug,Ethionamide,SAME-AS,RxNORM,4127,Ethionamide,75976
+1312,1312,Drug,Finasteride,SAME-AS,RxNORM,25025,Finasteride,76376
+1313,1313,Drug,Fluconazole,SAME-AS,RxNORM,4450,Fluconazole,76488
+1314,1314,Drug,Fluoxetine,SAME-AS,RxNORM,4493,Fluoxetine,76552
+1315,1315,Drug,Folic Acid,SAME-AS,RxNORM,4511,Folic Acid,76613
+1316,1316,Drug,Frusemide,SAME-AS,RxNORM,4603,Frusemide,76734
+1317,1317,Drug,Frusemide & Amiloride,SAME-AS,RxNORM,818351,Frusemide & Amiloride,103540
+1318,1318,Drug,Furosemide,SAME-AS,RxNORM,4603,Furosemide,76734
+1319,1319,Drug,Furosemide & Spironolactone,SAME-AS,RxNORM,392462,Furosemide & Spironolactone,104694
+1320,1320,Drug,Fusidic Acid,SAME-AS,RxNORM,4608,Fusidic Acid,76739
+1321,1321,Drug,Gabapentin,SAME-AS,RxNORM,25480,Gabapentin,76750
+1323,1323,Drug,Gentamycin,SAME-AS,RxNORM,1596450,Gentamycin,100
+1324,1324,Drug,Gentian Violet,SAME-AS,RxNORM,4778,Gentian Violet,76948
+1325,1325,Drug,Glimepiride,SAME-AS,RxNORM,25789,Glimepiride,77031
+1327,1327,Drug,Glyceryl Trinitrate,SAME-AS,RxNORM,4917,Glyceryl Trinitrate,80704
+1328,1328,Drug,Haloperidol,SAME-AS,RxNORM,5093,Haloperidol,77335
+1329,1329,Drug,Hydrocortisone,SAME-AS,RxNORM,5492,Hydrocortisone,77714
+1331,1331,Drug,Product containing only scopolamine (medicinal product),SAME-AS,SNOMED-CT,777502000,Hyoscine Butylbromide,431
+1332,1332,Drug,Ibuprofen,SAME-AS,RxNORM,5640,Ibuprofen,77897
+1334,1334,Drug,Indomethacin,SAME-AS,RxNORM,5781,Indomethacin,78010
+1335,1335,Drug,Insulin,SAME-AS,RxNORM,5856,Insulin,78056
+1336,1336,Drug,Ipratropium,SAME-AS,RxNORM,7213,Ipratropium,78199
+1337,1337,Drug,Ipratropium Bromide,SAME-AS,RxNORM,203212,Ipratropium Bromide,78200
+1338,1338,Drug,Isosorbide Mononitrate,SAME-AS,RxNORM,28004,Isosorbide Mononitrate,78306
+1339,1339,Drug,Ivermectin,SAME-AS,RxNORM,6069,Ivermectin,78342
+1340,1340,Drug,Ketamine,SAME-AS,RxNORM,6130,Ketamine,78467
+1341,1341,Drug,Ketoconazole,SAME-AS,RxNORM,6135,Ketoconazole,78476
+1342,1342,Drug,Lactulose,SAME-AS,RxNORM,6218,Lactulose,78632
+1343,1343,Drug,Levofloxacin,SAME-AS,RxNORM,82122,Levofloxacin,78788
+1344,1344,Drug,Levonorgestrel & Ethinylestradiol,SAME-AS,RxNORM,214558,Levonorgestrel & Ethinylestradiol,104625
+1345,1345,Drug,Levothyroxine,SAME-AS,RxNORM,40144,Levothyroxine,78809
+1346,1346,Drug,Lignocaine,SAME-AS,RxNORM,6387,Lignocaine,78849
+1347,1347,Drug,Lignocaine & Adrenaline,SAME-AS,RxNORM,107602,Lignocaine & Adrenaline,104584
+1348,1348,Drug,Losartan,SAME-AS,RxNORM,52175,Losartan,79074
+1349,1349,Drug,Magnesium,SAME-AS,RxNORM,6574,Magnesium,79224
+1350,1350,Drug,Mannitol,SAME-AS,RxNORM,6628,Mannitol,79303
+1351,1351,Drug,Medroxyprogesterone,SAME-AS,RxNORM,6691,Medroxyprogesterone,79494
+1352,1352,Drug,Medroxyprogesterone Acetate,SAME-AS,RxNORM,1000112,Medroxyprogesterone Acetate,907
+1353,1353,Drug,Methotrexate,SAME-AS,RxNORM,6851,Methotrexate,79700
+1354,1354,Drug,Methylergometrine,SAME-AS,RxNORM,6883,Methylergometrine,79729
+1355,1355,Drug,Metoclopramide,SAME-AS,RxNORM,6915,Metoclopramide,79755
+1356,1356,Drug,Metronidazole & Diloxanide,SAME-AS,RxNORM,108249,Metronidazole & Diloxanide,104492
+1358,1358,Drug,Midazolam,SAME-AS,RxNORM,6960,Midazolam,79853
+1359.1,1359,Drug,Product containing misoprostol (medicinal product),NARROWER-THAN,SNOMED-CT,43684009,Mifepristone & Misoprostol,162484
+1359.2,1359,Drug,Product containing mifepristone (medicinal product),NARROWER-THAN,SNOMED-CT,129483007,Mifepristone & Misoprostol,162484
+1360,1360,Drug,Miltefosine,SAME-AS,RxNORM,1494066,Miltefosine,162488
+1361,1361,Drug,Mirtazapine,SAME-AS,RxNORM,15996,Mirtazapine,79982
+1362,1362,Drug,Misoprostol,SAME-AS,RxNORM,42331,Misoprostol,79984
+1363,1363,Drug,Naloxone,SAME-AS,RxNORM,7242,Naloxone,80367
+1364,1364,Drug,Neomycin & Polymyxin B & Bacitracin Zinc,SAME-AS,RxNORM,477619,Neomycin & Polymyxin B & Bacitracin Zinc,103772
+1365,1365,Drug,Nifedipine,SAME-AS,RxNORM,7417,Nifedipine,80637
+1366,1366,Drug,Nimesulide,SAME-AS,RxNORM,53694,Nimesulide,80665
+1367,1367,Drug,Nitrofurantoin,SAME-AS,RxNORM,7454,Nitrofurantoin,80696
+1368,1368,Drug,Normal Saline (NS),SAME-AS,RxNORM,125464,Normal Saline (NS),80804
+1369,1369,Drug,Ofloxacin,SAME-AS,RxNORM,7623,Ofloxacin,81022
+1370,1370,Drug,Omeprazole,SAME-AS,RxNORM,7646,Omeprazole,81041
+1372,1372,Drug,Oral rehydration salts (product),SAME-AS,SNOMED-CT,346599006,Oral Rehydration Solution (ORS),351
+1373,1373,Drug,Oxymetazoline,SAME-AS,RxNORM,7812,Oxymetazoline,81345
+1374,1374,Drug,Oxytocin,SAME-AS,RxNORM,7824,Oxytocin,81369
+1376,1376,Drug,Pantoprazole,SAME-AS,RxNORM,40790,Pantoprazole,81550
+1378,1378,Drug,Paracetamol Paediatric,SAME-AS,RxNORM,161,Paracetamol Paediatric,70116
+1380.1,1380,Drug,Product containing turpentine oil (medicinal product),NARROWER-THAN,SNOMED-CT,411457000,"Paradichlorobenzene, Benzocaine, Chlorbutol & Turpentine Oil",169231
+1380.2,1380,Drug,Product containing benzocaine (medicinal product),NARROWER-THAN,SNOMED-CT,65020006,"Paradichlorobenzene, Benzocaine, Chlorbutol & Turpentine Oil",169231
+1381,1381,Drug,Pheniramine,SAME-AS,RxNORM,8132,Pheniramine,81944
+1382,1382,Drug,Pheniramine Maleate,SAME-AS,RxNORM,266959,Pheniramine Maleate,81946
+1383,1383,Drug,Phenobarbitone,SAME-AS,RxNORM,8134,Phenobarbitone,81951
+1384,1384,Drug,Phenytoin,SAME-AS,RxNORM,8183,Phenytoin,82023
+1386,1386,Drug,Snake antivenom immunoglobulin (substance),NARROWER-THAN,SNOMED-CT,720561009,Polyvalent Anti Snake Serum,165460
+1387,1387,Drug,Potassium Chloride,SAME-AS,RxNORM,8591,Potassium Chloride,82350
+1388,1388,Drug,Prednisolone,SAME-AS,RxNORM,8638,Prednisolone,82446
+1389,1389,Drug,Primaquine,SAME-AS,RxNORM,8687,Primaquine,82521
+1390,1390,Drug,Prochlorperazine Maleate,SAME-AS,RxNORM,8706,Prochlorperazine Maleate,82576
+1391,1391,Drug,Promethazine,SAME-AS,RxNORM,8745,Promethazine,82667
+1392,1392,Drug,Promethazine Hydrochloride (HCl),SAME-AS,RxNORM,142445,Promethazine Hydrochloride (HCl),82670
+1393,1393,Drug,Propofol,SAME-AS,RxNORM,8782,Propofol,82726
+1394,1394,Drug,Propranolol,SAME-AS,RxNORM,8787,Propranolol,82732
+1395,1395,Drug,Pyridoxine,SAME-AS,RxNORM,9008,Pyridoxine,82912
+1396,1396,Drug,Pyrimethamine Sulfadoxine,SAME-AS,RxNORM,203218,Pyrimethamine Sulfadoxine,105232
+1397,1397,Drug,Rabeprazole Sodium,SAME-AS,RxNORM,114979,Rabeprazole Sodium,83047
+1398,1398,Drug,Ranitidine,SAME-AS,RxNORM,9143,Ranitidine,83075
+1399,1399,Drug,Risperidone,SAME-AS,RxNORM,35636,Risperidone,83405
+1400,1400,Drug,Ringers Lactate (RL),SAME-AS,RxNORM,35629,Ringers Lactate (RL),78617
+1401,1401,Drug,Salbutamol,SAME-AS,RxNORM,435,Salbutamol,798
+1403,1403,Drug,Saline,SAME-AS,RxNORM,125464,Saline,80804
+1404,1404,Drug,Silver Sulphadiazene,SAME-AS,RxNORM,9793,Silver Sulphadiazene,83920
+1405,1405,Drug,Sodium Valproate,SAME-AS,RxNORM,40254,Sodium Valproate,86051
+1406,1406,Drug,Spironolactone,SAME-AS,RxNORM,9997,Spironolactone,84239
+1407,1407,Drug,Sulfamethoxazole & Trimethoprim,SAME-AS,RxNORM,10831,Sulfamethoxazole & Trimethoprim,105281
+1408,1408,Drug,Tetanus Antitoxin,SAME-AS,RxNORM,10385,Tetanus Antitoxin,84877
+1409,1409,Drug,Tetanus Immunoglobulin,SAME-AS,RxNORM,91603,Tetanus Immunoglobulin,84878
+1410,1410,Drug,Tetracycline Ophtalmic,SAME-AS,RxNORM,10395,Tetracycline Ophtalmic,84893
+1411,1411,Drug,Tinidazole,SAME-AS,RxNORM,10612,Tinidazole,85151
+1412,1412,Drug,Tizanidine,SAME-AS,RxNORM,57258,Tizanidine,85178
+1413,1413,Drug,Tramadol,SAME-AS,RxNORM,10689,Tramadol,85275
+1414,1414,Drug,Tranexamic Acid,SAME-AS,RxNORM,10691,Tranexamic Acid,85286
+1415,1415,Drug,Triamcinolone,SAME-AS,RxNORM,10759,Triamcinolone,85356
+1416,1416,Drug,Trihexyphenidyl,SAME-AS,RxNORM,10811,Trihexyphenidyl,85463
+1418,1418,Drug,Tuberculin Purified Protein Derivative (PPD),SAME-AS,RxNORM,8948,Tuberculin Purified Protein Derivative (PPD),82886
+1419,1419,Drug,Valproic Acid,SAME-AS,RxNORM,11118,Valproic Acid,86052
+1420,1420,Drug,Verapamil,SAME-AS,RxNORM,11170,Verapamil,86176
+1421,1421,Drug,Vitamin B Complex,SAME-AS,RxNORM,11251,Vitamin B Complex,86341
+1422,1422,Drug,Vitamin K,SAME-AS,RxNORM,11258,Vitamin K,86352
+1423,1423,Drug,Warfarin,SAME-AS,RxNORM,11289,Warfarin,86415
+1424,1424,Drug,Zinc Sulphate,SAME-AS,RxNORM,39954,Zinc Sulphate,86688
+1425,1425,Drug,Methimazole,SAME-AS,RxNORM,6835,Methimazole,79691
+1426,1426,Drug,Multivitamin preparation (product),SAME-AS,SNOMED-CT,10632007,Multi-Vitamin Adult,461
+1427,1427,Drug,Multivitamin preparation (product),SAME-AS,SNOMED-CT,10632007,Multi-Vitamin Children,461
+1428,1428,Drug,Prenatal vitamin (product),SAME-AS,SNOMED-CT,400572001,Multi-Vitamin Prenatal,162319
+1429,1429,Drug,Tenormin,SAME-AS,RxNORM,1202,Tenormin,71652
+1430,1430,Drug,Celecoxib,SAME-AS,RxNORM,140587,Celecoxib,73048
+1431,1431,Drug,Calcium Carbonate,SAME-AS,RxNORM,1897,Calcium Carbonate,72660
+1432,1432,Drug,Glipizide Er,SAME-AS,RxNORM,4821,Glipizide Er,77032
+1433,1433,Drug,Bacitracin,SAME-AS,RxNORM,1291,Bacitracin,71812
+1434,1434,Drug,Nystatin,SAME-AS,RxNORM,7597,Nystatin,80945
+1435,1435,Drug,Valacyclovir,SAME-AS,RxNORM,73645,Valacyclovir,86028
+1437,1437,Drug,Amoxicillin & Clauvulanate,SAME-AS,RxNORM,19711,Amoxicillin & Clauvulanate,450
+1438,1438,Drug,Cefuroxime,SAME-AS,RxNORM,2194,Cefuroxime,73043
+1439,1439,Drug,Atovaquone & Proquanil,SAME-AS,RxNORM,284623,Atovaquone & Proquanil,103734
+1440,1440,Drug,Fluticasone & Salmeterol,SAME-AS,RxNORM,284635,Fluticasone & Salmeterol,104676
+1441,1441,Drug,Budesonide & Formoterol,SAME-AS,RxNORM,389132,Budesonide & Formoterol,103955
+1443,1443,Drug,Tiotropium,SAME-AS,RxNORM,69120,Tiotropium,85157
+1444,1444,Drug,Budesonide,SAME-AS,RxNORM,19831,Budesonide,72484
+1445,1445,Drug,Albuterol,SAME-AS,RxNORM,435,Albuterol,798
+1446,1446,Drug,Levabuterol,SAME-AS,RxNORM,476981,Levabuterol,78752
+1447,1447,Drug,Polyethylene Glycol,SAME-AS,RxNORM,8516,Polyethylene Glycol,82281
+1448,1448,Drug,Docusate Sodium,SAME-AS,RxNORM,82003,Docusate Sodium,75120
+1449,1449,Drug,Senna,SAME-AS,RxNORM,9658,Senna,83797
+1450,1450,Drug,Loratadine,SAME-AS,RxNORM,28889,Loratadine,79053
+1451,1451,Drug,Diphenhydramine,SAME-AS,RxNORM,3498,Diphenhydramine,75015
+1452,1452,Drug,Prednisone,SAME-AS,RxNORM,8640,Prednisone,82453
+1453,1453,Drug,Tramadol & Acetaminophen,SAME-AS,RxNORM,352362,Tramadol & Acetaminophen,103303
+1455,1455,Drug,Cyclobenzaprine,SAME-AS,RxNORM,21949,Cyclobenzaprine,74101
+1456,1456,Drug,Permethrin,SAME-AS,RxNORM,33199,Permethrin,81834
+1457,1457,Drug,Miconozole,SAME-AS,RxNORM,6932,Miconozole,79831
+1458,1458,Drug,Tolnoftate,SAME-AS,RxNORM,10637,Tolnoftate,85214
+1459,1459,Drug,Lidocaine,SAME-AS,RxNORM,6387,Lidocaine,78849
+1460,1460,Drug,Benzyl Benzoate,SAME-AS,RxNORM,19044,Benzyl Benzoate,72075
+1461,1461,Drug,Glyburide,SAME-AS,RxNORM,4815,Glyburide,77071
+1462,1462,Drug,Cefaclor,SAME-AS,RxNORM,2176,Cefaclor,72987
+1463,1463,Drug,Famciclovir,SAME-AS,RxNORM,68099,Famciclovir,76174
+1464,1464,Drug,Minocycline,SAME-AS,RxNORM,6980,Minocycline,79944
+1465,1465,Drug,Clindamycin,SAME-AS,RxNORM,2582,Clindamycin,73546
+1466,1466,Drug,Tobramycin & Dexamethasone,SAME-AS,RxNORM,883815,Tobramycin & Dexamethasone,104426
+1467,1467,Drug,Methylprednisolone,SAME-AS,RxNORM,6902,Methylprednisolone,79743
+1468,1468,Drug,Tetrahydrozoline,SAME-AS,RxNORM,37935,Tetrahydrozoline,84898
+1469,1469,Drug,Fexofenadine,SAME-AS,RxNORM,87636,Fexofenadine,76355
+1470,1470,Drug,Guaifenesin,SAME-AS,RxNORM,5032,Guaifenesin,77204
+1472,1472,Drug,Amoxicillin & Clauvulanic Acid,SAME-AS,RxNORM,19711,Amoxicillin & Clauvulanic Acid,450
+1473,1473,Drug,Atovaquone & Proquanil hydrochloride,SAME-AS,RxNORM,284623,Atovaquone & Proquanil hydrochloride,103734
+1474,1474,Drug,Captopril,SAME-AS,RxNORM,1998,Captopril,72806
+1475,1475,Drug,Chloroquine phosphate,SAME-AS,RxNORM,2393,Chloroquine phosphate,73300
+1478,1478,Drug,Erythromycin estolate,SAME-AS,RxNORM,4053,Erythromycin estolate,75842
+1479,1479,Drug,Ferrous sulfate,SAME-AS,RxNORM,24947,Ferrous sulfate,76342
+1480,1480,Drug,Fluticasone spray,SAME-AS,RxNORM,41126,Fluticasone spray,76586
+1481,1481,Drug,Hydrocortisone & Acetic Acid,SAME-AS,RxNORM,466530,Hydrocortisone & Acetic Acid,103309
+1482,1482,Drug,Iptratropium bromide & albuterol,SAME-AS,RxNORM,214199,Iptratropium bromide & albuterol,103337
+1483,1483,Drug,Lansoprazole,SAME-AS,RxNORM,17128,Lansoprazole,78657
+1484,1484,Drug,Odansetron hydrochloride,SAME-AS,RxNORM,26225,Odansetron hydrochloride,81073
+1485,1485,Drug,Oral rehydration salts (product),SAME-AS,SNOMED-CT,346599006,Oral rehydration therapy,351
+1486,1486,Drug,Propranolol hydrochloride,SAME-AS,RxNORM,8787,Propranolol hydrochloride,82732
+1488,1488,Drug,Sulfacetamide,SAME-AS,RxNORM,10169,Sulfacetamide,84453
+1489,1489,Drug,Tiotropium powder,SAME-AS,RxNORM,69120,Tiotropium powder,85157
+1490,1490,Drug,Triple antibiotic,SAME-AS,RxNORM,477619,Triple antibiotic,103772
+1493,1493,Drug,Prickly heat (disorder),NARROWER-THAN,SNOMED-CT,72658003,Heatwrap,153349
+1495,1495,Drug,Antipyrine,SAME-AS,RxNORM,1001,Antipyrine,71390
+1496,1496,Drug,Apetamine,SAME-AS,RxNORM,3013,Apetamine,74152
+1497,1497,Drug,Apressoline,SAME-AS,RxNORM,5470,Apressoline,77675
+1498,1498,Drug,Bebe Sirop,SAME-AS,RxNORM,35302,Bebe Sirop,83983
+1499,1499,Drug,Bromhexine,SAME-AS,RxNORM,1753,Bromhexine,72401
+1500,1500,Drug,Co-Amoxiclav,SAME-AS,RxNORM,19711,Co-Amoxiclav,450
+1501,1501,Drug,Dolex,SAME-AS,RxNORM,10689,Dolex,85275
+1502,1502,Drug,Dypirone,SAME-AS,RxNORM,3523,Dypirone,75047
+1503,1503,Drug,Ergotamine,SAME-AS,RxNORM,4025,Ergotamine,75805
+1506,1506,Drug,Glibenclamide,SAME-AS,RxNORM,4815,Glibenclamide,77071
+1507,1507,Drug,Griseofulvine,SAME-AS,RxNORM,5021,Griseofulvine,77164
+1508,1508,Drug,Metoprolol,SAME-AS,RxNORM,102313,Metoprolol,79765
+1510,1510,Drug,Neomycin,SAME-AS,RxNORM,7299,Neomycin,80514
+1511,1511,Drug,Benzocaine-Chloroxylenol,SAME-AS,RxNORM,687096,Benzocaine-Chloroxylenol,103841
+1512,1512,Drug,Simethicone,SAME-AS,RxNORM,9796,Simethicone,83925
+1513,1513,Drug,Simvastatin,SAME-AS,RxNORM,36567,Simvastatin,83936
+1514,1514,Drug,Sorbitol,SAME-AS,RxNORM,9945,Sorbitol,84178
+1516,1516,Drug,Vitamin C,SAME-AS,RxNORM,1151,Vitamin C,71589
+1518,1518,Drug,"Levonorgestrel, Ethinylestradiol",SAME-AS,RxNORM,214558,"Levonorgestrel, Ethinylestradiol",104625
+1519,1519,Drug,Levonorgestrel,SAME-AS,RxNORM,6373,Levonorgestrel,78796
+1520,1520,Drug,Medroxyprojesterone acetate,SAME-AS,RxNORM,1000112,Medroxyprojesterone acetate,907
+1522,1522,Drug,"Rifampicine, Isoniazide",SAME-AS,RxNORM,106876,"Rifampicine, Isoniazide",1194
+1524,1524,Drug,Paracetamol & Chlorzoxasone,SAME-AS,RxNORM,494309,Paracetamol & Chlorzoxasone,103232
+1525,1525,Drug,Sevoflurane,SAME-AS,RxNORM,36453,Sevoflurane,83872
+1526,1526,Drug,Succinylcholine,SAME-AS,RxNORM,10154,Succinylcholine,84389
+1527,1527,Drug,Rocuronium,SAME-AS,RxNORM,68139,Rocuronium,83475
+1528,1528,Drug,Vecuronium,SAME-AS,RxNORM,71535,Vecuronium,86144
+1529,1529,Drug,Neostigmine,SAME-AS,RxNORM,7315,Neostigmine,80532
+1530,1530,Drug,Fentanyl,SAME-AS,RxNORM,4337,Fentanyl,76272
+1531,1531,Drug,Thiopental,SAME-AS,RxNORM,10493,Thiopental,85015
+1532,1532,Drug,Bupivacaine spinal heavy,SAME-AS,RxNORM,1815,Bupivacaine spinal heavy,72505
+1533,1533,Drug,Lidocaine & Epinephrine,SAME-AS,RxNORM,107602,Lidocaine & Epinephrine,104584
+1534,1534,Drug,Diphenidramine,SAME-AS,RxNORM,3498,Diphenidramine,75015
+1535,1535,Drug,Complex B,SAME-AS,RxNORM,11251,Complex B,86341
+1536,1536,Drug,"Complex B (B1, B6, B12)",SAME-AS,RxNORM,11251,"Complex B (B1, B6, B12)",86341
+1537,1537,Drug,Multivitamin preparation (product),SAME-AS,SNOMED-CT,10632007,Multivitamin,461
+1539,1539,Drug,Ascorbic acid (Vit C),SAME-AS,RxNORM,1151,Ascorbic acid (Vit C),71589
+1540,1540,Drug,Phytomenadione (Vit K),SAME-AS,RxNORM,11258,Phytomenadione (Vit K),86352
+1541,1541,Drug,Proteines,SAME-AS,RxNORM,8859,Proteines,82767
+1542,1542,Drug,Zinc,SAME-AS,RxNORM,11416,Zinc,86672
+1543,1543,Drug,Heparin,SAME-AS,RxNORM,5224,Heparin,77413
+1544,1544,Drug,Clopidogrel,SAME-AS,RxNORM,32968,Clopidogrel,73602
+1545,1545,Drug,Nitroglycerin,SAME-AS,RxNORM,4917,Nitroglycerin,80704
+1546,1546,Drug,Amiodarone,SAME-AS,RxNORM,703,Amiodarone,71118
+1547,1547,Drug,Nitroglycerin (Glycerine Trinitrate),SAME-AS,RxNORM,4917,Nitroglycerin (Glycerine Trinitrate),80704
+1548,1548,Drug,Isosorbide dinitrate,SAME-AS,RxNORM,6058,Isosorbide dinitrate,78305
+1549,1549,Drug,Hydralazine,SAME-AS,RxNORM,5470,Hydralazine,77675
+1550,1550,Drug,Methyldopa,SAME-AS,RxNORM,6876,Methyldopa,79723
+1551,1551,Drug,Labetalol,SAME-AS,RxNORM,6185,Labetalol,78599
+1552,1552,Drug,Nicardipine,SAME-AS,RxNORM,7396,Nicardipine,80598
+1553,1553,Drug,Sprironolactone,SAME-AS,RxNORM,9997,Sprironolactone,84239
+1554,1554,Drug,Nifedepine SR,SAME-AS,RxNORM,7417,Nifedepine SR,80637
+1555,1555,Drug,Carvedilol,SAME-AS,RxNORM,20352,Carvedilol,72944
+1556,1556,Drug,Metoprolol tartrate,SAME-AS,RxNORM,203191,Metoprolol tartrate,79767
+1557,1557,Drug,Propranalol,SAME-AS,RxNORM,8787,Propranalol,82732
+1558,1558,Drug,Phenobarbital,SAME-AS,RxNORM,8134,Phenobarbital,81951
+1559,1559,Drug,Protamine,SAME-AS,RxNORM,8826,Protamine,82763
+1560,1560,Drug,Regular insulin (substance),SAME-AS,SNOMED-CT,412222002,Insulin regular,282
+1561,1561,Drug,Insulin NPH,SAME-AS,RxNORM,253181,Insulin NPH,78068
+1563,1563,Drug,Albumin,SAME-AS,RxNORM,214198,Albumin,70445
+1564,1564,Drug,Dextran,SAME-AS,RxNORM,42635,Dextran,74653
+1565,1565,Drug,Gelofusine,SAME-AS,RxNORM,36709,Gelofusine,84090
+1566,1566,Drug,Calcium chloride,SAME-AS,RxNORM,1901,Calcium chloride,72662
+1567,1567,Drug,Sodium bicarbonate,SAME-AS,RxNORM,36676,Sodium bicarbonate,84041
+1568,1568,Drug,Product containing aluminium hydroxide and magnesium hydroxide and simeticone (medicinal product),SAME-AS,SNOMED-CT,412574000,Aluminum & Magnesium hydroxide & Simethicone,103528
+1569,1569,Drug,Bisacodyl,SAME-AS,RxNORM,1596,Bisacodyl,72223
+1572,1572,Drug,Latanoprost,SAME-AS,RxNORM,43611,Latanoprost,78677
+1573,1573,Drug,Trobramycin,SAME-AS,RxNORM,10627,Trobramycin,85185
+1574,1574,Drug,Ketorolac,SAME-AS,RxNORM,35827,Ketorolac,78481
+1575,1575,Drug,Sodium hyaluronate,SAME-AS,RxNORM,42892,Sodium hyaluronate,84063
+1576,1576,Drug,Timolol,SAME-AS,RxNORM,10600,Timolol,85132
+1578,1578,Drug,Sodium chloride,SAME-AS,RxNORM,9863,Sodium chloride,84047
+1579,1579,Drug,Brimonidine tartrate,SAME-AS,RxNORM,39171,Brimonidine tartrate,72343
+1580,1580,Drug,Betaxolol,SAME-AS,RxNORM,1520,Betaxolol,72138
+1581,1581,Drug,Brimonidine & timolol,SAME-AS,RxNORM,597142,Brimonidine & timolol,103930
+1582,1582,Drug,Dorzolamine & timolol,SAME-AS,RxNORM,662263,Dorzolamine & timolol,104546
+1583,1583,Drug,Pilocarpine,SAME-AS,RxNORM,8328,Pilocarpine,82082
+1584,1584,Drug,Cyclopentolate,SAME-AS,RxNORM,3001,Cyclopentolate,74117
+1585,1585,Drug,Propacaine,SAME-AS,RxNORM,34905,Propacaine,82804
+1586,1586,Drug,Phenylephrine,SAME-AS,RxNORM,8163,Phenylephrine,81996
+1587,1587,Drug,Salbutamol & Iprotopium bromide,SAME-AS,RxNORM,214199,Salbutamol & Iprotopium bromide,103337
+1588,1588,Drug,Alcohol,SAME-AS,RxNORM,455,Alcohol,70468
+1589,1589,Drug,Chlorhexidine,SAME-AS,RxNORM,2358,Chlorhexidine,73263
+1590,1590,Drug,Eucerin,SAME-AS,RxNORM,1223,Eucerin,71681
+1591,1591,Drug,Phenylephrine & pramoxine,SAME-AS,RxNORM,1008473,Phenylephrine & pramoxine,105161
+1593,1593,Drug,Product containing bacitracin (medicinal product),NARROWER-THAN,SNOMED-CT,370330005,Neomycin & Bacitracin,162168
+1594,1594,Drug,Permanganate potassium,SAME-AS,RxNORM,8604,Permanganate potassium,82370
+1595,1595,Drug,Petrolatum,SAME-AS,RxNORM,8091,Petrolatum,81861
+1596,1596,Drug,Povidone iodine,SAME-AS,RxNORM,8611,Povidone iodine,82384
+1597,1597,Drug,Silver sulfadiazine,SAME-AS,RxNORM,9793,Silver sulfadiazine,83920
+1600,1600,Drug,Benzyl penicillin Procaine,SAME-AS,RxNORM,7983,Benzyl penicillin Procaine,81729
+1601,1601,Drug,Cefalexin,SAME-AS,RxNORM,2231,Cefalexin,73087
+1602,1602,Drug,Cefotaxime,SAME-AS,RxNORM,2186,Cefotaxime,73018
+1603,1603,Drug,Erythromycin,SAME-AS,RxNORM,4053,Erythromycin,75842
+1604,1604,Drug,Gentamicin,SAME-AS,RxNORM,1596450,Gentamicin,100
+1605,1605,Drug,Quinine sulfate,SAME-AS,RxNORM,9071,Quinine sulfate,83023
+1606,1606,Drug,Serum antitetatique,SAME-AS,RxNORM,10385,Serum antitetatique,84877
+1607,1607,Drug,Vancomycin,SAME-AS,RxNORM,11124,Vancomycin,86082
+1608,1608,Drug,Rifampicin & Isoniazide & Pyrazinamide,SAME-AS,RxNORM,214662,Rifampicin & Isoniazide & Pyrazinamide,768
+1609,1609,Drug,Rifampicin & Izsoniazide & Ethambutol,SAME-AS,RxNORM,814321,Rifampicin & Izsoniazide & Ethambutol,159851
+1610,1610,Drug,Abacavir (ABC),SAME-AS,RxNORM,190521,Abacavir (ABC),70056
+1612,1612,Drug,Didanosine (DDI),SAME-AS,RxNORM,3364,Didanosine (DDI),74807
+1613,1613,Drug,Efavirenz (ENV or EFZ),SAME-AS,RxNORM,195085,Efavirenz (ENV or EFZ),75523
+1614.1,1614,Drug,Therapeutic regimen (regime/therapy),NARROWER-THAN,SNOMED-CT,133877004,Efavirenz & Lamivudine & Tenofovir,164505
+1614.2,1614,Drug,Product containing tenofovir (medicinal product),NARROWER-THAN,SNOMED-CT,395264002,Efavirenz & Lamivudine & Tenofovir,164505
+1614.3,1614,Drug,Product containing lamivudine (medicinal product),NARROWER-THAN,SNOMED-CT,108698001,Efavirenz & Lamivudine & Tenofovir,164505
+1614.4,1614,Drug,Product containing efavirenz (medicinal product),NARROWER-THAN,SNOMED-CT,116078005,Efavirenz & Lamivudine & Tenofovir,164505
+1615,1615,Drug,Lamivudine (3TC),SAME-AS,RxNORM,68244,Lamivudine (3TC),78643
+1616,1616,Drug,Lamivudine & Tenofovir,SAME-AS,RxNORM,1598388,Lamivudine & Tenofovir,161364
+1617,1617,Drug,Lopinavir & Ritonavir (LPV/r),SAME-AS,RxNORM,284640,Lopinavir & Ritonavir (LPV/r),794
+1618,1618,Drug,Nevirapine (NVP),SAME-AS,RxNORM,53654,Nevirapine (NVP),80586
+1619,1619,Drug,Tenofovir,SAME-AS,RxNORM,300195,Tenofovir,84796
+1620,1620,Drug,Zidovudine (AZT),SAME-AS,RxNORM,11413,Zidovudine (AZT),86663
+1621,1621,Drug,Zidovudine & Lamivudine (AZT/3TC),SAME-AS,RxNORM,214671,Zidovudine & Lamivudine (AZT/3TC),630
+1622,1622,Drug,Zidovudine & Lamivudine & Nevirapine (AZT/3TC/NVP),SAME-AS,RxNORM,687064,Zidovudine & Lamivudine & Nevirapine (AZT/3TC/NVP),1652
+1623,1623,Drug,BCG vaccine,SAME-AS,RxNORM,221050,BCG vaccine,71905
+1624,1624,Drug,Moderna Covid 19 Vaccine,SAME-AS,RxNORM,2470232,Moderna Covid 19 Vaccine,166154
+1625,1625,Drug,Pfizer-BioNTech Covid 19 Vaccine,SAME-AS,RxNORM,2468230,Pfizer-BioNTech Covid 19 Vaccine,166155
+1626,1626,Drug,Johnson & Johnson Covid 19 Vaccine,SAME-AS,RxNORM,2479830,Johnson & Johnson Covid 19 Vaccine,166355
+1627,1627,Drug,Antigen of live attenuated Human poliovirus (substance),SAME-AS,SNOMED-CT,863875008,Oral polio vaccine (OPV),168012
+1628,1628,Drug,Polio Vaccine-Inactivated Vaccine (IPV),SAME-AS,RxNORM,221145,Polio Vaccine-Inactivated Vaccine (IPV),82241
+1629,1629,Drug,Vaccine product containing only Measles morbillivirus and Rubella virus antigens (medicinal product),SAME-AS,SNOMED-CT,871817003,Measles Rubella Vaccine (MR),162586
+1630,1630,Drug,Administration of vaccine product containing only Streptococcus pneumoniae antigen (procedure),SAME-AS,SNOMED-CT,12866006,Pentavalent Vaccine (Penta),1423
+1631,1631,Drug,Rotavirus Vaccine (Rota),SAME-AS,RxNORM,253199,Rotavirus Vaccine (Rota),83531
+1632,1632,Drug,Diphtheria Tetanus Vaccine (DT),SAME-AS,RxNORM,1007589,Diphtheria Tetanus Vaccine (DT),104528
+1633,1633,Drug,Diphtheria Tetanus Pertusis Vaccine (DTP),SAME-AS,RxNORM,1007584,Diphtheria Tetanus Pertusis Vaccine (DTP),104527
+1634,1634,Drug,Pneumococcal Vaccine (PCV13),SAME-AS,RxNORM,1008803,Pneumococcal Vaccine (PCV13),165575
+1636,1636,Drug,Aminophyllin,SAME-AS,RxNORM,10438,Aminophyllin,84949
+1637,1637,Drug,Biperidene lactate,SAME-AS,RxNORM,19377,Biperidene lactate,72219
+1639,1639,Drug,Activated charcoal,SAME-AS,RxNORM,272,Activated charcoal,70229
+1640,1640,Drug,Cisatracurium,SAME-AS,RxNORM,319864,Cisatracurium,73455
+1641,1641,Drug,Clomifen citrate,SAME-AS,RxNORM,142431,Clomifen citrate,73591
+1643,1643,Drug,Dextran in NaCl,SAME-AS,RxNORM,42635,Dextran in NaCl,74653
+1644,1644,Drug,Enoxaparin,SAME-AS,RxNORM,67108,Enoxaparin,75687
+1645,1645,Drug,Ephedrine,SAME-AS,RxNORM,3966,Ephedrine,75720
+1646,1646,Drug,Esmolol,SAME-AS,RxNORM,49737,Esmolol,75872
+1647,1647,Drug,Etomidate,SAME-AS,RxNORM,4177,Etomidate,76021
+1648,1648,Drug,Fenofibrate,SAME-AS,RxNORM,8703,Fenofibrate,76253
+1649,1649,Drug,Fer elementaire & Acide folique,SAME-AS,RxNORM,1007327,Fer elementaire & Acide folique,104677
+1650,1650,Drug,Flumazenil,SAME-AS,RxNORM,4457,Flumazenil,76500
+1651,1651,Drug,Glycopyrrolate,SAME-AS,RxNORM,4955,Glycopyrrolate,77083
+1652,1652,Drug,Hialorunate de Na+,SAME-AS,RxNORM,42892,Hialorunate de Na+,84063
+1654,1654,Drug,Hydrocortisone hemorrhoidal,SAME-AS,RxNORM,5492,Hydrocortisone hemorrhoidal,77714
+1655,1655,Drug,Rabies immunoglobulins,SAME-AS,RxNORM,89886,Rabies immunoglobulins,162139
+1656,1656,Drug,Infant formula (product),SAME-AS,SNOMED-CT,412413001,Formula Milk,5254
+1657,1657,Drug,Lidocaine w & epinephrine dental,SAME-AS,RxNORM,107602,Lidocaine w & epinephrine dental,104584
+1658,1658,Drug,Meperidine,SAME-AS,RxNORM,6754,Meperidine,79574
+1660,1660,Drug,Nitroprussiate,SAME-AS,RxNORM,7476,Nitroprussiate,80714
+1661,1661,Drug,Noradrenaline,SAME-AS,RxNORM,7512,Noradrenaline,80779
+1663,1663,Drug,Petroleum,SAME-AS,RxNORM,8091,Petroleum,81861
+1664,1664,Drug,Propafenone,SAME-AS,RxNORM,8754,Propafenone,82696
+1665,1665,Drug,Glycerin,SAME-AS,RxNORM,214600,Glycerin,104800
+1666,1666,Drug,Bupivacaine,SAME-AS,RxNORM,1815,Bupivacaine,72505
+1667,1667,Drug,Propylthiouracil,SAME-AS,RxNORM,8794,Propylthiouracil,82743
+1668,1668,Drug,Protamine sulfate,SAME-AS,RxNORM,8825,Protamine sulfate,82762
+1669,1669,Drug,Sildenafil,SAME-AS,RxNORM,136411,Sildenafil,83902
+1670,1670,Drug,Streptokinase,SAME-AS,RxNORM,10106,Streptokinase,84359
+1671,1671,Drug,Tamoxifen,SAME-AS,RxNORM,10324,Tamoxifen,84668
+1672,1672,Drug,Tobramycin,SAME-AS,RxNORM,10627,Tobramycin,85185
+1673,1673,Drug,Tocopherol,SAME-AS,RxNORM,42934,Tocopherol,85193
+1674,1674,Drug,Vasopressin,SAME-AS,RxNORM,11149,Vasopressin,86127
+1675,1675,Drug,Vitamins A and D,SAME-AS,RxNORM,1007285,Vitamins A and D,105307
+1676,1676,Drug,Voltaren,SAME-AS,RxNORM,3355,Voltaren,74778
+1677,1677,Drug,Someticone,SAME-AS,RxNORM,9796,Someticone,83925
+1678,1678,Drug,Primoquine,SAME-AS,RxNORM,8687,Primoquine,82521
+1679,1679,Drug,Dyphenhydramine,SAME-AS,RxNORM,3498,Dyphenhydramine,75015
+1681,1681,Drug,Silver Nitrate,SAME-AS,RxNORM,9789,Silver Nitrate,83919
+1687,1687,Drug,Diosmine & Hesperidine,SAME-AS,RxNORM,723,Diosmine & Hesperidine,71160
+1688,1688,Drug,Gemfibrozil,SAME-AS,RxNORM,4719,Gemfibrozil,76861
+1689,1689,Drug,Glucosamine & Chondroitin,SAME-AS,RxNORM,1008567,Glucosamine & Chondroitin,104288
+1692,1692,Drug,Pentoxifylline,SAME-AS,RxNORM,8013,Pentoxifylline,81765
+1693,1693,Drug,Podophillin,SAME-AS,RxNORM,8462,Podophillin,82228
+1694,1694,Finding,Systolic blood pressure,BROADER-THAN,LOINC,8480-6,Systolic blood pressure,5085
+1695,1695,Finding,Diastolic blood pressure,BROADER-THAN,LOINC,8462-4,Diastolic blood pressure,5086
+1696,1696,Finding,Body temperature,BROADER-THAN,LOINC,8310-5,Temperature (c),5088
+1697,1697,Finding,Body height,BROADER-THAN,LOINC,8302-2,Height (cm),5090
+1698,1698,Finding,Body weight Measured,BROADER-THAN,LOINC,3141-9,Weight (kg),5089
+1699,1699,Finding,Heart rate,BROADER-THAN,LOINC,8867-4,Pulse,5087
+1700,1700,Finding,Mid upper arm circumference (observable entity),SAME-AS,SNOMED-CT,284473002,Mid-upper arm circumference,1343
+1701,1701,Finding,Respiratory rate,BROADER-THAN,LOINC,9279-1,Respiratory rate,5242
+1702,1702,Finding,Karnofsky performance status (assessment scale),SAME-AS,SNOMED-CT,273546003,Karnofsky performance score,5283
+1703,1703,Finding,Oxygen saturation in Arterial blood by Pulse oximetry,BROADER-THAN,LOINC,59408-5,Arterial blood oxygen saturation (pulse oximeter),5092
+1704,1704,Misc,Time patterns (qualifier value),NARROWER-THAN,SNOMED-CT,272103003,On time,167972
+1705,1705,Misc,Late (qualifier value),SAME-AS,SNOMED-CT,260383002,Late,167973
+1706,1706,Misc,Early (qualifier value),SAME-AS,SNOMED-CT,264499004,Early,167971
+1707,1707,Question,Clinical history/examination observable (observable entity),NARROWER-THAN,SNOMED-CT,363788007,Visit Punctuality,167970
+1712,1712,Misc,Lost to follow-up (finding),SAME-AS,SNOMED-CT,399307001,Lost to follow-up,5240
+1714,1714,Question,Note,BROADER-THAN,LOINC,34109-9,General patient note,165095
+1715,1715,ConvSet,Vital sign (observable entity),SAME-AS,SNOMED-CT,46680005,Vital signs,1114
+1716,1716,Diagnosis,Mild persistent asthma (disorder),SAME-AS,SNOMED-CT,426979002,Mild persistent asthma (J45.9),157792
+1718,1718,Diagnosis,Primary cardiomyopathy (disorder),SAME-AS,SNOMED-CT,89461002,Idiopathic cardiomyopathy (I42.8),129159
+1719,1719,Diagnosis,Heart failure (disorder),SAME-AS,SNOMED-CT,84114007,Heart Failure (I50.9),139069
+1720,1720,Diagnosis,Rheumatic fever without heart involvement (disorder),SAME-AS,SNOMED-CT,24363009,Rheumatic Fever Without Heart Involvement (I00),113228
+1721,1721,Diagnosis,Perinatal asphyxia (disorder),SAME-AS,SNOMED-CT,281578009,Birth Asphyxia (P21.9),130522
+1722,1722,Diagnosis,Diabetes mellitus type 1 (disorder),SAME-AS,SNOMED-CT,46635009,Type 1 diabetes (E10),142474
+1723,1723,Diagnosis,"Malignant tumor of lymphoid, hemopoietic AND/OR related tissue (disorder)",NARROWER-THAN,SNOMED-CT,269475001,Malignant tumor of lymphatic and hematopoietic tissue (C96.7),110112
+1724,1724,Diagnosis,Solar urticaria (disorder),SAME-AS,SNOMED-CT,10347006,"Urticaria, Solar (L56.3)",110169
+1725,1725,Diagnosis,Esophageal herpes simplex infection (disorder),SAME-AS,SNOMED-CT,240477008,Herpes simplex esophagitis (B00.8),110516
+1726,1726,Diagnosis,Fracture of great toe (disorder),SAME-AS,SNOMED-CT,208719004,Fracture of great toe (S92.4),110521
+1727,1727,Diagnosis,Gastrointestinal stromal tumor (disorder),SAME-AS,SNOMED-CT,420120006,Stromal tumor of digestive system (D48.1),110771
+1728,1728,Diagnosis,Fracture of base of skull (disorder),SAME-AS,SNOMED-CT,24063002,Fracture of Base of Skull (S02.1),110807
+1729,1729,Diagnosis,Cerebrovascular accident (disorder),SAME-AS,SNOMED-CT,230690007,Cerebrovascular Accident (I64),111103
+1730,1730,Diagnosis,Vitiligo (disorder),SAME-AS,SNOMED-CT,56727007,Vitiligo (L80),111459
+1731.1,1731,Diagnosis,Birth weight 999 g or less (finding),NARROWER-THAN,SNOMED-CT,310660006,"Extreme prematurity, < 28 weeks gestation (P07.2)",111523
+1731.2,1731,Diagnosis,Extreme immaturity (disorder),NARROWER-THAN,SNOMED-CT,276658003,"Extreme prematurity, < 28 weeks gestation (P07.2)",111523
+1732,1732,Diagnosis,Vaginal enterocele (disorder),SAME-AS,SNOMED-CT,398061002,Vaginal Enterocele (N81.5),111588
+1733,1733,Diagnosis,Inversion of uterus (disorder),SAME-AS,SNOMED-CT,27215002,Uterine Inversion (N85.5),111616
+1734,1734,Diagnosis,Urolithiasis (disorder),SAME-AS,SNOMED-CT,95566004,Urinary calculus (N20.9),111628
+1735,1735,Diagnosis,Polyarthropathy (disorder),NARROWER-THAN,SNOMED-CT,36186002,Polyarthropathy or Polyarthritis (M15.9),111662
+1736,1736,Diagnosis,Umbilical cord complication during labor and delivery (disorder),SAME-AS,SNOMED-CT,740597009,Umbilical Cord Complication During Labor and Delivery (O69.9),111705
+1737,1737,Diagnosis,Twin pregnancy (finding),SAME-AS,SNOMED-CT,65147003,Twin Pregnancy (O30.0),111772
+1738,1738,Diagnosis,Congestive cardiomyopathy (disorder),SAME-AS,SNOMED-CT,399020009,Dilated cardiomyopathy (I42.0),143624
+1739,1739,Diagnosis,Tuberculosis of skin and subcutaneous tissue (disorder),SAME-AS,SNOMED-CT,271423008,Tuberculosis of skin and subcutaneous tissue (A18.4),111939
+1740,1740,Diagnosis,Tuberculosis of meninges (disorder),SAME-AS,SNOMED-CT,58437007,Tuberculous Meningitis (A17.0),111967
+1741,1741,Diagnosis,Tuberculous peritonitis (disorder),SAME-AS,SNOMED-CT,44572005,Tuberculosis of the peritonium (A18.3),111816
+1742,1742,Diagnosis,Tuberculosis of central nervous system (disorder),SAME-AS,SNOMED-CT,10706006,Tuberculosis Of Central Nervous System (A17.9),112094
+1743,1743,Diagnosis,Tuberculosis of bones and/or joints (disorder),SAME-AS,SNOMED-CT,17653001,Tuberculosis of bones and joints (A18.0),112115
+1744,1744,Diagnosis,Tuberculoid leprosy (disorder),SAME-AS,SNOMED-CT,70143003,Tuberculoid Leprosy (Type T) (A30.1),112163
+1745,1745,Diagnosis,Triplet pregnancy (finding),SAME-AS,SNOMED-CT,64254006,Triplet Pregnancy (O30.1),112188
+1746,1746,Diagnosis,Traumatic amputation of finger (disorder),SAME-AS,SNOMED-CT,95855003,Traumatic Amputation of Finger(s) (S68.1),112245
+1747.1,1747,Diagnosis,Absence of upper limb (finding),NARROWER-THAN,SNOMED-CT,449669007,Amputation of arm (T11.6),112250
+1747.2,1747,Diagnosis,Amputee - limb (finding),NARROWER-THAN,SNOMED-CT,275530009,Amputation of arm (T11.6),112250
+1748,1748,Diagnosis,Transitory tachypnea of newborn (disorder),SAME-AS,SNOMED-CT,7550008,Transitory tachypnea of newborn (P22.1),112264
+1749.1,1749,Diagnosis,Cerebral ischemia (disorder),NARROWER-THAN,SNOMED-CT,287731003,Transient Cerebral Ischemia (G45.9),112276
+1749.2,1749,Diagnosis,Transient ischemia (disorder),NARROWER-THAN,SNOMED-CT,57357009,Transient Cerebral Ischemia (G45.9),112276
+1750,1750,Misc,Preoperative diagnosis (qualifier value),SAME-AS,SNOMED-CT,406520001,Pre-Operative Diagnosis,163034
+1751,1751,Misc,Postoperative diagnosis (qualifier value),SAME-AS,SNOMED-CT,406521002,Post-Operative Diagnosis,163035
+1753,1753,Misc,Nursing aid (occupation),SAME-AS,SNOMED-CT,73265009,Assistants,166010
+1755,1755,Misc,Anesthesia care monitoring (regime/therapy),SAME-AS,SNOMED-CT,426623001,Monitored Anesthesia Care,161916
+1757,1757,Misc,Brachial plexus block by axillary approach (procedure),SAME-AS,SNOMED-CT,231133002,Axillary Block,164251
+1759,1759,Misc,Local anesthetic intravenous regional block (procedure),SAME-AS,SNOMED-CT,303355006,Intravenous Block,164247
+1761,1761,Misc,Local anesthesia (procedure),SAME-AS,SNOMED-CT,386761002,Local Anesthesia,161914
+1762,1762,Misc,Type of anesthetic (observable entity),SAME-AS,SNOMED-CT,399084002,Anesthesia Type,164254
+1763,1763,Misc,Estimated blood loss (observable entity),SAME-AS,SNOMED-CT,409084000,Estimated Blood Loss,161928
+1764,1764,Misc,Disease (disorder),NARROWER-THAN,SNOMED-CT,64572001,Complications,120240
+1766,1766,Misc,Surgical drain (physical object),SAME-AS,SNOMED-CT,705718004,Drains,164240
+1769,1769,Misc,Date of procedure (observable entity),SAME-AS,SNOMED-CT,439272007,Time of Procedure,160715
+1771,1771,Finding,Eruption of skin (disorder),SAME-AS,SNOMED-CT,271807003,"Rash, nonvesicular, unspec.",512
+1773,1773,Finding,Dyspnea (finding),SAME-AS,SNOMED-CT,267036007,Shortness of breath,141600
+1776,1776,Finding,Sneezing (finding),SAME-AS,SNOMED-CT,76067001,Sneezing,126319
+1777,1777,Finding,Sore throat (finding),SAME-AS,SNOMED-CT,267102003,Sore throat or pain with swallowing,158843
+1778,1778,Finding,Loss of taste (finding),SAME-AS,SNOMED-CT,36955009,Loss of taste,135588
+1779,1779,Finding,Loss of sense of smell (finding),SAME-AS,SNOMED-CT,44169009,Loss of smell,135589
+1782,1782,Question,History of clinical finding in subject (situation),NARROWER-THAN,SNOMED-CT,417662000,Covid 19 Signs and Symptom in past 14 days,165656
+3,3,Question,ATT DEFAULT ATTACHMENT,,openmrs,3,ATT DEFAULT ATTACHMENT,
+4,4,Question,ATT IMAGE ATTACHMENT,,openmrs,4,ATT IMAGE ATTACHMENT,
+28,28,LabSet,GeneXpert MTB/Rif Lab set,,openmrs,28,GeneXpert MTB/Rif Lab set,
+31,31,Question,Bacillary burden as determined by quantitative cycle threshold,,openmrs,31,Bacillary burden as determined by quantitative cycle threshold,
+35,35,Misc,Invalid,,openmrs,35,Invalid,
+51,51,ConvSet,HIV test kits,,openmrs,51,HIV test kits,
+52,52,Medical supply,Trinity Biotech Trinscreen HIV test kit,,openmrs,52,Trinity Biotech Trinscreen HIV test kit,
+53,53,Medical supply,One Step HIV 1/2 testing kit,,openmrs,53,One Step HIV 1/2 testing kit,
+56,56,Medical supply,Premier First Response(R) test kit,,openmrs,56,Premier First Response(R) test kit,
+57,57,Medical supply,Abbott Determine(R) test kit,,openmrs,57,Abbott Determine(R) test kit,
+65,65,ConvSet,Tests Orderability,,openmrs,65,Tests Orderability,
+89,89,Finding,Four plus,,openmrs,89,Four plus,
+136,136,LabSet,Urine microscopy panel,,openmrs,136,Urine microscopy panel,
+145,145,Test,Spore presence in urine test,,openmrs,145,Spore presence in urine test,
+150,150,Test,Trichomonas vaginalis in microscopy of saline mount,,openmrs,150,Trichomonas vaginalis in microscopy of saline mount,
+246,246,ConvSet,Chemistry,,openmrs,246,Chemistry,
+248,248,ConvSet,Hematology,,openmrs,248,Hematology,
+249,249,ConvSet,Billable Services Set,,openmrs,249,Billable Services Set,
+259,259,Misc,Hospital waiver,,openmrs,259,Hospital waiver,
+263,263,Misc,Exempted from Insurance,,openmrs,263,Exempted from Insurance,
+265,265,Misc,Health insurance,,openmrs,265,Health insurance,
+266,266,Misc,Mobile money,,openmrs,266,Mobile money,
+267,267,Misc,Credit card,,openmrs,267,Credit card,
+268,268,Misc,Cash,,openmrs,268,Cash,
+269,269,Question,Method of payment,,openmrs,269,Method of payment,
+270,270,Misc,Euro,,openmrs,270,Euro,
+271,271,Misc,Ugandan shilling,,openmrs,271,Ugandan shilling,
+272,272,Misc,Tanzanian shilling,,openmrs,272,Tanzanian shilling,
+273,273,Misc,Nigerian naira,,openmrs,273,Nigerian naira,
+274,274,Misc,Kenyan shilling,,openmrs,274,Kenyan shilling,
+275,275,Misc,Ethiopian birr,,openmrs,275,Ethiopian birr,
+276,276,Question,Billable service,,openmrs,276,Billable service,
+277,277,Misc,Equitel Pay,,openmrs,277,Equitel Pay,
+278,278,Misc,Tigo Pesa,,openmrs,278,Tigo Pesa,
+279,279,Misc,MTN MoMo,,openmrs,279,MTN MoMo,
+280,280,Misc,Orange Money,,openmrs,280,Orange Money,
+281,281,Misc,Airtel Money,,openmrs,281,Airtel Money,
+283,283,Misc,M-Pesa,,openmrs,283,M-Pesa,
+284,284,Question,Mobile money type,,openmrs,284,Mobile money type,
+286,286,ConvSet,Billing status set,,openmrs,286,Billing status set,
+291,291,ConvSet,Charge item status set,,openmrs,291,Charge item status set,
+292,292,Question,Invoice total,,openmrs,292,Invoice total,
+293,293,Question,Invoice total net taxes,,openmrs,293,Invoice total net taxes,
+294,294,Question,Invoice price,,openmrs,294,Invoice price,
+295,295,Question,Invoice line number,,openmrs,295,Invoice line number,
+355,355,ConvSet,Imaging procedure history,,openmrs,355,Imaging procedure history,
+402,402,Diagnosis,HIV resulting in other conditions,,openmrs,402,HIV resulting in other conditions,
+421,421,ConvSet,Dispensing units,,openmrs,421,Dispensing units,
+487,487,ConvSet,Allergens Options,,openmrs,487,Allergens Options,
+505,505,ConvSet,Reference application allergic reactions,,openmrs,505,Reference application allergic reactions,
+506,506,ConvSet,Reference application common environmental allergens,,openmrs,506,Reference application common environmental allergens,
+507,507,ConvSet,Reference application common food allergens,,openmrs,507,Reference application common food allergens,
+508,508,ConvSet,Reference application common drug allergens,,openmrs,508,Reference application common drug allergens,
+509,509,Misc,Strawberries,,openmrs,509,Strawberries,
+516,516,Misc,Ragweed,,openmrs,516,Ragweed,
+522,522,Pharmacologic Drug Class,NSAIDs,,openmrs,522,NSAIDs,
+523,523,Pharmacologic Drug Class,Heparins,,openmrs,523,Heparins,
+524,524,Pharmacologic Drug Class,Cephalosporins,,openmrs,524,Cephalosporins,
+527,527,Pharmacologic Drug Class,Penicillins,,openmrs,527,Penicillins,
+529,529,Misc,Soy,,openmrs,529,Soy,
+563,563,Pharmacologic Drug Class,Erythromycins,,openmrs,563,Erythromycins,
+564,564,Pharmacologic Drug Class,Statins,,openmrs,564,Statins,
+567,567,Pharmacologic Drug Class,Sulfonamides,,openmrs,567,Sulfonamides,
+640,640,ConvSet,Status,,openmrs,640,Status,
+644,644,ConvSet,Service,,openmrs,644,Service,
+646,646,ConvSet,Priority,,openmrs,646,Priority,
+647,647,Misc,Not Urgent,,openmrs,647,Not Urgent,
+654,654,ConvSet,Medication dispense status reason,,openmrs,654,Medication dispense status reason,
+655,655,Misc,Washout period,,openmrs,655,Washout period,
+656,656,Misc,Surgery planned,,openmrs,656,Surgery planned,
+667,667,Misc,Stale-dated order,,openmrs,667,Stale-dated order,
+669,669,ConvSet,SubstanceAdminSubstitutionReason,,openmrs,669,SubstanceAdminSubstitutionReason,
+670,670,Misc,Regulatory requirement,,openmrs,670,Regulatory requirement,
+671,671,Misc,Formulary policy,,openmrs,671,Formulary policy,
+672,672,ConvSet,ActSubstanceAdminSubstitutionCode,,openmrs,672,ActSubstanceAdminSubstitutionCode,
+673,673,Misc,Formulary substitution,,openmrs,673,Formulary substitution,
+674,674,Misc,Therapeutic generic substitution,,openmrs,674,Therapeutic generic substitution,
+675,675,Misc,Therapeutic brand substitution,,openmrs,675,Therapeutic brand substitution,
+676,676,Misc,Therapeutic alternative substitution,,openmrs,676,Therapeutic alternative substitution,
+677,677,Misc,Generic composition substitution,,openmrs,677,Generic composition substitution,
+678,678,Misc,Brand composition substitution,,openmrs,678,Brand composition substitution,
+679,679,Misc,Equivalent composition substitution,,openmrs,679,Equivalent composition substitution,
+680,680,Misc,Equivalent substitution,,openmrs,680,Equivalent substitution,
+689,689,Misc,Example Option 3,,openmrs,689,Example Option 3,
+690,690,Misc,Example Option 2,,openmrs,690,Example Option 2,
+691,691,Misc,Example Option 1,,openmrs,691,Example Option 1,
+693,693,Misc,date,,openmrs,693,date,
+695,695,Misc,radio,,openmrs,695,radio,
+696,696,Misc,number,,openmrs,696,number,
+697,697,Misc,text area field,,openmrs,697,text area field,
+698,698,Misc,text field,,openmrs,698,text field,
+703,703,ConvSet,Inpatient disposition construct,,openmrs,703,Inpatient disposition construct,
+713,713,Question,Assessment,,openmrs,713,Assessment,
+723,723,Question,Current drugs used,,openmrs,723,Current drugs used,
+727,727,Misc Order,Diagnostic testing and counseling for HIV,,openmrs,727,Diagnostic testing and counseling for HIV,
+755,755,Finding,Dosing change,,openmrs,755,Dosing change,
+791,791,Misc Order,Voluntary counseling and testing for HIV,,openmrs,791,Voluntary counseling and testing for HIV,
+874,874,Misc,Recurrence of disease,,openmrs,874,Recurrence of disease,
+897,897,Question,HIV self-test performed,,openmrs,897,HIV self-test performed,
+900,900,Finding,Condition clinical status,,openmrs,900,Condition clinical status,
+913,913,Question,HIV test date,,openmrs,913,HIV test date,
+916,916,Question,Visit type,,openmrs,916,Visit type,
+930,930,Question,Smoking status,,openmrs,930,Smoking status,
+934,934,Finding,Current some day smoker,,openmrs,934,Current some day smoker,
+935,935,Finding,Current light tobacco smoker,,openmrs,935,Current light tobacco smoker,
+936,936,Finding,Current heavy tobacco smoker,,openmrs,936,Current heavy tobacco smoker,
+963,963,Question,Text of encounter note,,openmrs,963,Text of encounter note,
+964,964,Question,Patient-generated history: Family history section text,,openmrs,964,Patient-generated history: Family history section text,
+966,966,Question,Test name,,openmrs,966,Test name,
+968,968,Misc,Patient-reported,,openmrs,968,Patient-reported,
+969,969,Misc Order,Change regimen,,openmrs,969,Change regimen,
+970,970,Misc Order,Change formulation,,openmrs,970,Change formulation,
+978,978,Question,Antiretroviral plan,,openmrs,978,Antiretroviral plan,
+992,992,Diagnosis,Papular pruritic eruption,,openmrs,992,Papular pruritic eruption,
+1010,1010,Misc,Return visit type,,openmrs,1010,Return visit type,
+1011,1011,Misc,Tuberculosis Visit,,openmrs,1011,Tuberculosis Visit,
+1012,1012,Misc,Preventing Mother to Child Transmission Visit,,openmrs,1012,Preventing Mother to Child Transmission Visit,
+1013,1013,Misc,Kaposi Sarcoma Visit,,openmrs,1013,Kaposi Sarcoma Visit,
+1014,1014,Misc,Early Infant Diagnosis Visit,,openmrs,1014,Early Infant Diagnosis Visit,
+1015,1015,Misc,Pre-ART Visit,,openmrs,1015,Pre-ART Visit,
+1016,1016,Misc,Antiretroviral Treatment Visit,,openmrs,1016,Antiretroviral Treatment Visit,
+1019,1019,Misc,Pharmacy Visit,,openmrs,1019,Pharmacy Visit,
+1034,1034,Finding,Diagnosis order,,openmrs,1034,Diagnosis order,
+1038,1038,Question,Detailed location information,,openmrs,1038,Detailed location information,
+1039,1039,Misc,Maternal and child health program,,openmrs,1039,Maternal and child health program,
+1047,1047,Question,reuse,,openmrs,1047,reuse,
+1111,1111,Finding,Daily cigarette use,,openmrs,1111,Daily cigarette use,
+1148,1148,Question,History of HIV test,,openmrs,1148,History of HIV test,
+1155,1155,Misc,Never,,openmrs,1155,Never,
+1199,1199,Misc Order,Current immunization orders,,openmrs,1199,Current immunization orders,
+1209,1209,Finding,Immunization sequence number,,openmrs,1209,Immunization sequence number,
+1211,1211,Finding,Vaccination date,,openmrs,1211,Vaccination date,
+1230,1230,Misc,Patient Identification Photo,,openmrs,1230,Patient Identification Photo,
+1249,1249,Drug,Amlodipine & Atenolol,,openmrs,1249,Amlodipine & Atenolol,
+1253,1253,Drug,Amoxicillin & Cloxacillin,,openmrs,1253,Amoxicillin & Cloxacillin,
+1288,1288,Drug,Clotrimazole & Lignocaine,,openmrs,1288,Clotrimazole & Lignocaine,
+1290,1290,Drug,Clove Oil,,openmrs,1290,Clove Oil,
+1294,1294,Drug,Cremaffin,,openmrs,1294,Cremaffin,
+1311,1311,Drug,Etophylline & Theophylline,,openmrs,1311,Etophylline & Theophylline,
+1322,1322,Drug,Gamma Benzene Hexachloride & Cetrimide,,openmrs,1322,Gamma Benzene Hexachloride & Cetrimide,
+1326,1326,Drug,Glycerine & Sodium Chloride Enema,,openmrs,1326,Glycerine & Sodium Chloride Enema,
+1330,1330,Drug,Hydrogen Peroxide,,openmrs,1330,Hydrogen Peroxide,
+1333,1333,Drug,Ibuprofen & Paracetamol,,openmrs,1333,Ibuprofen & Paracetamol,
+1357,1357,Drug,"Metronidazole, Chlorhexidine, Lignocaine & Menthol",,openmrs,1357,"Metronidazole, Chlorhexidine, Lignocaine & Menthol",
+1371,1371,Drug,Oral Hormonal Contraceptive Pills,,openmrs,1371,Oral Hormonal Contraceptive Pills,
+1375,1375,Drug,P Dextrose And Electrolyte Solution,,openmrs,1375,P Dextrose And Electrolyte Solution,
+1377,1377,Drug,Paracetamol & Codeine Phosphate,,openmrs,1377,Paracetamol & Codeine Phosphate,
+1379,1379,Drug,Paradichloro Benzene,,openmrs,1379,Paradichloro Benzene,
+1385,1385,Drug,Pilex,,openmrs,1385,Pilex,
+1402,1402,Drug,Salbutamol & Bromhexine,,openmrs,1402,Salbutamol & Bromhexine,
+1417,1417,Drug,Trypsin Chymotrypsin,,openmrs,1417,Trypsin Chymotrypsin,
+1436,1436,Drug,Gamma-Hexachlorocyclohexane,,openmrs,1436,Gamma-Hexachlorocyclohexane,
+1442,1442,Drug,Fluticasone Furoate & Vilanterol,,openmrs,1442,Fluticasone Furoate & Vilanterol,
+1454,1454,Drug,"Peanut, Sugar, Vegetable oil, Milk, Vitamins, minerals",,openmrs,1454,"Peanut, Sugar, Vegetable oil, Milk, Vitamins, minerals",
+1471,1471,Drug,Aclidinium Bromide,,openmrs,1471,Aclidinium Bromide,
+1476,1476,Drug,Corticosteroid,,openmrs,1476,Corticosteroid,
+1477,1477,Drug,Emollient Lotion,,openmrs,1477,Emollient Lotion,
+1487,1487,Drug,Saline flush,,openmrs,1487,Saline flush,
+1491,1491,Drug,Eye glasses,,openmrs,1491,Eye glasses,
+1492,1492,Drug,Orthopedic device,,openmrs,1492,Orthopedic device,
+1494,1494,Drug,Alpha Methyl Dopa,,openmrs,1494,Alpha Methyl Dopa,
+1504,1504,Drug,Ferrous Folate,,openmrs,1504,Ferrous Folate,
+1505,1505,Drug,Fungobacter,,openmrs,1505,Fungobacter,
+1509,1509,Drug,Metronidazole and Nystatin,,openmrs,1509,Metronidazole and Nystatin,
+1515,1515,Drug,"Acetaminophen,Pseudo-ephedrine,Dextrometorphan,Chlorpheniramine",,openmrs,1515,"Acetaminophen,Pseudo-ephedrine,Dextrometorphan,Chlorpheniramine",
+1517,1517,Drug,Amino Acids and Vitamins,,openmrs,1517,Amino Acids and Vitamins,
+1521,1521,Drug,"Rifampicine, Isoniazide, Ethambutol, pyrazinamide",,openmrs,1521,"Rifampicine, Isoniazide, Ethambutol, pyrazinamide",
+1523,1523,MedSet,Albendazole and Vitamin A Set,,openmrs,1523,Albendazole and Vitamin A Set,
+1538,1538,Drug,Multivitamin & Lysine,,openmrs,1538,Multivitamin & Lysine,
+1562,1562,Drug,Insulin (Fast & Long Acting),,openmrs,1562,Insulin (Fast & Long Acting),
+1570,1570,Drug,Sodium phosphate (Fleet's),,openmrs,1570,Sodium phosphate (Fleet's),
+1571,1571,Drug,"Nitrofurasone, Neomycin, Dexamethasone (Otofuran®)",,openmrs,1571,"Nitrofurasone, Neomycin, Dexamethasone (Otofuran®)",
+1577,1577,Drug,Sodium hyaluronate & Oxymetazoline,,openmrs,1577,Sodium hyaluronate & Oxymetazoline,
+1592,1592,Drug,Mineral oil,,openmrs,1592,Mineral oil,
+1598,1598,Drug,Benzathine penicillin,,openmrs,1598,Benzathine penicillin,
+1599,1599,Drug,Benzyl penicillin,,openmrs,1599,Benzyl penicillin,
+1611,1611,Drug,Atazanavir & Ritonavir,,openmrs,1611,Atazanavir & Ritonavir,
+1635,1635,Drug,Ready-to-Use Supplementary Foods,,openmrs,1635,Ready-to-Use Supplementary Foods,
+1638,1638,Drug,Calcium & vit,,openmrs,1638,Calcium & vit,
+1642,1642,Drug,Cortisone & antibiotic & antimycotic,,openmrs,1642,Cortisone & antibiotic & antimycotic,
+1653,1653,Drug,Hialorunate de Na+ et oxymetazoline,,openmrs,1653,Hialorunate de Na+ et oxymetazoline,
+1659,1659,Drug,MTV & Fer gttes (pr neonato),,openmrs,1659,MTV & Fer gttes (pr neonato),
+1662,1662,Drug,Parenteral nutrition (peripheral at least),,openmrs,1662,Parenteral nutrition (peripheral at least),
+1680,1680,Drug,Eucalyptus & Diphenhydramine & Phenylephrine,,openmrs,1680,Eucalyptus & Diphenhydramine & Phenylephrine,
+1682,1682,Drug,Boric acid & Antipyrine & Ephedrine,,openmrs,1682,Boric acid & Antipyrine & Ephedrine,
+1683,1683,Drug,Belladona & Phenobarbital,,openmrs,1683,Belladona & Phenobarbital,
+1684,1684,Drug,Dequalinium & Lidocaine,,openmrs,1684,Dequalinium & Lidocaine,
+1685,1685,Drug,Diclofenac & Vitamin B complex,,openmrs,1685,Diclofenac & Vitamin B complex,
+1686,1686,Drug,Diclofenac & Methocarbamol & Paracetamol,,openmrs,1686,Diclofenac & Methocarbamol & Paracetamol,
+1690,1690,Drug,Nystatin & Zinc Oxide,,openmrs,1690,Nystatin & Zinc Oxide,
+1691,1691,Drug,Multivitamin & Iron,,openmrs,1691,Multivitamin & Iron,
+1708,1708,Misc,Prevention of Maternal to Child HIV transmissio,,openmrs,1708,Prevention of Maternal to Child HIV transmissio,
+1709,1709,Misc,HIV treatment status,,openmrs,1709,HIV treatment status,
+1710,1710,Misc,Program status,,openmrs,1710,Program status,
+1711,1711,Misc,On Antiretrovirals Treatment,,openmrs,1711,On Antiretrovirals Treatment,
+1713,1713,Misc,Never started,,openmrs,1713,Never started,
+1717,1717,Diagnosis,Acute rheumatic fever (I00),,openmrs,1717,Acute rheumatic fever (I00),
+1752,1752,Misc,Procedure,,openmrs,1752,Procedure,
+1754,1754,Misc,General,,openmrs,1754,General,
+1756,1756,Misc,Knee Block,,openmrs,1756,Knee Block,
+1758,1758,Misc,Interscalene Block,,openmrs,1758,Interscalene Block,
+1760,1760,Misc,Local Anesthesia and Sedation,,openmrs,1760,Local Anesthesia and Sedation,
+1765,1765,Misc,Specimens,,openmrs,1765,Specimens,
+1767,1767,Misc,Condition upon discharge from OR,,openmrs,1767,Condition upon discharge from OR,
+1768,1768,Misc,Surgeon,,openmrs,1768,Surgeon,
+1770,1770,Misc,Post-Operative Instructions,,openmrs,1770,Post-Operative Instructions,
+1772,1772,Finding,Congestion,,openmrs,1772,Congestion,
+1774,1774,Finding,Onset Date,,openmrs,1774,Onset Date,
+1775,1775,Question,Presence of Symptoms,,openmrs,1775,Presence of Symptoms,
+1780,1780,Finding,"Diarrea, Vomiting or Abdominal pain",,openmrs,1780,"Diarrea, Vomiting or Abdominal pain",
+1781,1781,Finding,Practicing social distancing,,openmrs,1781,Practicing social distancing,
+1783,1783,ConvSet,Covid 19 Signs and Symptom Set,,openmrs,1783,Covid 19 Signs and Symptom Set,
+1784,1784,Question,Tested for COVID 19,,openmrs,1784,Tested for COVID 19,
+1785,1785,Misc,Respiratory PCR,,openmrs,1785,Respiratory PCR,
+1786,1786,Misc,Rapid blood test,,openmrs,1786,Rapid blood test,
+1787,1787,Misc,ELISA blood test,,openmrs,1787,ELISA blood test,
+1788,1788,Question,Test Done,,openmrs,1788,Test Done,
+1789,1789,Question,Test Results,,openmrs,1789,Test Results,
+1790,1790,ConvSet,Covid 19 Test Set,,openmrs,1790,Covid 19 Test Set,
+1791,1791,Misc,Session Name,,openmrs,1791,Session Name,
+1792,1792,Misc,Session Date,,openmrs,1792,Session Date,
+1793,1793,Misc,Practitioner,,openmrs,1793,Practitioner,
+1794,1794,Misc,Session Notes,,openmrs,1794,Session Notes,
