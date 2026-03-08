@@ -19,7 +19,8 @@ RUN pip install --break-system-packages \
     sqlmesh==0.230.0 \
     "pandas<3.0" \
     pymysql \
-    sqlalchemy
+    sqlalchemy \
+    sqlmesh[web]
 # set workdir
 WORKDIR /core
 
