@@ -62,6 +62,11 @@ services:
       POSTGRES_PASSWORD: omop
     ports:
       - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U omop -d omop" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 #    volumes:
 #      - ./omop-ddl/processed/ddl:/docker-entrypoint-initdb.d
   achilles:
@@ -132,6 +137,48 @@ services:
     profiles:
       - manual
 
+  webapi:
+    image: ohdsi/webapi:latest
+    container_name: webapi
+    ports:
+      - "8180:8080"
+    environment:
+      DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
+      DATASOURCE_USERNAME: omop
+      DATASOURCE_PASSWORD: omop
+      DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      DATASOURCE_DIALECT: postgresql
+      DATASOURCE_OHDSI_SCHEMA: public
+
+      FLYWAY_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      FLYWAY_DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
+      FLYWAY_DATASOURCE_USERNAME: omop
+      FLYWAY_DATASOURCE_PASSWORD: omop
+      FLYWAY_DATASOURCE_LOCATIONS: classpath:db/migration/postgresql
+
+
+      SECURITY_ENABLED: true
+      SECURITY_ORIGIN: "http://localhost:8380"
+#       Code below will be need when to all Atlas login // Uncomment when required
+
+      SECURITY_PROVIDER: AtlasRegularSecurity
+      SECURITY_DB_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      SECURITY_DB_DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
+      SECURITY_DB_DATASOURCE_USERNAME: omop
+      SECURITY_DB_DATASOURCE_PASSWORD: omop
+      SECURITY_DB_DATASOURCE_SCHEMA: public
+    depends_on:
+      - omop-db
+
+  atlas:
+    image: ohdsi/atlas:latest
+    container_name: atlas
+    ports:
+      - "8380:8080"
+    environment:
+      - WEBAPI_URL=http://localhost:8180/WebAPI
+    depends_on:
+      - webapi
 
 
 volumes:

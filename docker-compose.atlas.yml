@@ -1,0 +1,42 @@
+version: "3.7"
+services:
+  webapi:
+    image: ohdsi/webapi:latest
+    container_name: webapi
+    ports:
+      - "8180:8080"
+    environment:
+      DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
+      DATASOURCE_USERNAME: omop
+      DATASOURCE_PASSWORD: omop
+      DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      DATASOURCE_DIALECT: postgresql
+      DATASOURCE_OHDSI_SCHEMA: public
+
+      FLYWAY_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      FLYWAY_DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
+      FLYWAY_DATASOURCE_USERNAME: omop
+      FLYWAY_DATASOURCE_PASSWORD: omop
+      FLYWAY_DATASOURCE_LOCATIONS: classpath:db/migration/postgresql
+
+
+      SECURITY_ENABLED: true
+      SECURITY_ORIGIN: "http://localhost:8380"
+      SECURITY_PROVIDER: AtlasRegularSecurity
+      SECURITY_DB_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      SECURITY_DB_DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
+      SECURITY_DB_DATASOURCE_USERNAME: omop
+      SECURITY_DB_DATASOURCE_PASSWORD: omop
+      SECURITY_DB_DATASOURCE_SCHEMA: public
+    depends_on:
+      - omop-db
+  atlas:
+    image: ohdsi/atlas:latest
+    container_name: atlas
+    ports:
+      - "8380:8080"
+    environment:
+      - WEBAPI_URL=http://localhost:8180/WebAPI
+      - ATLAS_USER_AUTH_ENABLED=true
+    depends_on:
+      - webapi
