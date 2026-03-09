@@ -15,10 +15,12 @@ RUN apt-get update && \
 
 
 # Install sqlmesh (force system install)
-RUN pip install --break-system-packages sqlmesh==0.190.0
-RUN pip install --break-system-packages pymysql
-RUN pip install --break-system-packages sqlalchemy
-RUN pip install --break-system-packages pandas
+RUN pip install --break-system-packages \
+    sqlmesh==0.230.0 \
+    "pandas<3.0" \
+    pymysql \
+    sqlalchemy \
+    sqlmesh[web]
 
 # set workdir
 WORKDIR /core

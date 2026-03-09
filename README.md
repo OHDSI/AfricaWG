@@ -7,8 +7,8 @@ Follow these steps to get the project up and running:
 ### 1. Clone the repository
 
 ```bash
-git clone git@github.com:jayasanka-sack/openmrs-to-omop.git
-cd openmrs-to-omop
+git clone https://github.com/OHDSI/AfricaWG.git
+cd AfricaWG
 ```
 
 ---
@@ -222,10 +222,11 @@ docker compose run --rm core populate-cdm-source
     docker compose run --rm dqd run
    ```
 ### 9. **View the Data Quality Dashboard**
-      This serves the DQD results on a local web server. Once it's running, open your browser and go to [http://localhost:3000](http://localhost:3000).
+   
    ```
    docker compose run --rm --service-ports dqd view
    ``` 
+This serves the DQD results on a local web server. Once it's running, open your browser and go to [http://localhost:3000](http://localhost:3000).
 
 ## 🧪 What does Achilles do?
 Achilles analyzes the OMOP CDM data and generates summary statistics, data quality metrics, and precomputed reports. These results are essential for visualizations in tools like Atlas.
