@@ -23,8 +23,8 @@ generate-concepts-usagi-input() {
 
 apply-sqlmesh-plan() {
   echo "Running SQLMesh plan..."
-  sqlmesh plan --no-prompts --auto-apply --restate-model '*'
-#  sqlmesh plan --no-prompts --auto-apply
+#  sqlmesh plan --no-prompts --auto-apply --restate-model '*'
+  sqlmesh plan --no-prompts --auto-apply
   echo "SQLMesh plan completed."
 }
 
@@ -150,7 +150,7 @@ populate-cdm-source() {
   : "${CDM_HOLDER:=OpenMRS Community}"
   : "${CDM_SOURCE_DESC:=OMOP CDM instance generated from OpenMRS data.}"
   : "${CDM_DOC_REF:=https://openmrs.org}"
-  : "${CDM_ETL_REF:=https://github.com/openmrs/etl-pipeline}"
+  : "${CDM_ETL_REF:=https://github.com/OHDSI/AfricaWG.git}"
   : "${CDM_VERSION:=5.4.0}"
   : "${VOCAB_VERSION:=v5.0}"
 
@@ -228,6 +228,9 @@ case "$command" in
     ;;
   import-omop-concepts)
     import-omop-concepts
+    ;;
+  apply-omop-constraints)
+    apply-omop-constraints
     ;;
   populate-cdm-source)
     populate-cdm-source

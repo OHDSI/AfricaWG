@@ -17,4 +17,4 @@ install2.r --error --ncpus 2 \
 R CMD javareconf
 EOF
 
-RUN R -e "remotes::install_github(repo = 'OHDSI/DataQualityDashboard')"
+RUN R -e "remotes::install_github('OHDSI/DataQualityDashboard', ref = 'v2.8.6')"

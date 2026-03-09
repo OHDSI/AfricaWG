@@ -8,9 +8,19 @@ mode <- args[[1]]
 
 source("/postprocessing/init.R")
 
+log_message <- function(msg, level = "INFO") {
+  timestamp <- format(Sys.time(), "%Y-%m-%d %H:%M:%S")
+  cat(sprintf("[%s] [%s] %s\n", timestamp, level, msg))
+}
+
+splitOrEmpty <- function(x) {
+  if (is.na(x) || x == "" || x == "NULL") return(character(0))
+  strsplit(x, ",", fixed = TRUE)[[1]]
+}
+
 if (mode == "run") {
 #   source("/postprocessing/init.R")
-
+  log_message("Initializing DQD wrapper configuration...")
   envVarNames <- list(
     "DQD_NUM_THREADS",
     "DQD_SQL_ONLY",
@@ -40,6 +50,7 @@ if (mode == "run") {
                             cdmConfig$CDM_DATABASE_SCHEMA)
 
   if (!file.exists(outputFolder)) {
+    log_message(sprintf("Creating output directory: %s", outputFolder))
     dir.create(path = outputFolder, recursive = TRUE)
   }
 
@@ -47,6 +58,27 @@ if (mode == "run") {
     jobConfig$DQD_COHORT_DEFINITION_ID <- c()
   }
 
+  checkNames <- splitOrEmpty(jobConfig$DQD_CHECK_NAMES)
+     if (length(checkNames) == 0) {
+         checkNames <- c(
+             "cdmTable", "cdmField", "isRequired", "cdmDatatype", "isPrimaryKey",
+             "isForeignKey", "fkDomain", "fkClass", "isStandardValidConcept",
+             "measurePersonCompleteness", "plausibleValueLow", "plausibleValueHigh",
+             "plausibleBeforeDeath", "plausibleAfterBirth",
+             "plausibleStartBeforeEnd", "plausibleGenderUseDescendants",
+             "measureConditionEraCompleteness","measureObservationPeriodOverlap",
+             "measureValueCompleteness","standardConceptRecordCompleteness",
+             "sourceConceptRecordCompleteness","sourceValueCompleteness",
+              "withinVisitDates",
+             "plausibleUnitConceptIds"
+
+         )
+         log_message("No DQD_CHECK_NAMES provided. Using modern standard defaults.")
+     }
+
+log_message("Starting DQD execution (mode: run)...")
+
+tryCatch({
   result <- DataQualityDashboard::executeDqChecks(
     connectionDetails = connectionDetails,
     cdmDatabaseSchema = cdmConfig$CDM_DATABASE_SCHEMA,
@@ -64,12 +96,12 @@ if (mode == "run") {
     writeTableName = jobConfig$DQD_WRITE_TABLE_NAME,
     writeToCsv = as.logical(jobConfig$DQD_WRITE_TO_CSV),
     csvFile = jobConfig$DQD_CSV_FILE,
-    checkLevels = (strsplit(x = jobConfig$DQD_CHECK_LEVELS, split = ",", fixed = TRUE))[[1]],
-    checkNames = (strsplit(x = jobConfig$DQD_CHECK_NAMES, split = ",", fixed = TRUE))[[1]],
+    checkLevels =  splitOrEmpty(jobConfig$DQD_CHECK_LEVELS),
+    checkNames = checkNames,
     cohortDefinitionId = jobConfig$DQD_COHORT_DEFINITION_ID,
     cohortDatabaseSchema = jobConfig$DQD_COHORT_DATABASE_SCHEMA,
     cohortTableName = jobConfig$DQD_COHORT_TABLE_NAME,
-    tablesToExclude = (strsplit(x = jobConfig$DQD_TABLES_TO_EXCLUDE, split = ",", fixed = TRUE))[[1]],
+    tablesToExclude = splitOrEmpty(jobConfig$DQD_TABLES_TO_EXCLUDE),
     cdmVersion = cdmConfig$CDM_VERSION,
     tableCheckThresholdLoc = jobConfig$DQD_TABLE_CHECK_THRESHOLD_LOC,
     fieldCheckThresholdLoc = jobConfig$DQD_FIELD_CHECK_THRESHOLD_LOC,
@@ -84,12 +116,27 @@ if (mode == "run") {
     targetCase = "snake"
   )
 
+ log_message("Success: DQD results generated and converted.")
+
+}, error = function(e) {
+    log_message(sprintf("CRITICAL ERROR: %s", e$message), level = "ERROR")
+    quit(status = 1)
+  })
+
+
 } else if (mode == "view") {
+  log_message("Launching DQD viewer (mode: view)...")
+
   jsonFilePath <- file.path("/postprocessing",
                             "dqd",
                             "data",
                             cdmConfig$CDM_DATABASE_SCHEMA,
                             "dq-result.json")
+
+  if (!file.exists(jsonFilePath)) {
+       log_message(sprintf("Error: Results file not found at %s", jsonFilePath), level = "ERROR")
+       quit(status = 1)
+  }
 
   DataQualityDashboard::viewDqDashboard(
         jsonFilePath,
