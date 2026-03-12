@@ -26,7 +26,7 @@ docker compose --profile manual build
 ### 3. Start the services
 
 ```bash
-docker compose up
+docker compose up -d
 ```
 
 ---
@@ -212,6 +212,7 @@ docker compose run --rm core populate-cdm-source
 | `populate-cdm-source`           | Populates the CDM source metadata table with configuration details.                                                                |
 | `run-full-pipeline`             | Executes all steps automatically in the correct order (see `core/entrypoint.sh` for details).                                      |
 
+---
 ### 7. **Run Achilles to generate data summaries** (Check What Achilles does below.)
    ```
    docker compose run achilles
