@@ -1,42 +1,107 @@
 version: "3.7"
 services:
   webapi:
-    image: ohdsi/webapi:latest
+    build:
+      context: .
+      dockerfile: atlas/Dockerfile
     container_name: webapi
+    restart: on-failure
     ports:
-      - "8180:8080"
+      - "8080:8080"
     environment:
+      SERVER_PORT: 8080
+      DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
       DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
       DATASOURCE_USERNAME: omop
       DATASOURCE_PASSWORD: omop
-      DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
       DATASOURCE_DIALECT: postgresql
-      DATASOURCE_OHDSI_SCHEMA: public
+      DATASOURCE_OHDSI_SCHEMA: webapi
 
+      # Flyway
       FLYWAY_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
       FLYWAY_DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
       FLYWAY_DATASOURCE_USERNAME: omop
       FLYWAY_DATASOURCE_PASSWORD: omop
-      FLYWAY_DATASOURCE_LOCATIONS: classpath:db/migration/postgresql
+      FLYWAY_LOCATIONS: classpath:db/migration/postgresql
 
+      # Security
+      SECURITY_PROVIDER: DisabledSecurity
+      SECURITY_TOKEN_EXPIRATION: 43200
+      SECURITY_ORIGIN: "*"
+      SECURITY_SSL_ENABLED: "false"
+      SECURITY_CORS_ENABLED: "true"
 
-      SECURITY_ENABLED: true
-      SECURITY_ORIGIN: "http://localhost:8380"
-      SECURITY_PROVIDER: AtlasRegularSecurity
-      SECURITY_DB_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      SECURITY_OAUTH_CALLBACK_UI: http://localhost:8180/Atlas/#/welcome
+      SECURITY_OAUTH_CALLBACK_API: http://localhost:8080/WebAPI/user/oauth/callback
+
+      # OAuth keys (empty by default)
+      SECURITY_OAUTH_GOOGLE_APIKEY: ""
+      SECURITY_OAUTH_GOOGLE_APISECRET: ""
+      SECURITY_OAUTH_FACEBOOK_APIKEY: ""
+      SECURITY_OAUTH_FACEBOOK_APISECRET: ""
+      SECURITY_OAUTH_GITHUB_APIKEY: ""
+      SECURITY_OAUTH_GITHUB_APISECRET: ""
+
+      # OID
+      SECURITY_OID_CLIENTID: ""
+      SECURITY_OID_APISECRET: ""
+      SECURITY_OID_URL: ""
+      SECURITY_OID_REDIRECTURL: http://localhost/index.html#/welcome/
+
+      # LDAP / AD
+      SECURITY_LDAP_DN: cn={0},dc=example,dc=org
+      SECURITY_LDAP_URL: ldap://localhost:389
+      SECURITY_LDAP_BASEDN: ""
+      SECURITY_LDAP_SYSTEM_USERNAME: ""
+      SECURITY_LDAP_SYSTEM_PASSWORD: ""
+
+      SECURITY_AD_URL: ldap://localhost:389
+      SECURITY_AD_SEARCHBASE: CN=Users,DC=example,DC=org
+      SECURITY_AD_PRINCIPALSUFFIX: "@example.org"
+      SECURITY_AD_SYSTEM_USERNAME: ""
+      SECURITY_AD_SYSTEM_PASSWORD: ""
+      SECURITY_AD_SEARCHFILTER: ""
+      SECURITY_AD_IGNORE_PARTIAL_RESULT_EXCEPTION: "true"
+      SECURITY_AD_RESULT_COUNT_LIMIT: 30000
+      SECURITY_AD_DEFAULT_IMPORT_GROUP: public
+
+      # CAS / Google IAP
+      SECURITY_CAS_LOGINURL: ""
+      SECURITY_CAS_CALLBACKURL: ""
+      SECURITY_CAS_SERVERURL: ""
+      SECURITY_CAS_CASSVCS: ""
+      SECURITY_CAS_CASTICKET: casticket
+      SECURITY_GOOGLEIAP_CLOUDPROJECTID: ""
+      SECURITY_GOOGLEIAP_BACKENDSERVICEID: ""
+
+      # Login attempts / durations
+      SECURITY_MAXLOGINATTEMPTS: 3
+      SECURITY_DURATION_INITIAL: 10
+      SECURITY_DURATION_INCREMENT: 10
+
+      # Security DB datasource
+      SECURITY_DB_DATASOURCE_SCHEMA: webapi
       SECURITY_DB_DATASOURCE_URL: jdbc:postgresql://omop-db:5432/omop
+      SECURITY_DB_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
       SECURITY_DB_DATASOURCE_USERNAME: omop
       SECURITY_DB_DATASOURCE_PASSWORD: omop
-      SECURITY_DB_DATASOURCE_SCHEMA: public
-    depends_on:
-      - omop-db
+      SECURITY_DB_DATASOURCE_AUTHENTICATIONQUERY: select password from webapi.users where lower(email) = lower(?)
+    networks:
+      - ohdsi-network
   atlas:
     image: ohdsi/atlas:latest
     container_name: atlas
     ports:
-      - "8380:8080"
+      - "8180:8080"
     environment:
-      - WEBAPI_URL=http://localhost:8180/WebAPI
-      - ATLAS_USER_AUTH_ENABLED=true
+      - WEBAPI_URL=http://localhost:8080/WebAPI
+#      - ATLAS_USER_AUTH_ENABLED=true
     depends_on:
       - webapi
+    networks:
+      - ohdsi-network
+
+networks:
+  ohdsi-network:
+    name: etl-ohdsi-network
+    external: true
