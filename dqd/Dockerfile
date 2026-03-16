@@ -18,3 +18,14 @@ R CMD javareconf
 EOF
 
 RUN R -e "remotes::install_github('OHDSI/DataQualityDashboard', ref = 'v2.8.6')"
+
+WORKDIR /opt/dqd
+
+
+RUN mkdir -p /postprocessing/dqd/data/public && \
+    echo '{}' > /postprocessing/dqd/data/public/dq-result.json
+
+COPY postprocessing ./postprocessing
+COPY run_dqd.R ./
+
+CMD ["Rscript", "/opt/dqd/run_dqd.R"]
