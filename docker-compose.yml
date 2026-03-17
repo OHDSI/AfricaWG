@@ -1,14 +1,6 @@
 version: '3.8'
 
 services:
-  # dbname: openmrs username: openmrs pw: openmrs rootpw: openmrs
-  omrsdb:
-    container_name: omrsdb
-    image: openmrs/openmrs-reference-application-3-db:nightly-with-data
-    ports:
-      - "3306:3306"
-    networks:
-      - ohdsi-network
 
   sqlmesh-db:
     container_name: sqlmesh-db
@@ -22,8 +14,9 @@ services:
       MYSQL_ROOT_PASSWORD: openmrs
     volumes:
       - db-data:/var/lib/mysql
+      - ./omrs-db:/docker-entrypoint-initdb.d
     ports:
-      - "3307:3306"
+      - "3306:3306"
     networks:
       - ohdsi-network
 
@@ -32,7 +25,7 @@ services:
     image: omop-etl-core
     container_name: core
     environment:
-      SRC_HOST: omrsdb
+      SRC_HOST: sqlmesh-db
       SRC_PORT: 3306
       SRC_USER: openmrs
       SRC_PASS: openmrs
@@ -48,7 +41,6 @@ services:
       ATLAS_WEB_API_SCHEMA: webapi
     depends_on:
       - sqlmesh-db
-      - omrsdb
       - omop-db
 
     volumes:
@@ -141,7 +133,6 @@ services:
 
 volumes:
   db-data: ~
-  db-data2: ~
   postgres_data: ~
   jdbc-drivers-data: ~
   cdm-postprocessing-data:
