@@ -14,7 +14,7 @@ host_root = os.getenv('HOST_PROJECT_ROOT', os.path.dirname(os.path.abspath(__fil
 
 def create_core_docker_task(task_id, command, image='omop-etl-core', extra_env=None):
     base_env = {
-        'SRC_HOST': 'omrsdb',
+        'SRC_HOST': 'sqlmesh-db',
         'SRC_PORT': '3306',
         'SRC_USER': 'openmrs',
         'SRC_PASS': 'openmrs',
@@ -55,7 +55,6 @@ with (DAG(
         schedule='@hourly',  # runs every hour
         catchup=False
 ) as dag):
-    clone_openmrs_db = create_core_docker_task("clone_openmrs_db", "clone-openmrs-db")
     apply_sqlmesh_plan = create_core_docker_task("apply_sqlmesh_plan", "apply-sqlmesh-plan")
     materialize_mysql_views = create_core_docker_task("materialize_mysql_views", "materialize-mysql-views")
     migrate_to_postresql = create_core_docker_task("migrate_to_postgresql", "migrate-to-postgresql")
@@ -97,7 +96,6 @@ with (DAG(
         mounts=[
             Mount(source="jdbc-drivers-data", target="/jdbc", type="volume"),
             Mount(source="cdm-postprocessing-data", target="/postprocessing", type="volume")
-            # Mount(source=os.path.join(host_root, "postprocessing"), target="/postprocessing", type="volume")
         ],
         environment={
             'CDM_CONNECTIONDETAILS_DBMS': "postgresql",
@@ -132,5 +130,5 @@ with (DAG(
         }
     )
 
-clone_openmrs_db >> apply_sqlmesh_plan >> materialize_mysql_views >> migrate_to_postresql >> import_omop_concepts >> apply_omop_constraints >> populate_cdm_source >> run_achilles >> run_dqd
+apply_sqlmesh_plan >> materialize_mysql_views >> migrate_to_postresql >> import_omop_concepts >> apply_omop_constraints >> populate_cdm_source >> run_achilles >> run_dqd
 

@@ -10,12 +10,6 @@ TARGET_MYSQL_DB="public"
 CONCEPTS_CSV_FILE="seed/CONCEPT.csv"
 TEMP_DIR="tmp"
 
-clone-openmrs-db() {
-  echo "Cloning OpenMRS database..."
-  mysqldump -h "$SRC_HOST" -P "$SRC_PORT" -u "$SRC_USER" -p"$SRC_PASS" "$SRC_DB" \
-  | mysql -h sqlmesh-db -uopenmrs -popenmrs openmrs
-  echo "Clone completed."
-}
 
 generate-concepts-usagi-input() {
   python3 export_concepts.py
@@ -211,9 +205,6 @@ echo "DEBUG: all args: $@"
 mkdir -p "$TEMP_DIR"
 
 case "$command" in
-  clone-openmrs-db)
-    clone-openmrs-db
-    ;;
   generate-concepts-usagi-input)
     generate-concepts-usagi-input
     ;;
@@ -251,7 +242,7 @@ case "$command" in
     ;;
   *)
     echo "Unknown command: $command"
-    echo "Usage: $0 {clone-openmrs-db|generate-concepts-usagi-input|apply-sqlmesh-plan|materialize-mysql-views|migrate-to-postgresql|import-omop-concepts|apply-omop-constraints|run-full-pipeline}"
+    echo "Usage: $0 {generate-concepts-usagi-input|apply-sqlmesh-plan|materialize-mysql-views|migrate-to-postgresql|import-omop-concepts|apply-omop-constraints|run-full-pipeline}"
     exit 1
     ;;
 esac
