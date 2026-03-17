@@ -115,7 +115,6 @@ services:
 #      - CDM_CONNECTIONDETAILS_PASSWORD
     env_file:
       - .env
-    entrypoint: ["Rscript", "/opt/dqd/run_dqd.R"]
     volumes:
       - jdbc-drivers-data:/jdbc
       - cdm-postprocessing-data:/postprocessing
@@ -125,7 +124,7 @@ services:
       - ohdsi-network
 
   dqd-viewer:
-    build: dqd
+    image: omop-etl-dqd
     container_name: omop-etl-dqd-viewer
     depends_on:
       - omop-db
@@ -145,7 +144,8 @@ volumes:
   db-data2: ~
   postgres_data: ~
   jdbc-drivers-data: ~
-  cdm-postprocessing-data: ~
+  cdm-postprocessing-data:
+    name: cdm-postprocessing-data
 
 networks:
   ohdsi-network:

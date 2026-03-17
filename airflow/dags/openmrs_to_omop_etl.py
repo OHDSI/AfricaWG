@@ -96,7 +96,8 @@ with (DAG(
         command='Rscript /opt/dqd/run_dqd.R run',
         mounts=[
             Mount(source="jdbc-drivers-data", target="/jdbc", type="volume"),
-            Mount(source=os.path.join(host_root, "postprocessing"), target="/postprocessing", type="volume")
+            Mount(source="cdm-postprocessing-data", target="/postprocessing", type="volume")
+            # Mount(source=os.path.join(host_root, "postprocessing"), target="/postprocessing", type="volume")
         ],
         environment={
             'CDM_CONNECTIONDETAILS_DBMS': "postgresql",

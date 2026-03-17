@@ -1,6 +1,5 @@
 FROM apache/airflow:3.1.8
 
-ARG AIRFLOW_UID=1000
 
 USER root
 

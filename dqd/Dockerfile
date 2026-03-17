@@ -22,8 +22,9 @@ RUN R -e "remotes::install_github('OHDSI/DataQualityDashboard', ref = 'v2.8.6')"
 WORKDIR /opt/dqd
 
 
-RUN mkdir -p /postprocessing/dqd/data/public && \
-    echo '{}' > /postprocessing/dqd/data/public/dq-result.json
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 
 COPY postprocessing ./postprocessing
 COPY run_dqd.R ./
