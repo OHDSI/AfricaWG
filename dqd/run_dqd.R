@@ -6,7 +6,7 @@ if (length(args) == 0) {
 
 mode <- args[[1]]
 
-source("/postprocessing/init.R")
+source("/opt/dqd/postprocessing/init.R")
 
 log_message <- function(msg, level = "INFO") {
   timestamp <- format(Sys.time(), "%Y-%m-%d %H:%M:%S")
@@ -19,7 +19,6 @@ splitOrEmpty <- function(x) {
 }
 
 if (mode == "run") {
-#   source("/postprocessing/init.R")
   log_message("Initializing DQD wrapper configuration...")
   envVarNames <- list(
     "DQD_NUM_THREADS",
@@ -52,6 +51,19 @@ if (mode == "run") {
   if (!file.exists(outputFolder)) {
     log_message(sprintf("Creating output directory: %s", outputFolder))
     dir.create(path = outputFolder, recursive = TRUE)
+  }else{
+#       log_message(sprintf("Start removing the previous demo json files"))
+#      files_to_clean <- c(
+#          file.path(outputFolder, "dq-result_camel.json"),
+#          file.path(outputFolder, "dq-result.json")
+#        )
+#
+#        for (f in files_to_clean) {
+#          if (file.exists(f)) {
+#            log_message(sprintf("Removing old result file: %s", f))
+#            unlink(f)
+#          }
+#        }
   }
 
   if (jobConfig$DQD_COHORT_DEFINITION_ID == "") {

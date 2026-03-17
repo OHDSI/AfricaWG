@@ -66,6 +66,7 @@ services:
     image: postgres:15
     container_name: omop-db
     restart: always
+    shm_size: 2gb
     environment:
       POSTGRES_DB: omop
       POSTGRES_USER: omop
@@ -110,57 +111,41 @@ services:
     depends_on:
       - omop-db
     platform: "linux/amd64"
-    ports:
-      - "3000:3000"
 #    secrets:
 #      - CDM_CONNECTIONDETAILS_PASSWORD
-    environment:
-      CDM_CONNECTIONDETAILS_DBMS: "postgresql"
-      CDM_CONNECTIONDETAILS_USER: "omop"
-      CDM_CONNECTIONDETAILS_SERVER: "omop-db/omop"
-      CDM_CONNECTIONDETAILS_PORT: "5432"
-      CDM_CONNECTIONDETAILS_PASSWORD: "omop"
-      CDM_CONNECTIONDETAILS_EXTRA_SETTINGS: ""
-      CDM_VERSION: "5.4"
-      CDM_SOURCE_NAME: "OpenMRS"
-      CDM_DATABASE_SCHEMA: "public"
-      RESULTS_DATABASE_SCHEMA: "results"
-      VOCAB_DATABASE_SCHEMA: "public"
-      DQD_NUM_THREADS: "1"
-      DQD_SQL_ONLY: "FALSE"
-      DQD_SQL_ONLY_UNION_COUNT: "1"
-      DQD_SQL_ONLY_INCREMENTAL_INSERT: "FALSE"
-      DQD_VERBOSE_MODE: "FALSE"
-      DQD_WRITE_TO_TABLE: "TRUE"
-      DQD_WRITE_TABLE_NAME: "dqdashboard_results"
-      DQD_WRITE_TO_CSV: "FALSE"
-      DQD_CSV_FILE: ""
-      DQD_CHECK_LEVELS: "TABLE,FIELD,CONCEPT"
-      DQD_CHECK_NAMES: ""
-      DQD_COHORT_DEFINITION_ID: ""
-      DQD_COHORT_DATABASE_SCHEMA: "public"
-      DQD_COHORT_TABLE_NAME: "cohort"
-      DQD_TABLES_TO_EXCLUDE: "CONCEPT,VOCABULARY,CONCEPT_ANCESTOR,CONCEPT_RELATIONSHIP,CONCEPT_CLASS,CONCEPT_SYNONYM,RELATIONSHIP,DOMAIN"
-      DQD_TABLE_CHECK_THRESHOLD_LOC: "default"
-      DQD_FIELD_CHECK_THRESHOLD_LOC: "default"
-      DQD_CONCEPT_CHECK_THRESHOLD_LOC: "default"
-    entrypoint: ["Rscript", "/postprocessing/dqd/scripts/run_dqd.R" ]
+    env_file:
+      - .env
     volumes:
       - jdbc-drivers-data:/jdbc
       - cdm-postprocessing-data:/postprocessing
-      - ./dqd/postprocessing/init.R:/postprocessing/init.R
-      - ./dqd/run_dqd.R:/postprocessing/dqd/scripts/run_dqd.R
     profiles:
       - manual
     networks:
       - ohdsi-network
+
+  dqd-viewer:
+    image: omop-etl-dqd
+    container_name: omop-etl-dqd-viewer
+    depends_on:
+      - omop-db
+    env_file:
+      - .env
+    profiles:
+      - manual
+    ports:
+      - "3000:3000"
+    volumes:
+      - jdbc-drivers-data:/jdbc
+      - cdm-postprocessing-data:/postprocessing
+    command: [ "Rscript", "/opt/dqd/run_dqd.R", "view" ]
 
 volumes:
   db-data: ~
   db-data2: ~
   postgres_data: ~
   jdbc-drivers-data: ~
-  cdm-postprocessing-data: ~
+  cdm-postprocessing-data:
+    name: cdm-postprocessing-data
 
 networks:
   ohdsi-network:
