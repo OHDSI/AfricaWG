@@ -32,7 +32,7 @@ default_vars <- list(
   ACHILLES_DB_PASSWORD = "",
   ACHILLES_CDM_SCHEMA = "public",
   ACHILLES_VOCAB_SCHEMA = "public",
-  ACHILLES_RESULTS_SCHEMA = "results",
+  ACHILLES_RESULTS_SCHEMA = "webapi",
   ATLAS_WEB_API_SCHEMA = "webapi",
   ACHILLES_OUTPUT_BASE = "/opt/achilles/workspace",
   ACHILLES_CDM_VERSION = "5.4",
@@ -102,6 +102,15 @@ if (length(args) == 0 || args[1] != "heel") {
     createIndices = createIndices,
     numThreads = env_vars$ACHILLES_NUM_THREADS
   )
+
+  # 2. NEW: Build the concept_hierarchy and Atlas cache tables
+    message("Building Atlas cache and concept_hierarchy tables...")
+    optimizeAtlasCache(
+      connectionDetails = connectionDetails,
+      resultsDatabaseSchema = env_vars$ACHILLES_RESULTS_SCHEMA,
+      vocabDatabaseSchema = env_vars$ACHILLES_VOCAB_SCHEMA
+    )
+
 } else {
   # Run Achilles Heel only
   achillesHeel(

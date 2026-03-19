@@ -11,7 +11,7 @@ echo "Sleeping 10s to allow WebAPI to initialize..."
 sleep 20
 
 # Wait for WebAPI tables to exist
-echo "Waiting for WebAPI schema 'ohdsi' and table 'sec_user'..."
+echo "Waiting for WebAPI schema 'webapi' and table 'sec_user'..."
 until python3 - <<END
 import psycopg2
 import sys
@@ -23,7 +23,7 @@ try:
     cur.execute("""
         SELECT 1
         FROM information_schema.tables
-        WHERE table_schema = 'ohdsi'
+        WHERE table_schema = 'webapi'
           AND table_name = 'sec_user'
         LIMIT 1;
     """)

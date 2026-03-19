@@ -82,8 +82,6 @@ But the DQD report will be empty until airflow orchestration is done.
 
 This step involves mapping your OpenMRS concepts to OMOP standard concepts using the Usagi tool. This mapping is crucial for ensuring that your OpenMRS data is correctly transformed into the OMOP Common Data Model.
 
-> **Note:** For your convenience, example mappings are provided in the `concepts` directory. If you're here to explore the project, you can skip this step and use the provided example mappings. This step is only required when working with a production environment or when connecting a different OpenMRS database.
-
 ---
 
 #### 4.1. Generate the Usagi Input File
@@ -207,11 +205,11 @@ chmod +x ./airflow/airflow_env_generator.sh && ./airflow/airflow_env_generator.s
 ```
 ### 5.2 To start with Airflow:
 ```bash
-docker compose --env-file .env-airflow -f docker-compose.yml -f docker-compose.airflow.yml up -d
+docker compose --env-file .env-airflow -f docker-compose.airflow.yml up -d
 ```
 
 This will launch the Airflow UI at:
-👉 http://localhost:8080
+👉 http://localhost:8780
 
 Login credentials:\
 Username: airflow\

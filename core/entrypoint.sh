@@ -1,4 +1,5 @@
 #!/bin/bash
+umask 000
 
 export PGPASSWORD=$TARGET_PASS
 MYSQL_USER="root"
@@ -7,6 +8,7 @@ MYSQL_HOST="sqlmesh-db"
 MYSQL_PORT="3306"
 SOURCE_DB="omop_db"
 TARGET_MYSQL_DB="public"
+TARGET_PG_SCHEMA="public"
 CONCEPTS_CSV_FILE="seed/CONCEPT.csv"
 TEMP_DIR="tmp"
 
@@ -69,21 +71,15 @@ materialize-mysql-views() {
 
 migrate-to-postgresql() {
   echo "Migrating to PostgreSQL..."
-  # Terminate connections to the target DB
-  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d postgres -c "
-    SELECT pg_terminate_backend(pid)
-    FROM pg_stat_activity
-    WHERE datname = '$TARGET_DB' AND pid <> pg_backend_pid();
-  "
-  # Drop if exists
-  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d postgres -c "DROP DATABASE IF EXISTS $TARGET_DB;"
-  # Recreate the database
-  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d postgres -c "CREATE DATABASE $TARGET_DB;"
+  # create TARGET SCHEME IF NOT EXISTS
+  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d "$TARGET_DB" \
+      -c "CREATE SCHEMA IF NOT EXISTS $TARGET_PG_SCHEMA;"
   # import the ddl
-  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d "$TARGET_DB" -f "omop-ddl/processed/ddl/01_OMOPCDM_postgresql_5.4_ddl.sql"
+  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d "$TARGET_DB" \
+      -f "omop-ddl/processed/ddl/01_OMOPCDM_postgresql_5.4_ddl.sql" 2>/dev/null || echo "Existing tables found, skipping DDL creation..."
 
   # # === Step 3: Migrate the entire MySQL DB to PostgreSQL ===
-  echo "🚚 Running pgloader to migrate entire database '$TARGET_MYSQL_DB' to PostgreSQL '$TARGET_DB'..."
+  echo "🚚 Running pgloader to migrate entire database '$TARGET_MYSQL_DB' to PostgreSQL '$TARGET_DB' - $TARGET_PG_SCHEMA - schema"
 
   cat <<EOF > $TEMP_DIR/temp_pgloader.load
 LOAD DATABASE
@@ -91,10 +87,15 @@ LOAD DATABASE
        INTO postgresql://$TARGET_USER:$TARGET_PASS@$TARGET_HOST:$TARGET_PORT/$TARGET_DB
 
         WITH include no drop,
-             data only
+             create tables,
+             create indexes,
+             reset sequences,
+             data only,
+             truncate
 
         CAST type int to integer,
-             type datetime to timestamp;
+            type datetime to "timestamp without time zone",
+            type date to date;
 EOF
   pgloader $TEMP_DIR/temp_pgloader.load
 
@@ -102,32 +103,111 @@ EOF
 }
 
 import-omop-concepts() {
-  echo "Importing concepts..."
-  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" <<EOF
-\copy concept_class FROM 'seed/CONCEPT_CLASS.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true);
-EOF
+ echo "Temporarily dropping Foreign Key constraints to allow data load..."
 
-  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" <<EOF
-\copy domain FROM 'seed/DOMAIN.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true);
-EOF
+   psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" -c "
+       DO \$\$ DECLARE
+           r RECORD;
+       BEGIN
+           -- Drop all Foreign Keys
+           FOR r IN (SELECT constraint_name, table_name
+                     FROM information_schema.table_constraints
+                     WHERE constraint_type = 'FOREIGN KEY' AND table_schema = '$TARGET_PG_SCHEMA') LOOP
+               EXECUTE 'ALTER TABLE ' || r.table_name || ' DROP CONSTRAINT ' || r.constraint_name;
+           END LOOP;
 
-  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" <<EOF
-\copy vocabulary FROM 'seed/VOCABULARY.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true);
-EOF
+           -- Drop all Primary Keys
+           FOR r IN (SELECT constraint_name, table_name
+                     FROM information_schema.table_constraints
+                     WHERE constraint_type = 'PRIMARY KEY' AND table_schema = '$TARGET_PG_SCHEMA') LOOP
+               EXECUTE 'ALTER TABLE ' || r.table_name || ' DROP CONSTRAINT ' || r.constraint_name;
+           END LOOP;
+       END \$\$;"
 
+  # Clean existing concept data before re-importing to prevent duplicates
+  echo "Truncating existing vocabulary tables..."
+  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" -c "
+      TRUNCATE TABLE concept_relationship, concept_synonym, concept_ancestor, drug_strength,
+                     vocabulary, domain, concept_class, relationship, concept CASCADE;"
 
+  echo "Importing concepts and relationships..."
+  # 1. Standard Vocab Tables
+  for table in concept_class domain vocabulary relationship; do
+      psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" \
+      -c "\copy $table FROM 'seed/${table^^}.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true);"
+  done
+
+  # 2. Main Concept Table
   sed 's/"/""/g' $CONCEPTS_CSV_FILE > $TEMP_DIR/escaped_concepts.tmp.csv
+  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" \
+    -c "\copy concept FROM '$TEMP_DIR/escaped_concepts.tmp.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true);"
 
+  # 3. Optional Synonyms & Drug Strength
+  for opt_table in CONCEPT_SYNONYM DRUG_STRENGTH; do
+      if [ -f "seed/$opt_table.csv" ]; then
+        echo "Preparing and loading ${opt_table,,}..."
+        if [ "$opt_table" == "CONCEPT_SYNONYM" ]; then
+            psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" \
+            -c "ALTER TABLE concept_synonym ALTER COLUMN concept_synonym_name TYPE TEXT;"
+        fi
+        psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" \
+        -c "\copy ${opt_table,,} FROM 'seed/$opt_table.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true, QUOTE E'\b');"
+      fi
+  done
+
+  # 4. Large Mapping & Hierarchy Tables
+  echo "Importing Relationships and Ancestors..."
+  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" \
+  -c "\copy concept_relationship FROM 'seed/CONCEPT_RELATIONSHIP.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true);"
+
+  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" \
+  -c "\copy concept_ancestor FROM 'seed/CONCEPT_ANCESTOR.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true);"
+
+  # === CRITICAL CLEANUP: Fixes Step 5 Errors ===
+  echo "Cleaning up orphan records (Foreign Key Fix)..."
   psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" <<EOF
-\copy concept FROM '$TEMP_DIR/escaped_concepts.tmp.csv' WITH (FORMAT csv, DELIMITER E'\t', HEADER true);
-EOF
+    -- Create a temporary index to make lookups instant
+    CREATE INDEX IF NOT EXISTS idx_temp_concept_id ON concept(concept_id);
+    ANALYZE concept;
 
-  echo "Concepts imported."
+    -- Delete using a correlated subquery (much faster than NOT IN)
+    DELETE FROM concept_relationship r
+    WHERE NOT EXISTS (SELECT 1 FROM concept c WHERE c.concept_id = r.concept_id_1)
+       OR NOT EXISTS (SELECT 1 FROM concept c WHERE c.concept_id = r.concept_id_2);
+
+    DELETE FROM concept_synonym s
+    WHERE NOT EXISTS (SELECT 1 FROM concept c WHERE c.concept_id = s.concept_id);
+
+    DELETE FROM concept_ancestor a
+    WHERE NOT EXISTS (SELECT 1 FROM concept c WHERE c.concept_id = a.ancestor_concept_id)
+       OR NOT EXISTS (SELECT 1 FROM concept c WHERE c.concept_id = a.descendant_concept_id);
+
+    DELETE FROM drug_strength d
+    WHERE NOT EXISTS (SELECT 1 FROM concept c WHERE c.concept_id = d.drug_concept_id)
+       OR NOT EXISTS (SELECT 1 FROM concept c WHERE c.concept_id = d.ingredient_concept_id);
+
+    -- Drop the temp index (Step 5 will create the official ones)
+    DROP INDEX idx_temp_concept_id;
+EOF
+  echo "📊 Optimizing database statistics..."
+  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" -c "VACUUM ANALYZE;"
+
+  echo "✅ Concepts imported and cleaned successfully"
 }
 
 apply-omop-constraints() {
-  echo "🔗 Connecting to PostgreSQL and executing constraint scripts..."
+  echo "Cleaning up old indices and constraints..."
+  psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" -c "
+      DO \$\$ DECLARE
+          r RECORD;
+      BEGIN
+          -- Drop all indices in the $TARGET_PG_SCHEMA schema to avoid 'already exists' errors
+          FOR r IN (SELECT indexname FROM pg_indexes WHERE schemaname = '$TARGET_PG_SCHEMA') LOOP
+              EXECUTE 'DROP INDEX IF EXISTS ' || r.indexname || ' CASCADE';
+          END LOOP;
+      END \$\$;"
 
+  echo "🔗 Connecting to PostgreSQL and executing constraint scripts..."
   for sql_file in omop-ddl/processed/constraints/*.sql; do
     echo "⚙️  Executing $sql_file..."
     psql -U "$TARGET_USER" -h "$TARGET_HOST" -p "$TARGET_PORT" -d "$TARGET_DB" -f "$sql_file"

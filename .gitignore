@@ -6,3 +6,4 @@ core/tmp/
 .DS_Store
 __pycache__
 .env-airflow
+concepts/*.csv

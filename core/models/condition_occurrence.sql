@@ -24,8 +24,8 @@ MODEL(
 SELECT c.condition_id                      AS condition_occurrence_id,
        c.patient_id                        AS person_id,
        concept_mapping.conceptId           AS condition_concept_id,
-       DATE(c.onset_date)                  AS condition_start_date,
-       c.onset_date                        AS condition_start_datetime,
+       DATE(COALESCE(c.onset_date, c.date_created)) AS condition_start_date,
+       COALESCE(c.onset_date, c.date_created)       AS condition_start_datetime,
        DATE(c.end_date)                    AS condition_end_date,
        c.end_date                          AS condition_end_datetime,
        0                                   AS condition_type_concept_id,
@@ -40,5 +40,4 @@ SELECT c.condition_id                      AS condition_occurrence_id,
 FROM openmrs.conditions AS c
          LEFT JOIN raw.CONCEPT_MAPPING concept_mapping
                     ON c.condition_coded = concept_mapping.sourceCode
-WHERE c.voided = 0
-  AND c.onset_date IS NOT NULL;
+WHERE c.voided = 0;

@@ -15,12 +15,14 @@ RUN apt-get update && \
 
 
 # Install sqlmesh (force system install)
-RUN pip install --break-system-packages \
+RUN pip install --break-system-packages --no-cache-dir \
     sqlmesh==0.230.0 \
     "pandas<3.0" \
     pymysql \
     sqlalchemy \
-    sqlmesh[web]
+    "sqlmesh[web]"
+
+ENV SQLMESH_LOG_LEVEL=ERROR
 
 # set workdir
 WORKDIR /core

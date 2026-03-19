@@ -65,7 +65,7 @@ x-airflow-common:
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8080/execution/'
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: 'http://airflow-apiserver:8780/execution/'
     AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW__API_AUTH__JWT_SECRET:-airflow_jwt_secret}
     AIRFLOW__API_AUTH__JWT_ISSUER: ${AIRFLOW__API_AUTH__JWT_ISSUER:-airflow}
     # yamllint disable rule:line-length
@@ -78,6 +78,9 @@ x-airflow-common:
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
     # The following line can be used to set a custom config file, stored in the local config folder
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
+    AIRFLOW_CONN_OMOP_DB_POSTGRES: "postgres://omop:omop@omop-db:5432/omop"
+#    AIRFLOW__LOGGING__LOGGING_LEVEL: "ERROR"
+#    AIRFLOW__LOGGING__FAB_LOGGING_LEVEL: "ERROR"
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/airflow/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/airflow/logs:/opt/airflow/logs
@@ -132,9 +135,9 @@ services:
     <<: *airflow-common
     command: api-server
     ports:
-      - "8080:8080"
+      - "8780:8780"
     healthcheck:
-      test: [ "CMD", "curl", "--fail", "http://localhost:8080/api/v2/monitor/health" ]
+      test: [ "CMD", "curl", "--fail", "http://localhost:8780/api/v2/monitor/health" ]
       interval: 30s
       timeout: 10s
       retries: 5
