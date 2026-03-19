@@ -37,7 +37,7 @@ services:
       TARGET_PASS: omop
       TARGET_DB: omop
       ACHILLES_VOCAB_SCHEMA: public
-      ACHILLES_RESULTS_SCHEMA: results
+      ACHILLES_RESULTS_SCHEMA: webapi
       ATLAS_WEB_API_SCHEMA: webapi
     depends_on:
       - sqlmesh-db
@@ -71,6 +71,8 @@ services:
       timeout: 5s
       retries: 5
 #    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    volumes:
 #      - ./omop-ddl/processed/ddl:/docker-entrypoint-initdb.d
     networks:
       - ohdsi-network
@@ -88,7 +90,7 @@ services:
       ACHILLES_DB_PASSWORD: "omop"
       ACHILLES_CDM_SCHEMA: "public"
       ACHILLES_VOCAB_SCHEMA: "public"
-      ACHILLES_RESULTS_SCHEMA: "results"
+      ACHILLES_RESULTS_SCHEMA: "webapi"
       ACHILLES_CDM_VERSION: "5.4"
       ACHILLES_NUM_THREADS: "1"
     profiles:

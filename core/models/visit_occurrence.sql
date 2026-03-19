@@ -24,12 +24,15 @@ MODEL(
 
 SELECT v.visit_id                                   AS visit_occurrence_id,
        v.patient_id                                 AS person_id,
-       0                                            AS visit_concept_id,
+       CASE
+           WHEN v.visit_type_id = 1 THEN 9201  -- Standard: Inpatient Visit
+           ELSE 9202                          -- Standard: Outpatient Visit
+       END                                          AS visit_concept_id,
        DATE(v.date_started)                         AS visit_start_date,
        v.date_started                               AS visit_start_datetime,
        COALESCE(DATE(v.date_stopped), CURRENT_DATE) AS visit_end_date,
        COALESCE(v.date_stopped, CURRENT_TIMESTAMP)  AS visit_end_datetime,
-       v.visit_type_id                              AS visit_type_concept_id,
+       32817                                        AS visit_type_concept_id,
        creator.person_id                            AS provider_id,
        v.location_id                                AS care_site_id,
        ''                                           AS visit_source_value,

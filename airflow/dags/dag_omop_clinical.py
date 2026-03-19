@@ -1,65 +1,39 @@
-from airflow import DAG
 from datetime import datetime, timedelta
+
+from airflow.providers.common.sql.sensors.sql import SqlSensor
 from airflow.providers.docker.operators.docker import DockerOperator
-import os
 from docker.types import Mount
+from docker_utils import create_core_docker_task
+
+from airflow import DAG
 
 default_args = {
     'owner': 'you',
-    'retries': 0,
-    'retry_delay': timedelta(minutes=5)
+    'retries': 1,
+    'retry_delay': timedelta(minutes=10)
 }
 
-host_root = os.getenv('HOST_PROJECT_ROOT', os.path.dirname(os.path.abspath(__file__)))
-
-def create_core_docker_task(task_id, command, image='omop-etl-core', extra_env=None):
-    base_env = {
-        'SRC_HOST': 'sqlmesh-db',
-        'SRC_PORT': '3306',
-        'SRC_USER': 'openmrs',
-        'SRC_PASS': 'openmrs',
-        'SRC_DB': 'openmrs',
-        'SQLMESH_DB_ROOT_PASSWORD': 'openmrs',
-        'TARGET_HOST': 'omop-db',
-        'TARGET_PORT': '5432',
-        'TARGET_USER': 'omop',
-        'TARGET_PASS': 'omop',
-        'TARGET_DB': 'omop',
-        'ACHILLES_VOCAB_SCHEMA': 'vocab',
-        'ACHILLES_RESULTS_SCHEMA': 'results',
-        'ATLAS_WEB_API_SCHEMA': 'webapi'
-    }
-
-    if extra_env:
-        base_env.update(extra_env)
-
-    return DockerOperator(
-        task_id=task_id,
-        image=image,
-        api_version='auto',
-        auto_remove='success',
-        docker_url='unix://var/run/docker.sock',
-        network_mode='etl-ohdsi-network',
-        command=command,
-        environment=base_env,
-        mounts=[
-            Mount(source=os.path.join(host_root, "concepts"), target="/concepts", type="bind"),
-            Mount(source=os.path.join(host_root, "core"), target="/core", type="bind")
-        ]
-    )
-
-with (DAG(
-        dag_id='OpenMRS_to_OMOP_ETL',
+with DAG(
+        dag_id='OpenMRS_to_OMOP_Clinical_ETL',
         default_args=default_args,
-        start_date=datetime(2023, 1, 1),
-        schedule='@hourly',  # runs every hour
-        catchup=False
-) as dag):
+        start_date=datetime(2026, 1, 1),
+        schedule='0 */8 * * *',  # Every 8 hours
+        catchup=False,
+        tags=['OMOP', 'Clinical', 'Daily']
+) as dag:
     apply_sqlmesh_plan = create_core_docker_task("apply_sqlmesh_plan", "apply-sqlmesh-plan")
     materialize_mysql_views = create_core_docker_task("materialize_mysql_views", "materialize-mysql-views")
-    migrate_to_postresql = create_core_docker_task("migrate_to_postgresql", "migrate-to-postgresql")
-    import_omop_concepts = create_core_docker_task("import_omop_concepts", "import-omop-concepts")
-    apply_omop_constraints = create_core_docker_task("apply_omop_constraints", "apply-omop-constraints")
+    migrate_to_postgresql = create_core_docker_task("migrate_to_postgresql", "migrate-to-postgresql")
+
+    wait_for_vocab = SqlSensor(
+        task_id='wait_for_vocabulary',
+        conn_id='omop_db_postgres',
+        sql="SELECT COUNT(*) FROM public.vocabulary WHERE vocabulary_id = 'None';",
+        mode='reschedule',  # Reschedule releases the worker slot while waiting
+        poke_interval=60,
+        timeout=1200  # 20 minute timeout
+    )
+
     populate_cdm_source = create_core_docker_task("populate_cdm_source", "populate-cdm-source")
 
     run_achilles = DockerOperator(
@@ -70,22 +44,19 @@ with (DAG(
         docker_url='unix://var/run/docker.sock',
         network_mode='etl-ohdsi-network',
         command="Rscript /opt/achilles/entrypoint.r",
-        # platform='linux/amd64',
-        tmp_dir='/opt/airflow/tmp',
-        mount_tmp_dir=False,
         environment={
             'ACHILLES_DB_URI': 'postgresql://omop-db:5432/omop',
             'ACHILLES_DB_USERNAME': 'omop',
             'ACHILLES_DB_PASSWORD': 'omop',
             'ACHILLES_CDM_SCHEMA': 'public',
             'ACHILLES_VOCAB_SCHEMA': 'public',
-            'ACHILLES_RESULTS_SCHEMA': 'results',
+            'ACHILLES_RESULTS_SCHEMA': 'webapi',
             'ACHILLES_CDM_VERSION': '5.4',
             'ACHILLES_NUM_THREADS': '1'
         }
     )
 
-    run_dqd  = DockerOperator(
+    run_dqd = DockerOperator(
         task_id='dqd_run',
         image='omop-etl-dqd',
         api_version='auto',
@@ -107,13 +78,13 @@ with (DAG(
             'CDM_VERSION': "5.4",
             'CDM_SOURCE_NAME': "OpenMRS",
             'CDM_DATABASE_SCHEMA': "public",
-            'RESULTS_DATABASE_SCHEMA': "results",
+            'RESULTS_DATABASE_SCHEMA': "webapi",
             'VOCAB_DATABASE_SCHEMA': "public",
             'DQD_NUM_THREADS': "1",
             'DQD_SQL_ONLY': "FALSE",
             'DQD_SQL_ONLY_UNION_COUNT': "1",
             'DQD_SQL_ONLY_INCREMENTAL_INSERT': "FALSE",
-            'DQD_VERBOSE_MODE': "FALSE",
+            'DQD_VERBOSE_MODE': "TRUE",
             'DQD_WRITE_TO_TABLE': "TRUE",
             'DQD_WRITE_TABLE_NAME': "dqdashboard_results",
             'DQD_WRITE_TO_CSV': "FALSE",
@@ -130,5 +101,12 @@ with (DAG(
         }
     )
 
-apply_sqlmesh_plan >> materialize_mysql_views >> migrate_to_postresql >> import_omop_concepts >> apply_omop_constraints >> populate_cdm_source >> run_achilles >> run_dqd
-
+(
+        apply_sqlmesh_plan
+        >> materialize_mysql_views
+        >> migrate_to_postgresql
+        >> wait_for_vocab
+        >> populate_cdm_source
+        >> run_achilles
+        >> run_dqd
+)
