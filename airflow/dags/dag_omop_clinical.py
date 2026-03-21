@@ -101,6 +101,11 @@ with DAG(
         }
     )
 
+    generate_mapping_report = create_core_docker_task(
+        task_id="generate_data_quality_report",
+        command="automated-mapping-summary-report"
+    )
+
 (
         apply_sqlmesh_plan
         >> materialize_mysql_views
@@ -109,4 +114,5 @@ with DAG(
         >> populate_cdm_source
         >> run_achilles
         >> run_dqd
+        >> generate_mapping_report
 )
