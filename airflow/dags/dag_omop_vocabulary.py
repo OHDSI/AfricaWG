@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 from airflow.providers.docker.operators.docker import DockerOperator
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from docker_utils import create_core_docker_task
 
 from airflow import DAG
@@ -16,13 +17,28 @@ with DAG(
         default_args=default_args,
         description='Manually triggered DAG to refresh OMOP Vocabularies and Other metadata tables',
         start_date=datetime(2026, 1, 1),
-        schedule=None,
+        schedule='@weekly',
         catchup=False,
         tags=['OMOP', 'Vocabulary', 'Setup']
 ) as dag:
+    concept_placeholder_files = create_core_docker_task(
+        task_id="generate_concept_placeholder_files",
+        command="generate-mapper-placeholder-files"
+    )
+
+    check_and_create_schema = create_core_docker_task(
+        task_id="check_and_create_omop_schema",
+        command="create-omop-postgres-schema"
+    )
+
     import_concepts = create_core_docker_task(
         task_id="import_omop_concepts",
         command="import-omop-concepts"
+    )
+
+    sync_openmrs_mappings = create_core_docker_task(
+        task_id="sync_openmrs_to_athena_mappings",
+        command="sync-omrs-mappings"
     )
 
     apply_constraints = create_core_docker_task(
@@ -35,4 +51,21 @@ with DAG(
         command="populate-cdm-source"
     )
 
-import_concepts >> apply_constraints >> update_cdm_metadata
+    trigger_clinical_migration = TriggerDagRunOperator(
+        task_id="trigger_omop_clinical_etl",
+        trigger_dag_id="OpenMRS_to_OMOP_Clinical_ETL",
+        wait_for_completion=False,
+        poke_interval=60,
+        reset_dag_run=True,
+        failed_states=['failed']
+    )
+
+(
+        concept_placeholder_files
+        >> check_and_create_schema
+        >> import_concepts
+        >> sync_openmrs_mappings
+        >> apply_constraints
+        >> update_cdm_metadata
+        >> trigger_clinical_migration
+)

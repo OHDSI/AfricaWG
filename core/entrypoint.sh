@@ -12,9 +12,25 @@ TARGET_PG_SCHEMA="public"
 CONCEPTS_CSV_FILE="seed/CONCEPT.csv"
 TEMP_DIR="tmp"
 
+generate-mapper-placeholder-files(){
+  python3 placeholder_files_generator.py
+}
+create-omop-postgres-schema(){
+  echo "Dropping $TARGET_PG_SCHEMA Schema if already exists "
+  psql -h "$TARGET_HOST" -U "$TARGET_USER" -d "$TARGET_DB" \
+   -c "DROP SCHEMA IF EXISTS $TARGET_PG_SCHEMA CASCADE;"
 
-generate-concepts-usagi-input() {
-  python3 export_concepts.py
+  echo "Creating Omop postgres public schema and tables using ddl "
+  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d "$TARGET_DB" \
+      -c "CREATE SCHEMA IF NOT EXISTS $TARGET_PG_SCHEMA;"
+
+  echo "Importing Omop ddl structure"
+  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d "$TARGET_DB" \
+      -f "omop-ddl/processed/ddl/01_OMOPCDM_postgresql_5.4_ddl.sql" 2>/dev/null || echo "Existing tables found, skipping DDL creation..."
+}
+
+sync-omrs-mappings(){
+  python3 automated_athena_mappings.py
 }
 
 apply-sqlmesh-plan() {
@@ -70,17 +86,8 @@ materialize-mysql-views() {
 }
 
 migrate-to-postgresql() {
-  echo "Migrating to PostgreSQL..."
-  # create TARGET SCHEME IF NOT EXISTS
-  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d "$TARGET_DB" \
-      -c "CREATE SCHEMA IF NOT EXISTS $TARGET_PG_SCHEMA;"
-  # import the ddl
-  psql -h "$TARGET_HOST" -p "$TARGET_PORT" -U "$TARGET_USER" -d "$TARGET_DB" \
-      -f "omop-ddl/processed/ddl/01_OMOPCDM_postgresql_5.4_ddl.sql" 2>/dev/null || echo "Existing tables found, skipping DDL creation..."
-
-  # # === Step 3: Migrate the entire MySQL DB to PostgreSQL ===
+    # # === Step 3: Migrate the entire MySQL DB to PostgreSQL ===
   echo "🚚 Running pgloader to migrate entire database '$TARGET_MYSQL_DB' to PostgreSQL '$TARGET_DB' - $TARGET_PG_SCHEMA - schema"
-
   cat <<EOF > $TEMP_DIR/temp_pgloader.load
 LOAD DATABASE
        FROM mysql://root:$SQLMESH_DB_ROOT_PASSWORD@sqlmesh-db:$MYSQL_PORT/$TARGET_MYSQL_DB
@@ -274,6 +281,9 @@ SQL
     -f "$sql_file"
 }
 
+automated-mapping-summary-report(){
+    python3 automated_mapping_summary.py
+}
 
 command="$1"
 shift
@@ -285,8 +295,14 @@ echo "DEBUG: all args: $@"
 mkdir -p "$TEMP_DIR"
 
 case "$command" in
-  generate-concepts-usagi-input)
-    generate-concepts-usagi-input
+ generate-mapper-placeholder-files)
+   generate-mapper-placeholder-files
+   ;;
+  create-omop-postgres-schema)
+    create-omop-postgres-schema
+    ;;
+  sync-omrs-mappings)
+    sync-omrs-mappings
     ;;
   apply-sqlmesh-plan)
     apply-sqlmesh-plan
@@ -306,24 +322,8 @@ case "$command" in
   populate-cdm-source)
     populate-cdm-source
     ;;
-  run-full-pipeline)
-    echo "Step 1/6"
-    apply-sqlmesh-plan
-    echo "Step 2/6"
-    materialize-mysql-views
-    echo "Step 3/6"
-    migrate-to-postgresql
-    echo "Step 4/6"
-    import-omop-concepts
-    echo "Step 5/6"
-    apply-omop-constraints
-    echo "Step 6/6"
-    populate-cdm-source
-    ;;
-  *)
-    echo "Unknown command: $command"
-    echo "Usage: $0 {generate-concepts-usagi-input|apply-sqlmesh-plan|materialize-mysql-views|migrate-to-postgresql|import-omop-concepts|apply-omop-constraints|run-full-pipeline}"
-    exit 1
+  automated-mapping-summary-report)
+    automated-mapping-summary-report
     ;;
 esac
 
