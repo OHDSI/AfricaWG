@@ -88,6 +88,7 @@ x-airflow-common:
     - ${AIRFLOW_PROJ_DIR:-.}/airflow/plugins:/opt/airflow/plugins
     - ./airflow/tmp:/opt/airflow/tmp
     - /var/run/docker.sock:/var/run/docker.sock
+    - ${PWD}/concepts:/opt/concepts
   user: "${AIRFLOW_UID:-50000}:0"
   group_add:
     - "${DOCKER_GID}"

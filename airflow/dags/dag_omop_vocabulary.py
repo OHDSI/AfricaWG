@@ -17,10 +17,15 @@ with DAG(
         default_args=default_args,
         description='Manually triggered DAG to refresh OMOP Vocabularies and Other metadata tables',
         start_date=datetime(2026, 1, 1),
-        schedule=None,
+        schedule='@weekly',
         catchup=False,
         tags=['OMOP', 'Vocabulary', 'Setup']
 ) as dag:
+    concept_placeholder_files = create_core_docker_task(
+        task_id="generate_concept_placeholder_files",
+        command="generate-mapper-placeholder-files"
+    )
+
     check_and_create_schema = create_core_docker_task(
         task_id="check_and_create_omop_schema",
         command="create-omop-postgres-schema"
@@ -56,11 +61,11 @@ with DAG(
     )
 
 (
-        check_and_create_schema
+        concept_placeholder_files
+        >> check_and_create_schema
         >> import_concepts
         >> sync_openmrs_mappings
         >> apply_constraints
         >> update_cdm_metadata
         >> trigger_clinical_migration
-
 )

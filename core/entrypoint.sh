@@ -12,7 +12,9 @@ TARGET_PG_SCHEMA="public"
 CONCEPTS_CSV_FILE="seed/CONCEPT.csv"
 TEMP_DIR="tmp"
 
-
+generate-mapper-placeholder-files(){
+  python3 placeholder_files_generator.py
+}
 create-omop-postgres-schema(){
   echo "Dropping $TARGET_PG_SCHEMA Schema if already exists "
   psql -h "$TARGET_HOST" -U "$TARGET_USER" -d "$TARGET_DB" \
@@ -293,6 +295,9 @@ echo "DEBUG: all args: $@"
 mkdir -p "$TEMP_DIR"
 
 case "$command" in
+ generate-mapper-placeholder-files)
+   generate-mapper-placeholder-files
+   ;;
   create-omop-postgres-schema)
     create-omop-postgres-schema
     ;;

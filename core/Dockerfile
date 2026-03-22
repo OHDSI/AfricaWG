@@ -41,6 +41,7 @@ COPY models models
 COPY config.yaml .
 COPY entrypoint.sh .
 COPY export_concepts.py .
+COPY placeholder_files_generator.py .
 COPY automated_athena_mappings.py .
 COPY automated_mapping_summary.py .
 
