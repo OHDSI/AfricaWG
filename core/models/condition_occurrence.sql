@@ -21,8 +21,9 @@ MODEL(
         )
 );
 
-SELECT c.condition_id                      AS condition_occurrence_id,
-       c.patient_id                        AS person_id,
+SELECT
+       cw_condition.omop_id                AS condition_occurrence_id,
+       cw_person.omop_id                       AS person_id,
        concept_mapping.conceptId           AS condition_concept_id,
        DATE(COALESCE(c.onset_date, c.date_created)) AS condition_start_date,
        COALESCE(c.onset_date, c.date_created)       AS condition_start_datetime,
@@ -31,13 +32,27 @@ SELECT c.condition_id                      AS condition_occurrence_id,
        0                                   AS condition_type_concept_id,
        0                                   AS condition_status_concept_id,
        COALESCE(c.void_reason, '')         AS stop_reason,
-       NULL                                AS provider_id,
+       cw_provider.omop_id                 AS provider_id,
        NULL                                AS visit_occurrence_id,
        NULL                                AS visit_detail_id,
        ''                                  AS condition_source_value,
        concept_mapping.conceptId           AS condition_source_concept_id,
        COALESCE(c.verification_status, '') AS condition_status_source_value
 FROM openmrs.conditions AS c
+         INNER JOIN raw.ID_CROSSWALK cw_condition
+         ON c.condition_id = cw_condition.source_id
+            AND cw_condition.source_table = 'conditions'
+
+         INNER JOIN raw.ID_CROSSWALK cw_person
+         ON c.patient_id = cw_person.source_id
+           AND cw_person.source_table = 'person'
+
+        LEFT JOIN raw.ID_CROSSWALK cw_provider
+         ON c.creator = cw_provider.source_id
+           AND cw_provider.source_table = 'users'
+
          LEFT JOIN raw.CONCEPT_MAPPING concept_mapping
                     ON c.condition_coded = concept_mapping.sourceCode
-WHERE c.voided = 0;
+WHERE c.voided = 0
+  AND concept_mapping.conceptId  IS NOT NULL
+GROUP BY cw_condition.omop_id;

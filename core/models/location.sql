@@ -17,7 +17,7 @@ MODEL(
         )
 );
 
-SELECT l.location_id               AS location_id,
+SELECT cw_location.omop_id         AS location_id,
        l.address1                  AS address_1,
        l.address2                  AS address_2,
        l.city_village              AS city,
@@ -30,4 +30,9 @@ SELECT l.location_id               AS location_id,
        NULLIF(l.latitude, '')      AS latitude,
        NULLIF(l.longitude, '')     AS longitude
 FROM openmrs.location AS l
+
+     INNER JOIN raw.ID_CROSSWALK cw_location
+         ON l.location_id = cw_location.source_id
+           AND cw_location.source_table = 'location'
+
 WHERE l.retired = 0;
