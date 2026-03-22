@@ -12,7 +12,7 @@ MODEL(
         )
 );
 
-SELECT p.person_id                     AS person_id,
+SELECT cw_person.omop_id               AS person_id,
        DATE(p.death_date)              AS death_date,
        p.death_date                    AS death_datetime,
        32817                           AS death_type_concept_id, -- EHR record
@@ -20,6 +20,10 @@ SELECT p.person_id                     AS person_id,
        ''                              AS cause_source_value,
        concept_mapping.conceptId       AS cause_source_concept_id
 FROM openmrs.person AS p
+         INNER JOIN raw.ID_CROSSWALK cw_person
+         ON p.person_id = cw_person.source_id
+           AND cw_person.source_table = 'person'
+
          LEFT JOIN raw.CONCEPT_MAPPING concept_mapping
                    ON p.cause_of_death = concept_mapping.sourceCode
 WHERE p.dead = 1

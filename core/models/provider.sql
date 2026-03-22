@@ -17,7 +17,7 @@ MODEL(
         )
 );
 
-SELECT u.user_id                                  AS provider_id,
+SELECT cw_provider.omop_id                        AS provider_id,
        CONCAT(pn.given_name, ' ', pn.family_name) AS provider_name,
        NULL                                       AS npi,
        NULL                                       AS dea,
@@ -38,6 +38,10 @@ SELECT u.user_id                                  AS provider_id,
            ELSE 0
            END                                    AS gender_source_concept_id
 FROM openmrs.users AS u
+         INNER JOIN raw.ID_CROSSWALK cw_provider
+         ON u.user_id = cw_provider.source_id
+           AND cw_provider.source_table = 'users'
+
          INNER JOIN openmrs.person AS p ON u.person_id = p.person_id
          INNER JOIN openmrs.person_name AS pn ON u.person_id = pn.person_id
 WHERE u.retired = 0;

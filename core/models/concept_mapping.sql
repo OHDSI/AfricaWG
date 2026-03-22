@@ -6,9 +6,9 @@ MODEL
 
 WITH Usagi_Safe AS (
                  SELECT
-                     sourceCode::TEXT AS sourceCode,
+                     sourceCode AS sourceCode,
                      sourceName AS source_name,
-                     conceptId::INT AS conceptId,
+                     conceptId AS conceptId,
                      domainId AS domainId,
                      sourceFrequency::INT AS frequency, 'MANUAL_USAGI' AS mapping_source
                  FROM raw.CONCEPT_USAGI_MAPPING
@@ -17,11 +17,11 @@ WITH Usagi_Safe AS (
                  UNION ALL
 
                  SELECT
-                   sourceCode::TEXT,
+                   sourceCode,
                   sourceName,
-                     conceptId::INT,
+                     conceptId,
                    domainId,
-                sourceFrequency::INT,
+                sourceFrequency,
                  'MANUAL_USAGI'
                     FROM raw.CONCEPT_USAGI_MAPPING
                     WHERE conceptId IS NOT NULL
@@ -35,14 +35,14 @@ FROM Usagi_Safe
 UNION ALL
 
 SELECT
-    source_concept_id::TEXT AS sourceCode,
+    source_concept_id AS sourceCode,
     source_concept_name AS sourceName,
-    target_concept_id::INT AS conceptId,
-    target_domain AS domainId,
-    frequency::INT AS frequency,
+    target_concept_id AS conceptId,
+    source_domain AS domainId,
+    frequency AS frequency,
     match_status AS mapping_source
 FROM raw.CONCEPT_AUTO_MAPPING
 WHERE
     match_status != 'USAGI_REQUIRED'
-  AND source_concept_id::TEXT
-   NOT IN (SELECT sourceCode FROM Usagi_Safe);
+  AND match_status != 'FAILED_ATHENA'
+  AND source_concept_id NOT IN (SELECT sourceCode FROM Usagi_Safe);
