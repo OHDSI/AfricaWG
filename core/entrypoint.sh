@@ -348,6 +348,39 @@ case "$command" in
   automated-mapping-summary-report)
     automated-mapping-summary-report
     ;;
+  run-full-pipeline)
+    echo "🚀 Starting Full OMRS - OMOP/CDM Etl Pipeline"
+    echo "Step 1/11"
+    generate-mapper-placeholder-files
+    echo "Step 2/11"
+    create-omop-postgres-schema
+    echo "Step 3/11"
+    import-omop-concepts
+    echo "Step 4/11"
+    sync-omrs-mappings
+    echo "Step 5/11"
+    apply-omop-constraints
+    echo "Step 6/11"
+    populate-cdm-source
+    echo "Step 7/11"
+    apply-sqlmesh-plan
+    echo "Step 8/11"
+    materialize-mysql-views
+    echo "Step 9/11"
+    migrate-to-postgresql
+    echo "Step 10/11"
+    populate-cdm-source
+    echo "Step 11/11"
+    generate_mapping_report
+    echo "✅ Full Pipeline Completed Successfully!"
+    ;;
+  *)
+   echo "Unknown command: $command"
+    echo "Usage: $0 {generate-mapper-placeholder-files|create-omop-postgres-schema|import-omop-concepts
+    |sync-omrs-mappings|apply-omop-constraints|populate-cdm-source|apply-sqlmesh-plan|materialize-mysql-views
+    |migrate-to-postgresql|populate-cdm-source|generate_mapping_report}"
+    exit 1
+    ;;
 esac
 
 # Remove temp directory

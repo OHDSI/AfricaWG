@@ -1,61 +1,70 @@
+# 🌍 AfricaWG: OpenMRS to OMOP CDM ETL Pipeline
 
-## 🏗️  Setting Up Git LFS for This Repository
+This repository contains the tools and orchestration logic to transform **OpenMRS data** into the **OMOP Common Data Model (CDM) v5.4** using **SQLMesh** and **Apache Airflow**.
 
-This repository uses **Git Large File Storage (LFS)** to handle large files like `CONCEPT.csv`. If you're cloning or pulling the repository, make sure to set up Git LFS to download the actual files instead of pointers.
+## Data Integration & ETL Architecture
+The following diagram illustrates the end-to-end ETL workflow implemented in this repository, detailing the pipeline from OpenMRS source data to the OMOP Common Data Model (CDM).
+
+![](docs/img/sematic_mapping_workflow.png)
+---
+## Getting Started: Local & Server Setup
+Complete the following installation and configuration steps to ensure the ETL workflow is correctly deployed and operational in your environment.
+
+## 🏗️ Setting Up Git LFS
+
+This repository uses **Git Large File Storage (LFS)** to handle large files like `CONCEPT.csv`.
+
+You **must** set up Git LFS to download actual data files instead of pointer files.
 
 ### Step 1: Install Git LFS
-Before cloning, install Git LFS:
 
-- **macOS (Homebrew)**
-  ```sh
+- **macOS**
+  ```bash
   brew install git-lfs
   ```
 
-- **Linux (Ubuntu/Debian)**
-  ```sh
+- **Linux**
+  ```bash
   sudo apt update && sudo apt install git-lfs
   ```
 
-- **Windows**  
-  Download and install Git LFS from [Git LFS official site](https://git-lfs.github.com/).
+- **Windows**
+  Download from: https://git-lfs.github.com/
 
-### Step 2: Clone the Repository
-After installing Git LFS, clone the repository:
+---
 
-```sh
+### Step 2: Initialize and Clone
+
+```bash
+git lfs install
 git clone https://github.com/OHDSI/AfricaWG.git
 cd AfricaWG
 ```
 
-Git LFS will automatically download the large files.
+---
 
-### Step 3: Pulling Updates
-If you have already cloned the repository before installing Git LFS, or if you are pulling new changes, run:
+### Step 3: Pull Data (If Already Cloned)
 
-```sh
-git lfs install
+If you see small "pointer" files instead of large CSVs:
+
+```bash
 git lfs pull
 ```
-
-This ensures all large files are properly downloaded.
-
-### Troubleshooting
-If you see pointer files instead of actual data when opening a large file (e.g., `CONCEPT.csv`), it means Git LFS is not set up correctly. Run:
-
-```sh
-git lfs pull
-```
-
-For more information, refer to the [Git LFS documentation](https://git-lfs.github.com/).
 
 ---
 
+## 🚀 Getting Started
 
-## Follow these steps to get the project up and running:
+---
 
-### 1. Build the Required Images
+## 1. Database Initialization
+Before building the containers, you must provide the initial data dump for the OpenMRS database.
+- Action: Locate your `db.sql `file
+- Path: Move or upload the db.sql file into the `./omrs-db/` directory
+- Note: The Docker container is configured to automatically execute any .sql scripts found in this folder during the first boot.
 
-Run the following command to build the `omop-etl-core` and `omop-etl-achilles` images:
+### 2. Build the Required Images
+Once the SQL dump is in place, build the environment using Docker Compose. This ensures all configurations and the database dump are baked into the initial volume setup.
 
 ```bash
 docker compose --profile manual build
@@ -63,48 +72,121 @@ docker compose --profile manual build
 
 ---
 
-### 2. Start the services
+### 3. Start the Services
 
 ```bash
 docker compose up -d
 ```
 
 ---
-### 3. Start up DQD viewer service
+
+### 4. Start the DQD Viewer
+
 ```bash
 docker compose --profile manual up -d dqd-viewer
 ```
-This serves the DQD results on a local web server. Once it's running, open your browser and go to [http://localhost:3000](http://localhost:3000).
-But the DQD report will be empty until airflow orchestration is done.
+
+Access the dashboard at:
+
+```
+http://localhost:3000
+```
+
+> ⚠️ Results will be empty until the ETL runs.
 
 ---
-### 4.0. Map OpenMRS Concepts to OMOP Standard Concepts
 
-This step involves mapping your OpenMRS concepts to OMOP standard concepts using the Usagi tool. This mapping is crucial for ensuring that your OpenMRS data is correctly transformed into the OMOP Common Data Model.
+# 🌀 5.0 Run Orchestration
 
----
+You have two options to run the data conversion:
 
-#### 4.1. Generate the Usagi Input File
+## Option A: Production Orchestration (Airflow)
 
-Run the following command:
+
+Use **Apache Airflow** to visually monitor and schedule your pipeline.
+
+### 1. Environment Setup
 
 ```bash
-docker compose run --rm core generate-concepts-usagi-input
+chmod +x ./airflow/airflow_env_generator.sh && ./airflow/airflow_env_generator.sh
 ```
 
-This will generate a CSV file containing OpenMRS concept IDs, names, and their usage frequencies.
+### 2. Launch Airflow
 
-✅ **Location of the generated file:**
+```bash
+docker compose --env-file .env-airflow -f docker-compose.airflow.yml up -d
+```
+
+- UI URL: http://localhost:8780  
+- Credentials: username: `airflow` password: `airflow`  
+
+![](docs/img/airflow.png)
+
+### 3. Trigger Setup DAG:
+Run `OMOP_Vocabulary_Load`. 
+
+This DAG manages the end-to-end ingestion and semantic mapping of medical vocabularies. It executes the following core processes:
+
+- Athena Vocabulary Ingestion: Performs a bulk import of Athena vocabulary concepts into the `omop` database. This provides the necessary underlying structure for Atlas to function.
+- Semantic Mapping Workflow: Processes source codes through a decision logic (as seen in the workflow diagram at the start of readme) to determine the best OMOP Standard Concept.
+- OCL/Athena Mapper Integration: For codes identified as CIEL or those lacking immediate standard maps, the OCL/Athena Mapper is engaged. It cross-references OCL and Athena relationships to resolve mappings, resulting in two distinct output files:
+  
+  - `autogenerated_omop_mappings.csv`: Contains automated maps for direct implementation.
+  - `concepts_for_usagi_mapping.csv`: Contains concepts that require human-in-the-loop validation via the Usagi tool or manual Athena lookup.
+
+![](docs/img/ocl_mapper_worklow.png)
+
+### 4. Next Step: 
+Proceed to Section 6.0 (Mapping) before running clinical DAG.
+
+---
+
+
+### Option B: Manual CLI Execution
+For development or step-by-step debugging, you can run the ETL directly using the core service.
+
+**You have two choices for running Manual CLI Execution.**
+### Option B.1: The "One-Click" Pipeline (Recommended)
+This executes all 11 internal steps in the correct sequence automatically.
+```bash
+docker compose run --rm core run-full-pipeline
+```
+### Option B.2: Manual Step-by-Step Execution
+Use this if you need to debug a specific stage or are working in a development environment.
+
+| Step | Command                                                          | Description                                                                 |
+|-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| 1   | `docker compose run --rm core generate-mapper-placeholder-files` | Prepares initial mapping logic files                                        |
+| 2   | `docker compose run --rm core create-omop-postgres-schema`       | Initializes the OHDSI DDL in PostgreSQL                                     |
+| 3   | `docker compose run --rm core import-omop-concepts`              | Loads Athena vocabulary CSVs                                                |
+| 4   | `docker compose run --rm core sync-omrs-mappings`                | Syncs your mapping.csv with the ETL engine                                  |
+|     | [Go to Section 6.0: Usagi Mapping]            | Perform your concept mapping now then come back and run the remaining steps |
+| 5   | `docker compose run --rm core apply-omop-constraints`            | Sets up Primary and Foreign Keys in Postgres                                |
+| 6   | `docker compose run --rm core populate-cdm-source `              | Sets initial CDM metadata                                                   |
+| 7   | `docker compose run --rm core apply-sqlmesh-plan`                | Runs SQLMesh transformations on the data                                    |
+| 8   | `docker compose run --rm core materialize-mysql-views `          | Converts logic views into physical tables                                   |
+| 9   | `docker compose run --rm core migrate-to-postgresql  `           | Moves data from MySQL to the final Postgres DB                              |
+| 10  | `docker compose run --rm core populate-cdm-source`               | Finalizes CDM metadata                                                      |
+| 11  | `docker compose run --rm core generate_mapping_report `          | Outputs a coverage report of your mappings                                  |
+
+---
+
+
+## 🧠 6.0 Mapping OpenMRS Concepts (Usagi)
+
+After running Step 4 (CLI) or the Vocabulary Load (Airflow), the required mapping input is automatically generated.
+
+✅ **Input File Location:**
 
 ```
-/concepts/concepts_for_usagi_mapping
+/concepts/concepts_for_usagi_mapping.csv
 ```
 
 You'll import this file into **Usagi** to map your OpenMRS concepts to OMOP standard concepts.
 
 ---
 
-#### 4.2. Import the File into Usagi
+### 6.1. Import the File into Usagi
 
 ##### a. Download and Install Usagi
 
@@ -128,7 +210,7 @@ Before you can map your concepts, you must load the OMOP vocabulary into Usagi.
 File > Import Vocabulary
 ```
 
-- Select the folder containing the vocabulary CSV files.
+- Select the folder containing Athena vocabulary CSV files.
 
 > **Note:** This is a one-time task unless you update your vocabularies in the future.
 
@@ -142,10 +224,10 @@ File > Import Vocabulary
 File > Import Codes
 ```
 
-- Select the file you generated in Step 5.1:
+- Select the file that was automatically generated by one of docker cmds:
 
 ```
-/concepts/concepts_for_usagi_mapping
+/concepts/concepts_for_usagi_mapping.csv
 ```
 
 Usagi will automatically attempt to map your source concepts to standard OMOP concepts based on the concept names and frequencies.
@@ -178,8 +260,6 @@ mapping.csv
 /concepts/mapping.csv
 ```
 
-This file will later be used by **SQLMesh** during ETL processing.
-
 ---
 
 ##### e. Updating Your Mapping Later
@@ -195,25 +275,46 @@ File > Apply Previous Mapping
 
 - Import your existing mapping file (`mapping.csv`), and make further edits as needed.
 
---- 
-## 🌀 5.0 Run with Airflow
-You can run this project with Apache Airflow to visually orchestrate and schedule your data pipeline.
-At this stage the Openmrs data will be automatically converted to omop.
-### 5.1 Airflow Environment Setup and Deployment
+## 🔄 6.2 Re-run the Mapping Orchestration
+
+Now that `mapping.csv` is populated, re-run the pipeline to apply the clinical transformation.
+ - If using Airflow: Trigger the `OpenMRS_to_OMOP_Clinical_ETL` DAG.
+ - If using Manual CLI: Continue with Step 5 in the Manual Step-by-Step table, or run the `run-full-pipeline` command.
+---
+
+## 📊 7.0 Data Characterization & Quality Checks
+
+### Run Achilles
+
 ```bash
-chmod +x ./airflow/airflow_env_generator.sh && ./airflow/airflow_env_generator.sh
+docker compose run --rm achilles Rscript /opt/achilles/entrypoint.r
 ```
-### 5.2 To start with Airflow:
+
+### Run Data Quality Dashboard (DQD)
+
 ```bash
-docker compose --env-file .env-airflow -f docker-compose.airflow.yml up -d
+docker compose run --rm dqd Rscript /opt/dqd/run_dqd.R run
 ```
 
-This will launch the Airflow UI at:
-👉 http://localhost:8780
+Refresh:
 
-Login credentials:\
-Username: airflow\
-Password: airflow
+```
+http://localhost:3000
+```
+## 📈 8.0 Cohort Analysis & Exploration (ATLAS)
+Once your data is loaded into OMOP CDM and validated, you can explore it using OHDSI ATLAS.
 
-You can use the UI to manually trigger DAGs that run your pipeline steps.
-![](docs/img/airflow.jpeg)
+### 8.1 Start ATLAS
+```bash
+docker compose -f docker-compose.atlas.yml up -d
+```
+## 8.2 Access ATLAS
+
+```bash
+ http://localhost:8180/atlas
+```
+
+---
+## 8.3 Atlas Preview 
+
+![](docs/img/atlas.png)
