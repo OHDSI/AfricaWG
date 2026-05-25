@@ -1,0 +1,95 @@
+# Build Docker image and push to GitHub Container Registry (GHCR) (tag-driven)
+name: build-and-push-ghcr-image
+
+on:
+  # Run only when a git tag like "v2.2.1" is pushed
+  push:
+    tags:
+      - 'v*'
+    branches:
+      - omop-db-image
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to build"
+        required: false
+        default: "omop-db-image"
+
+env:
+  REGISTRY: ghcr.io
+  # GitHub requires repository names to be lowercase for packages.
+  # metadata-action handles this automatically when combining REGISTRY and github.repository.
+  IMAGE_NAME: ${{ github.repository_owner }}/omop-etl-postgresdb
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
+          lfs: true
+
+      - name: Fetch Git LFS files
+        run: git lfs pull
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            # If git tag exists (v2.2.1)
+            type=semver,pattern={{version}}
+
+            # latest only for git tags
+            type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/') }}
+
+            # branch name tags
+            type=ref,event=branch
+
+            # manual dispatch fallback
+            type=raw,value=edge,enable=${{ github.event_name == 'workflow_dispatch' }}
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64
+          push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          # Buildx v6 uses provenance tracking by default; inline mode cleans up workflow footprints
+          provenance: true
+          secrets: |
+            "OHDSI_ETL_POSTGRES_DB_PASSWORD=omop"
+          build-args: |
+            PASSWORD_METHOD=default
+            GIT_BRANCH=${{ github.ref_name }}
+            GIT_COMMIT_ID_ABBREV=${{ github.sha }}
+
+      - name: Log generated Docker image tags
+        run: |
+          echo "Generated tags:"
+          echo "${{ steps.meta.outputs.tags }}"

@@ -1,0 +1,25 @@
+volumes:
+  omop-etl-data:
+    name: omop-etl-data
+
+services:
+  omop-etl-postgresdb:
+    build: .
+    image: ohdsi/omop-etl-postgresdb:1.0.0
+    container_name: omop-etl-postgresdb
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+    environment:
+      - POSTGRES_PASSWORD=postgres_pass
+    ports:
+      - "5432:5432"
+    volumes:
+     - omop-etl-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10

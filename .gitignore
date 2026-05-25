@@ -1,0 +1,11 @@
+.DS_Store
+.vscode
+
+# Temporary and intermediate generation directory
+.tmp_webapi_gen/
+
+# Editor/OS cruft
+*.swp
+*.swo
+Thumbs.db
+.idea

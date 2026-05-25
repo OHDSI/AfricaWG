@@ -1,0 +1,46 @@
+vocabulary_id	vocabulary_name	vocabulary_reference	vocabulary_version	vocabulary_concept_id
+Vocabulary	OMOP Vocabulary	OMOP generated		44819232
+Relationship	OMOP Relationship	OMOP generated		44819235
+RxNorm	RxNorm (NLM)	http://www.nlm.nih.gov/research/umls/rxnorm/docs/rxnormfiles.html	RxNorm 20260105	44819104
+Visit Type	OMOP Visit Type	OMOP generated		44819150
+Drug Type	OMOP Drug Exposure Type	OMOP generated		44819126
+Plan	OMOP Health Plan	OMOP generated		32471
+Procedure Type	OMOP Procedure Occurrence Type	OMOP generated		44819128
+LOINC	Logical Observation Identifiers Names and Codes (Regenstrief Institute)	http://loinc.org/downloads/loinc	LOINC 2.80	44819102
+US Census	Census regions of the United States (USCB)	https://www.census.gov/geo/maps-data/data/tiger-cart-boundary.html	US Census 2017 Release	32570
+Episode	OMOP Episode	OMOP generated	Episode 20201014	32523
+Metadata	OMOP Metadata	OMOP generated		32675
+Observation Type	OMOP Observation Type	OMOP generated		44819129
+Condition Type	OMOP Condition Occurrence Type	OMOP generated		44819127
+Meas Type	OMOP Measurement Type	OMOP generated		44819152
+Condition Status	OMOP Condition Status	OMOP generated		32887
+None	OMOP Standardized Vocabularies	OMOP generated	v5.0 27-FEB-26	44819096
+Obs Period Type	OMOP Observation Period Type	OMOP generated		44819149
+Visit	OMOP Visit	OMOP generated	Visit 20211216	44819119
+Cost Type	OMOP Cost Type	OMOP generated		5029
+Sponsor	OMOP Sponsor	OMOP generated		32472
+Plan Stop Reason	OMOP Plan Stop Reason	OMOP generated		32474
+Device Type	OMOP Device Type	OMOP generated		44819151
+SOPT	Source of Payment Typology (PHDSC)	https://www.nahdo.org/sopt	SOPT Version 9.2	32473
+UB04 Typ bill	UB04 Type of Bill - Institutional (USHIK)	https://ushik.ahrq.gov/ViewItemDetails?&system=apcd&itemKey=196987000		32044
+Gender	OMOP Gender	OMOP generated		44819108
+CIEL	Columbia International eHealth Laboratory (Columbia University)	https://app.openconceptlab.org/#/orgs/CIEL/	CIEL 2025-11-20	45905710
+Cohort Type	OMOP Cohort Type	OMOP generated		44819234
+ATC	WHO Anatomic Therapeutic Chemical Classification	http://www.whocc.no/atc_ddd_index/	ATC 2026-02-01	44819117
+Death Type	OMOP Death Type	OMOP generated		44819135
+Note Type	OMOP Note Type	OMOP generated		44819146
+RxNorm Extension	OMOP RxNorm Extension	OMOP generated	RxNorm Extension 2026-01-14	252
+Cost	OMOP Cost	OMOP generated		581457
+OSM	OpenStreetMap (OSMF)	https://www.openstreetmap.org/copyright/en, https://wambachers-osm.website/boundaries/	OSM Release 2019-02-21	32541
+UB04 Point of Origin	UB04 Claim Source Inpatient Admission Code (CMS)	https://www.resdac.org/cms-data/variables/Claim-Source-Inpatient-Admission-Code		32045
+UB04 Pt dis status	UB04 Patient Discharge Status Code (CMS)	https://www.resdac.org/cms-data/variables/patient-discharge-status-code		32047
+Korean Revenue Code	Korean Revenue Code (KNHIS)	OMOP generated		32724
+UB04 Pri Typ of Adm	UB04 Claim Inpatient Admission Type Code (CMS)	https://www.resdac.org/cms-data/variables/Claim-Inpatient-Admission-Type-Code		32046
+Domain	OMOP Domain	OMOP generated		44819147
+Type Concept	OMOP Type Concept	OMOP generated	Type Concept 20260202	32808
+Language	OMOP Language	OMOP generated	Language 20221030	33069
+ICD10	International Classification of Diseases, Tenth Revision (WHO)	http://www.who.int/classifications/icd/icdonlineversions/en/	2021 Release	44819124
+CDM	OMOP Common DataModel	https://github.com/OHDSI/CommonDataModel	CDM v6.0.0	32485
+Concept Class	OMOP Concept Class	OMOP generated		44819233
+UCUM	Unified Code for Units of Measure (Regenstrief Institute)	http://aurora.regenstrief.org/~ucum/ucum.html#section-Alphabetic-Index	Version 1.8.2	44819107
+SNOMED	Systematic Nomenclature of Medicine - Clinical Terms (IHTSDO)	http://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html	2025-02-01 SNOMED CT International Edition; 2025-03-01 SNOMED CT US Edition; 2025-04-09 SNOMED CT UK Edition	44819097
