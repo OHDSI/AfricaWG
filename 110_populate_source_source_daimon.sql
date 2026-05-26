@@ -5,7 +5,7 @@ truncate webapi.source_daimon;
 -- OHDSI CDM source
 INSERT INTO webapi.source( source_id, source_name, source_key, source_connection, source_dialect)
 VALUES (1, 'OpenMRS', 'OpenMRS_ETL',
-        'jdbc:postgresql://omop-etl-postgresdb:5432/postgres?user=postgres&password=omop', 'postgresql');
+        'jdbc:postgresql://omop-etl-postgresdb:5432/postgres?user=postgres&password=postgres_pass', 'postgresql');
 
 -- CDM daimon
 INSERT INTO webapi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (1, 1, 0, 'omop', 0);

@@ -13,7 +13,7 @@ EXPOSE 5432
 
 # configure postgres database defaults
 ENV PGDATA=/data
-ENV PGOPTIONS="--search_path=omop"
+ENV PGOPTIONS="--search_path=public"
 
 
 # copy the below SQL files into the container image - postgresql database will automatically run them in this sequence when it starts up

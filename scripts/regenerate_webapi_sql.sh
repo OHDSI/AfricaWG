@@ -128,7 +128,7 @@ java -jar "$TMP_DIR/SqlRender.jar" \
   "$TMP_DIR/results_ohdisql.ddl" \
   "$TMP_DIR/results_postgresql.ddl" \
   -translate postgresql \
-  -render results_schema cdm_results vocab_schema omop
+  -render results_schema cdm_results vocab_schema public
 
 echo "Building WebAPI baseline SQL..."
 pushd "$TMP_DIR/WebAPI/src/main/resources/db/migration/postgresql" >/dev/null
@@ -231,7 +231,7 @@ java -jar "$TMP_DIR/SqlRender.jar" \
   "$TMP_DIR/omop_cdm_ohdisql_ddl.sql" \
   "$TMP_DIR/omop_cdm_postgresql_ddl.sql" \
   -translate postgresql \
-  -render cdmDatabaseSchema omop \
+  -render cdmDatabaseSchema public \
   || { echo "SqlRender translation failed for CDM DDL" >&2; exit 8; }
 
 # Use the translated output as the vendored Postgres DDL consumed by the Dockerfile build (step 020)

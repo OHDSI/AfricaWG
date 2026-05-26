@@ -1,7 +1,7 @@
 -- remove any previously added database connection configuration data
-truncate omop.cdm_source;
+truncate public.cdm_source;
 
-INSERT INTO omop.cdm_source (
+INSERT INTO public.cdm_source (
     cdm_source_name,
     cdm_source_abbreviation,
     cdm_holder,

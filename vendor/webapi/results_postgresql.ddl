@@ -1965,18 +1965,18 @@ FROM (
 	SELECT
 		concept_id,
 		concept_name
-	FROM omop.concept
+	FROM public.concept
 	WHERE domain_id = 'Condition'
 ) snomed
 LEFT JOIN (
 	SELECT
 		c1.concept_id      AS snomed_concept_id,
 		max(c2.concept_id) AS pt_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.domain_id = 'Condition'
 		AND ca1.min_levels_of_separation = 1
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'MedDRA'
 	GROUP BY c1.concept_id
 ) snomed_to_pt ON snomed.concept_id = snomed_to_pt.snomed_concept_id
@@ -1985,11 +1985,11 @@ LEFT JOIN (
 		c1.concept_id      AS pt_concept_id,
 		c1.concept_name    AS pt_concept_name,
 		max(c2.concept_id) AS hlt_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.vocabulary_id = 'MedDRA'
 		AND ca1.min_levels_of_separation = 1
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'MedDRA'
 	GROUP BY c1.concept_id, c1.concept_name
 ) pt_to_hlt ON snomed_to_pt.pt_concept_id = pt_to_hlt.pt_concept_id
@@ -1998,11 +1998,11 @@ LEFT JOIN (
 		c1.concept_id      AS hlt_concept_id,
 		c1.concept_name    AS hlt_concept_name,
 		max(c2.concept_id) AS hlgt_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.vocabulary_id = 'MedDRA'
 		AND ca1.min_levels_of_separation = 1
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'MedDRA'
 	GROUP BY c1.concept_id, c1.concept_name
 ) hlt_to_hlgt ON pt_to_hlt.hlt_concept_id = hlt_to_hlgt.hlt_concept_id
@@ -2011,15 +2011,15 @@ LEFT JOIN (
 		c1.concept_id      AS hlgt_concept_id,
 		c1.concept_name    AS hlgt_concept_name,
 		max(c2.concept_id) AS soc_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.vocabulary_id = 'MedDRA'
 		AND ca1.min_levels_of_separation = 1
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'MedDRA'
 	GROUP BY c1.concept_id, c1.concept_name
 ) hlgt_to_soc ON hlt_to_hlgt.hlgt_concept_id = hlgt_to_soc.hlgt_concept_id
-LEFT JOIN omop.concept soc ON hlgt_to_soc.soc_concept_id = soc.concept_id;
+LEFT JOIN public.concept soc ON hlgt_to_soc.soc_concept_id = soc.concept_id;
 /********** DRUG **********/
 INSERT INTO cdm_results.concept_hierarchy
 	(concept_id, concept_name, treemap, concept_hierarchy_type, level1_concept_name, level2_concept_name, level3_concept_name, level4_concept_name)
@@ -2038,10 +2038,10 @@ FROM (
 		c1.concept_name,
 		c2.concept_id   AS rxnorm_ingredient_concept_id,
 		c2.concept_name AS RxNorm_ingredient_concept_name
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.domain_id = 'Drug'
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.domain_id = 'Drug'
 		AND c2.concept_class_id = 'Ingredient'
 ) rxnorm
@@ -2049,11 +2049,11 @@ LEFT JOIN (
 	SELECT
 		c1.concept_id      AS rxnorm_ingredient_concept_id,
 		max(c2.concept_id) AS atc5_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.domain_id = 'Drug'
 		AND c1.concept_class_id = 'Ingredient'
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'ATC'
 		AND c2.concept_class_id = 'ATC 4th'
 	GROUP BY c1.concept_id
@@ -2063,11 +2063,11 @@ LEFT JOIN (
 		c1.concept_id      AS atc5_concept_id,
 		c1.concept_name    AS atc5_concept_name,
 		max(c2.concept_id) AS atc3_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.vocabulary_id = 'ATC'
 		AND c1.concept_class_id = 'ATC 4th'
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'ATC'
 		AND c2.concept_class_id = 'ATC 2nd'
 	GROUP BY c1.concept_id, c1.concept_name
@@ -2077,16 +2077,16 @@ LEFT JOIN (
 		c1.concept_id      AS atc3_concept_id,
 		c1.concept_name    AS atc3_concept_name,
 		max(c2.concept_id) AS atc1_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.vocabulary_id = 'ATC'
 		AND c1.concept_class_id = 'ATC 2nd'
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'ATC'
 		AND c2.concept_class_id = 'ATC 1st'
 	GROUP BY c1.concept_id, c1.concept_name
 ) atc3_to_atc1 ON atc5_to_atc3.atc3_concept_id = atc3_to_atc1.atc3_concept_id
-LEFT JOIN omop.concept atc1 ON atc3_to_atc1.atc1_concept_id = atc1.concept_id;
+LEFT JOIN public.concept atc1 ON atc3_to_atc1.atc1_concept_id = atc1.concept_id;
 /********** DRUG_ERA **********/
 INSERT INTO cdm_results.concept_hierarchy
 	(concept_id, concept_name, treemap, concept_hierarchy_type, level1_concept_name, level2_concept_name, level3_concept_name, level4_concept_name)
@@ -2103,7 +2103,7 @@ FROM (
 	SELECT
 		c2.concept_id   AS rxnorm_ingredient_concept_id,
 		c2.concept_name AS RxNorm_ingredient_concept_name
-	FROM omop.concept c2
+	FROM public.concept c2
 	WHERE c2.domain_id = 'Drug'
 		AND c2.concept_class_id = 'Ingredient'
 ) rxnorm
@@ -2111,11 +2111,11 @@ LEFT JOIN (
 	SELECT
 		c1.concept_id      AS rxnorm_ingredient_concept_id,
 		max(c2.concept_id) AS atc5_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.domain_id = 'Drug'
 		AND c1.concept_class_id = 'Ingredient'
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'ATC'
 		AND c2.concept_class_id = 'ATC 4th'
 	GROUP BY c1.concept_id
@@ -2125,11 +2125,11 @@ LEFT JOIN (
 		c1.concept_id      AS atc5_concept_id,
 		c1.concept_name    AS atc5_concept_name,
 		max(c2.concept_id) AS atc3_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.vocabulary_id = 'ATC'
 		AND c1.concept_class_id = 'ATC 4th'
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'ATC'
 		AND c2.concept_class_id = 'ATC 2nd'
 	GROUP BY c1.concept_id, c1.concept_name
@@ -2139,16 +2139,16 @@ LEFT JOIN (
 		c1.concept_id      AS atc3_concept_id,
 		c1.concept_name    AS atc3_concept_name,
 		max(c2.concept_id) AS atc1_concept_id
-	FROM omop.concept c1
-	INNER JOIN omop.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
+	FROM public.concept c1
+	INNER JOIN public.concept_ancestor ca1 ON c1.concept_id = ca1.descendant_concept_id
 		AND c1.vocabulary_id = 'ATC'
 		AND c1.concept_class_id = 'ATC 2nd'
-	INNER JOIN omop.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
+	INNER JOIN public.concept c2 ON ca1.ancestor_concept_id = c2.concept_id
 		AND c2.vocabulary_id = 'ATC'
 		AND c2.concept_class_id = 'ATC 1st'
 	GROUP BY c1.concept_id, c1.concept_name
 ) atc3_to_atc1 ON atc5_to_atc3.atc3_concept_id = atc3_to_atc1.atc3_concept_id
-LEFT JOIN omop.concept atc1 ON atc3_to_atc1.atc1_concept_id = atc1.concept_id;
+LEFT JOIN public.concept atc1 ON atc3_to_atc1.atc1_concept_id = atc1.concept_id;
 /********** MEASUREMENT **********/
 INSERT INTO cdm_results.concept_hierarchy
 	(concept_id, concept_name, treemap, concept_hierarchy_type, level1_concept_name, level2_concept_name, level3_concept_name, level4_concept_name)
@@ -2165,15 +2165,15 @@ FROM (
 	SELECT DISTINCT
 		concept_id,
 		concept_name
-	FROM omop.concept c
+	FROM public.concept c
 	WHERE domain_id = 'Measurement'
 ) m
-LEFT JOIN omop.concept_ancestor ca1 ON M.concept_id = ca1.DESCENDANT_CONCEPT_ID AND ca1.min_levels_of_separation = 1
-LEFT JOIN omop.concept c1 ON ca1.ANCESTOR_CONCEPT_ID = c1.concept_id
-LEFT JOIN omop.concept_ancestor ca2 ON c1.concept_id = ca2.DESCENDANT_CONCEPT_ID AND ca2.min_levels_of_separation = 1
-LEFT JOIN omop.concept c2 ON ca2.ANCESTOR_CONCEPT_ID = c2.concept_id
-LEFT JOIN omop.concept_ancestor ca3 ON c2.concept_id = ca3.DESCENDANT_CONCEPT_ID AND ca3.min_levels_of_separation = 1
-LEFT JOIN omop.concept c3 ON ca3.ANCESTOR_CONCEPT_ID = c3.concept_id
+LEFT JOIN public.concept_ancestor ca1 ON M.concept_id = ca1.DESCENDANT_CONCEPT_ID AND ca1.min_levels_of_separation = 1
+LEFT JOIN public.concept c1 ON ca1.ANCESTOR_CONCEPT_ID = c1.concept_id
+LEFT JOIN public.concept_ancestor ca2 ON c1.concept_id = ca2.DESCENDANT_CONCEPT_ID AND ca2.min_levels_of_separation = 1
+LEFT JOIN public.concept c2 ON ca2.ANCESTOR_CONCEPT_ID = c2.concept_id
+LEFT JOIN public.concept_ancestor ca3 ON c2.concept_id = ca3.DESCENDANT_CONCEPT_ID AND ca3.min_levels_of_separation = 1
+LEFT JOIN public.concept c3 ON ca3.ANCESTOR_CONCEPT_ID = c3.concept_id
 GROUP BY M.concept_id, M.concept_name;
 /********** OBSERVATION **********/
 INSERT INTO cdm_results.concept_hierarchy
@@ -2191,15 +2191,15 @@ FROM (
 	SELECT
 		concept_id,
 		concept_name
-	FROM omop.concept
+	FROM public.concept
 	WHERE domain_id = 'Observation'
 ) obs
-LEFT JOIN omop.concept_ancestor ca1 ON obs.concept_id = ca1.DESCENDANT_CONCEPT_ID AND ca1.min_levels_of_separation = 1
-LEFT JOIN omop.concept c1 ON ca1.ANCESTOR_CONCEPT_ID = c1.concept_id
-LEFT JOIN omop.concept_ancestor ca2 ON c1.concept_id = ca2.DESCENDANT_CONCEPT_ID AND ca2.min_levels_of_separation = 1
-LEFT JOIN omop.concept c2 ON ca2.ANCESTOR_CONCEPT_ID = c2.concept_id
-LEFT JOIN omop.concept_ancestor ca3 ON c2.concept_id = ca3.DESCENDANT_CONCEPT_ID AND ca3.min_levels_of_separation = 1
-LEFT JOIN omop.concept c3 ON ca3.ANCESTOR_CONCEPT_ID = c3.concept_id
+LEFT JOIN public.concept_ancestor ca1 ON obs.concept_id = ca1.DESCENDANT_CONCEPT_ID AND ca1.min_levels_of_separation = 1
+LEFT JOIN public.concept c1 ON ca1.ANCESTOR_CONCEPT_ID = c1.concept_id
+LEFT JOIN public.concept_ancestor ca2 ON c1.concept_id = ca2.DESCENDANT_CONCEPT_ID AND ca2.min_levels_of_separation = 1
+LEFT JOIN public.concept c2 ON ca2.ANCESTOR_CONCEPT_ID = c2.concept_id
+LEFT JOIN public.concept_ancestor ca3 ON c2.concept_id = ca3.DESCENDANT_CONCEPT_ID AND ca3.min_levels_of_separation = 1
+LEFT JOIN public.concept c3 ON ca3.ANCESTOR_CONCEPT_ID = c3.concept_id
 GROUP BY obs.concept_id, obs.concept_name;
 /********** PROCEDURE **********/
 INSERT INTO cdm_results.concept_hierarchy
@@ -2218,21 +2218,21 @@ FROM
 	SELECT
 		c1.concept_id,
 		CONCAT(v1.vocabulary_name, ' ', c1.concept_code, ': ', c1.concept_name) AS proc_concept_name
-	FROM omop.concept c1
-	INNER JOIN omop.vocabulary v1 ON c1.vocabulary_id = v1.vocabulary_id
+	FROM public.concept c1
+	INNER JOIN public.vocabulary v1 ON c1.vocabulary_id = v1.vocabulary_id
 	WHERE c1.domain_id = 'Procedure'
 ) procs
 LEFT JOIN (
 	SELECT
 		ca0.DESCENDANT_CONCEPT_ID,
 		max(ca0.ancestor_concept_id) AS ancestor_concept_id
-	FROM omop.concept_ancestor ca0
+	FROM public.concept_ancestor ca0
 	INNER JOIN (
 		SELECT DISTINCT c2.concept_id AS os3_concept_id
-		FROM omop.concept_ancestor ca1
-		INNER JOIN omop.concept c1 ON ca1.DESCENDANT_CONCEPT_ID = c1.concept_id
-		INNER JOIN omop.concept_ancestor ca2 ON c1.concept_id = ca2.ANCESTOR_CONCEPT_ID
-		INNER JOIN omop.concept c2 ON ca2.DESCENDANT_CONCEPT_ID = c2.concept_id
+		FROM public.concept_ancestor ca1
+		INNER JOIN public.concept c1 ON ca1.DESCENDANT_CONCEPT_ID = c1.concept_id
+		INNER JOIN public.concept_ancestor ca2 ON c1.concept_id = ca2.ANCESTOR_CONCEPT_ID
+		INNER JOIN public.concept c2 ON ca2.DESCENDANT_CONCEPT_ID = c2.concept_id
 		WHERE ca1.ancestor_concept_id = 4040390
 			AND ca1.Min_LEVELS_OF_SEPARATION = 2
 			AND ca2.MIN_LEVELS_OF_SEPARATION = 1
@@ -2249,8 +2249,8 @@ LEFT JOIN (
 		SELECT
 			DESCENDANT_CONCEPT_ID AS os1_concept_id,
 			concept_name          AS os1_concept_name
-		FROM omop.concept_ancestor ca1
-		INNER JOIN omop.concept c1 ON ca1.DESCENDANT_CONCEPT_ID = c1.concept_id
+		FROM public.concept_ancestor ca1
+		INNER JOIN public.concept c1 ON ca1.DESCENDANT_CONCEPT_ID = c1.concept_id
 		WHERE ancestor_concept_id = 4040390
 			AND Min_LEVELS_OF_SEPARATION = 1
 	) proc_by_os1
@@ -2259,10 +2259,10 @@ LEFT JOIN (
 			max(c1.CONCEPT_ID) AS os1_concept_id,
 			c2.concept_id      AS os2_concept_id,
 			c2.concept_name    AS os2_concept_name
-		FROM omop.concept_ancestor ca1
-		INNER JOIN omop.concept c1 ON ca1.DESCENDANT_CONCEPT_ID = c1.concept_id
-		INNER JOIN omop.concept_ancestor ca2 ON c1.concept_id = ca2.ANCESTOR_CONCEPT_ID
-		INNER JOIN omop.concept c2 ON ca2.DESCENDANT_CONCEPT_ID = c2.concept_id
+		FROM public.concept_ancestor ca1
+		INNER JOIN public.concept c1 ON ca1.DESCENDANT_CONCEPT_ID = c1.concept_id
+		INNER JOIN public.concept_ancestor ca2 ON c1.concept_id = ca2.ANCESTOR_CONCEPT_ID
+		INNER JOIN public.concept c2 ON ca2.DESCENDANT_CONCEPT_ID = c2.concept_id
 		WHERE ca1.ancestor_concept_id = 4040390
 			AND ca1.Min_LEVELS_OF_SEPARATION = 1
 			AND ca2.MIN_LEVELS_OF_SEPARATION = 1
@@ -2273,10 +2273,10 @@ LEFT JOIN (
 			max(c1.CONCEPT_ID) AS os2_concept_id,
 			c2.concept_id      AS os3_concept_id,
 			c2.concept_name    AS os3_concept_name
-		FROM omop.concept_ancestor ca1
-		INNER JOIN omop.concept c1 ON ca1.DESCENDANT_CONCEPT_ID = c1.concept_id
-		INNER JOIN omop.concept_ancestor ca2 ON c1.concept_id = ca2.ANCESTOR_CONCEPT_ID
-		INNER JOIN omop.concept c2 ON ca2.DESCENDANT_CONCEPT_ID = c2.concept_id
+		FROM public.concept_ancestor ca1
+		INNER JOIN public.concept c1 ON ca1.DESCENDANT_CONCEPT_ID = c1.concept_id
+		INNER JOIN public.concept_ancestor ca2 ON c1.concept_id = ca2.ANCESTOR_CONCEPT_ID
+		INNER JOIN public.concept c2 ON ca2.DESCENDANT_CONCEPT_ID = c2.concept_id
 		WHERE ca1.ancestor_concept_id = 4040390
 			AND ca1.Min_LEVELS_OF_SEPARATION = 2
 			AND ca2.MIN_LEVELS_OF_SEPARATION = 1

@@ -2,10 +2,11 @@
 name: build-and-push-ghcr-image
 
 on:
-  # Run only when a git tag like "v2.2.1" is pushed
+  # Run only when a git tag like "v2.2.1" or "1.0.0.1" is pushed
   push:
     tags:
       - 'v*'
+      - '[0-9]*' # Matches purely numeric tags like 1.0.0.1
     branches:
       - omop-db-image
   workflow_dispatch:
@@ -14,6 +15,10 @@ on:
         description: "Branch to build"
         required: false
         default: "omop-db-image"
+      version_tag:
+        description: "Custom Image Tag (e.g., 1.0.0.1) - Leave blank to use defaults"
+        required: false
+        default: ""
 
 env:
   REGISTRY: ghcr.io
@@ -47,17 +52,17 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            # If git tag exists (v2.2.1)
-            type=semver,pattern={{version}}
+            # 1. Custom tag explicitly typed during manual dispatch
+            type=raw,value=${{ github.event.inputs.version_tag }},enable=${{ github.event.inputs.version_tag != '' }}
 
-            # latest only for git tags
+            # 2. Strict Git tag handling (v1.2.3 or 1.0.0.1)
+            type=raw,value=${{ github.ref_name }},enable=${{ startsWith(github.ref, 'refs/tags/') }}
+
+            # 3. Add latest tag ONLY if it's a Git tag push
             type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/') }}
 
-            # branch name tags
-            type=ref,event=branch
-
-            # manual dispatch fallback
-            type=raw,value=edge,enable=${{ github.event_name == 'workflow_dispatch' }}
+            # 4. Fallback 'edge' tag if manual dispatch is run without an explicit version_tag
+            type=raw,value=edge,enable=${{ github.event_name == 'workflow_dispatch' && github.event.inputs.version_tag == '' }}
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -83,13 +88,38 @@ jobs:
           # Buildx v6 uses provenance tracking by default; inline mode cleans up workflow footprints
           provenance: true
           secrets: |
-            "OHDSI_ETL_POSTGRES_DB_PASSWORD=omop"
+            "OHDSI_ETL_POSTGRES_DB_PASSWORD=postgres_pass"
           build-args: |
             PASSWORD_METHOD=default
-            GIT_BRANCH=${{ github.ref_name }}
+            GIT_BRANCH=${{ github.event.inputs.branch || github.ref_name }}
             GIT_COMMIT_ID_ABBREV=${{ github.sha }}
 
       - name: Log generated Docker image tags
         run: |
           echo "Generated tags:"
           echo "${{ steps.meta.outputs.tags }}"
+
+  release:
+    needs: docker
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Create GitHub Pre-Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: "Pre-release ${{ github.ref_name }}"
+          prerelease: true
+          generate_release_notes: true
+          body: |
+            ## 🐳 Container Registry Info
+            The OMOP DB image for this pre-release has been built and pushed to GHCR.
+            
+            ```bash
+            docker pull ghcr.io/${{ env.IMAGE_NAME }}:${{ github.ref_name }}
+            ```
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
