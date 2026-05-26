@@ -59,7 +59,6 @@ with DAG(
         timeout=7200
     )
 
-    populate_cdm_source = create_core_docker_task("populate_cdm_source", "populate-cdm-source")
 
     run_achilles = DockerOperator(
         task_id='achilles',
@@ -70,12 +69,12 @@ with DAG(
         network_mode='etl-ohdsi-network',
         command="Rscript /opt/achilles/entrypoint.r",
         environment={
-            'ACHILLES_DB_URI': 'postgresql://omop-db:5432/omop',
-            'ACHILLES_DB_USERNAME': 'omop',
-            'ACHILLES_DB_PASSWORD': 'omop',
+            'ACHILLES_DB_URI': 'postgresql://omop-db:5432/postgres',
+            'ACHILLES_DB_USERNAME': 'postgres',
+            'ACHILLES_DB_PASSWORD': 'postgres_pass',
             'ACHILLES_CDM_SCHEMA': 'public',
             'ACHILLES_VOCAB_SCHEMA': 'public',
-            'ACHILLES_RESULTS_SCHEMA': 'webapi',
+            'ACHILLES_RESULTS_SCHEMA': 'cdm_results',
             'ACHILLES_CDM_VERSION': '5.4',
             'ACHILLES_NUM_THREADS': '1'
         }
@@ -95,15 +94,15 @@ with DAG(
         ],
         environment={
             'CDM_CONNECTIONDETAILS_DBMS': "postgresql",
-            'CDM_CONNECTIONDETAILS_USER': "omop",
-            'CDM_CONNECTIONDETAILS_SERVER': "omop-db/omop",
+            'CDM_CONNECTIONDETAILS_USER': "postgres",
+            'CDM_CONNECTIONDETAILS_SERVER': "omop-db/postgres",
             'CDM_CONNECTIONDETAILS_PORT': "5432",
-            'CDM_CONNECTIONDETAILS_PASSWORD': "omop",
+            'CDM_CONNECTIONDETAILS_PASSWORD': "postgres_pass",
             'CDM_CONNECTIONDETAILS_EXTRA_SETTINGS': "",
             'CDM_VERSION': "5.4",
             'CDM_SOURCE_NAME': "OpenMRS",
             'CDM_DATABASE_SCHEMA': "public",
-            'RESULTS_DATABASE_SCHEMA': "webapi",
+            'RESULTS_DATABASE_SCHEMA': "cdm_results",
             'VOCAB_DATABASE_SCHEMA': "public",
             'DQD_NUM_THREADS': "1",
             'DQD_SQL_ONLY': "FALSE",
@@ -135,7 +134,6 @@ with DAG(
          >> apply_sqlmesh_plan
         >> materialize_mysql_views
         >> migrate_to_postgresql
-        >> populate_cdm_source
         >> run_achilles
         >> run_dqd
         >> generate_mapping_report

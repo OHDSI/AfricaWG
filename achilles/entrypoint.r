@@ -32,7 +32,7 @@ default_vars <- list(
   ACHILLES_DB_PASSWORD = "",
   ACHILLES_CDM_SCHEMA = "public",
   ACHILLES_VOCAB_SCHEMA = "public",
-  ACHILLES_RESULTS_SCHEMA = "webapi",
+  ACHILLES_RESULTS_SCHEMA = "cdm_results",
   ATLAS_WEB_API_SCHEMA = "webapi",
   ACHILLES_OUTPUT_BASE = "/opt/achilles/workspace",
   ACHILLES_CDM_VERSION = "5.4",
