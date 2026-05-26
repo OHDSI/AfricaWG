@@ -33,11 +33,11 @@ services:
       SQLMESH_DB_ROOT_PASSWORD: openmrs
       TARGET_HOST: omop-db
       TARGET_PORT: 5432
-      TARGET_USER: omop
-      TARGET_PASS: omop
-      TARGET_DB: omop
+      TARGET_USER: postgres
+      TARGET_PASS: postgres_pass
+      TARGET_DB: postgres
       ACHILLES_VOCAB_SCHEMA: public
-      ACHILLES_RESULTS_SCHEMA: webapi
+      ACHILLES_RESULTS_SCHEMA: cdm_results
       ATLAS_WEB_API_SCHEMA: webapi
     depends_on:
       - sqlmesh-db
@@ -55,25 +55,23 @@ services:
       - ohdsi-network
 
   omop-db:
-    image: postgres:15
+    image: ghcr.io/ohdsi/omop-etl-postgresdb:${OMOP_PG_DB_VERSION}
     container_name: omop-db
     restart: always
     shm_size: 2gb
     environment:
-      POSTGRES_DB: omop
-      POSTGRES_USER: omop
-      POSTGRES_PASSWORD: omop
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_pass
     ports:
       - "5432:5432"
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U omop -d omop" ]
+      test: [ "CMD-SHELL", "pg_isready -U postgres -d postgres" ]
       interval: 10s
       timeout: 5s
       retries: 5
-#    volumes:
-#      - postgres_data:/var/lib/postgresql/data
-#    volumes:
-#      - ./omop-ddl/processed/ddl:/docker-entrypoint-initdb.d
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - ohdsi-network
 
@@ -85,12 +83,12 @@ services:
     depends_on:
       - omop-db
     environment:
-      ACHILLES_DB_URI: "postgresql://omop-db:5432/omop"
-      ACHILLES_DB_USERNAME: "omop"
-      ACHILLES_DB_PASSWORD: "omop"
+      ACHILLES_DB_URI: "postgresql://omop-db:5432/postgres"
+      ACHILLES_DB_USERNAME: "postgres"
+      ACHILLES_DB_PASSWORD: "postgres_pass"
       ACHILLES_CDM_SCHEMA: "public"
       ACHILLES_VOCAB_SCHEMA: "public"
-      ACHILLES_RESULTS_SCHEMA: "webapi"
+      ACHILLES_RESULTS_SCHEMA: "cdm_results"
       ACHILLES_CDM_VERSION: "5.4"
       ACHILLES_NUM_THREADS: "1"
     profiles:

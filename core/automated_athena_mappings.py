@@ -12,10 +12,11 @@ MYSQL_HOST="sqlmesh-db"
 MYSQL_PORT="3306"
 MYSQL_DATABASE= "openmrs"
 TARGET_HOST="omop-db"
-TARGET_USER="omop"
-TARGET_PASSWORD="omop"
+TARGET_USER="postgres"
+TARGET_PASSWORD="postgres_pass"
 TARGET_Port="5432"
-TARGET_DB="omop"
+TARGET_DB="postgres"
+TARGET_SCHEMA="public"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -26,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 MYSQL_URL = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DATABASE}"
 
-PG_URL = f"postgresql+psycopg2://{TARGET_USER}:{TARGET_PASSWORD}@{TARGET_HOST}:{TARGET_Port}/{TARGET_DB}"
+PG_URL = f"postgresql+psycopg2://{TARGET_USER}:{TARGET_PASSWORD}@{TARGET_HOST}:{TARGET_Port}/{TARGET_DB}?options=-csearch_path={TARGET_SCHEMA}"
 
 OCL_API_URL = "https://api.openconceptlab.org/orgs/CIEL/sources/CIEL/concepts/"
 CONCEPT_DIR = "../concepts/"

@@ -157,16 +157,11 @@ Use this if you need to debug a specific stage or are working in a development e
 | Step | Command                                                          | Description                                                                 |
 |-----|------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | 1   | `docker compose run --rm core generate-mapper-placeholder-files` | Prepares initial mapping logic files                                        |
-| 2   | `docker compose run --rm core create-omop-postgres-schema`       | Initializes the OHDSI DDL in PostgreSQL                                     |
-| 3   | `docker compose run --rm core import-omop-concepts`              | Loads Athena vocabulary CSVs                                                |
 | 4   | `docker compose run --rm core sync-omrs-mappings`                | Syncs your mapping.csv with the ETL engine                                  |
 |     | [Go to Section 6.0: Usagi Mapping]            | Perform your concept mapping now then come back and run the remaining steps |
-| 5   | `docker compose run --rm core apply-omop-constraints`            | Sets up Primary and Foreign Keys in Postgres                                |
-| 6   | `docker compose run --rm core populate-cdm-source `              | Sets initial CDM metadata                                                   |
 | 7   | `docker compose run --rm core apply-sqlmesh-plan`                | Runs SQLMesh transformations on the data                                    |
 | 8   | `docker compose run --rm core materialize-mysql-views `          | Converts logic views into physical tables                                   |
 | 9   | `docker compose run --rm core migrate-to-postgresql  `           | Moves data from MySQL to the final Postgres DB                              |
-| 10  | `docker compose run --rm core populate-cdm-source`               | Finalizes CDM metadata                                                      |
 | 11  | `docker compose run --rm core generate_mapping_report `          | Outputs a coverage report of your mappings                                  |
 
 ---

@@ -26,30 +26,11 @@ with DAG(
         command="generate-mapper-placeholder-files"
     )
 
-    check_and_create_schema = create_core_docker_task(
-        task_id="check_and_create_omop_schema",
-        command="create-omop-postgres-schema"
-    )
-
-    import_concepts = create_core_docker_task(
-        task_id="import_omop_concepts",
-        command="import-omop-concepts"
-    )
-
     sync_openmrs_mappings = create_core_docker_task(
         task_id="sync_openmrs_to_athena_mappings",
         command="sync-omrs-mappings"
     )
 
-    apply_constraints = create_core_docker_task(
-        task_id="apply_omop_constraints",
-        command="apply-omop-constraints"
-    )
-
-    update_cdm_metadata = create_core_docker_task(
-        task_id="update_cdm_source_metadata",
-        command="populate-cdm-source"
-    )
 
     trigger_clinical_migration = TriggerDagRunOperator(
         task_id="trigger_omop_clinical_etl",
@@ -62,10 +43,6 @@ with DAG(
 
 (
         concept_placeholder_files
-        >> check_and_create_schema
-        >> import_concepts
         >> sync_openmrs_mappings
-        >> apply_constraints
-        >> update_cdm_metadata
         >> trigger_clinical_migration
 )

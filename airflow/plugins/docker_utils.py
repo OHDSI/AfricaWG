@@ -15,11 +15,11 @@ def create_core_docker_task(task_id, command, image='omop-etl-core', extra_env=N
         'SQLMESH_DB_ROOT_PASSWORD': 'openmrs',
         'TARGET_HOST': 'omop-db',
         'TARGET_PORT': '5432',
-        'TARGET_USER': 'omop',
-        'TARGET_PASS': 'omop',
-        'TARGET_DB': 'omop',
-        'ACHILLES_VOCAB_SCHEMA': 'vocab',
-        'ACHILLES_RESULTS_SCHEMA': 'webapi',
+        'TARGET_USER': 'postgres',
+        'TARGET_PASS': 'postgres_pass',
+        'TARGET_DB': 'postgres',
+        'ACHILLES_VOCAB_SCHEMA': 'public',
+        'ACHILLES_RESULTS_SCHEMA': 'cdm_results',
         'ATLAS_WEB_API_SCHEMA': 'webapi'
     }
 

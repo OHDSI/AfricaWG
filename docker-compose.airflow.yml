@@ -78,7 +78,7 @@ x-airflow-common:
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
     # The following line can be used to set a custom config file, stored in the local config folder
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
-    AIRFLOW_CONN_OMOP_DB_POSTGRES: "postgres://omop:omop@omop-db:5432/omop"
+    AIRFLOW_CONN_OMOP_DB_POSTGRES: "postgres://postgress:postgress@omop-db:5432/postgress"
 #    AIRFLOW__LOGGING__LOGGING_LEVEL: "ERROR"
 #    AIRFLOW__LOGGING__FAB_LOGGING_LEVEL: "ERROR"
   volumes:
