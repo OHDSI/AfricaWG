@@ -10,7 +10,6 @@ SOURCE_DB="omop_db"
 TARGET_MYSQL_DB="public"
 TARGET_PG_SCHEMA="public"
 TARGET_DB="postgres"
-CONCEPTS_CSV_FILE="seed/CONCEPT.csv"
 TEMP_DIR="tmp"
 
 generate-mapper-placeholder-files(){

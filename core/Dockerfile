@@ -35,7 +35,7 @@ ENV SQLMESH_LOG_LEVEL=ERROR
 # set workdir
 WORKDIR /core
 
-COPY seed seed
+
 COPY models models
 COPY config.yaml .
 COPY entrypoint.sh .

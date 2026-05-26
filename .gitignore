@@ -8,3 +8,4 @@ __pycache__
 .env-airflow
 concepts/*.csv
 docs/img/mapping_quality_summary.png
+
