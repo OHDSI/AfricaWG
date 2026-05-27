@@ -131,6 +131,22 @@ services:
       - cdm-postprocessing-data:/postprocessing
     command: [ "Rscript", "/opt/dqd/run_dqd.R", "view" ]
 
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: cloudbeaver
+    restart: unless-stopped
+    depends_on:
+      - sqlmesh-db
+      - omop-db
+    ports:
+      - "8978:8978"
+    volumes:
+      - cloudbeaver-data:/opt/cloudbeaver/workspace
+    networks:
+      - ohdsi-network
+    profiles:
+      - manual
+
 volumes:
   db-data: ~
   postgres_data: ~
