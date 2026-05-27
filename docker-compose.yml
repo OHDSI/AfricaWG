@@ -144,8 +144,6 @@ services:
       - cloudbeaver-data:/opt/cloudbeaver/workspace
     networks:
       - ohdsi-network
-    profiles:
-      - manual
 
 volumes:
   db-data: ~
