@@ -7,51 +7,71 @@ The following diagram illustrates the end-to-end ETL workflow implemented in thi
 
 ![](docs/img/sematic_mapping_workflow.png)
 ---
-## Getting Started: Local & Server Setup
-Complete the following installation and configuration steps to ensure the ETL workflow is correctly deployed and operational in your environment.
 
-## 🏗️ Setting Up Git LFS
+## What You'll Need Before Starting
 
-This repository uses **Git Large File Storage (LFS)** to handle large files like `CONCEPT.csv`.
+- **Docker Desktop** installed on your computer ([Download here](https://www.docker.com/products/docker-desktop/))
+- **Basic command line knowledge** (we'll show you the exact commands to type)
+- About **30 minutes** for the initial setup
 
-You **must** set up Git LFS to download actual data files instead of pointer files.
 
-### Step 1: Install Git LFS
+#### Installing Docker
 
-- **macOS**
-  ```bash
-  brew install git-lfs
-  ```
+<details>
+<summary>mac OS</summary>
 
-- **Linux**
-  ```bash
-  sudo apt update && sudo apt install git-lfs
-  ```
 
-- **Windows**
-  Download from: https://git-lfs.github.com/
+1. **Manual Installation:**
+  - Download Docker Desktop from [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+  - Install and launch Docker Desktop
+  - Ensure Docker is running (you should see the Docker icon in your menu bar)
+2. Or ** Using Homebrew:**
+   ```bash
+   brew install --cask docker
+   ```
+   Then launch Docker Desktop from Applications.
+</details>
 
----
+<details>
+<summary>Windows</summary>
 
-### Step 2: Initialize and Clone
+1. Download Docker Desktop from [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+2. Install and launch Docker Desktop
+3. Ensure WSL 2 is enabled if prompted
+</details>
 
-```bash
-git lfs install
-git clone https://github.com/OHDSI/AfricaWG.git
-cd AfricaWG
-```
+<details>
+<summary>Linux (Ubuntu/Debian)</summary>
 
----
-
-### Step 3: Pull Data (If Already Cloned)
-
-If you see small "pointer" files instead of large CSVs:
 
 ```bash
-git lfs pull
+# Update package index
+sudo apt-get update
+
+# Install prerequisites
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
+
+# Add Docker's official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# Add Docker repository
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# Start Docker service
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Add your user to docker group (optional, to avoid sudo)
+sudo usermod -aG docker $USER
 ```
 
----
+</details>
+
+
 
 ## 🚀 Getting Started
 
@@ -63,12 +83,13 @@ Before building the containers, you must provide the initial data dump for the O
 - Path: Move or upload the db.sql file into the `./omrs-db/` directory
 - Note: The Docker container is configured to automatically execute any .sql scripts found in this folder during the first boot.
 
-### 2. Build the Required Images
+### 2. Build the Required Docker Images
 Once the SQL dump is in place, build the environment using Docker Compose. This ensures all configurations and the database dump are baked into the initial volume setup.
 
 ```bash
 docker compose --profile manual build
 ```
+**What this does:** Downloads and sets up all the databases and tools you'll need.
 
 ---
 
@@ -77,22 +98,78 @@ docker compose --profile manual build
 ```bash
 docker compose up -d
 ```
+**What this does:** Starts all the services including databases and web interfaces.
+
+**✅ Success indicator:** You'll see messages saying services are ready. The process is complete when you stop seeing new log messages.
 
 ---
 
-### 4. Start the DQD Viewer
 
-```bash
-docker compose --profile manual up -d dqd-viewer
-```
+## What's Now Available?
 
-Access the dashboard at:
+After running the setup, you'll have access to:
 
-```
-http://localhost:3000
-```
+- **CloudBeaver** (Database viewer): http://localhost:8978
+- **OMOP PostgreSQL Database**: Available at localhost:5433
+- **MySQL Database**: Contains OpenMRS DB and available internally for quick previews
 
-> ⚠️ Results will be empty until the ETL runs.
+---
+
+## Working with Your Data
+
+### Understanding the Database Setup
+
+You now have three main databases:
+- **PostgreSQL** (omop-db): Your final OMOP-formatted data lives here
+- **MySQL** (sqlmesh-db): Contains two databases:
+  - `openmrs`: Your source OpenMRS dataset with 250 patients
+  - `omop_db`: Used for quick previews and intermediate processing
+
+### Viewing Your Data with CloudBeaver
+
+CloudBeaver is a web-based tool that lets you explore your databases without needing to install additional software.
+
+#### First Time Setup (Only do this once)
+
+1. **Open CloudBeaver**: Go to http://localhost:8978 in your web browser
+
+2. **Create Your Admin Account** (First time only):
+  - You'll see a Setup Wizard
+  - Choose any username (suggestion: `admin`)
+  - Choose any password (suggestion: `Admin@123` - remember this!)
+  - Click through to complete the setup
+  - Log in with these credentials
+
+#### Connect to Your Databases
+
+**Connect to PostgreSQL (Your main OMOP database):**
+
+1. Click **"New Connection"** from the top menu
+2. Select **"PostgreSQL"** from the list
+3. Fill in these exact details:
+  - **Host**: `omop-db`
+  - **Port**: `5432`
+  - **Database**: `omop`
+  - **Username**: `omop`
+  - **Password**: `omop`
+4. Click **"Test Connection"** to make sure it works
+5. Click **"Create"**
+
+**Connect to MySQL (For source data and previews):**
+
+1. Click **"New Connection"** again
+2. Select **"MySQL"** from the list
+3. Fill in these exact details:
+  - **Host**: `sqlmesh-db`
+  - **Port**: `3306`
+  - **Database**: *(leave empty)*
+  - **Username**: `root`
+  - **Password**: `openmrs`
+4. Click **"Create"**
+
+**Important:** Once connected, you'll see two databases:
+- `openmrs`: Your source data with 250 patients
+- `omop_db`: Preview results from your transformations (available only when you run the pipeline at least once)
 
 ---
 
@@ -285,17 +362,23 @@ Now that `mapping.csv` is populated, re-run the pipeline to apply the clinical t
 docker compose run --rm achilles Rscript /opt/achilles/entrypoint.r
 ```
 
-### Run Data Quality Dashboard (DQD)
+### **Run DQD to perform data quality checks**
 
 ```bash
 docker compose run --rm dqd Rscript /opt/dqd/run_dqd.R run
 ```
+This runs the [OHDSI Data Quality Dashboard (DQD)](https://github.com/OHDSI/DataQualityDashboard) on the OMOP database.
 
-Refresh:
 
+### View the Data Quality Dashboard
+
+```bash
+docker compose --profile manual up -d dqd-viewer
 ```
-http://localhost:3000
-```
+**This serves** the DQD results on a local web server. Once it's running, open your browser and go to http://localhost:3000.
+
+---
+
 ## 📈 8.0 Cohort Analysis & Exploration (ATLAS)
 Once your data is loaded into OMOP CDM and validated, you can explore it using OHDSI ATLAS.
 
