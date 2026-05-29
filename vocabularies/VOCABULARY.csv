@@ -43,4 +43,5 @@ ICD10	International Classification of Diseases, Tenth Revision (WHO)	http://www.
 CDM	OMOP Common DataModel	https://github.com/OHDSI/CommonDataModel	CDM v6.0.0	32485
 Concept Class	OMOP Concept Class	OMOP generated		44819233
 UCUM	Unified Code for Units of Measure (Regenstrief Institute)	http://aurora.regenstrief.org/~ucum/ucum.html#section-Alphabetic-Index	Version 1.8.2	44819107
+CVX	CDC Vaccine Administered CVX (NCIRD)	https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx	CVX 20251119	581400
 SNOMED	Systematic Nomenclature of Medicine - Clinical Terms (IHTSDO)	http://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html	2025-02-01 SNOMED CT International Edition; 2025-03-01 SNOMED CT US Edition; 2025-04-09 SNOMED CT UK Edition	44819097
