@@ -41,6 +41,9 @@ COPY 040_omop_cdm_postgresql_primary_keys.sql /docker-entrypoint-initdb.d/040_om
 # 050 - create atlas omop schema table indexes
 COPY ./050_omop_cdm_postgresql_indexes.sql /docker-entrypoint-initdb.d/050_omop_cdm_postgresql_indexes.sql
 
+#051 - create indexes for concept table for both standard and none standard code matching
+COPY ./051_omop_cdm_vocabulary_postgresql_indexes.sql /docker-entrypoint-initdb.d/051_omop_cdm_vocabulary_postgresql_indexes.sql
+
 # 060 - create atlas omop schema table database constraints - referential integrity
 COPY ./060_omop_cdm_postgresql_constraints.sql /docker-entrypoint-initdb.d/060_omop_cdm_postgresql_constraints.sql
 
