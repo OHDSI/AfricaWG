@@ -3,12 +3,13 @@ from docker.types import Mount
 import os
 
 host_root = os.getenv('HOST_PROJECT_ROOT', os.path.dirname(os.path.abspath(__file__)))
-
+sqlmesh_db = os.getenv("SQLMESH_DB", "sqlmesh-db")
+mysql_port = os.getenv("MYSQL_PORT", "3306")
 
 def create_core_docker_task(task_id, command, image='omop-etl-core', extra_env=None):
     base_env = {
-        'SRC_HOST': 'sqlmesh-db',
-        'SRC_PORT': '3306',
+        'SRC_HOST': sqlmesh_db,
+        'SRC_PORT': mysql_port,
         'SRC_USER': 'openmrs',
         'SRC_PASS': 'openmrs',
         'SRC_DB': 'openmrs',

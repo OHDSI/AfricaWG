@@ -17,7 +17,7 @@ MODEL(
         )
 );
 
-SELECT cw_provider.omop_id                        AS provider_id,
+SELECT provider_id                       AS provider_id,
        CONCAT(pn.given_name, ' ', pn.family_name) AS provider_name,
        NULL                                       AS npi,
        NULL                                       AS dea,
@@ -28,20 +28,21 @@ SELECT cw_provider.omop_id                        AS provider_id,
            WHEN p.gender = 'F' THEN 8532 -- OMOP concept_id for Female
            ELSE 0
            END                                    AS gender_concept_id,
-       u.uuid                                     AS provider_source_value,
-       NULL                                       AS specialty_source_value,
-       NULL                                       AS specialty_source_concept_id,
+       pv.uuid                                     AS provider_source_value,
+       cn.name                                       AS specialty_source_value,
+       c.concept_id                                       AS specialty_source_concept_id,
        p.gender                                   AS gender_source_value,
        CASE
            WHEN p.gender = 'M' THEN 8507
            WHEN p.gender = 'F' THEN 8532
            ELSE 0
            END                                    AS gender_source_concept_id
-FROM openmrs.users AS u
-         INNER JOIN raw.ID_CROSSWALK cw_provider
-         ON u.user_id = cw_provider.source_id
-           AND cw_provider.source_table = 'users'
+FROM openmrs.provider pv
+         LEFT JOIN openmrs.person  p ON pv.person_id = p.person_id
+         LEFT JOIN openmrs.person_name  pn ON p.person_id = pn.person_id
+         LEFT JOIN  openmrs.concept c ON  pv.speciality_id = c.concept_id
+         LEFT JOIN  openmrs.concept_name cn ON  c.concept_id = cn.concept_id
+                  AND cn.locale = 'en'  --- to be added to the concept_mapping (To--Do)
+                  AND cn.concept_name_type = 'FULLY_SPECIFIED'
 
-         INNER JOIN openmrs.person AS p ON u.person_id = p.person_id
-         INNER JOIN openmrs.person_name AS pn ON u.person_id = pn.person_id
-WHERE u.retired = 0;
+WHERE pv.retired = 0;

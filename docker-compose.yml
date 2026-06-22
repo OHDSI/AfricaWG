@@ -1,7 +1,4 @@
-version: '3.8'
-
 services:
-
   sqlmesh-db:
     container_name: sqlmesh-db
     image: mariadb:10.11.7
@@ -19,14 +16,16 @@ services:
       - "3306:3306"
     networks:
       - ohdsi-network
+    profiles: ["sqlmesh-db" ]
 
   core:
     build: core
     image: omop-etl-core
     container_name: core
     environment:
-      SRC_HOST: sqlmesh-db
-      SRC_PORT: 3306
+      SQLMESH_DB: ${SQLMESH_DB}
+      SRC_HOST: ${SQLMESH_DB}
+      SRC_PORT: ${MYSQL_PORT}
       SRC_USER: openmrs
       SRC_PASS: openmrs
       SRC_DB: openmrs
@@ -40,7 +39,6 @@ services:
       ACHILLES_RESULTS_SCHEMA: cdm_results
       ATLAS_WEB_API_SCHEMA: webapi
     depends_on:
-      - sqlmesh-db
       - omop-db
 
     volumes:
@@ -49,8 +47,7 @@ services:
       # Note: This will override files copied into /core during build.
       # - so be sure your local files are complete.
        - ./core:/core
-    profiles:
-      - manual
+    profiles: ["default","core"]
     networks:
       - ohdsi-network
 
@@ -74,6 +71,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - ohdsi-network
+    profiles: [ "default", "omop-db","cdm-postprocessing" ]
 
   achilles:
     build: achilles
@@ -91,8 +89,8 @@ services:
       ACHILLES_RESULTS_SCHEMA: "cdm_results"
       ACHILLES_CDM_VERSION: "5.4"
       ACHILLES_NUM_THREADS: "1"
-    profiles:
-      - manual
+    profiles: [ "cdm-postprocessing", "achilles" ]
+
     networks:
       - ohdsi-network
 
@@ -110,16 +108,15 @@ services:
     volumes:
       - jdbc-drivers-data:/jdbc
       - cdm-postprocessing-data:/postprocessing
-    profiles:
-      - manual
+    profiles: [ "cdm-postprocessing", "dqd" ]
     networks:
       - ohdsi-network
 
   dqd-viewer:
     image: omop-etl-dqd
     container_name: omop-etl-dqd-viewer
-    depends_on:
-      - omop-db
+#    depends_on:
+#      - omop-db
     env_file:
       - .env
     profiles:
@@ -135,15 +132,13 @@ services:
     image: dbeaver/cloudbeaver:latest
     container_name: cloudbeaver
     restart: unless-stopped
-    depends_on:
-      - sqlmesh-db
-      - omop-db
     ports:
       - "8978:8978"
     volumes:
       - cloudbeaver-data:/opt/cloudbeaver/workspace
     networks:
       - ohdsi-network
+    profiles: [ "default", "cloudbeaver" ]
 
 volumes:
   db-data: ~

@@ -10,16 +10,34 @@ MODEL(
         )
 );
 
-SELECT ROW_NUMBER() OVER (ORDER BY person_id) + 15000000              AS observation_period_id,
-       cw_person.omop_id                                              AS person_id,
-       DATE(MIN(v.date_started))                                      AS observation_period_start_date,
-       DATE(GREATEST(MAX(v.date_stopped,v.date_started), MAX(e.encounter_datetime, v.date_started))) AS observation_period_end_date,
-       44814724                                                       AS period_type_concept_id -- EHR recordd
-FROM openmrs.visit v
-          INNER JOIN raw.ID_CROSSWALK cw_person
-           ON v.patient_id = cw_person.source_id
-             AND cw_person.source_table = 'person'
 
-         LEFT JOIN openmrs.encounter e ON v.visit_id = e.visit_id
-WHERE v.date_started IS NOT NULL
-GROUP BY v.patient_id;
+WITH patient_boundaries AS (
+    SELECT
+        v.patient_id AS person_id,
+        -- Earliest known activity
+        MIN(v.date_started) AS min_start,
+
+        -- Latest known activity comparing visits and encounters
+        MAX(v.date_started) AS max_visit_start,
+        MAX(v.date_stopped) AS max_visit_stop,
+        MAX(e.encounter_datetime) AS max_encounter
+    FROM openmrs.visit v
+             LEFT JOIN openmrs.encounter e
+                       ON v.visit_id = e.visit_id
+    WHERE v.voided = 0
+    GROUP BY v.patient_id
+)
+
+SELECT
+    person_id + 15000000             AS observation_period_id,
+    person_id                        AS person_id,
+    DATE(min_start)                  AS observation_period_start_date,
+
+    -- find the absolute latest date using GREATEST on the pre-aggregated results
+    DATE(GREATEST(
+    COALESCE(max_visit_start, '1900-01-01'),
+    COALESCE(max_visit_stop, '1900-01-01'),
+    COALESCE(max_encounter, '1900-01-01')
+    ))                               AS observation_period_end_date,
+    44814724                         AS period_type_concept_id 
+FROM patient_boundaries;

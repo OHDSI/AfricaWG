@@ -2,8 +2,8 @@ gateways:
   omrs:
     connection:
       type: mysql
-      host: sqlmesh-db
-      port: 3306
+      host: "{{ env_var('SQLMESH_DB') }}"
+      port: {{ env_var('MYSQL_PORT') | int }}
       user: root
       password: openmrs
 
@@ -11,3 +11,14 @@ default_gateway: omrs
 
 model_defaults:
   dialect: mysql
+  start: 1999-01-01
+#  cron: "0 0 */30 * *"
+
+
+
+linter:
+  enabled: true
+  rules:
+    - ambiguousorinvalidcolumn
+    - invalidselectstarexpansion
+    - noambiguousprojections
