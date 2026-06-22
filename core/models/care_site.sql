@@ -11,16 +11,13 @@ MODEL(
         )
 );
 
-SELECT cw_location.omop_id AS care_site_id,
-       l.name        AS care_site_name,
+SELECT care_site.location_id AS care_site_id,
+       care_site.name        AS care_site_name,
        NULL          AS place_of_service_concept_id,
-       cw_location.omop_id AS location_id,
-       l.name        AS care_site_source_value,
+       l.location_id AS location_id,
+       care_site.name        AS care_site_source_value,
        NULL          AS place_of_service_source_value
-FROM openmrs.location AS l
+FROM openmrs.location care_site
+    LEFT JOIN omop_db.LOCATION l ON l.location_id = care_site.location_id
 
-     INNER JOIN raw.ID_CROSSWALK cw_location
-         ON l.location_id = cw_location.source_id
-            AND cw_location.source_table = 'location'
-
-WHERE l.retired = 0;
+WHERE care_site.retired = 0;

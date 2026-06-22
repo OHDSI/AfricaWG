@@ -4,8 +4,8 @@ umask 000
 export PGPASSWORD=$TARGET_PASS
 MYSQL_USER="root"
 MYSQL_PASSWORD="openmrs"
-MYSQL_HOST="sqlmesh-db"
-MYSQL_PORT="3306"
+MYSQL_HOST=$SQLMESH_DB
+MYSQL_PORT=$MYSQL_PORT
 SOURCE_DB="omop_db"
 TARGET_MYSQL_DB="public"
 TARGET_PG_SCHEMA="public"
@@ -93,13 +93,13 @@ migrate-to-postgresql() {
   # Step 3.1: TRUNCATE clinical tables to prevent duplicate keys errors
   echo "Cleaning target tables in PostgreSQL to prevent duplicate key errors..."
    psql -h "$TARGET_HOST" -U "$TARGET_USER" -d "$TARGET_DB" \
-      -c "SET search_path TO $TARGET_PG_SCHEMA; TRUNCATE TABLE person, visit_occurrence, condition_occurrence, measurement, observation, observation_period, note, location, care_site, provider, death CASCADE;"
+      -c "SET search_path TO $TARGET_PG_SCHEMA; TRUNCATE TABLE person, visit_occurrence, condition_occurrence, measurement, observation, observation_period, note, location, care_site, provider, death, drug_exposure CASCADE;"
 
     #Step 3.2: Migrate the entire MySQL DB to PostgreSQL ===
   echo "🚚 Running pgloader to migrate entire database '$TARGET_MYSQL_DB' to PostgreSQL '$TARGET_DB' - $TARGET_PG_SCHEMA - schema"
   cat <<EOF > $TEMP_DIR/temp_pgloader.load
 LOAD DATABASE
-       FROM mysql://root:$SQLMESH_DB_ROOT_PASSWORD@sqlmesh-db:$MYSQL_PORT/$TARGET_MYSQL_DB
+       FROM mysql://root:$SQLMESH_DB_ROOT_PASSWORD@$MYSQL_HOST:$MYSQL_PORT/$TARGET_MYSQL_DB
        INTO postgresql://$TARGET_USER:$TARGET_PASS@$TARGET_HOST:$TARGET_PORT/$TARGET_DB
 
         WITH include no drop,
@@ -110,7 +110,9 @@ LOAD DATABASE
              truncate
 
         CAST type datetime to "timestamp without time zone" drop default drop not null,
+             type timestamp to "timestamp without time zone" drop default drop not null,
              type date to date,
+             type bigint to integer,
              type int to integer;
 EOF
   pgloader $TEMP_DIR/temp_pgloader.load

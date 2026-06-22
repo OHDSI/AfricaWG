@@ -1,6 +1,11 @@
 MODEL(
         name omop_db.OBSERVATION,
-        kind FULL,
+        kind INCREMENTAL_BY_TIME_RANGE (
+          time_column observation_date,
+          batch_size 30,
+          batch_concurrency 1
+        ),
+         grain observation_id,
         columns(
                 observation_id INT NOT NULL,
                 person_id INT NOT NULL,
@@ -26,52 +31,55 @@ MODEL(
         )
 );
 
-SELECT cw_obs.omop_id                  AS observation_id,
-       cw_person.omop_id               AS person_id,
-       concept_mapping.conceptId       AS observation_concept_id,
-       DATE(o.obs_datetime)            AS observation_date,
-       o.obs_datetime                  AS observation_datetime,
-       32827                           AS observation_type_concept_id, -- EHR encounter record
-       o.value_numeric                 AS value_as_number,
-       LEFT(o.value_text, 60)          AS value_as_string,
-       value_concept_mapping.conceptId AS value_as_concept_id,
-       NULL                            AS qualifier_concept_id,
-       NULL                            AS unit_concept_id,
-       cw_provider.omop_id             AS provider_id,
-       cw_visit.omop_id                      AS visit_occurrence_id,
-       NULL                            AS visit_detail_id,
-       ''                              AS observation_source_value,
-       concept_mapping.conceptId       AS observation_source_concept_id,
-       cn.units                        AS unit_source_value,
-       ''                              AS qualifier_source_value,
-       o.value_numeric                 AS value_source_value,
-       NULL                            AS observation_event_id,
-       NULL                            AS obs_event_field_concept_id
-FROM openmrs.obs AS o
-         INNER JOIN raw.ID_CROSSWALK cw_obs
-           ON o.obs_id = cw_obs.source_id
-             AND cw_obs.source_table = 'obs'
 
-        INNER JOIN raw.ID_CROSSWALK cw_person
-           ON o.person_id = cw_person.source_id
-             AND cw_person.source_table = 'person'
+WITH  filtered_obs AS (
+    SELECT
+        o.obs_id, o.person_id, o.concept_id, o.obs_datetime,
+        o.value_numeric, o.value_text, o.value_coded, o.encounter_id
+    FROM openmrs.obs AS o
+    WHERE o.voided = 0
+      AND o.obs_datetime BETWEEN @start_ds AND @end_ds
+)
+SELECT
+    fo.obs_id                       AS observation_id,
+    fo.person_id                    AS person_id,
+    concept_mapping.conceptId       AS observation_concept_id,
+    DATE(fo.obs_datetime)           AS observation_date,
+    fo.obs_datetime                 AS observation_datetime,
+    32827                           AS observation_type_concept_id, -- EHR encounter record
+    fo.value_numeric                AS value_as_number,
+    LEFT(fo.value_text, 60)         AS value_as_string,
+    value_concept_mapping.conceptId AS value_as_concept_id,
+    NULL                            AS qualifier_concept_id,
+    NULL                            AS unit_concept_id,
+    ep.provider_id                  AS provider_id,
+    e.visit_id                      AS visit_occurrence_id,
+    NULL                            AS visit_detail_id,
+    ''                              AS observation_source_value,
+    concept_mapping.conceptId       AS observation_source_concept_id,
+    cn.units                        AS unit_source_value,
+    ''                              AS qualifier_source_value,
+    fo.value_numeric                AS value_source_value,
+    NULL                            AS observation_event_id,
+    NULL                            AS obs_event_field_concept_id
+FROM filtered_obs fo
 
-        LEFT JOIN raw.ID_CROSSWALK cw_provider
-         ON o.creator = cw_provider.source_id
-           AND cw_provider.source_table = 'users'
+    INNER JOIN raw.CONCEPT_MAPPING concept_mapping
+ON fo.concept_id = concept_mapping.sourceCode
+    AND concept_mapping.domainId = 'Observation'
+    AND concept_mapping.conceptId IS NOT NULL
+    AND concept_mapping.conceptId <> ''
 
-         INNER JOIN openmrs.encounter e ON o.encounter_id = e.encounter_id
+    LEFT JOIN openmrs.encounter e
+    ON fo.encounter_id = e.encounter_id
+    LEFT JOIN (
+        SELECT encounter_id, MAX(provider_id) AS provider_id
+         FROM openmrs.encounter_provider
+         GROUP BY encounter_id
+    ) ep ON e.encounter_id = ep.encounter_id
+    LEFT JOIN openmrs.concept_numeric cn
+    ON fo.concept_id = cn.concept_id
 
-          LEFT JOIN raw.ID_CROSSWALK cw_visit
-           ON e.visit_id = cw_visit.source_id
-             AND cw_visit.source_table = 'visit'
-
-         LEFT JOIN openmrs.concept_numeric cn ON o.concept_id = cn.concept_id
-         LEFT JOIN raw.CONCEPT_MAPPING concept_mapping
-                   ON o.concept_id = concept_mapping.sourceCode
-
-         LEFT JOIN raw.CONCEPT_MAPPING value_concept_mapping
-                   ON o.value_coded = value_concept_mapping.sourceCode
-WHERE o.voided = 0
-  AND concept_mapping.domainId = 'Observation';
-
+    LEFT JOIN raw.CONCEPT_MAPPING value_concept_mapping
+       ON fo.value_coded IS NOT NULL
+        AND fo.value_coded = value_concept_mapping.sourceCode

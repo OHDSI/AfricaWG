@@ -38,7 +38,7 @@ SELECT
     source_concept_id AS sourceCode,
     source_concept_name AS sourceName,
     target_concept_id AS conceptId,
-    source_domain AS domainId,
+    target_domain AS domainId,
     frequency AS frequency,
     match_status AS mapping_source
 FROM raw.CONCEPT_AUTO_MAPPING

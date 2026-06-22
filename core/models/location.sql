@@ -17,22 +17,17 @@ MODEL(
         )
 );
 
-SELECT cw_location.omop_id         AS location_id,
+SELECT location_id         AS location_id,
+       l.name                      AS location_source_value,
        l.address1                  AS address_1,
        l.address2                  AS address_2,
        l.city_village              AS city,
        LEFT(l.state_province, 2)   AS state,
        LEFT(l.postal_code, 9)      AS zip,
        LEFT(l.county_district, 20) AS county,
-       l.name                      AS location_source_value,
        NULL                        AS country_concept_id,
        l.country                   AS country_source_value,
        NULLIF(l.latitude, '')      AS latitude,
        NULLIF(l.longitude, '')     AS longitude
 FROM openmrs.location AS l
-
-     INNER JOIN raw.ID_CROSSWALK cw_location
-         ON l.location_id = cw_location.source_id
-           AND cw_location.source_table = 'location'
-
 WHERE l.retired = 0;

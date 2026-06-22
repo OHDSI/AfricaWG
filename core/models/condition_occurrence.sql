@@ -1,6 +1,11 @@
 MODEL(
         name omop_db.CONDITION_OCCURRENCE,
-        kind FULL,
+        kind INCREMENTAL_BY_TIME_RANGE (
+          time_column condition_start_date,
+          batch_size 20,
+          batch_concurrency 1
+        ),
+        grain condition_occurrence_id,
         columns(
                 condition_occurrence_id INT NOT NULL,
                 person_id INT NOT NULL,
@@ -22,8 +27,8 @@ MODEL(
 );
 
 SELECT
-       cw_condition.omop_id                AS condition_occurrence_id,
-       cw_person.omop_id                       AS person_id,
+       c.condition_id                AS condition_occurrence_id,
+       c.patient_id                       AS person_id,
        concept_mapping.conceptId           AS condition_concept_id,
        DATE(COALESCE(c.onset_date, c.date_created)) AS condition_start_date,
        COALESCE(c.onset_date, c.date_created)       AS condition_start_datetime,
@@ -32,27 +37,25 @@ SELECT
        0                                   AS condition_type_concept_id,
        0                                   AS condition_status_concept_id,
        COALESCE(c.void_reason, '')         AS stop_reason,
-       cw_provider.omop_id                 AS provider_id,
-       NULL                                AS visit_occurrence_id,
+       ep.provider_id                 AS provider_id,
+       e.visit_id                                AS visit_occurrence_id,
        NULL                                AS visit_detail_id,
        ''                                  AS condition_source_value,
        concept_mapping.conceptId           AS condition_source_concept_id,
+--        To..Do
+--     this should be the source concept source value ( NO STANDARD CONCEPT)
+--     concept_mapping.conceptId           AS condition_source_concept_id,
        COALESCE(c.verification_status, '') AS condition_status_source_value
 FROM openmrs.conditions AS c
-         INNER JOIN raw.ID_CROSSWALK cw_condition
-         ON c.condition_id = cw_condition.source_id
-            AND cw_condition.source_table = 'conditions'
-
-         INNER JOIN raw.ID_CROSSWALK cw_person
-         ON c.patient_id = cw_person.source_id
-           AND cw_person.source_table = 'person'
-
-        LEFT JOIN raw.ID_CROSSWALK cw_provider
-         ON c.creator = cw_provider.source_id
-           AND cw_provider.source_table = 'users'
-
+         LEFT JOIN openmrs.encounter e ON c.encounter_id = e.encounter_id
+         LEFT JOIN openmrs.encounter_provider ep ON e.encounter_id = ep.encounter_id
          LEFT JOIN raw.CONCEPT_MAPPING concept_mapping
                     ON c.condition_coded = concept_mapping.sourceCode
 WHERE c.voided = 0
   AND concept_mapping.conceptId  IS NOT NULL
-GROUP BY cw_condition.omop_id;
+  AND (
+    (c.onset_date BETWEEN @start_ds AND @end_ds)
+   OR
+    (c.onset_date IS NULL AND c.date_created BETWEEN @start_ds AND @end_ds)
+    )
+GROUP BY c.condition_id;

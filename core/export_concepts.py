@@ -5,7 +5,7 @@ from sqlalchemy import create_engine
 
 MYSQL_USER = os.environ.get("MYSQL_USER", "root")
 MYSQL_PASSWORD = os.environ.get("MYSQL_PASSWORD", "openmrs")
-MYSQL_HOST = os.environ.get("MYSQL_HOST", "sqlmesh-db")
+MYSQL_HOST = os.getenv("SQLMESH_DB", "sqlmesh-db")
 MYSQL_PORT = os.environ.get("MYSQL_PORT", "3306")
 MYSQL_DB = os.environ.get("MYSQL_DATABASE", "openmrs")
 
