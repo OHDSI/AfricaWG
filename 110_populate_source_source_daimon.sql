@@ -5,13 +5,13 @@ truncate webapi.source_daimon;
 -- OHDSI CDM source
 INSERT INTO webapi.source( source_id, source_name, source_key, source_connection, source_dialect)
 VALUES (1, 'OpenMRS', 'OpenMRS_ETL',
-        'jdbc:postgresql://omop-etl-postgresdb:5432/postgres?user=postgres&password=postgres_pass', 'postgresql');
+        'jdbc:postgresql://omop-db:5432/postgres?user=postgres&password=postgres_pass', 'postgresql');
 
 -- CDM daimon
-INSERT INTO webapi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (1, 1, 0, 'omop', 0);
+INSERT INTO webapi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (1, 1, 0, 'public', 0);
 
 -- VOCABULARY daimon
-INSERT INTO webapi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (2, 1, 1, 'omop', 10);
+INSERT INTO webapi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (2, 1, 1, 'public', 10);
 
 -- RESULTS daimon
 INSERT INTO webapi.source_daimon( source_daimon_id, source_id, daimon_type, table_qualifier, priority) VALUES (3, 1, 2, 'cdm_results', 0);

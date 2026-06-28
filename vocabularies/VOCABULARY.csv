@@ -15,8 +15,10 @@ Condition Type	OMOP Condition Occurrence Type	OMOP generated		44819127
 Meas Type	OMOP Measurement Type	OMOP generated		44819152
 Condition Status	OMOP Condition Status	OMOP generated		32887
 None	OMOP Standardized Vocabularies	OMOP generated	v5.0 27-FEB-26	44819096
+Ethnicity	OMOP Ethnicity	OMOP generated	Ethnicity 20250807	44819134
 Obs Period Type	OMOP Observation Period Type	OMOP generated		44819149
 Visit	OMOP Visit	OMOP generated	Visit 20211216	44819119
+Race	Race and Ethnicity Code Set (USBC)	http://www.cdc.gov/nchs/data/dvs/Race_Ethnicity_CodeSet.pdf	Version 1.0	44819109
 Cost Type	OMOP Cost Type	OMOP generated		5029
 Sponsor	OMOP Sponsor	OMOP generated		32472
 Plan Stop Reason	OMOP Plan Stop Reason	OMOP generated		32474
@@ -31,6 +33,7 @@ Death Type	OMOP Death Type	OMOP generated		44819135
 Note Type	OMOP Note Type	OMOP generated		44819146
 RxNorm Extension	OMOP RxNorm Extension	OMOP generated	RxNorm Extension 2026-01-14	252
 Cost	OMOP Cost	OMOP generated		581457
+ICD10PCS	ICD-10 Procedure Coding System (CMS)	http://www.cms.gov/Medicare/Coding/ICD10/index.html	ICD10PCS 2026	44819125
 OSM	OpenStreetMap (OSMF)	https://www.openstreetmap.org/copyright/en, https://wambachers-osm.website/boundaries/	OSM Release 2019-02-21	32541
 UB04 Point of Origin	UB04 Claim Source Inpatient Admission Code (CMS)	https://www.resdac.org/cms-data/variables/Claim-Source-Inpatient-Admission-Code		32045
 UB04 Pt dis status	UB04 Patient Discharge Status Code (CMS)	https://www.resdac.org/cms-data/variables/patient-discharge-status-code		32047
@@ -39,9 +42,9 @@ UB04 Pri Typ of Adm	UB04 Claim Inpatient Admission Type Code (CMS)	https://www.r
 Domain	OMOP Domain	OMOP generated		44819147
 Type Concept	OMOP Type Concept	OMOP generated	Type Concept 20260202	32808
 Language	OMOP Language	OMOP generated	Language 20221030	33069
-ICD10	International Classification of Diseases, Tenth Revision (WHO)	http://www.who.int/classifications/icd/icdonlineversions/en/	2021 Release	44819124
 CDM	OMOP Common DataModel	https://github.com/OHDSI/CommonDataModel	CDM v6.0.0	32485
 Concept Class	OMOP Concept Class	OMOP generated		44819233
 UCUM	Unified Code for Units of Measure (Regenstrief Institute)	http://aurora.regenstrief.org/~ucum/ucum.html#section-Alphabetic-Index	Version 1.8.2	44819107
 CVX	CDC Vaccine Administered CVX (NCIRD)	https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx	CVX 20251119	581400
+OMOP Extension	OMOP Extension (OHDSI)	OMOP generated	OMOP Extension 20260202	32758
 SNOMED	Systematic Nomenclature of Medicine - Clinical Terms (IHTSDO)	http://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html	2025-02-01 SNOMED CT International Edition; 2025-03-01 SNOMED CT US Edition; 2025-04-09 SNOMED CT UK Edition	44819097

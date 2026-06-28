@@ -3,7 +3,7 @@ volumes:
     name: omop-etl-data
 
 services:
-  omop-etl-postgresdb:
+  omop-db:
     build: .
     image: ohdsi/omop-etl-postgresdb:1.0.0
     container_name: omop-etl-postgresdb

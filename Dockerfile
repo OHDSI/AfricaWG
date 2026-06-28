@@ -56,6 +56,9 @@ COPY 080_create_webapi_schema_postgresql.sql /docker-entrypoint-initdb.d/080_cre
 # 085 - create the atlas cdm_results schema tables - use vendored SQL
 COPY ./vendor/webapi/results_postgresql.ddl /docker-entrypoint-initdb.d/085_results_schema_ddl_postgresql.sql
 
+# 085 - create the atlas cdm_results schema tables - use vendored SQL
+COPY ./vendor/webapi/achilles_postgresql.ddl /docker-entrypoint-initdb.d/086_achilles_postgresql.ddl.sql
+
 # 089 - apply the webapi schema tables flyway database migration postgresql SQL files up to baseline version V2.2.5.20180212152023 - use vendored SQL
 COPY ./vendor/webapi/webapi_baseline_V2.2.5.20180212152023_postgresql.sql /docker-entrypoint-initdb.d/089_webapi_flyway_migrations_postgresql.sql
 
