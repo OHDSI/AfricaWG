@@ -52,7 +52,7 @@ services:
       - ohdsi-network
 
   omop-db:
-    image: ghcr.io/ohdsi/omop-etl-postgresdb:${OMOP_PG_DB_VERSION}
+    image: ghcr.io/ohdsi/omop-etl-postgresdb:latest
     container_name: omop-db
     restart: always
     shm_size: 2gb

@@ -103,7 +103,7 @@ You must provide a SQL dump file from the existing OpenMRS instance at the facil
 ### To import the SQL dump or the source data into the mysql docker container Run:
 
 ```bash
-docker compose --profile sqlmesh-db up -d
+sudo docker compose --profile sqlmesh-db up -d
 ```
 
 </details>
@@ -116,7 +116,7 @@ If you want to have an OpenMRS instance up and running alongside the ETL pipelin
 ### To start with OpenMRS:
 
 ```bash
-docker compose -f docker-compose.yml -f docker-compose.openmrs.yml up -d
+sudo docker compose -f docker-compose.yml -f docker-compose.openmrs.yml up -d
 ```
 
 </details>
@@ -220,15 +220,15 @@ CloudBeaver is a web-based tool that lets you explore your databases without nee
 ## 4. ETL Step-by-Step Execution commands
 **Please Note:** You can either use Openmrs dump Dataset located at `omrs-db`  Or Openmrs Instance which comes with its own Synthetic dataset
 
-| Step | Openmrs Dataset SQL Dump ETL Commands                                                                          | Openmrs Instance ETL Commands                                                                                     | Description                                                                 |
-|------|----------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
+| Step | Openmrs Dataset SQL Dump ETL Commands                                                                         | Openmrs Instance ETL Commands                                                                                     | Description                                                                 |
+|------|---------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | 4.1  | ``sudo docker compose --profile default run --rm core generate-mapper-placeholder-files`` | ``sudo docker compose --profile default run --rm core generate-mapper-placeholder-files``                         | Prepares initial mapping logic files                                        |
-| 4.2  | `sudo docker compose --profile default  run --rm --env MYSQL_PORT=3306 core sync-omrs-mappings`                                     | `sudo docker compose --profile default  run --rm --env SQLMESH_DB=omrsdb MYSQL_PORT=3307 core sync-omrs-mappings` | Syncs your concept_mapping_usagi_extract.csv with the ETL engine            |
-|      | [Go to Section 5 : Usagi Mapping]                                                                              | [Go to Section 6.0: Usagi Mapping]                                                                                | Perform your concept mapping now then come back and run the remaining steps |
-| 4.3  | `sudo docker compose run --rm core apply-sqlmesh-plan`                                                         | `sudo SQLMESH_DB=omrsdb MYSQL_PORT=3307 docker compose run --rm core apply-sqlmesh-plan`                          | Runs SQLMesh transformations on the data                                    |
-| 4.4  | `sudo docker compose run --rm --env MYSQL_PORT=3306 core materialize-mysql-views`                                                   | `sudo SQLMESH_DB=omrsdb MYSQL_PORT=3307 docker compose run --rm core materialize-mysql-views`                     | Converts logic views into physical tables                                   |
-| 4.5  | `sudo  docker compose run --rm core migrate-to-postgresql`                                                     | `sudo SQLMESH_DB=omrsdb MYSQL_PORT=3307 docker compose run --rm core migrate-to-postgresql`                                      | Moves data from MySQL to the final Postgres DB                              |
-| 4.6  | `sudo docker compose run --rm core generate_mapping_report`                                                    | `sudo docker compose run --rm core generate_mapping_report`                                                       | Outputs a coverage report of your mappings                                  |
+| 4.2  | `sudo docker compose --profile default  run --rm --env MYSQL_PORT=3306 core sync-omrs-mappings`                                    | `sudo docker compose --profile default  run --rm --env SQLMESH_DB=omrsdb MYSQL_PORT=3307 core sync-omrs-mappings` | Syncs your concept_mapping_usagi_extract.csv with the ETL engine            |
+|      | [Go to Section 5 : Usagi Mapping]                                                                             | [Go to Section 6.0: Usagi Mapping]                                                                                | Perform your concept mapping now then come back and run the remaining steps |
+| 4.3  | `sudo docker compose run --rm core apply-sqlmesh-plan`                                                        | `sudo SQLMESH_DB=omrsdb MYSQL_PORT=3307 docker compose run --rm core apply-sqlmesh-plan`                          | Runs SQLMesh transformations on the data                                    |
+| 4.4  | `sudo docker compose run --rm --env MYSQL_PORT=3306 core materialize-mysql-views`                                                  | `sudo SQLMESH_DB=omrsdb MYSQL_PORT=3307 docker compose run --rm core materialize-mysql-views`                     | Converts logic views into physical tables                                   |
+| 4.5  | `sudo docker compose run --rm core migrate-to-postgresql`                                                     | `sudo SQLMESH_DB=omrsdb MYSQL_PORT=3307 docker compose run --rm core migrate-to-postgresql`                                      | Moves data from MySQL to the final Postgres DB                              |
+| 4.6  | `sudo docker compose run --rm core generate_mapping_report`                                                   | `sudo docker compose run --rm core generate_mapping_report`                                                       | Outputs a coverage report of your mappings                                  |
 
 ---
 
@@ -377,7 +377,7 @@ Once your data is loaded into OMOP CDM and validated, you can explore it using O
 ### 7.1 Start ATLAS
 
 ```bash
-sudo docker compose -f docker-compose.atlas.yml up -d
+sudo docker compose --env-file ./atlas/.env -f docker-compose.atlas.yml up -d
 ```
 
 ## 7.2 Access ATLAS

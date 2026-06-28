@@ -104,12 +104,14 @@ if (length(args) == 0 || args[1] != "heel") {
   )
 
   # 2. NEW: Build the concept_hierarchy and Atlas cache tables
-    message("Building Atlas cache and concept_hierarchy tables...")
-    optimizeAtlasCache(
-      connectionDetails = connectionDetails,
-      resultsDatabaseSchema = env_vars$ACHILLES_RESULTS_SCHEMA,
-      vocabDatabaseSchema = env_vars$ACHILLES_VOCAB_SCHEMA
-    )
+    message("Achilles analysis complete.")
+    # message("Building Atlas cache and concept_hierarchy tables...")
+    # optimizeAtlasCache(
+    #   connectionDetails = connectionDetails,
+    #   resultsDatabaseSchema = env_vars$ACHILLES_RESULTS_SCHEMA,
+    #   vocabDatabaseSchema = env_vars$ACHILLES_VOCAB_SCHEMA
+    #
+    # )
 
 } else {
   # Run Achilles Heel only
