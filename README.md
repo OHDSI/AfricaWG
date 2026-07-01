@@ -107,7 +107,7 @@ docker compose --profile manual build
 ### Step 3: Start Everything
 
 ```bash
-docker compose up
+docker compose up -d
 ```
 
 **What this does:** Starts all the services including databases and web interfaces.
@@ -121,7 +121,7 @@ docker compose up
 After running the setup, you'll have access to:
 
 - **CloudBeaver** (Database viewer): http://localhost:8978
-- **OMOP PostgreSQL Database**: Available at localhost:5433
+- **OMOP PostgreSQL Database**: Available at localhost:5432
 - **MySQL Database**: Contains OpenMRS DB and available internally for quick previews
 
 ---
@@ -160,9 +160,9 @@ CloudBeaver is a web-based tool that lets you explore your databases without nee
 3. Fill in these exact details:
     - **Host**: `omop-db`
     - **Port**: `5432`
-    - **Database**: `omop`
-    - **Username**: `omop`
-    - **Password**: `omop`
+    - **Database**: `postgres`
+    - **Username**: `postgres`
+    - **Password**: `postgres_pass`
 4. Click **"Test Connection"** to make sure it works
 5. Click **"Create"**
 
@@ -256,10 +256,10 @@ If you prefer using other database tools, you can connect directly:
 
 **PostgreSQL (Final OMOP Data):**
 - **Host**: localhost
-- **Port**: 5433
-- **Database**: omop
-- **Username**: omop
-- **Password**: omop
+- **Port**: 5432
+- **Database**: postgres
+- **Username**: postgres
+- **Password**: postgres_pass
 
 
 ## 🎉 Congratulations!
