@@ -29,9 +29,9 @@ services:
       SQLMESH_DB_ROOT_PASSWORD: openmrs
       TARGET_HOST: omop-db
       TARGET_PORT: 5432
-      TARGET_USER: omop
-      TARGET_PASS: omop
-      TARGET_DB: omop
+      TARGET_USER: postgres
+      TARGET_PASS: postgres_pass
+      TARGET_DB: postgres
       ACHILLES_VOCAB_SCHEMA: vocab
       ACHILLES_RESULTS_SCHEMA: results
     depends_on:
@@ -50,17 +50,16 @@ services:
       - manual
 
   omop-db:
-    image: postgres:15
+    image: ghcr.io/ohdsi/omop-etl-postgresdb:latest
     container_name: omop-db
     restart: always
     environment:
-      POSTGRES_DB: omop
-      POSTGRES_USER: omop
-      POSTGRES_PASSWORD: omop
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_pass
     ports:
-      - "5433:5432"
-#    volumes:
-#      - ./omop-ddl/processed/ddl:/docker-entrypoint-initdb.d
+      - "5432:5432"
+
   achilles:
     build: achilles
     image: omop-etl-achilles
@@ -69,9 +68,9 @@ services:
     depends_on:
       - omop-db
     environment:
-      ACHILLES_DB_URI: "postgresql://omop-db:5432/omop"
-      ACHILLES_DB_USERNAME: "omop"
-      ACHILLES_DB_PASSWORD: "omop"
+      ACHILLES_DB_URI: "postgresql://omop-db:5432/postgres"
+      ACHILLES_DB_USERNAME: "postgres"
+      ACHILLES_DB_PASSWORD: "postgres_pass"
       ACHILLES_CDM_SCHEMA: "public"
       ACHILLES_VOCAB_SCHEMA: "public"
       ACHILLES_RESULTS_SCHEMA: "public"
@@ -92,10 +91,10 @@ services:
 #      - CDM_CONNECTIONDETAILS_PASSWORD
     environment:
       CDM_CONNECTIONDETAILS_DBMS: "postgresql"
-      CDM_CONNECTIONDETAILS_USER: "omop"
-      CDM_CONNECTIONDETAILS_SERVER: "omop-db/omop"
+      CDM_CONNECTIONDETAILS_USER: "postgres"
+      CDM_CONNECTIONDETAILS_SERVER: "omop-db/postgres"
       CDM_CONNECTIONDETAILS_PORT: "5432"
-      CDM_CONNECTIONDETAILS_PASSWORD: "omop"
+      CDM_CONNECTIONDETAILS_PASSWORD: "postgres_pass"
       CDM_CONNECTIONDETAILS_EXTRA_SETTINGS: ""
       CDM_VERSION: "5.4"
       CDM_SOURCE_NAME: "OpenMRS"
