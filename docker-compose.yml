@@ -1,0 +1,25 @@
+volumes:
+  omop-etl-data:
+    name: omop-etl-data
+
+services:
+  omop-db:
+    build: .
+    image: ohdsi/omop-etl-deepdive-db:1.0.0
+    container_name: omop-etl-deepdive-db
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+    environment:
+      - POSTGRES_PASSWORD=postgres_pass
+    ports:
+      - "5432:5432"
+    volumes:
+     - omop-etl-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
