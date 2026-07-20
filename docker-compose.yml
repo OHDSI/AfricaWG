@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   sqlmesh-db:
     image: mariadb:10.11.7
@@ -50,7 +48,7 @@ services:
       - manual
 
   omop-db:
-    image: ghcr.io/ohdsi/omop-etl-postgresdb:latest
+    image: abertnamanya/omop-etl-deepdive-db:latest
     container_name: omop-db
     restart: always
     environment:

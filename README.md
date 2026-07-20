@@ -1,94 +1,26 @@
 # OMOP ETL Deep Dive - Getting Started Guide
 
-This project helps you transform healthcare data from OpenMRS into the OMOP Common Data Model format using **SQLMesh** as the transformation engine. Don't worry if you're new to this - we'll guide you through each step!
+This project helps you transform healthcare data from OpenMRS into the OMOP Common Data Model format using **SQLMesh** as the transformation engine.
 
 ## 📹 Session Recording
 
 This entire setup and workflow was covered in our previous call. You can watch the full recording here:
-**[OHDSI Africa Chapter - OMOP ETL Deep Dive Session](https://ohdsiorg.sharepoint.com/:v:/s/Chapter-Africa/EaOu_rXBPoJDiq_BGAMUfPUBIm-vd661Xv_Uy6EYV000dg?e=i2sUWd)**
+**[OHDSI Africa Chapter - OMOP ETL Deep Dive Session](https://drive.google.com/file/d/1Ew2O4O8-GIYwnIU76tOPYQGcs5BQMfpk/view?usp=drive_link)**
 
+Here is the link to the github repository with the guided steps:
+https://github.com/abertnamanya/openmrs-350-patients-dataset
 ## Your Goal
 
 We've already mapped two entities during the call (**Location** and **Person**) - you can find these examples in the `core/models` folder. Your task is to **map the remaining OMOP entities** using these as reference templates.
 
-**Dataset Info:** You'll be working with a sample OpenMRS database containing **250 patients** to practice your transformations.
+**Dataset Info:** You'll be working with a sample OpenMRS database containing **350 patients** to practice your transformations.
 
-## What You'll Need Before Starting
-
-- **Docker Desktop** installed on your computer ([Download here](https://www.docker.com/products/docker-desktop/))
-- **Basic command line knowledge** (we'll show you the exact commands to type)
-- About **30 minutes** for the initial setup
-
-
-#### Installing Docker
-
-<details>
-<summary>mac OS</summary>
-
-
-1. **Manual Installation:**
-    - Download Docker Desktop from [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-    - Install and launch Docker Desktop
-    - Ensure Docker is running (you should see the Docker icon in your menu bar)
-2. Or ** Using Homebrew:**
-   ```bash
-   brew install --cask docker
-   ```
-   Then launch Docker Desktop from Applications.
-</details>
-
-<details>
-<summary>Windows</summary>
-
-1. Download Docker Desktop from [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-2. Install and launch Docker Desktop
-3. Ensure WSL 2 is enabled if prompted
-</details>
-
-<details>
-<summary>Linux (Ubuntu/Debian)</summary>
-
-
-```bash
-# Update package index
-sudo apt-get update
-
-# Install prerequisites
-sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
-
-# Add Docker's official GPG key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-# Add Docker repository
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# Install Docker
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-
-# Start Docker service
-sudo systemctl start docker
-sudo systemctl enable docker
-
-# Add your user to docker group (optional, to avoid sudo)
-sudo usermod -aG docker $USER
-```
-
-</details>
 
 
 ## Quick Start (3 Simple Steps)
 
 ### Step 1: Get the Project Files
-
-**Option A: Download ZIP file (Recommended for beginners)**
-1. Visit: wget https://github.com/OHDSI/AfricaWG/archive/refs/heads/omop-deep-dive.zip
-2. Download and extract the ZIP file to a folder on your computer
-3. Open your terminal/command prompt and navigate to that folder
-
-**Option B: Use Git (If you have Git installed)**
-
-Make sure you have LFS installed. Check [Setting Up git LFS](#setting-up-git-lfs)
+ETL executions files will be downloaded onto you're PC/MAC
 ```bash
 git clone --branch omop-deep-dive --single-branch https://github.com/OHDSI/AfricaWG.git
 cd AfricaWG
@@ -112,18 +44,6 @@ docker compose up -d
 
 **What this does:** Starts all the services including databases and web interfaces.
 
-**✅ Success indicator:** You'll see messages saying services are ready. The process is complete when you stop seeing new log messages.
-
----
-
-## What's Now Available?
-
-After running the setup, you'll have access to:
-
-- **CloudBeaver** (Database viewer): http://localhost:8978
-- **OMOP PostgreSQL Database**: Available at localhost:5432
-- **MySQL Database**: Contains OpenMRS DB and available internally for quick previews
-
 ---
 
 ## Working with Your Data
@@ -133,7 +53,7 @@ After running the setup, you'll have access to:
 You now have three main databases:
 - **PostgreSQL** (omop-db): Your final OMOP-formatted data lives here
 - **MySQL** (sqlmesh-db): Contains two databases:
-    - `openmrs`: Your source OpenMRS dataset with 250 patients
+    - `openmrs`: Your source OpenMRS dataset with 350 patients
     - `omop_db`: Used for quick previews and intermediate processing
 
 ### Viewing Your Data with CloudBeaver
@@ -146,7 +66,7 @@ CloudBeaver is a web-based tool that lets you explore your databases without nee
 
 2. **Create Your Admin Account** (First time only):
     - You'll see a Setup Wizard
-    - Choose any username (suggestion: `admin`)
+    - Choose any username (suggestion: `superuser`)
     - Choose any password (suggestion: `Admin@123` - remember this!)
     - Click through to complete the setup
     - Log in with these credentials
@@ -179,7 +99,7 @@ CloudBeaver is a web-based tool that lets you explore your databases without nee
 4. Click **"Create"**
 
 **Important:** Once connected, you'll see two databases:
-- `openmrs`: Your source data with 250 patients
+- `openmrs`: Your source data with 350 patients
 - `omop_db`: Preview results from your transformations (available only when you run the pipeline at least once)
 
 ---
@@ -191,7 +111,7 @@ CloudBeaver is a web-based tool that lets you explore your databases without nee
 The transformation magic happens using **SQLMesh**, a powerful data transformation framework. Your transformation logic is defined in SQL files located in the `core/models` folder.
 
 **Think of it like this:**
-- Raw OpenMRS data (250 patients) goes in → SQLMesh processes your SQL models → Clean OMOP data comes out
+- Raw OpenMRS data (350 patients) goes in → SQLMesh processes your SQL models → Clean OMOP data comes out
 
 **What's Already Done:**
 - ✅ **Location** entity mapping (see `core/models/location.sql`)
@@ -206,21 +126,8 @@ The transformation magic happens using **SQLMesh**, a powerful data transformati
 1. **Edit SQL files** in the `core/models` directory using any text editor
 2. **Test your changes** using one of the options below
 
-### Option 1: Quick Preview (Recommended for testing)
 
-Perfect for checking if your changes work before running the full process:
-
-```bash
-docker compose run --rm core apply-sqlmesh-plan
-```
-
-**What this does:**
-- Runs your transformations quickly in MySQL
-- Creates preview tables you can check in CloudBeaver
-- Look for results under the MySQL connection → `omop_db` database
-- Results appear as "views" (think of them as virtual tables)
-
-### Option 2: Full Production Run
+### Run ETL pipelin
 
 Once you're happy with your preview, run the complete pipeline:
 
@@ -265,61 +172,7 @@ If you prefer using other database tools, you can connect directly:
 ## 🎉 Congratulations!
 
 You now have a working OMOP ETL system! Your OpenMRS data is being transformed into the standard OMOP format, making it ready for research and analysis.
-
-**Next steps:**
-- Explore your data using CloudBeaver
-- Try making small changes to the SQL models
-- Run the preview command to see your changes in action
-
-**Need help?** Check the project's GitHub issues page or documentation for more advanced topics.
-
-
-
-
-Once your work is done, you can stop the services with:
-
-```bash
-docker compose stop
-```
-
 ---
-
-## Troubleshooting Common Issues
-
-**"Docker command not found"**
-- Make sure Docker Desktop is installed and running
-
-**"Port already in use"**
-
-* Option 1: Stop applications using the conflicting ports
-* Option 2: Change the ports in your docker-compose.yml file
-*
-* To change ports, find the ports: sections and update the left side (your computer's port):
-```yaml
-* ports:
-- "change_this_port:8978"  # CloudBeaver
-```
-Example: If port 8978 is busy, change it to 8979:
-```yaml
-ports:
-- "8979:8978"  # Now access CloudBeaver at localhost:8979
-```
-Note: Only change the number before the colon. The number after the colon must stay the same.**"Connection refused" in CloudBeaver**
-
-**"Connection refused" in CloudBeaver**
-- Wait a few minutes after running `docker compose up`
-- Make sure all services are fully started (check the logs)
-
-**Changes not showing up**
-- Make sure you ran either the preview or full pipeline command after making changes
-- Check that your SQL syntax is correct
-
-**You see pointer files instead of actual data when opening a large file (e.g., `CONCEPT.csv`)**
-it means Git LFS is not set up correctly. Run:
-
-```sh
-git lfs pull
-```
 
 ### Fancy a User Interface?
 
@@ -364,59 +217,3 @@ docker compose run achilles
 - ✅ Produces results in the Achilles_results and Achilles_analysis tables
 - ✅ Prepares your OMOP CDM for use with the web-based Atlas UI
 
-
-
-
-
-##### Setting Up Git LFS
-<summary>Setting Up Git LFS for This Repository</summary>
-
-<details>
-
-### Setting Up Git LFS for This Repository
-
-This repository uses **Git Large File Storage (LFS)** to handle large files like `CONCEPT.csv`. If you're cloning or pulling the repository, make sure to set up Git LFS to download the actual files instead of pointers.
-
-### Step 1: Install Git LFS
-Before cloning, install Git LFS:
-
-- **macOS (Homebrew)**  
-  ```sh
-  brew install git-lfs
-  ```
-
-- **Linux (Ubuntu/Debian)**
-  ```sh
-  sudo apt update && sudo apt install git-lfs
-  ```
-
-- **Windows**  
-  Download and install Git LFS from [Git LFS official site](https://git-lfs.github.com/).
-
-### Step 2: Clone the Repository
-After installing Git LFS, clone the repository:
-
-```sh
-git clone https://github.com/jayasanka-sack/openmrs-to-omop.git
-cd openmrs-to-omop
-```
-
-Git LFS will automatically download the large files.
-
-### Step 3: Pulling Updates
-If you have already cloned the repository before installing Git LFS, or if you are pulling new changes, run:
-
-```sh
-git lfs install
-git lfs pull
-```
-
-This ensures all large files are properly downloaded.
-
-
-
----
-
-
-For more information, refer to the [Git LFS documentation](https://git-lfs.github.com/).
-</details>

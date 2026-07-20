@@ -24,7 +24,7 @@ RUN pip install --break-system-packages \
 # set workdir
 WORKDIR /core
 
-COPY seed seed
+#COPY seed seed
 COPY models models
 COPY config.yaml .
 COPY entrypoint.sh .
