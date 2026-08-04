@@ -127,7 +127,130 @@ The transformation magic happens using **SQLMesh**, a powerful data transformati
 2. **Test your changes** using one of the options below
 
 
-### Run ETL pipelin
+## Map OpenMRS Concepts to OMOP Standard Concepts
+
+This step involves mapping your OpenMRS concepts to OMOP standard concepts using the Usagi tool. This mapping is crucial for ensuring that your OpenMRS data is correctly transformed into the OMOP Common Data Model.
+
+> **Note:** For your convenience, example mappings are provided in the `concepts` directory. If you're here to explore the project, you can skip this step and use the provided example mappings. This step is only required when working with a production environment or when connecting a different OpenMRS database.
+
+---
+
+#### Generate the Usagi Input File
+
+Run the following command:
+
+```bash
+docker compose run --rm core generate-concepts-usagi-input
+```
+
+This will generate a CSV file containing OpenMRS concept IDs, names, and their usage frequencies.
+
+✅ **Location of the generated file:**
+
+```
+/concepts/concepts_for_usagi_mapping
+```
+
+You'll import this file into **Usagi** to map your OpenMRS concepts to OMOP standard concepts.
+
+---
+
+####  Import the File into Usagi
+
+##### a. Download and Install Usagi
+
+If you don't have Usagi installed yet:
+
+- Go to the official OHDSI page for Usagi:
+  [https://ohdsi.github.io/Usagi/](https://ohdsi.github.io/Usagi/)
+- Download the latest release suitable for your operating system.
+- Extract and run Usagi.
+
+---
+
+##### b. Import the OMOP Vocabulary
+
+Before you can map your concepts, you must load the OMOP vocabulary into Usagi.
+
+- Download the vocabulary files (e.g. `CONCEPT.csv`, `VOCABULARY.csv`, etc.) from [OHDSI Athena](https://athena.ohdsi.org/).
+- In Usagi, go to:
+
+```
+File > Import Vocabulary
+```
+
+- Select the folder containing the vocabulary CSV files.
+
+> **Note:** This is a one-time task unless you update your vocabularies in the future.
+
+---
+
+##### c. Import the Concepts for Mapping
+
+- In Usagi, go to:
+
+```
+File > Import Codes
+```
+
+- Select the file you generated in Step 5.1:
+
+```
+/concepts/concepts_for_usagi_mapping
+```
+
+Usagi will automatically attempt to map your source concepts to standard OMOP concepts based on the concept names and frequencies.
+
+---
+
+##### d. Review and Save the Mapping
+
+- Review the suggested mappings:
+   - Approve mappings
+   - Change mappings
+   - Or leave some unmapped for later
+
+- Once you're done, save the mapping:
+
+![](docs/img/usagi.jpeg)
+```
+File > Save As
+```
+
+- Save the file in the `concepts` folder and name it:
+
+```
+mapping.csv
+```
+
+**Location of saved mapping file:**
+
+```
+/concepts/mapping.csv
+```
+
+This file will later be used by **SQLMesh** during ETL processing.
+
+---
+
+##### e. Updating Your Mapping Later
+
+If you wish to change mappings in the future:
+
+- Open Usagi
+- Go to:
+
+```
+File > Apply Previous Mapping
+```
+
+- Import your existing mapping file (`mapping.csv`), and make further edits as needed.
+
+
+---
+
+
+### Now run ETL pipeline
 
 Once you're happy with your preview, run the complete pipeline:
 
@@ -141,33 +264,6 @@ docker compose run --rm core run-pipeline
 - Takes longer but gives you the final production-ready data
 
 ---
-
-## Working with Concept Mappings (Advanced - Optional)
-
-**What are concept mappings?** They help translate your local medical codes to standard OMOP codes.
-
-We've provided pre-made mappings, so you can skip this section initially. When you're ready to create custom mappings:
-
-1. Open the **Usagi** tool (included in the project)
-2. Import: `concepts/selected_concepts_1to1_updated.csv`
-3. Create your mappings
-4. Save (don't export!) as `concepts/mapping.csv`
-
-The system will automatically use your new mappings.
-
----
-
-## Direct Database Access (For Advanced Users)
-
-If you prefer using other database tools, you can connect directly:
-
-**PostgreSQL (Final OMOP Data):**
-- **Host**: localhost
-- **Port**: 5432
-- **Database**: postgres
-- **Username**: postgres
-- **Password**: postgres_pass
-
 
 ## 🎉 Congratulations!
 
