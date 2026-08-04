@@ -1,0 +1,259 @@
+source_concept_id,source_concept_name,type,Reference code system,Reference code,frequency
+654,None,Misc,CIEL,1107,8030
+770,No,Misc,CIEL,1066,4767
+771,Yes,Misc,CIEL,1065,2991
+50786,All,Misc,CIEL,1163,1365
+3481,Continue regimen,Misc Order,CIEL,1257,1316
+3487,Antiretroviral plan,Question,CIEL,1255,1027
+39337,Tuberculosis prophylaxis plan,Question,CIEL,1265,1025
+39928,PCP prophylaxis plan,Question,CIEL,1261,1025
+12121,Pay category,Question,CIEL,5282,1023
+38864,Tuberculosis treatment plan,Question,CIEL,1268,1022
+3380,Return visit date,Misc,CIEL,5096,1021
+4166,Temperature (C),Finding,CIEL,5088,1017
+4169,Pulse,Finding,CIEL,5087,1016
+51496,New complaints,Question,CIEL,1154,1016
+4173,Arterial blood oxygen saturation (pulse oximeter),Question,CIEL,5092,1014
+54964,Patient reported current cryptococcus treatment,Question,CIEL,1112,1012
+4168,Weight (kg),Finding,CIEL,5089,1010
+42253,Scheduled visit,Question,CIEL,1246,1008
+51371,Overall drug adherence in last month,Question,CIEL,1156,1007
+48127,Antiretroviral use,Question,CIEL,1192,1003
+52746,Pilot,Misc,CIEL,1139,975
+37447,Cryptococcal treatment plan,Question,CIEL,1277,965
+4164,Systolic blood pressure,Finding,CIEL,5085,959
+4165,Diastolic blood pressure,Finding,CIEL,5086,959
+55043,Patient reported current tuberculosis treatment,Question,CIEL,1111,951
+11966,Current WHO HIV stage,Finding,CIEL,5356,950
+41926,New WHO/CDC staging criteria met,Question,CIEL,1248,919
+10409,Discordant couple,Question,CIEL,6096,919
+3439,Referrals ordered,Question,CIEL,1272,918
+55102,Patient reported current tuberculosis prophylaxis,Question,CIEL,1110,902
+50705,Antiretroviral adherence in past week,Question,CIEL,1164,839
+51405,Primary regimen,Question,CIEL,1155,685
+55154,Patient reported current PCP prophylaxis,Question,CIEL,1109,644
+3373,Pregnancy status,Question,CIEL,5272,612
+52173,Conception since last visit,Question,CIEL,1146,576
+38390,Tests ordered,Question,CIEL,1271,488
+46777,WHO stage 3 adult,ConvSet,CIEL,1206,403
+10476,PCP prophylaxis adherence in past week,Question,CIEL,6065,376
+46938,WHO stage 1 adult,ConvSet,CIEL,1204,305
+656,Unknown,Misc,CIEL,1067,289
+653,Normal,Misc,CIEL,1115,275
+225,Serum glutamic-pyruvic transaminase,Test,CIEL,654,254
+4181,On Antiretrovirals Treatment,Misc,SNOMED MVP,OATT,252
+229,CD4 count,Test,CIEL,5497,191
+211,CD4%,Test,CIEL,730,189
+4739,CD8 count,Test,CIEL,853,186
+223,CD4 panel,LabSet,CIEL,657,172
+242,Haemoglobin,Test,CIEL,21,166
+37599,Medication received at visit,Question,CIEL,1276,144
+221,White blood cells,Test,CIEL,678,143
+212,Platelets,Test,CIEL,729,142
+205,Mean corpuscular volume,Test,CIEL,851,141
+46880,WHO stage 2 adult,ConvSet,CIEL,1205,139
+4330,Absolute lymphocyte count,Test,CIEL,952,137
+209,Serum creatinine (umol/L),Test,CIEL,790,117
+671,Complete blood count,LabSet,CIEL,1019,109
+50618,Tuberculosis prophylaxis adherence in past week,Question,CIEL,1165,106
+46658,WHO stage 4 adult,ConvSet,CIEL,1207,103
+36285,Still on treatment,State,CIEL,160037,95
+4312,Mother,Misc,CIEL,970,73
+10450,Tuberculosis treatment adherence in past week,Question,CIEL,6077,68
+134,Lamivudine / zidovudine,Drug,CIEL,630,67
+4167,Height (cm),Finding,CIEL,5090,66
+3477,Stop all,Misc Order,CIEL,1260,64
+3738,Immunizations,ConvSet,CIEL,984,57
+12077,Childs current HIV status,Question,CIEL,5303,57
+12053,Head circumference,Finding,CIEL,5314,55
+4306,Hospitalized since last visit,Question,CIEL,976,54
+11479,Mother deceased,Question,CIEL,5588,54
+36291,Treatment complete,State,CIEL,160035,54
+11477,Father deceased,Question,CIEL,5589,53
+4314,Family member accompanying patient,Question,CIEL,969,53
+6689,Lopinavir / ritonavir,Drug,CIEL,794,52
+46439,Peds CDC category query,Finding,CIEL,1209,52
+45111,Peds WHO category query,Finding,CIEL,1224,51
+51679,Weaned,Finding,CIEL,1152,51
+51774,Infant feeding method,Question,CIEL,1151,50
+3612,Cardiac exam findings,Finding,CIEL,1124,49
+3614,Chest exam findings,Finding,CIEL,1123,49
+4304,Family member that administers medications,Question,CIEL,979,49
+3608,Musculoskeletal exam findings,Finding,CIEL,1128,48
+53681,Neurologic exam findings,Finding,CIEL,1129,48
+3611,Abdominal exam findings,Finding,CIEL,1125,48
+4171,Respiratory rate,Question,CIEL,5242,48
+991951,GROUP FOLLOWING,State,,,47
+3720,Hemophilus influenza B vaccine,Drug,CIEL,5261,47
+3615,HEENT exam findings,Finding,CIEL,1122,47
+3739,Diphtheria tetanus and pertussis vaccination,Procedure,CIEL,781,47
+3712,Bacillus Calmette–Guérin vaccine,Procedure,CIEL,886,46
+3718,Hepatitis B vaccination,Procedure,CIEL,782,46
+47514,Previous immunizations administered,Question,CIEL,1198,46
+3632,Acute coryza,Diagnosis,CIEL,106,46
+3740,"Polio vaccination, oral",Procedure,CIEL,783,46
+52531,National AIDS sexually transmitted disease control program,Misc,CIEL,1141,45
+3486,Start drugs,Misc Order,CIEL,1256,39
+991742,PATIENT DIED,State,,,37
+160,Ethambutol and isoniazid,Drug,CIEL,1108,36
+3721,Measles vaccination,Procedure,CIEL,36,36
+4299,Feeding plan,Question,CIEL,985,35
+10514,Mixed feeding,Finding,CIEL,6046,32
+227,Other non-coded,Misc,CIEL,5622,31
+3247,Completed,Finding,CIEL,1267,31
+45406,WHO stage 1 peds,ConvSet,CIEL,1220,29
+1501,Asymptomatic HIV infection,Diagnosis,CIEL,5327,26
+5753,Exposure to HIV,Finding,CIEL,822,26
+39188,Reason tuberculosis prophylaxis stopped,Question,CIEL,1266,24
+39773,Reason PCP prophylaxis stopped,Question,CIEL,1262,24
+992003,GROUP TB 1,State,,,22
+3680,"X-ray, chest",Radiology/Imaging Procedure,CIEL,12,21
+40991,CD4 count greater than 200,Finding,CIEL,1254,21
+6747,Lamivudine / nevirapine / stavudine,Drug,CIEL,792,20
+48270,Dermatitis,Finding,CIEL,119,16
+55830,Antiretrovirals used for MTCT prophylaxis,Question,CIEL,1084,16
+50862,Most,Misc,CIEL,1162,15
+41290,Reason antiretrovirals stopped,Question,CIEL,1252,15
+991989,GROUP PMTCT 1,State,,,15
+991968,GROUP PEDI 1,State,,,14
+47020,CDC category c,ConvSet,CIEL,1203,14
+991987,GROUP 14,State,,,14
+991972,GROUP 4,State,,,14
+652,Abnormal,Misc,CIEL,1116,14
+48798,Treatment,Misc,CIEL,1185,13
+41439,Reason antiretrovirals started,Question,CIEL,1251,13
+991986,GROUP 2,State,,,12
+3273,Isoniazid / pyrazinamide / rifampin,Drug,CIEL,768,12
+159,Rifampicin isoniazid pyrazinamide and ethambutol,Drug,CIEL,1131,11
+991993,GROUP 15,State,,,11
+45201,WHO stage 3 peds,ConvSet,CIEL,1222,11
+991953,GROUP 17,State,,,11
+51334,Pneumocystic carinii pneumonia prophylactic drugs,MedSet,CIEL,1157,11
+991954,GROUP PMTCT,State,,,11
+991988,GROUP 16,State,,,11
+991974,GROUP PEDI FOLLOWING,State,,,11
+991949,GROUP TB 2,State,,,11
+991969,GROUP 10,State,,,10
+991962,GROUP 12,State,,,10
+991980,GROUP 21,State,,,10
+991957,GROUP 18,State,,,10
+991959,GROUP 6,State,,,9
+991976,GROUP 9,State,,,9
+4286,"Respiratory tract infection, NOS",Diagnosis,CIEL,999,9
+36288,Patient transferred out,State,CIEL,160036,9
+55829,Antiretroviral drugs,MedSet,CIEL,1085,9
+45307,WHO stage 2 peds,ConvSet,CIEL,1221,9
+991964,GROUP 8,State,,,9
+3361,Adherence counseling,Procedure,CIEL,5488,9
+3479,Change regimen,Misc Order,CIEL,1259,9
+3480,Change formulation,Misc Order,CIEL,1258,9
+3364,Nutritional support,Procedure,CIEL,5484,9
+202,HIV viral load,Test,CIEL,856,8
+4307,Aunt,Misc,CIEL,975,8
+38711,Reason tuberculosis treatment stopped,Question,CIEL,1269,8
+54821,Tuberculosis drug treatment start date,Question,CIEL,1113,8
+1002,Myalgia,Finding,CIEL,121,7
+47084,CDC category b,ConvSet,CIEL,1202,7
+3206,"Toxicity, drug",Diagnosis,CIEL,102,7
+991955,GROUP 19,State,,,7
+991970,GROUP 1,State,,,6
+4309,Grandparent,Misc,CIEL,973,6
+991965,GROUP 11,State,,,6
+11408,Other family member,Misc,CIEL,5620,6
+991967,GROUP 20,State,,,6
+991994,GROUP 24,State,,,5
+991963,GROUP 13,State,,,5
+991971,GROUP 33,State,,,5
+991995,GROUP 32,State,,,5
+47184,CDC category a,ConvSet,CIEL,1201,5
+42090,Cryptococcus treatment adherence in past week,Question,CIEL,1247,5
+991981,GROUP 30,State,,,5
+991958,GROUP 7,State,,,5
+991983,GROUP 23,State,,,5
+929,Rash,Symptom/Finding,CIEL,512,4
+12184,Infant formula,Drug,CIEL,5254,4
+991985,GROUP 3,State,,,4
+3071,Tonsillitis,Diagnosis,CIEL,112,4
+51248,Tuberculosis prophylactic drugs,MedSet,CIEL,1158,4
+1033,Bronchospasm,Symptom,CIEL,108,4
+1117,"Candidiasis, oral",Diagnosis,CIEL,5334,4
+1530,"Pneumonia, tuberculous",Diagnosis,CIEL,42,4
+4310,Sibling,Misc,CIEL,972,4
+50517,Mucocutaneous exam findings,Finding,CIEL,1166,4
+1534,"Candidiasis, vaginal",Diagnosis,CIEL,298,4
+4311,Father,Misc,CIEL,971,4
+991956,GROUP 27,State,,,4
+642,Few,Misc,CIEL,1160,4
+13973,Fungal infection,Diagnosis,CIEL,171,4
+991998,GROUP PEDI 5,State,,,4
+158,Rifampicin and isoniazid,Drug,CIEL,1194,4
+991991,GROUP PEDI 4,State,,,4
+2439,"Anemia, iron deficiency",Diagnosis,CIEL,1226,3
+3298,Pruritus,Finding,CIEL,879,3
+992002,GROUP TB,State,,,3
+5095,Regimen failure,Finding,CIEL,843,3
+51999,Total maternal to child transmission prophylaxis,Procedure,CIEL,1148,3
+240,VDRL,Test,CIEL,299,3
+665,"HIV DNA polymerase chain reaction, qualitative",Test,CIEL,1030,3
+991996,GROUP 37,State,,,3
+1136,Amoebiasis,Diagnosis,CIEL,124,3
+991973,GROUP 5,State,,,3
+991997,GROUP 28,State,,,3
+991966,GROUP 22,State,,,3
+991982,GROUP 36,State,,,3
+1237,Pelvic inflammatory disease,Diagnosis,CIEL,902,3
+3296,Dosing change,Finding,CIEL,981,3
+36253,Transfer care to other center,Question,CIEL,1285,3
+781,Helminthiasis,Diagnosis,CIEL,199,2
+4315,Cow milk,Misc,CIEL,968,2
+10411,History of nevirapine to infant,Question,CIEL,6095,2
+991984,GROUP 25,State,,,2
+991992,GROUP 29,State,,,2
+992000,GROUP PEDI 7,State,,,2
+3305,Weight loss,Finding,CIEL,832,2
+45139,WHO stage 4 peds,ConvSet,CIEL,1223,2
+4287,"Respiratory tract infection, lower",Diagnosis,CIEL,998,2
+51946,On antiretroviral therapy,Finding,CIEL,1149,2
+658,"HIV enzyme immunoassay, qualitative",Test,CIEL,1042,2
+5303,Hyperacidity,Finding,CIEL,837,2
+52123,Antiretroviral use during pregnancy,Question,CIEL,1147,2
+36162,Non-AMPATH,Misc,CIEL,1287,2
+991944,GROUP FOLLOWING 1,State,,,2
+991990,GROUP 26,State,,,2
+2274,Papular pruritic eruption associated with HIV infection,Diagnosis,CIEL,1249,2
+11460,Date of confinement,Question,CIEL,5599,2
+51580,Child of HIV patient in clinic,Question,CIEL,1153,2
+55104,Dyspepsia,Symptom/Finding,CIEL,111,2
+991999,GROUP PEDI,State,,,2
+1238,Pneumocystis carinii pneumonia,Diagnosis,CIEL,882,1
+3365,Family planning services,Procedure,CIEL,5483,1
+4305,Self,Misc,CIEL,978,1
+4507,Genital sores,Finding,CIEL,864,1
+38074,Patient hospitalized location,Question,CIEL,1273,1
+1493,HIV staging - salmonella septicemia,Diagnosis,CIEL,5354,1
+2524,Verruca planus,Diagnosis,CIEL,1211,1
+41141,Completed total PMTCT,Finding,CIEL,1253,1
+991952,GROUP PEDI 3,State,,,1
+991961,GROUP PEDI 2,State,,,1
+991977,GROUP 38,State,,,1
+3338,Poor appetite,Symptom/Finding,CIEL,6031,1
+11485,Immunizations up to date,Question,CIEL,5585,1
+991978,GROUP 34,State,,,1
+1509,Failure to thrive,Diagnosis,CIEL,5050,1
+3184,Bronchitis,Diagnosis,CIEL,147,1
+3341,Abdominal swelling,Symptom/Finding,CIEL,6019,1
+4289,"Conjunctivitis, allergic",Diagnosis,CIEL,995,1
+991979,GROUP 31,State,,,1
+992007,GROUP PRISON,State,,,1
+3344,Paresthesia,Symptom,CIEL,6004,1
+4298,Reason feeding method changed,Question,CIEL,986,1
+10988,"Mass, other",Finding,CIEL,582,1
+12016,HIV staging - minor mucocutaneous manifestations,Finding,CIEL,5330,1
+47298,Allergic dermatitis,Diagnosis,CIEL,120,1
+1184,Scabies,Diagnosis,CIEL,140,1
+1756,Cellulitis,Diagnosis,CIEL,134,1
+3362,Tuberculosis Treatment or DOT Program,Misc Order,CIEL,5487,1
+4300,Weight change,Finding,CIEL,983,1
+36246,AMPATH,Misc,CIEL,1286,1
+37909,Moi teaching and referral hospital,Misc,CIEL,1274,1
+991975,GROUP 35,State,,,1

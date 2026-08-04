@@ -5,5 +5,3 @@ logs
 core/tmp/
 .DS_Store
 __pycache__
-concepts/concepts_for_usagi_mapping.csv
-concepts/mapping.csv
