@@ -66,11 +66,11 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 3738,Immunizations,ConvSet,CIEL,984,57
 12077,Childs current HIV status,Question,CIEL,5303,57
 12053,Head circumference,Finding,CIEL,5314,55
+36291,Treatment complete,State,CIEL,160035,54
 4306,Hospitalized since last visit,Question,CIEL,976,54
 11479,Mother deceased,Question,CIEL,5588,54
-36291,Treatment complete,State,CIEL,160035,54
-11477,Father deceased,Question,CIEL,5589,53
 4314,Family member accompanying patient,Question,CIEL,969,53
+11477,Father deceased,Question,CIEL,5589,53
 6689,Lopinavir / ritonavir,Drug,CIEL,794,52
 46439,Peds CDC category query,Finding,CIEL,1209,52
 45111,Peds WHO category query,Finding,CIEL,1224,51
@@ -83,20 +83,20 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 53681,Neurologic exam findings,Finding,CIEL,1129,48
 3611,Abdominal exam findings,Finding,CIEL,1125,48
 4171,Respiratory rate,Question,CIEL,5242,48
-991951,GROUP FOLLOWING,State,,,47
 3720,Hemophilus influenza B vaccine,Drug,CIEL,5261,47
 3615,HEENT exam findings,Finding,CIEL,1122,47
 3739,Diphtheria tetanus and pertussis vaccination,Procedure,CIEL,781,47
-3712,Bacillus Calmette–Guérin vaccine,Procedure,CIEL,886,46
+991951,GROUP FOLLOWING,State,,,47
 3718,Hepatitis B vaccination,Procedure,CIEL,782,46
 47514,Previous immunizations administered,Question,CIEL,1198,46
 3632,Acute coryza,Diagnosis,CIEL,106,46
 3740,"Polio vaccination, oral",Procedure,CIEL,783,46
+3712,Bacillus Calmette–Guérin vaccine,Procedure,CIEL,886,46
 52531,National AIDS sexually transmitted disease control program,Misc,CIEL,1141,45
 3486,Start drugs,Misc Order,CIEL,1256,39
 991742,PATIENT DIED,State,,,37
-160,Ethambutol and isoniazid,Drug,CIEL,1108,36
 3721,Measles vaccination,Procedure,CIEL,36,36
+160,Ethambutol and isoniazid,Drug,CIEL,1108,36
 4299,Feeding plan,Question,CIEL,985,35
 10514,Mixed feeding,Finding,CIEL,6046,32
 227,Other non-coded,Misc,CIEL,5622,31
@@ -110,22 +110,20 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 3680,"X-ray, chest",Radiology/Imaging Procedure,CIEL,12,21
 40991,CD4 count greater than 200,Finding,CIEL,1254,21
 6747,Lamivudine / nevirapine / stavudine,Drug,CIEL,792,20
-48270,Dermatitis,Finding,CIEL,119,16
 55830,Antiretrovirals used for MTCT prophylaxis,Question,CIEL,1084,16
-50862,Most,Misc,CIEL,1162,15
+48270,Dermatitis,Finding,CIEL,119,16
 41290,Reason antiretrovirals stopped,Question,CIEL,1252,15
 991989,GROUP PMTCT 1,State,,,15
-991968,GROUP PEDI 1,State,,,14
+50862,Most,Misc,CIEL,1162,15
 47020,CDC category c,ConvSet,CIEL,1203,14
 991987,GROUP 14,State,,,14
 991972,GROUP 4,State,,,14
 652,Abnormal,Misc,CIEL,1116,14
-48798,Treatment,Misc,CIEL,1185,13
+991968,GROUP PEDI 1,State,,,14
 41439,Reason antiretrovirals started,Question,CIEL,1251,13
+48798,Treatment,Misc,CIEL,1185,13
 991986,GROUP 2,State,,,12
 3273,Isoniazid / pyrazinamide / rifampin,Drug,CIEL,768,12
-159,Rifampicin isoniazid pyrazinamide and ethambutol,Drug,CIEL,1131,11
-991993,GROUP 15,State,,,11
 45201,WHO stage 3 peds,ConvSet,CIEL,1222,11
 991953,GROUP 17,State,,,11
 51334,Pneumocystic carinii pneumonia prophylactic drugs,MedSet,CIEL,1157,11
@@ -133,14 +131,12 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 991988,GROUP 16,State,,,11
 991974,GROUP PEDI FOLLOWING,State,,,11
 991949,GROUP TB 2,State,,,11
-991969,GROUP 10,State,,,10
+159,Rifampicin isoniazid pyrazinamide and ethambutol,Drug,CIEL,1131,11
+991993,GROUP 15,State,,,11
 991962,GROUP 12,State,,,10
 991980,GROUP 21,State,,,10
 991957,GROUP 18,State,,,10
-991959,GROUP 6,State,,,9
-991976,GROUP 9,State,,,9
-4286,"Respiratory tract infection, NOS",Diagnosis,CIEL,999,9
-36288,Patient transferred out,State,CIEL,160036,9
+991969,GROUP 10,State,,,10
 55829,Antiretroviral drugs,MedSet,CIEL,1085,9
 45307,WHO stage 2 peds,ConvSet,CIEL,1221,9
 991964,GROUP 8,State,,,9
@@ -148,6 +144,10 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 3479,Change regimen,Misc Order,CIEL,1259,9
 3480,Change formulation,Misc Order,CIEL,1258,9
 3364,Nutritional support,Procedure,CIEL,5484,9
+991959,GROUP 6,State,,,9
+991976,GROUP 9,State,,,9
+4286,"Respiratory tract infection, NOS",Diagnosis,CIEL,999,9
+36288,Patient transferred out,State,CIEL,160036,9
 202,HIV viral load,Test,CIEL,856,8
 4307,Aunt,Misc,CIEL,975,8
 38711,Reason tuberculosis treatment stopped,Question,CIEL,1269,8
@@ -170,9 +170,6 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 991981,GROUP 30,State,,,5
 991958,GROUP 7,State,,,5
 991983,GROUP 23,State,,,5
-929,Rash,Symptom/Finding,CIEL,512,4
-12184,Infant formula,Drug,CIEL,5254,4
-991985,GROUP 3,State,,,4
 3071,Tonsillitis,Diagnosis,CIEL,112,4
 51248,Tuberculosis prophylactic drugs,MedSet,CIEL,1158,4
 1033,Bronchospasm,Symptom,CIEL,108,4
@@ -188,9 +185,9 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 991998,GROUP PEDI 5,State,,,4
 158,Rifampicin and isoniazid,Drug,CIEL,1194,4
 991991,GROUP PEDI 4,State,,,4
-2439,"Anemia, iron deficiency",Diagnosis,CIEL,1226,3
-3298,Pruritus,Finding,CIEL,879,3
-992002,GROUP TB,State,,,3
+929,Rash,Symptom/Finding,CIEL,512,4
+12184,Infant formula,Drug,CIEL,5254,4
+991985,GROUP 3,State,,,4
 5095,Regimen failure,Finding,CIEL,843,3
 51999,Total maternal to child transmission prophylaxis,Procedure,CIEL,1148,3
 240,VDRL,Test,CIEL,299,3
@@ -204,14 +201,9 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 1237,Pelvic inflammatory disease,Diagnosis,CIEL,902,3
 3296,Dosing change,Finding,CIEL,981,3
 36253,Transfer care to other center,Question,CIEL,1285,3
-781,Helminthiasis,Diagnosis,CIEL,199,2
-4315,Cow milk,Misc,CIEL,968,2
-10411,History of nevirapine to infant,Question,CIEL,6095,2
-991984,GROUP 25,State,,,2
-991992,GROUP 29,State,,,2
-992000,GROUP PEDI 7,State,,,2
-3305,Weight loss,Finding,CIEL,832,2
-45139,WHO stage 4 peds,ConvSet,CIEL,1223,2
+2439,"Anemia, iron deficiency",Diagnosis,CIEL,1226,3
+3298,Pruritus,Finding,CIEL,879,3
+992002,GROUP TB,State,,,3
 4287,"Respiratory tract infection, lower",Diagnosis,CIEL,998,2
 51946,On antiretroviral therapy,Finding,CIEL,1149,2
 658,"HIV enzyme immunoassay, qualitative",Test,CIEL,1042,2
@@ -225,17 +217,14 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 51580,Child of HIV patient in clinic,Question,CIEL,1153,2
 55104,Dyspepsia,Symptom/Finding,CIEL,111,2
 991999,GROUP PEDI,State,,,2
-1238,Pneumocystis carinii pneumonia,Diagnosis,CIEL,882,1
-3365,Family planning services,Procedure,CIEL,5483,1
-4305,Self,Misc,CIEL,978,1
-4507,Genital sores,Finding,CIEL,864,1
-38074,Patient hospitalized location,Question,CIEL,1273,1
-1493,HIV staging - salmonella septicemia,Diagnosis,CIEL,5354,1
-2524,Verruca planus,Diagnosis,CIEL,1211,1
-41141,Completed total PMTCT,Finding,CIEL,1253,1
-991952,GROUP PEDI 3,State,,,1
-991961,GROUP PEDI 2,State,,,1
-991977,GROUP 38,State,,,1
+781,Helminthiasis,Diagnosis,CIEL,199,2
+4315,Cow milk,Misc,CIEL,968,2
+10411,History of nevirapine to infant,Question,CIEL,6095,2
+991984,GROUP 25,State,,,2
+991992,GROUP 29,State,,,2
+992000,GROUP PEDI 7,State,,,2
+3305,Weight loss,Finding,CIEL,832,2
+45139,WHO stage 4 peds,ConvSet,CIEL,1223,2
 3338,Poor appetite,Symptom/Finding,CIEL,6031,1
 11485,Immunizations up to date,Question,CIEL,5585,1
 991978,GROUP 34,State,,,1
@@ -257,3 +246,14 @@ source_concept_id,source_concept_name,type,Reference code system,Reference code,
 36246,AMPATH,Misc,CIEL,1286,1
 37909,Moi teaching and referral hospital,Misc,CIEL,1274,1
 991975,GROUP 35,State,,,1
+1238,Pneumocystis carinii pneumonia,Diagnosis,CIEL,882,1
+3365,Family planning services,Procedure,CIEL,5483,1
+4305,Self,Misc,CIEL,978,1
+4507,Genital sores,Finding,CIEL,864,1
+38074,Patient hospitalized location,Question,CIEL,1273,1
+1493,HIV staging - salmonella septicemia,Diagnosis,CIEL,5354,1
+2524,Verruca planus,Diagnosis,CIEL,1211,1
+41141,Completed total PMTCT,Finding,CIEL,1253,1
+991952,GROUP PEDI 3,State,,,1
+991961,GROUP PEDI 2,State,,,1
+991977,GROUP 38,State,,,1
