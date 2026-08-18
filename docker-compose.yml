@@ -95,8 +95,6 @@ services:
     platform: "linux/amd64"
     ports:
       - "3000:3000"
-#    secrets:
-#      - CDM_CONNECTIONDETAILS_PASSWORD
     environment:
       CDM_CONNECTIONDETAILS_DBMS: "postgresql"
       CDM_CONNECTIONDETAILS_USER: "postgres"
@@ -107,7 +105,7 @@ services:
       CDM_VERSION: "5.4"
       CDM_SOURCE_NAME: "OpenMRS"
       CDM_DATABASE_SCHEMA: "public"
-      RESULTS_DATABASE_SCHEMA: "public"
+      RESULTS_DATABASE_SCHEMA: "cdm_results"
       VOCAB_DATABASE_SCHEMA: "public"
       DQD_NUM_THREADS: "1"
       DQD_SQL_ONLY: "FALSE"
