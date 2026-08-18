@@ -13,6 +13,8 @@ services:
       - ./omrs-db:/docker-entrypoint-initdb.d
 #    ports:
 #      - "3308:3306"
+    networks:
+      - ohdsi-network
 
   core:
     build: core
@@ -30,13 +32,15 @@ services:
       TARGET_USER: postgres
       TARGET_PASS: postgres_pass
       TARGET_DB: postgres
-      ACHILLES_VOCAB_SCHEMA: vocab
-      ACHILLES_RESULTS_SCHEMA: results
+      ACHILLES_VOCAB_SCHEMA: public
+      ACHILLES_RESULTS_SCHEMA: cdm_results
     depends_on:
       - sqlmesh-db
       - omop-db
     ports:
       - "8000:8000"
+    networks:
+      - ohdsi-network
 
     volumes:
        - ./concepts:/concepts
@@ -48,7 +52,7 @@ services:
       - manual
 
   omop-db:
-    image: abertnamanya/omop-etl-deepdive-db:latest
+    image: abertnamanya/omop-etl-generic-db:latest
     container_name: omop-db
     restart: always
     environment:
@@ -57,6 +61,8 @@ services:
       POSTGRES_PASSWORD: postgres_pass
     ports:
       - "5432:5432"
+    networks:
+      - ohdsi-network
 
   achilles:
     build: achilles
@@ -65,16 +71,20 @@ services:
     platform: linux/amd64
     depends_on:
       - omop-db
+    volumes:
+      - ./output:/opt/achilles/workspace
     environment:
       ACHILLES_DB_URI: "postgresql://omop-db:5432/postgres"
       ACHILLES_DB_USERNAME: "postgres"
       ACHILLES_DB_PASSWORD: "postgres_pass"
       ACHILLES_CDM_SCHEMA: "public"
       ACHILLES_VOCAB_SCHEMA: "public"
-      ACHILLES_RESULTS_SCHEMA: "public"
+      ACHILLES_RESULTS_SCHEMA: "cdm_results"
       ACHILLES_CDM_VERSION: "5.4"
     profiles:
       - manual
+    networks:
+      - ohdsi-network
 
   dqd:
     build: dqd
@@ -125,6 +135,8 @@ services:
       - ./dqd/run_dqd.R:/postprocessing/dqd/scripts/run_dqd.R
     profiles:
       - manual
+    networks:
+      - ohdsi-network
 
   pgadmin:
     image: dpage/pgadmin4
@@ -140,8 +152,10 @@ services:
       - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
     profiles:
       - manual
-    
-  
+    networks:
+      - ohdsi-network
+
+
   cloudbeaver:
     image: dbeaver/cloudbeaver:latest
     container_name: cloudbeaver
@@ -150,6 +164,8 @@ services:
       - "8978:8978" # Web UI exposed on http://localhost:8978
     volumes:
       - cloudbeaver-data:/opt/cloudbeaver/workspace
+    networks:
+      - ohdsi-network
 
 
 volumes:
@@ -158,3 +174,8 @@ volumes:
   jdbc-drivers-data: ~
   cdm-postprocessing-data: ~
   cloudbeaver-data: ~
+
+networks:
+  ohdsi-network:
+    name: etl-ohdsi-network
+    driver: bridge
