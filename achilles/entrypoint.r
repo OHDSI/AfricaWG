@@ -15,7 +15,7 @@ env_var_names <- list(
   "ACHILLES_DB_PASSWORD",
   "ACHILLES_CDM_SCHEMA",
   "ACHILLES_VOCAB_SCHEMA",
-  "ACHILLES_RES_SCHEMA",
+  "ACHILLES_RESULTS_SCHEMA",
   "ACHILLES_OUTPUT_BASE",
   "ACHILLES_CDM_VERSION",
   "ACHILLES_NUM_THREADS"
@@ -31,7 +31,7 @@ default_vars <-
     "postgres_pass",                         # ACHILLES_DB_PASSWORD
     "public",                                # ACHILLES_CDM_SCHEMA
     "public",                                # ACHILLES_VOCAB_SCHEMA
-    "public",                                # ACHILLES_RES_SCHEMA
+    "cdm_results",                           # ACHILLES_RESULTS_SCHEMA <--- Fixed: defaults to cdm_results
     "/opt/achilles/workspace",               # ACHILLES_OUTPUT_BASE
     "5.4",                                   # ACHILLES_CDM_VERSION
     "1"                                      # ACHILLES_NUM_THREADS
@@ -98,7 +98,7 @@ if (length(args) == 0 || args[1] != "heel") {
   achillesResults <- achilles(
     connectionDetails,
     cdmDatabaseSchema = env_vars$ACHILLES_CDM_SCHEMA,
-    resultsDatabaseSchema = env_vars$ACHILLES_RES_SCHEMA,
+    resultsDatabaseSchema = env_vars$ACHILLES_RESULTS_SCHEMA, # <--- Uses correct mapped variable
     vocabDatabaseSchema = env_vars$ACHILLES_VOCAB_SCHEMA,
     sourceName = env_vars$ACHILLES_SOURCE,
     cdmVersion = env_vars$ACHILLES_CDM_VERSION,
@@ -110,7 +110,7 @@ if (length(args) == 0 || args[1] != "heel") {
   achillesHeel(
     connectionDetails,
     cdmDatabaseSchema = env_vars$ACHILLES_CDM_SCHEMA,
-    resultsDatabaseSchema = env_vars$ACHILLES_RES_SCHEMA,
+    resultsDatabaseSchema = env_vars$ACHILLES_RESULTS_SCHEMA,
     vocabDatabaseSchema = env_vars$ACHILLES_VOCAB_SCHEMA,
     cdmVersion = env_vars$ACHILLES_CDM_VERSION,
     numThreads = env_vars$ACHILLES_NUM_THREADS
