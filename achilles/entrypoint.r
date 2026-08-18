@@ -22,19 +22,19 @@ env_var_names <- list(
 )
 env_vars <- Sys.getenv(env_var_names, unset = NA)
 
-# Replace unset environment variables with defaults.
+# Replace unset environment variables with defaults aligned to your docker-compose setup.
 default_vars <-
   list(
-    "unknown",
-    "postgresql://localhost:5432/postgres",
-    "",
-    "",
-    "public",
-    "public",
-    "public",
-    "/opt/achilles/workspace",
-    "5",
-    "1"
+    "OpenMRS",                               # ACHILLES_SOURCE
+    "postgresql://omop-db:5432/postgres",    # ACHILLES_DB_URI
+    "postgres",                              # ACHILLES_DB_USERNAME
+    "postgres_pass",                         # ACHILLES_DB_PASSWORD
+    "public",                                # ACHILLES_CDM_SCHEMA
+    "public",                                # ACHILLES_VOCAB_SCHEMA
+    "public",                                # ACHILLES_RES_SCHEMA
+    "/opt/achilles/workspace",               # ACHILLES_OUTPUT_BASE
+    "5.4",                                   # ACHILLES_CDM_VERSION
+    "1"                                      # ACHILLES_NUM_THREADS
   )
 env_vars[is.na(env_vars)] <- default_vars[is.na(env_vars)]
 

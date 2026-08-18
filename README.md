@@ -287,7 +287,7 @@ Access the UI at [http://localhost:8000](http://localhost:8000)
 
 ### 1. **Run Achilles to generate data summaries** (Check What Achilles does below.)
    ```
-   docker compose run achilles
+   docker compose --profile manual run achilles
    ``` 
 ### 2. **Run DQD to perform data quality checks**
 This runs the [OHDSI Data Quality Dashboard (DQD)](https://github.com/OHDSI/DataQualityDashboard) on the OMOP database.
@@ -300,16 +300,14 @@ This serves the DQD results on a local web server. Once it's running, open your 
    docker compose run --rm --service-ports dqd view
    ``` 
 
-## 🧪 What does Achilles do?
-Achilles analyzes the OMOP CDM data and generates summary statistics, data quality metrics, and precomputed reports. These results are essential for visualizations in tools like Atlas.
+## Cohort Analysis & Exploration (ATLAS)
+Once your data is loaded into OMOP CDM and validated, you can explore it using OHDSI ATLAS.
 
-When you run:
 
 ```
-docker compose run achilles
+sudo docker compose --env-file ./atlas/.env -f docker-compose.atlas.yml up -d
 ```
-- ✅ It connects to your omop-db
-- ✅ Scans and summarizes data in the public schema
-- ✅ Produces results in the Achilles_results and Achilles_analysis tables
-- ✅ Prepares your OMOP CDM for use with the web-based Atlas UI
-
+## Access ATLAS
+```
+ http://localhost:8081/atlas
+```
