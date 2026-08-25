@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS cdm_results.heracles_analysis
 	stratum_5_name varchar(255),
 	analysis_type varchar(255)
 );
-CREATE TABLE IF NOT EXISTS cdm_results.HERACLES_HEEL_results 
+CREATE TABLE IF NOT EXISTS cdm_results.HERACLES_HEEL_results
  (cohort_definition_id int, 
   analysis_id INT, 
   HERACLES_HEEL_warning VARCHAR(255) 

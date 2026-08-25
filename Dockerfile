@@ -23,38 +23,40 @@ COPY ./vocabularies/*.zip ./
 
 RUN for f in *.zip; do unzip "$f" && rm "$f"; done || true
 
-# 010 - create empty atlas omop & atlas cdm_results schemas
+
+# 010 - create empty atlas cdm & atlas schemas
 COPY 010_create_cdm_schemas.sql /docker-entrypoint-initdb.d/010_create_cdm_schemas.sql
 
-# 015 - create atlas omop schema tables - use vendored SQL
-COPY ./vendor/cdm/omop_cdm_postgres_ddl.sql /docker-entrypoint-initdb.d/020_omop_cdm_postgresql_ddl.sql
+# 020 - create atlas cdm schema tables - use vendored SQL
+COPY omop_cdm_postgres_ddl.sql /docker-entrypoint-initdb.d/020_omop_cdm_postgresql_ddl.sql
 
-# 020 - create empty achilles tables in the atlas cdm_results schema
-COPY 020_achilles_postgresql_ddl.sql /docker-entrypoint-initdb.d/020_achilles_postgresql_ddl.sql
+# 035 - create concept_recommended table in the atlas cdm schema for Atlas Phoebe recommendations functionality
+COPY 035_concept_recommended.ddl.sql /docker-entrypoint-initdb.d/035_concept_recommended.ddl.sql
 
-# 030 - load vocabularies cdm csv data into the atlas omop schema tables & achilles data into atlas cdm_results schema achilles tables
-COPY 030_load_cdm_vocabularies.sql /docker-entrypoint-initdb.d/
+# 040 - load vocabularies cdm csv data into the atlas omop schema tables & achilles data into atlas cdm_results schema achilles tables
+COPY 040_load_cdm_vocabularies.sql /docker-entrypoint-initdb.d/
 
-# 040 - create atlas omop schema table primary keys
-COPY 040_omop_cdm_postgresql_primary_keys.sql /docker-entrypoint-initdb.d/040_omop_cdm_postgresql_primary_keys.sql
+# 045 - create atlas cdm schema table primary keys
+COPY 045_omop_cdm_postgresql_primary_keys.sql /docker-entrypoint-initdb.d/045_omop_cdm_postgresql_primary_keys.sql
 
-# 050 - create atlas omop schema table indexes
-COPY ./050_omop_cdm_postgresql_indexes.sql /docker-entrypoint-initdb.d/050_omop_cdm_postgresql_indexes.sql
+# 050 - create atlas cdm schema table indexes
+COPY 050_omop_cdm_postgresql_indexes.sql /docker-entrypoint-initdb.d/050_omop_cdm_postgresql_indexes.sql
 
-#051 - create indexes for concept table for both standard and none standard code matching
-COPY ./051_omop_cdm_vocabulary_postgresql_indexes.sql /docker-entrypoint-initdb.d/051_omop_cdm_vocabulary_postgresql_indexes.sql
+# 060 - create atlas cdm schema table database constraints - referential integrity
+COPY 060_omop_cdm_postgresql_constraints.sql /docker-entrypoint-initdb.d/060_omop_cdm_postgresql_constraints.sql
 
-# 060 - create atlas omop schema table database constraints - referential integrity
-COPY ./060_omop_cdm_postgresql_constraints.sql /docker-entrypoint-initdb.d/060_omop_cdm_postgresql_constraints.sql
 
-# 070 - populate cdm_source with the data source info
+# 070 - populate cdm_source table
 COPY 070_populate_cdm_source.sql /docker-entrypoint-initdb.d/070_populate_cdm_source.sql
 
-# 085 - create the atlas cdm_results schema tables - use vendored SQL
-COPY ./vendor/webapi/results_postgresql.ddl /docker-entrypoint-initdb.d/085_results_schema_ddl_postgresql.sql
+# 065 - create the atlas demo_cdm_results schema tables - use vendored SQL
+COPY results_postgresql.ddl /docker-entrypoint-initdb.d/065_results_schema_ddl_postgresql.sql
 
-# 085 - create the atlas cdm_results schema tables - use vendored SQL
-COPY ./vendor/webapi/achilles_postgresql.ddl /docker-entrypoint-initdb.d/086_achilles_postgresql.ddl.sql
+# 075 - apply the webapi schema tables flyway database migration postgresql SQL files up to baseline version V2.2.5.20180212152023 - use vendored SQL
+#COPY webapi_baseline_V2.2.5.20180212152023_postgresql.sql /docker-entrypoint-initdb.d/075_webapi_flyway_migrations_postgresql.sql
+
+# 080 - create and populate webapi_security schema - Atlas ohdsi and admin users
+COPY 080_create_and_populate_webapi_security_schema.sql /docker-entrypoint-initdb.d/080_create_and_populate_webapi_security_schema.sql
 
 
 

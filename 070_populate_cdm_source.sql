@@ -1,6 +1,4 @@
--- remove any previously added database connection configuration data
-truncate public.cdm_source;
-
+SET session_replication_role = 'replica';
 INSERT INTO public.cdm_source (
     cdm_source_name,
     cdm_source_abbreviation,
@@ -14,16 +12,22 @@ INSERT INTO public.cdm_source (
     cdm_version_concept_id,
     vocabulary_version
 )
-VALUES (
-           'OpenMRS OMOP CDM',
-           'OMRS',
-           'OpenMRS Community',
-           'OMOP CDM instance generated from OpenMRS data.',
-           'https://openmrs.org',
-           'https://github.com/OHDSI/AfricaWG.git',
-           CURRENT_DATE,
-           CURRENT_DATE,
-           '5.4',
-           756265,
-           'v5.0'
-       );
+SELECT
+    'OMOP Bridge',
+    'OMOP-BRIDGE',
+    'OMOP Bridge',
+    'Healthcare data transformed into OMOP CDM using OMOP-Bridge ETL',
+    'https://github.com/OHDSI/CommonDataModel',
+    'OMOP-Bridge ETL pipeline',
+    CURRENT_DATE,
+    CURRENT_DATE,
+    '5.4',
+    756265,
+    'Athena vocabulary'
+WHERE NOT EXISTS (
+    SELECT 1
+    FROM public.cdm_source
+    WHERE cdm_source_name = 'OMOP Bridge'
+);
+-- Re-enable constraints
+SET session_replication_role = 'origin';

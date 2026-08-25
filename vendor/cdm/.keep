@@ -1,2 +1,0 @@
-# Vendored OMOP CDM derived SQL artifacts live here.
-# Generate via: make regen-webapi-sql

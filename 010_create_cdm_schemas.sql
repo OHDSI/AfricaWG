@@ -1,1 +1,5 @@
-create schema cdm_results;
+CREATE SCHEMA IF NOT EXISTS public;       -- target OMOP CDM tables
+CREATE SCHEMA IF NOT EXISTS webapi;
+CREATE SCHEMA IF NOT EXISTS webapi_security;
+CREATE SCHEMA IF NOT EXISTS cdm_results;
+
