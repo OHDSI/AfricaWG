@@ -1,4 +1,4 @@
-# Build Docker image and push to GitHub Container Registry (GHCR) (tag-driven)
+# Build Docker image and push to GitHub Container Registry (GHCR)
 name: build-and-push-ghcr-image
 
 on:
@@ -20,9 +20,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  # GitHub requires repository names to be lowercase for packages.
-  # metadata-action handles this automatically when combining REGISTRY and github.repository.
-  IMAGE_NAME: ${{ github.repository_owner }}/omop-etl-deepdive-db
 
 jobs:
   docker:
@@ -44,16 +41,26 @@ jobs:
       - name: Fetch Git LFS files
         run: git lfs pull
 
+      - name: Lowercase Repository Name
+        id: string
+        run: |
+          # GHCR strictly requires lowercase owner/repository names
+          echo "IMAGE_NAME=$(echo '${{ github.repository_owner }}/omop-etl-deepdive-db' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
+            # Always tag as 'latest' for pushes and manual dispatches
+            type=raw,value=latest
+            # Generate semver tag on git tag pushes (e.g., v1.0.0)
             type=semver,pattern={{version}}
-            type=raw,value=latest,enable=${{ startsWith(github.ref, 'refs/tags/') }}
-            # Fallback handling: If triggered manually via workflow_dispatch, tag as 'edge'
-            type=ref,event=branch,enable=${{ !startsWith(github.ref, 'refs/tags/') }}
+            # Generate custom version tag if provided in workflow_dispatch
+            type=raw,value=${{ github.event.inputs.version_tag }},enable=${{ github.event.inputs.version_tag != '' }}
+            # Generate branch name tag (e.g., deep-dive-db)
+            type=ref,event=branch
 
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -71,15 +78,12 @@ jobs:
           context: .
           file: ./Dockerfile
           platforms: linux/amd64
-          push: ${{ startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch' }}
+          push: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          # Buildx v6 uses provenance tracking by default; inline mode cleans up workflow footprints
           provenance: true
-          secrets: |
-            "OHDSI_ETL_POSTGRES_DB_PASSWORD=postgres_pass"
           build-args: |
             PASSWORD_METHOD=default
             GIT_BRANCH=${{ github.event.inputs.branch || github.ref_name }}
@@ -87,5 +91,6 @@ jobs:
 
       - name: Log generated Docker image tags
         run: |
+          echo "Successfully pushed to: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}"
           echo "Generated tags:"
           echo "${{ steps.meta.outputs.tags }}"
