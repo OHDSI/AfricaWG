@@ -15,7 +15,7 @@ INSERT INTO public.cdm_source (
     vocabulary_version
 )
 VALUES (
-           'OpenMRS OMOP CDM',
+           'OMRS',
            'OMRS',
            'OpenMRS Community',
            'OMOP CDM instance generated from OpenMRS data.',
