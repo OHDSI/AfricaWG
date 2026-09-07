@@ -31,7 +31,7 @@ cd AfricaWG
 This step prepares all the necessary software components. It may take 5-10 minutes the first time.
 
 ```bash
-docker compose --profile manual build
+docker compose build
 ```
 
 **What this does:** Downloads and sets up all the databases and tools you'll need.
@@ -281,24 +281,29 @@ Access the UI at [http://localhost:8000](http://localhost:8000)
 <img src="/docs/img/sql_mesh.jpeg" alt="SQLMesh UI"> 
 -- 
 
-## Fancy a Data Quality Check? (This will cover on upcoming weeks)
+## Fancy a Data Quality Check & Characterization
 
-
-
-### 1. **Run Achilles to generate data summaries** (Check What Achilles does below.)
-   ```
-   docker compose --profile manual run achilles
-   ``` 
-### 2. **Run DQD to perform data quality checks**
-This runs the [OHDSI Data Quality Dashboard (DQD)](https://github.com/OHDSI/DataQualityDashboard) on the OMOP database.
+### 1. **Run Achilles to generate data summaries**
+Trigger the characterization analysis via the Plumber R runner API (ensuring single-threaded execution to prevent database connection limits):
    ```bash
-    docker compose run --rm dqd run 
+   curl -X POST "http://localhost:8001/run-achilles?create_indices=false&num_threads=1"
    ```
-### 3. **View the Data Quality Dashboard**
-This serves the DQD results on a local web server. Once it's running, open your browser and go to [http://localhost:3000](http://localhost:3000).
+
+### 2. Run DQD to perform data quality checks
+   Execute the OHDSI Data Quality Dashboard (DQD) checks against your OMOP database:
+   ```bash
+    curl -X POST "http://localhost:8001/run-dqd?cdm_version=5.4"
    ```
-   docker compose run --rm --service-ports dqd view
-   ``` 
+### 3. Generate ARES Indices
+   Export and index your characterization and data quality results for web exploration:
+   ```bash
+   curl -X POST "http://localhost:8001/run-ares-indexer"
+   ```
+### 4. View the Data Quality Dashboard & ARES UI
+   ARES Explorer: Access the frontend data exploration UI at
+   http://localhost:81/ares/#/home.
+
+![](docs/img/img.png)
 
 ## Cohort Analysis & Exploration (ATLAS)
 Once your data is loaded into OMOP CDM and validated, you can explore it using OHDSI ATLAS.
@@ -309,5 +314,5 @@ sudo docker compose --env-file ./atlas/.env -f docker-compose.atlas.yml up -d
 ```
 ## Access ATLAS
 ```
- http://localhost:8081/atlas
+ http://localhost:8180/atlas
 ```
