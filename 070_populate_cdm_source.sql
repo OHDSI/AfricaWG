@@ -13,21 +13,21 @@ INSERT INTO public.cdm_source (
     vocabulary_version
 )
 SELECT
-    'OMOP Bridge',
-    'OMOP-BRIDGE',
-    'OMOP Bridge',
-    'Healthcare data transformed into OMOP CDM using OMOP-Bridge ETL',
-    'https://github.com/OHDSI/CommonDataModel',
-    'OMOP-Bridge ETL pipeline',
+    'OMRS',
+    'OMRS',
+    'OpenMRS Community',
+    'OMOP CDM instance generated from OpenMRS data.',
+    'https://openmrs.org',
+    'https://github.com/OHDSI/AfricaWG.git',
     CURRENT_DATE,
     CURRENT_DATE,
     '5.4',
     756265,
-    'Athena vocabulary'
+    'v5.0'
 WHERE NOT EXISTS (
     SELECT 1
     FROM public.cdm_source
-    WHERE cdm_source_name = 'OMOP Bridge'
+    WHERE cdm_source_name = 'OMRS'
 );
 -- Re-enable constraints
 SET session_replication_role = 'origin';
