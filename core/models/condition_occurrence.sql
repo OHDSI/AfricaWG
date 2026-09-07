@@ -21,21 +21,21 @@ MODEL(
         )
 );
 
-SELECT c.condition_id                      AS condition_occurrence_id,
-       c.patient_id                        AS person_id,
-       concept_mapping.conceptId           AS condition_concept_id,
-    DATE(c.onset_date)                  AS condition_start_date,
-    c.onset_date                        AS condition_start_datetime,
-    DATE(c.end_date)                    AS condition_end_date,
-    c.end_date                          AS condition_end_datetime,
-    0                                   AS condition_type_concept_id,
-    0                                   AS condition_status_concept_id,
-    COALESCE(c.void_reason, '')         AS stop_reason,
-    NULL                                AS provider_id,
-    NULL                                AS visit_occurrence_id,
-    NULL                                AS visit_detail_id,
-    ''                                  AS condition_source_value,
-    concept_mapping.conceptId           AS condition_source_concept_id,
+SELECT c.condition_id                 AS condition_occurrence_id,
+       c.patient_id                   AS person_id,
+       COALESCE(concept_mapping.conceptId, 0) AS condition_concept_id,
+    DATE(c.onset_date)             AS condition_start_date,
+    c.onset_date                   AS condition_start_datetime,
+    DATE(c.end_date)               AS condition_end_date,
+    c.end_date                     AS condition_end_datetime,
+    32817                          AS condition_type_concept_id, -- EHR (using standard OMOP concept ID instead of 0)
+    0                              AS condition_status_concept_id,
+    COALESCE(c.void_reason, '')    AS stop_reason,
+    NULL                           AS provider_id,
+    NULL                           AS visit_occurrence_id,
+    NULL                           AS visit_detail_id,
+    ''                             AS condition_source_value,
+    concept_mapping.conceptId      AS condition_source_concept_id,
     COALESCE(c.verification_status, '') AS condition_status_source_value
 FROM openmrs.conditions AS c
     LEFT JOIN raw.CONCEPT_MAPPING concept_mapping

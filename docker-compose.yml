@@ -11,14 +11,24 @@ services:
     volumes:
       - db-data:/var/lib/mysql
       - ./omrs-db:/docker-entrypoint-initdb.d
-#    ports:
-#      - "3308:3306"
+    networks:
+      - ohdsi-network
+
+  omop-db:
+    image: ghcr.io/ohdsi/omop-etl-deepdive-db:latest
+    container_name: omop-db
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_pass
+    ports:
+      - "5432:5432"
     networks:
       - ohdsi-network
 
   core:
     build: core
-    image: omop-etl-core
     container_name: core
     environment:
       SRC_HOST: sqlmesh-db
@@ -38,118 +48,53 @@ services:
       - sqlmesh-db
       - omop-db
     ports:
-      - "8000:8000"
+      - "8005:8000"
     networks:
       - ohdsi-network
 
     volumes:
-       - ./concepts:/concepts
+      - ./concepts:/concepts
       # Uncomment the following line during development to mount local files and see changes without rebuilding the image.
       # Note: This will override files copied into /core during build.
       # - so be sure your local files are complete.
-       - ./core:/core
-    profiles:
-      - manual
+      - ./core:/core
 
-  omop-db:
-    image: abertnamanya/omop-etl-generic-db:latest
-    container_name: omop-db
-    restart: always
-    environment:
-      POSTGRES_DB: postgres
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres_pass
+  r-runner:
+    build: ./r-runner
+    container_name: omop-r-runner
+    restart: unless-stopped
     ports:
-      - "5432:5432"
-    networks:
-      - ohdsi-network
-
-  achilles:
-    build: achilles
-    image: omop-etl-achilles
-    container_name: achilles
-    platform: linux/amd64
+      - "8001:8001"   # Plumber API port
+    environment:
+      TARGET_DB_HOST: omop-db
+      TARGET_DB_PORT: 5432
+      TARGET_DB_USER: postgres
+      TARGET_DB_PASSWORD: postgres_pass
+      TARGET_DB_NAME: postgres
+      CDM_SCHEMA: public
+      VOCAB_SCHEMA: public
+      RESULTS_SCHEMA: cdm_results
+      RESULTS_DIR: /results
+      CDM_SOURCE_NAME: "OMRS"
+      SHINY_HOST: 0.0.0.0
+      SHINY_PORT: 3000
+      SHINY_SERVER_BASE_PATH: /dqd
     depends_on:
       - omop-db
     volumes:
-      - ./output:/opt/achilles/workspace
-    environment:
-      ACHILLES_DB_URI: "postgresql://omop-db:5432/postgres"
-      ACHILLES_DB_USERNAME: "postgres"
-      ACHILLES_DB_PASSWORD: "postgres_pass"
-      ACHILLES_CDM_SCHEMA: "public"
-      ACHILLES_VOCAB_SCHEMA: "public"
-      ACHILLES_RESULTS_SCHEMA: "cdm_results"
-      ACHILLES_CDM_VERSION: "5.4"
-    profiles:
-      - manual
+      - dqd_results:/results
     networks:
       - ohdsi-network
 
-  dqd:
-    build: dqd
-    image: omop-etl-dqd
-    container_name: omop-etl-dqd
-    depends_on:
-      - omop-db
-    platform: "linux/amd64"
+  ares:
+    image: ghcr.io/omop-bridge/ares:sha-21d4e88
+    container_name: ohdsi-ares
+    restart: unless-stopped
     ports:
-      - "3000:3000"
-    environment:
-      CDM_CONNECTIONDETAILS_DBMS: "postgresql"
-      CDM_CONNECTIONDETAILS_USER: "postgres"
-      CDM_CONNECTIONDETAILS_SERVER: "omop-db/postgres"
-      CDM_CONNECTIONDETAILS_PORT: "5432"
-      CDM_CONNECTIONDETAILS_PASSWORD: "postgres_pass"
-      CDM_CONNECTIONDETAILS_EXTRA_SETTINGS: ""
-      CDM_VERSION: "5.4"
-      CDM_SOURCE_NAME: "OpenMRS"
-      CDM_DATABASE_SCHEMA: "public"
-      RESULTS_DATABASE_SCHEMA: "cdm_results"
-      VOCAB_DATABASE_SCHEMA: "public"
-      DQD_NUM_THREADS: "1"
-      DQD_SQL_ONLY: "FALSE"
-      DQD_SQL_ONLY_UNION_COUNT: "1"
-      DQD_SQL_ONLY_INCREMENTAL_INSERT: "FALSE"
-      DQD_VERBOSE_MODE: "FALSE"
-      DQD_WRITE_TO_TABLE: "TRUE"
-      DQD_WRITE_TABLE_NAME: "dqdashboard_results"
-      DQD_WRITE_TO_CSV: "FALSE"
-      DQD_CSV_FILE: ""
-      DQD_CHECK_LEVELS: "TABLE,FIELD,CONCEPT"
-      DQD_CHECK_NAMES: ""
-      DQD_COHORT_DEFINITION_ID: ""
-      DQD_COHORT_DATABASE_SCHEMA: "public"
-      DQD_COHORT_TABLE_NAME: "cohort"
-      DQD_TABLES_TO_EXCLUDE: "CONCEPT,VOCABULARY,CONCEPT_ANCESTOR,CONCEPT_RELATIONSHIP,CONCEPT_CLASS,CONCEPT_SYNONYM,RELATIONSHIP,DOMAIN"
-      DQD_TABLE_CHECK_THRESHOLD_LOC: "default"
-      DQD_FIELD_CHECK_THRESHOLD_LOC: "default"
-      DQD_CONCEPT_CHECK_THRESHOLD_LOC: "default"
-    entrypoint: ["Rscript", "/postprocessing/dqd/scripts/run_dqd.R" ]
+      - "81:80"
     volumes:
-      - jdbc-drivers-data:/jdbc
-      - cdm-postprocessing-data:/postprocessing
-      - ./dqd/postprocessing/init.R:/postprocessing/init.R
-      - ./dqd/run_dqd.R:/postprocessing/dqd/scripts/run_dqd.R
-    profiles:
-      - manual
-    networks:
-      - ohdsi-network
-
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
-    ports:
-      - "8001:80"
-    depends_on:
-      - omop-db
-    volumes:
-      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
-    profiles:
-      - manual
+      - dqd_results:/usr/share/nginx/html/ares/data
+      - dqd_results:/usr/share/nginx/html/data
     networks:
       - ohdsi-network
 
@@ -165,13 +110,10 @@ services:
     networks:
       - ohdsi-network
 
-
 volumes:
   db-data: ~
-  postgres_data: ~
-  jdbc-drivers-data: ~
-  cdm-postprocessing-data: ~
   cloudbeaver-data: ~
+  dqd_results:
 
 networks:
   ohdsi-network:
