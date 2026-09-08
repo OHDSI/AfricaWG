@@ -294,6 +294,14 @@ Trigger the characterization analysis via the Plumber R runner API (ensuring sin
    ```bash
     curl -X POST "http://localhost:8001/run-dqd?cdm_version=5.4"
    ```
+
+### Reload the Data Quality Dashboard 
+View the Data Quality Dashboard
+   ```bash
+    curl -X POST "http://localhost:8001/launch-dqd-viewer"
+   ```
+This serves the DQD results on a local web server. Once it's running, open your browser and go to [http://localhost:3000](http://localhost:3000).
+
 ### 3. Generate ARES Indices
    Export and index your characterization and data quality results for web exploration:
    ```bash
@@ -309,8 +317,8 @@ Trigger the characterization analysis via the Plumber R runner API (ensuring sin
 Once your data is loaded into OMOP CDM and validated, you can explore it using OHDSI ATLAS.
 
 
-```
-sudo docker compose --env-file ./atlas/.env -f docker-compose.atlas.yml up -d
+```bash
+ docker compose --env-file ./atlas/.env -f docker-compose.atlas.yml up -d
 ```
 ## Access ATLAS
 ```

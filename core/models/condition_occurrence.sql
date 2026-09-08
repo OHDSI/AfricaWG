@@ -29,7 +29,7 @@ SELECT c.condition_id                 AS condition_occurrence_id,
     DATE(c.end_date)               AS condition_end_date,
     c.end_date                     AS condition_end_datetime,
     32817                          AS condition_type_concept_id, -- EHR (using standard OMOP concept ID instead of 0)
-    0                              AS condition_status_concept_id,
+    32890                              AS condition_status_concept_id,
     COALESCE(c.void_reason, '')    AS stop_reason,
     NULL                           AS provider_id,
     NULL                           AS visit_occurrence_id,
