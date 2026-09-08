@@ -65,6 +65,7 @@ services:
     restart: unless-stopped
     ports:
       - "8001:8001"   # Plumber API port
+      - "3000:3000"
     environment:
       TARGET_DB_HOST: omop-db
       TARGET_DB_PORT: 5432

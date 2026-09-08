@@ -6,7 +6,7 @@ library(jsonlite)
 # ==============================================================================
 # Base Path & Helper Configuration
 # ==============================================================================
-BASE_PATH <- Sys.getenv("SHINY_SERVER_BASE_PATH", "/dqd")
+BASE_PATH <- Sys.getenv("SHINY_SERVER_BASE_PATH","")
 
 get_base_url <- function() {
   if (nchar(BASE_PATH) > 0) {
